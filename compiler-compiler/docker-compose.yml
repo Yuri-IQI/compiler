@@ -1,0 +1,10 @@
+services:
+  ccc:
+    build: .
+    container_name: ccc
+    volumes:
+      - .:/cc
+    working_dir: /cc
+    stdin_open: true
+    tty: true
+    command: sh
