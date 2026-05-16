@@ -1,5 +1,7 @@
 # Parser com Bison/Flex/GCC
 
+Este parser são será utilizado na versão final do compilador, servindo apenas para verificação da gramática e experimentações além do que é permitido pelo ANTLR4.
+
 Este pasta contém uma imagem Docker para compilar e executar um parser usando Bison, Flex e GCC.
 A imagem utiliza um bind mount dessa pasta para que seja possível editar os arquivos localmente e executá-los dentro do container.
 Para modificar o parser, basta editar os arquivos `parser.y` e `lexer.l` e depois executar o comando `run` dentro do container para compilar e rodar o parser.
