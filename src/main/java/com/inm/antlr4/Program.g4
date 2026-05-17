@@ -1,6 +1,6 @@
 grammar Program;
 
-// TODO: Adicionar tratamento de exceções
+// TODO: Adicionar tratamento de exceções e Imprimir tokens
 
 @header {
     package com.inm.antlr4;
@@ -21,7 +21,7 @@ listId : ID | ID VIG listId ;
 tip : INTEGER | BOOLEAN | STRING ;
 
 cmdComp : BEGIN listCmd END ;
-listCmd : cmd | cmd PVIG listCmd ;
+listCmd : cmd PVIG | cmd PVIG listCmd ;
 cmd : cmdIf | cmdWhile | cmdRead | cmdWrite | cmdAtrib | cmdComp ;
 
 cmdIf : IF exprRel THEN cmd
@@ -49,7 +49,7 @@ exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE ;
 // Tokens
 
 // Palavras Reservadas
-PROGRAM : 'PROGRAM' ;
+PROGRAM : 'PROGRAM' { System.out.println("Token: PROGRAM | Tipo: PROGRAM"); } ;
 INTEGER : 'INTEGER' ;
 BOOLEAN : 'BOOLEAN' ;
 BEGIN : 'BEGIN' ;
