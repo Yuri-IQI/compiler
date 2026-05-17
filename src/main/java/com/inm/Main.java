@@ -25,6 +25,8 @@ public class Main {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         ProgramParser parser = new ProgramParser(tokens);
 
-        parser.prog();
+        GrammarValidator.validarTamanhoIdentificador(lexer);
+
+        parser.prog().PROGRAM();
     }
 }

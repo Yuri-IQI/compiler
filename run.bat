@@ -13,6 +13,6 @@ echo Gerando arquivos ANTLR...
 java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 
 echo Compilando e executando...
-mvn compile exec:java
+./mvnw compile exec:java
 
 exit
