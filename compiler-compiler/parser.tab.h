@@ -1,8 +1,9 @@
 /* A Bison parser, made by GNU Bison 3.8.2.  */
 
-/* Skeleton interface for Bison GLR parsers in C
+/* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 2002-2015, 2018-2021 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+   Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -30,6 +31,10 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
+
 #ifndef YY_YY_PARSER_TAB_H_INCLUDED
 # define YY_YY_PARSER_TAB_H_INCLUDED
 /* Debug traces.  */
@@ -39,15 +44,6 @@
 #if YYDEBUG
 extern int yydebug;
 #endif
-/* "%code requires" blocks.  */
-#line 2 "parser.y"
-
-typedef struct ResultList {
-    int values[100];
-    int count;
-} ResultList;
-
-#line 51 "parser.tab.h"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -58,7 +54,37 @@ typedef struct ResultList {
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NUMBER = 258                   /* NUMBER  */
+    PROGRAM = 258,                 /* PROGRAM  */
+    INTEGER = 259,                 /* INTEGER  */
+    BOOLEAN = 260,                 /* BOOLEAN  */
+    BEGIN_TOKEN = 261,             /* BEGIN_TOKEN  */
+    END_TOKEN = 262,               /* END_TOKEN  */
+    WHILE = 263,                   /* WHILE  */
+    DO = 264,                      /* DO  */
+    READ = 265,                    /* READ  */
+    VAR = 266,                     /* VAR  */
+    WRITE = 267,                   /* WRITE  */
+    STRING = 268,                  /* STRING  */
+    IF = 269,                      /* IF  */
+    THEN = 270,                    /* THEN  */
+    ELSE = 271,                    /* ELSE  */
+    FALSE_TOKEN = 272,             /* FALSE_TOKEN  */
+    TRUE_TOKEN = 273,              /* TRUE_TOKEN  */
+    OPLOG = 274,                   /* OPLOG  */
+    OPNEG = 275,                   /* OPNEG  */
+    OPREL = 276,                   /* OPREL  */
+    OPAD = 277,                    /* OPAD  */
+    OPMULT = 278,                  /* OPMULT  */
+    ATRIB = 279,                   /* ATRIB  */
+    DPONTOS = 280,                 /* DPONTOS  */
+    PVIG = 281,                    /* PVIG  */
+    PONTO = 282,                   /* PONTO  */
+    VIG = 283,                     /* VIG  */
+    ABPAR = 284,                   /* ABPAR  */
+    FPAR = 285,                    /* FPAR  */
+    CTE = 286,                     /* CTE  */
+    ID = 287,                      /* ID  */
+    CADEIA = 288                   /* CADEIA  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -67,12 +93,12 @@ typedef struct ResultList {
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 22 "parser.y"
+#line 10 "parser.y"
 
-    int num;
-    ResultList* results;
+    int ival;
+    char *sval;
 
-#line 76 "parser.tab.h"
+#line 102 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -83,6 +109,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yylval;
 
+
 int yyparse (void);
+
 
 #endif /* !YY_YY_PARSER_TAB_H_INCLUDED  */

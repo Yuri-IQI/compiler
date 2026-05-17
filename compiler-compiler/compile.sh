@@ -15,7 +15,7 @@ if ! flex lexer.l; then
 fi
 
 echo "Compilando o executavel..."
-if ! gcc parser.tab.c lex.yy.c -o parser; then
+if ! gcc parser.tab.c lex.yy.c -o analisador; then
     echo -e "ERRO: falha ao compilar com gcc \n" >&2
     exit 1
 fi

@@ -1,111 +1,133 @@
-/* %code requires: emitido antes de tudo, define tipos usados no %union */
-%code requires {
-typedef struct ResultList {
-    int values[100];
-    int count;
-} ResultList;
-}
+%{
+#include <stdio.h>
+#include <stdlib.h>
 
-%code {
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    int yylex();
-    void yyerror(const char *s);
-    ResultList* create_result(int value);
-    ResultList* apply_op(ResultList* a, ResultList* b, char op);
-    ResultList* merge_results(YYSTYPE, YYSTYPE);
-}
-
-%glr-parser
+extern int yylex();
+extern int yylineno;
+void yyerror(const char *s);
+%}
 
 %union {
-    int num;
-    ResultList* results;
+    int ival;
+    char *sval;
 }
 
-%token <num> NUMBER
-%type <results> expr input
+/* Palavras Reservadas */
+%token PROGRAM INTEGER BOOLEAN BEGIN_TOKEN END_TOKEN
+%token WHILE DO READ VAR WRITE STRING
+%token IF THEN ELSE
+%token <ival> FALSE_TOKEN TRUE_TOKEN
+
+/* Operadores */
+%token OPLOG OPNEG OPREL OPAD OPMULT
+
+/* Símbolos de Marcação */
+%token ATRIB DPONTOS PVIG PONTO VIG ABPAR FPAR
+
+/* Tokens com Atributo */
+%token <ival> CTE
+%token <sval> ID CADEIA
+
+/* Resolve o conflito dangling else — ELSE tem maior precedência que THEN */
+%nonassoc THEN
+%nonassoc ELSE
 
 %%
 
-input:
-    expr {
-        printf("\nResultados Possiveis:\n");
-        for (int i = 0; i < $1->count; i++) {
-            printf("%d\n", $1->values[i]);
-        }
-    }
-;
+start : prog { printf("Análise sintática concluída com sucesso!\n"); } ;
 
-expr:
-      expr '+' expr %merge <merge_results>
-        {
-            $$ = apply_op($1, $3, '+');
-        }
-    | expr '*' expr %merge <merge_results>
-        {
-            $$ = apply_op($1, $3, '*');
-        }
-    | expr '-' expr %merge <merge_results>
-        {
-            $$ = apply_op($1, $3, '-');
-        }
-    | expr '/' expr %merge <merge_results>
-        {
-            $$ = apply_op($1, $3, '/');
-        }
-    | NUMBER
-        {
-            $$ = create_result($1);
-        }
-;
+prog : PROGRAM ID PVIG decls cmdComp PONTO ;
+
+decls : VAR listDecls
+      | /* vazio */
+      ;
+
+listDecls : declTip
+          | declTip listDecls
+          ;
+
+declTip : listId DPONTOS tip PVIG ;
+
+listId : ID
+       | ID VIG listId
+       ;
+
+tip : INTEGER
+    | BOOLEAN
+    | STRING
+    ;
+
+cmdComp : BEGIN_TOKEN listCmd END_TOKEN ;
+
+listCmd : cmd
+        | cmd PVIG listCmd
+        ;
+
+cmd : cmdIf
+    | cmdWhile
+    | cmdRead
+    | cmdWrite
+    | cmdAtrib
+    | cmdComp
+    ;
+
+cmdIf : IF exprRel THEN cmd
+      | IF exprRel THEN cmd ELSE cmd
+      ;
+
+cmdWhile : WHILE exprRel DO cmd ;
+
+cmdRead  : READ ABPAR listId FPAR ;
+cmdWrite : WRITE ABPAR listW FPAR ;
+
+listW : elemW
+      | elemW VIG listW
+      ;
+
+elemW : exprRel
+      | CADEIA
+      ;
+
+cmdAtrib : ID ATRIB exprRel ;
+
+exprRel  : exprLog OPREL exprRel
+         | exprLog
+         ;
+
+exprLog  : exprAd OPLOG exprLog
+         | exprAd
+         ;
+
+exprAd   : exprMult OPAD exprAd
+         | exprMult
+         ;
+
+exprMult : exprNeg OPMULT exprMult
+         | exprNeg
+         ;
+
+exprNeg  : OPNEG exprNeg
+         | exprPar
+         ;
+
+exprPar  : ABPAR exprRel FPAR
+         | ID
+         | CTE
+         | TRUE_TOKEN
+         | FALSE_TOKEN
+         ;
 
 %%
-
-ResultList* merge_results(YYSTYPE x, YYSTYPE y) {
-    ResultList* a = x.results;
-    ResultList* b = y.results;
-    ResultList* r = malloc(sizeof(ResultList));
-    r->count = 0;
-    for (int i = 0; i < a->count; i++)
-        r->values[r->count++] = a->values[i];
-    for (int i = 0; i < b->count; i++)
-        r->values[r->count++] = b->values[i];
-    return r;
-}
-
-ResultList* create_result(int value) {
-    ResultList* r = malloc(sizeof(ResultList));
-    r->count = 1;
-    r->values[0] = value;
-    return r;
-}
-
-ResultList* apply_op(ResultList* a, ResultList* b, char op) {
-    ResultList* r = malloc(sizeof(ResultList));
-    r->count = 0;
-    for (int i = 0; i < a->count; i++) {
-        for (int j = 0; j < b->count; j++) {
-            int value = 0;
-            switch (op) {
-                case '+': value = a->values[i] + b->values[j]; break;
-                case '*': value = a->values[i] * b->values[j]; break;
-                case '-': value = a->values[i] - b->values[j]; break;
-                case '/': value = a->values[i] / b->values[j]; break;
-            }
-            r->values[r->count++] = value;
-        }
-    }
-    return r;
-}
 
 void yyerror(const char *s) {
-    printf("Erro: %s\n", s);
+    printf("Erro sintático: %s | Linha: %d\n", s, yylineno);
+    exit(1);
 }
 
 int main() {
-    printf("Digite expressao:\n");
+    setvbuf(stdout, NULL, _IONBF, 0); /* desabilita buffer completamente */
+    setvbuf(stderr, NULL, _IONBF, 0);
     yyparse();
+    printf("Análise concluída com sucesso!\n");
     return 0;
 }

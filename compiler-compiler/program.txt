@@ -1,0 +1,5 @@
+program MeuPrograma;
+
+begin
+    write("Olá...")
+end.

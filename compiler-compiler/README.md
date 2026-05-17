@@ -1,29 +1,16 @@
-# Parser com Bison/Flex/GCC
+# Analisador com Bison/Flex/GCC
 
-Este parser são será utilizado na versão final do compilador, servindo apenas para verificação da gramática e experimentações além do que é permitido pelo ANTLR4.
+Este analisador não será utilizado na versão final do compilador, servindo apenas para verificação da gramática e experimentações além do que é permitido pelo ANTLR4.
 
-Este pasta contém uma imagem Docker para compilar e executar um parser usando Bison, Flex e GCC.
-A imagem utiliza um bind mount dessa pasta para que seja possível editar os arquivos localmente e executá-los dentro do container.
-Para modificar o parser, basta editar os arquivos `parser.y` e `lexer.l` e depois executar o comando `run` dentro do container para compilar e rodar o parser.
+Esta pasta contém uma imagem Docker para compilar e executar o analisador usando Bison, Flex e GCC.
+A imagem utiliza um bind mount desta pasta para que seja possível editar os arquivos localmente e executá-los dentro do container.
 
-## Executando Parser com Bison/Flex/GCC
+## Executando
 
-Executar docker-compose:
+Iniciar o container:
 
 ```bash
 docker-compose up -d
-```
-
-Caso deseje, também é possível construir a imagem manualmente:
-
-```bash
-docker build -t compiler-compiler-container .
-```
-
-e rodar o container:
-
-```bash
-docker run -it --name ccc -v .:/cc -w /cc compiler-compiler-container sh
 ```
 
 Entrar no container:
@@ -32,28 +19,43 @@ Entrar no container:
 docker exec -it ccc sh
 ```
 
-Dentro do container, executar o parser:
+Dentro do container, compilar e executar:
 
 ```bash
 run
 ```
 
-Ou compilar o parser separadamente:
+Ou apenas compilar:
 
 ```bash
 compile
 ```
 
-Para utilizar o parser, use o comando:
+Executar o analisador:
 
 ```bash
-./parser
+./analisador
 ```
 
-Caso queira testar alguma etapa da compilação, como o lexer ou o parser, é possível executar os comandos diretamente:
+Ou com um arquivo de entrada:
+
+```bash
+./analisador < program.txt
+```
+
+## Compilação Manual
+
+Caso queira compilar as etapas separadamente:
 
 ```bash
 bison -d parser.y
 flex lexer.l
-gcc -o parser parser.tab.c lex.yy.c -lfl
+gcc -o analisador parser.tab.c lex.yy.c -lfl
+```
+
+## Construção Manual da Imagem
+
+```bash
+docker build -t compiler-compiler-container .
+docker run -it --name ccc -v .:/cc -w /cc compiler-compiler-container sh
 ```
