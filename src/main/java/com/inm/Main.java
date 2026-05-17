@@ -1,8 +1,9 @@
 package com.inm;
 
+import com.inm.antlr4.ProgramLexer;
+import com.inm.validators.GrammarValidator;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
-import com.inm.antlr4.ProgramLexer;
 
 public class Main {
     public static void main(String[] args) {

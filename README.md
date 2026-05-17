@@ -1,6 +1,11 @@
 ## Como executar
 
-Execute o script `run.bat` na raiz do projeto:
+Execute a aplicação com:
+```
+mvn exec:java
+```
+
+Ou execute o script `run.bat` na raiz do projeto:
 ```
 ./run.bat
 ```

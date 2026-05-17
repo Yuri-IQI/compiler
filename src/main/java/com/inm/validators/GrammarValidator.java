@@ -1,4 +1,4 @@
-package com.inm;
+package com.inm.validators;
 
 import com.inm.antlr4.ProgramLexer;
 import org.antlr.v4.runtime.Token;
