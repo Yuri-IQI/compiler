@@ -3,11 +3,11 @@ grammar Program;
 // TODO: Adicionar tratamento de exceções e Imprimir tokens
 
 @header {
-    package com.inm.antlr4;
+  package com.inm.antlr4;
 }
 
 options {
-    caseInsensitive = true;
+  caseInsensitive = true;
 }
 
 start : prog EOF ;
@@ -25,7 +25,7 @@ listCmd : cmd PVIG | cmd PVIG listCmd ;
 cmd : cmdIf | cmdWhile | cmdRead | cmdWrite | cmdAtrib | cmdComp ;
 
 cmdIf : IF exprRel THEN cmd
-    | IF exprRel THEN cmd ELSE cmd ;
+  | IF exprRel THEN cmd ELSE cmd ;
 
 cmdWhile : WHILE exprRel DO cmd ;
 
@@ -49,47 +49,68 @@ exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE ;
 // Tokens
 
 // Palavras Reservadas
-PROGRAM : 'PROGRAM' { System.out.println("Token: PROGRAM | Tipo: PROGRAM"); } ;
-INTEGER : 'INTEGER' ;
-BOOLEAN : 'BOOLEAN' ;
-BEGIN : 'BEGIN' ;
-END : 'END' ;
-WHILE : 'WHILE' ;
-DO : 'DO' ;
-READ : 'READ' ;
-VAR : 'VAR' ;
-FALSE : 'FALSE' ;
-TRUE : 'TRUE' ;
-WRITE : 'WRITE' ;
-STRING : 'STRING' ;
-IF : 'IF' ;
-THEN : 'THEN' ;
-ELSE : 'ELSE' ;
+PROGRAM : 'PROGRAM' { System.out.println("Token: " + getText() + " | Tipo: PROGRAM"); } ;
+INTEGER : 'INTEGER' { System.out.println("Token: " + getText() + " | Tipo: INTEGER"); } ;
+BOOLEAN : 'BOOLEAN' { System.out.println("Token: " + getText() + " | Tipo: BOOLEAN"); } ;
+BEGIN : 'BEGIN' { System.out.println("Token: " + getText() + " | Tipo: BEGIN"); } ;
+END : 'END' { System.out.println("Token: " + getText() + " | Tipo: END"); } ;
+WHILE : 'WHILE' { System.out.println("Token: " + getText() + " | Tipo: WHILE"); } ;
+DO : 'DO' { System.out.println("Token: " + getText() + " | Tipo: DO"); } ;
+READ : 'READ' { System.out.println("Token: " + getText() + " | Tipo: READ"); } ;
+VAR : 'VAR' { System.out.println("Token: " + getText() + " | Tipo: VAR"); } ;
+FALSE : 'FALSE' { System.out.println("Token: " + getText() + " | Tipo: FALSE"); } ;
+TRUE : 'TRUE' { System.out.println("Token: " + getText() + " | Tipo: TRUE"); } ;
+WRITE : 'WRITE' { System.out.println("Token: " + getText() + " | Tipo: WRITE"); } ;
+STRING : 'STRING' { System.out.println("Token: " + getText() + " | Tipo: STRING"); } ;
+IF : 'IF' { System.out.println("Token: " + getText() + " | Tipo: IF"); } ;
+THEN : 'THEN' { System.out.println("Token: " + getText() + " | Tipo: THEN"); } ;
+ELSE : 'ELSE' { System.out.println("Token: " + getText() + " | Tipo: ELSE"); } ;
 
-CTE : [+-]?[0-9]+ ;
+CTE : [0-9]+
+  { System.out.println("Token: " + getText() + " | Tipo: CTE | Atributo: " + getText()); } ;
 
 // Operadores Aritméticos e Lógicos
-OPAD : '+' | '-' ;
-OPMULT : '*' | '/' ;
-OPLOG : 'OR' | 'AND' ;
-OPNEG : '~' ;
+OPAD  : '+' { System.out.println("Token: " + getText() + " | Tipo: OPAD | Atributo: MAIS"); }
+    | '-' { System.out.println("Token: " + getText() + " | Tipo: OPAD | Atributo: MENOS"); } ;
+OPMULT : '*' { System.out.println("Token: " + getText() + " | Tipo: OPMULT | Atributo: VEZES"); }
+    | '/' { System.out.println("Token: " + getText() + " | Tipo: OPMULT | Atributo: DIV"); } ;
+OPLOG : 'OR' { System.out.println("Token: " + getText() + " | Tipo: OPLOG | Atributo: OR"); }
+    | 'AND' { System.out.println("Token: " + getText() + " | Tipo: OPLOG | Atributo: AND"); } ;
+OPNEG : '~' { System.out.println("Token: " + getText() + " | Tipo: OPNEG | Atributo: NEG"); } ;
 
 // Operadores Relacionais
-OPREL : '<>' | '<=' | '<' | '>=' | '>' | '==' ;
+OPREL : '<>' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: DIFER"); }
+    | '<=' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MENIG"); }
+    | '>=' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MAIG"); }
+    | '==' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: IGUAL"); }
+    | '<' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MENOR"); }
+    | '>' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MAIOR"); } ;
 
 // Simbolos de Marcação
-PVIG : ';' ;
-PONTO : '.' ;
-ATRIB : ':=' ;
-DPONTOS : ':' ;
-VIG : ',' ;
-ABPAR : '(' ;
-FPAR : ')' ;
+ATRIB : ':=' { System.out.println("Token: " + getText() + " | Tipo: ATRIB"); } ;
+DPONTOS : ':' { System.out.println("Token: " + getText() + " | Tipo: DPONTOS"); } ;
+PVIG : ';' { System.out.println("Token: " + getText() + " | Tipo: PVIG"); } ;
+PONTO : '.' { System.out.println("Token: " + getText() + " | Tipo: PONTO"); } ;
+VIG : ',' { System.out.println("Token: " + getText() + " | Tipo: VIG"); } ;
+ABPAR : '(' { System.out.println("Token: " + getText() + " | Tipo: ABPAR"); } ;
+FPAR : ')' { System.out.println("Token: " + getText() + " | Tipo: FPAR"); } ;
 
 ID : [a-z][a-z0-9]*
-    { if ( getText().length() > 16 ) { setText(getText().substring(0, 16)); } } ;
+   {
+       if (getText().length() > 16) { setText(getText().substring(0, 16)); }
+       System.out.println("Token: " + getText() + " | Tipo: ID | Atributo: " + getText());
+   } ;
 
-CADEIA : '"' (~["\r\n])* '"' ;
+CADEIA : '"' (~["\r\n])* '"'
+       { System.out.println("Token: " + getText() + " | Tipo: CADEIA | Atributo: " + getText()); } ;
 
 WS_RULE : [ \t\r\n]+ -> skip ;
 COMMENT_RULE : '/' .*? '/' -> skip ;
+
+ERR : .
+    {
+        System.out.println("Erro léxico: caractere inválido '" + getText() +
+            "' | Linha: " + getLine() +
+            " | Coluna: " + getCharPositionInLine());
+        System.exit(1);
+    } ;

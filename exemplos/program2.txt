@@ -1,0 +1,6 @@
+program teste;
+var variavel : integer;
+begin
+    variavel := 2;
+    write(variavel);
+end.
