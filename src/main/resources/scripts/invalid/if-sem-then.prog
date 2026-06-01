@@ -1,0 +1,9 @@
+program ifsemthen;
+var x : integer;
+begin
+    x := 1;
+    if x > 0
+    begin
+        write("then não fornecido")
+    end
+end.

@@ -1,0 +1,5 @@
+program attrsemexpr;
+var x : integer;
+begin
+    x :=
+end.

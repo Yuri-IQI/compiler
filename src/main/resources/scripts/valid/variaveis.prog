@@ -1,0 +1,8 @@
+program variaveis;
+var x, y : integer;
+    z : sTrInG;
+begin
+    write(x);
+    write(y);
+    read(z)
+end.

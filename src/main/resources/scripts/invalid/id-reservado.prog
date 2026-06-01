@@ -1,0 +1,6 @@
+program idreservado;
+var while : integer;
+begin
+    x := 20;
+    x := 2
+end.

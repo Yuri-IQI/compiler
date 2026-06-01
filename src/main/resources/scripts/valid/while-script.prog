@@ -1,0 +1,10 @@
+program whilescript;
+var id : integer;
+begin
+    id := 0;
+    while id < 10 do
+    begin
+        id := i + 1;
+        id := 2
+    end
+end.

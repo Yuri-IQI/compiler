@@ -1,7 +1,5 @@
 grammar Program;
 
-// TODO: Adicionar tratamento de exceções e Imprimir tokens
-
 @header {
   package com.inm.antlr4;
 }
@@ -10,107 +8,106 @@ options {
   caseInsensitive = true;
 }
 
-start : prog EOF ;
-
 // Produções da Gramática
-prog : PROGRAM ID PVIG decls cmdComp PONTO ;
-decls : (VAR listDecls)? ;
-listDecls : declTip | declTip listDecls ;
-declTip : listId DPONTOS tip PVIG ; // A gramática está exigindo que a última linha antes de END. não termine com ;
-listId : ID | ID VIG listId ;
+prog : PROGRAM ID PVIG decls cmdComp PONTO EOF ;
+decls : (VAR listDecl)? ;
+
+// A produção ListDecl apresentava recursão a esquerda na gramática original,
+// então ela foi fatorada com a criação de ListDecl' (listDeclLine).
+listDecl : declTip listDeclLine ;
+listDeclLine : (declTip listDeclLine)? ;
+
+declTip : listId DPONTOS tip PVIG ;
+listId : ID listIdLine ;
+listIdLine : (VIG ID listIdLine)? ;
 tip : INTEGER | BOOLEAN | STRING ;
 
 cmdComp : BEGIN listCmd END ;
-listCmd : cmd PVIG | cmd PVIG listCmd ;
+listCmd : cmd listCmdLine ;
+listCmdLine : (PVIG cmd listCmdLine)? ;
 cmd : cmdIf | cmdWhile | cmdRead | cmdWrite | cmdAtrib | cmdComp ;
 
-cmdIf : IF exprRel THEN cmd
-  | IF exprRel THEN cmd ELSE cmd ;
+// Para resolver o dangling else,
+// o cmdIf usará o bloco BEGIN END de cmdComp para demarcar o que ele precisa executar
+cmdIf : IF exprRel THEN cmdComp cmdIfLine ;
+cmdIfLine : (ELSE cmdComp)? ;
 
-cmdWhile : WHILE exprRel DO cmd ;
+cmdWhile : WHILE exprRel DO cmdComp ;
 
 cmdRead : READ ABPAR listId FPAR ; // Na gramática esses parenteses estão como literais
 cmdWrite : WRITE ABPAR listW FPAR ;
-listW : elemW | elemW VIG listW ;
+listW : elemW listWLine ;
+listWLine : (VIG elemW listWLine)? ;
 elemW : exprRel | CADEIA ;
 cmdAtrib : ID ATRIB exprRel ; // Na gramática essa atribuição está como literal
 
-/* exprOp : expr OPREL expr | expr OPAD expr | expr OPMULT expr | expr ;
-expr : ID | CTE | ABPAR exprOp FPAR | TRUE | FALSE | OPNEG exprOp ; */
-
-// expr separado para cada tipo de operação por conta de erro de reatribuição e outras coisas
-exprRel : exprLog OPREL exprRel | exprLog ;
-exprLog : exprAd OPLOG exprLog | exprAd ; // OPLOGs não são aplicados em lugar nenhum, mas eu vou aplica-lo a expr como outros OPs
-exprAd : exprMult OPAD exprAd | exprMult ;
-exprMult : exprNeg OPMULT exprMult | exprNeg ;
+// expr separado para cada tipo de operação para resolver erros
+exprRel : exprLog exprRelLine ;
+exprRelLine : (OPREL exprLog exprRelLine)? ;
+exprLog : exprAd exprLogLine ; // OPLOGs não são aplicados em lugar nenhum, mas eu vou aplica-lo a expr como outros OPs
+exprLogLine : (OPLOG exprAd exprLogLine)? ;
+exprAd : exprMult exprAdLine ;
+exprAdLine : (OPAD exprMult exprAdLine)? ;
+exprMult : exprNeg exprMultLine ;
+exprMultLine : (OPMULT exprNeg exprMultLine)? ;
 exprNeg : OPNEG exprNeg | exprPar ;
 exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE ;
 
 // Tokens
 
 // Palavras Reservadas
-PROGRAM : 'PROGRAM' { System.out.println("Token: " + getText() + " | Tipo: PROGRAM"); } ;
-INTEGER : 'INTEGER' { System.out.println("Token: " + getText() + " | Tipo: INTEGER"); } ;
-BOOLEAN : 'BOOLEAN' { System.out.println("Token: " + getText() + " | Tipo: BOOLEAN"); } ;
-BEGIN : 'BEGIN' { System.out.println("Token: " + getText() + " | Tipo: BEGIN"); } ;
-END : 'END' { System.out.println("Token: " + getText() + " | Tipo: END"); } ;
-WHILE : 'WHILE' { System.out.println("Token: " + getText() + " | Tipo: WHILE"); } ;
-DO : 'DO' { System.out.println("Token: " + getText() + " | Tipo: DO"); } ;
-READ : 'READ' { System.out.println("Token: " + getText() + " | Tipo: READ"); } ;
-VAR : 'VAR' { System.out.println("Token: " + getText() + " | Tipo: VAR"); } ;
-FALSE : 'FALSE' { System.out.println("Token: " + getText() + " | Tipo: FALSE"); } ;
-TRUE : 'TRUE' { System.out.println("Token: " + getText() + " | Tipo: TRUE"); } ;
-WRITE : 'WRITE' { System.out.println("Token: " + getText() + " | Tipo: WRITE"); } ;
-STRING : 'STRING' { System.out.println("Token: " + getText() + " | Tipo: STRING"); } ;
-IF : 'IF' { System.out.println("Token: " + getText() + " | Tipo: IF"); } ;
-THEN : 'THEN' { System.out.println("Token: " + getText() + " | Tipo: THEN"); } ;
-ELSE : 'ELSE' { System.out.println("Token: " + getText() + " | Tipo: ELSE"); } ;
+PROGRAM : 'PROGRAM' ;
+INTEGER : 'INTEGER' ;
+BOOLEAN : 'BOOLEAN' ;
+BEGIN : 'BEGIN' ;
+END : 'END' ;
+WHILE : 'WHILE' ;
+DO : 'DO' ;
+READ : 'READ' ;
+VAR : 'VAR' ;
+FALSE : 'FALSE' ;
+TRUE : 'TRUE' ;
+WRITE : 'WRITE' ;
+STRING : 'STRING' ;
+IF : 'IF' ;
+THEN : 'THEN' ;
+ELSE : 'ELSE' ;
 
-CTE : [0-9]+
-  { System.out.println("Token: " + getText() + " | Tipo: CTE | Atributo: " + getText()); } ;
+CTE : [0-9]+  ;
+
+// O comentário vai dar conflito com a divisão enquante ele precisar de uma /
+COMMENT_RULE : '/' ~['\r\n]+ '/' -> skip ;
 
 // Operadores Aritméticos e Lógicos
-OPAD  : '+' { System.out.println("Token: " + getText() + " | Tipo: OPAD | Atributo: MAIS"); }
-    | '-' { System.out.println("Token: " + getText() + " | Tipo: OPAD | Atributo: MENOS"); } ;
-OPMULT : '*' { System.out.println("Token: " + getText() + " | Tipo: OPMULT | Atributo: VEZES"); }
-    | '/' { System.out.println("Token: " + getText() + " | Tipo: OPMULT | Atributo: DIV"); } ;
-OPLOG : 'OR' { System.out.println("Token: " + getText() + " | Tipo: OPLOG | Atributo: OR"); }
-    | 'AND' { System.out.println("Token: " + getText() + " | Tipo: OPLOG | Atributo: AND"); } ;
-OPNEG : '~' { System.out.println("Token: " + getText() + " | Tipo: OPNEG | Atributo: NEG"); } ;
+OPAD : '+' | '-'  ;
+OPMULT : '*' | '/' ;
+OPLOG : 'OR' | 'AND' ;
+OPNEG : '~'  ;
 
 // Operadores Relacionais
-OPREL : '<>' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: DIFER"); }
-    | '<=' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MENIG"); }
-    | '>=' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MAIG"); }
-    | '==' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: IGUAL"); }
-    | '<' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MENOR"); }
-    | '>' { System.out.println("Token: " + getText() + " | Tipo: OPREL | Atributo: MAIOR"); } ;
+OPREL : '<>' | '<=' | '>='
+    | '==' | '<' | '>' ;
 
 // Simbolos de Marcação
-ATRIB : ':=' { System.out.println("Token: " + getText() + " | Tipo: ATRIB"); } ;
-DPONTOS : ':' { System.out.println("Token: " + getText() + " | Tipo: DPONTOS"); } ;
-PVIG : ';' { System.out.println("Token: " + getText() + " | Tipo: PVIG"); } ;
-PONTO : '.' { System.out.println("Token: " + getText() + " | Tipo: PONTO"); } ;
-VIG : ',' { System.out.println("Token: " + getText() + " | Tipo: VIG"); } ;
-ABPAR : '(' { System.out.println("Token: " + getText() + " | Tipo: ABPAR"); } ;
-FPAR : ')' { System.out.println("Token: " + getText() + " | Tipo: FPAR"); } ;
+ATRIB : ':=' ;
+DPONTOS : ':' ;
+PVIG : ';' ;
+PONTO : '.' ;
+VIG : ',' ;
+ABPAR : '(' ;
+FPAR : ')' ;
 
-ID : [a-z][a-z0-9]*
-   {
-       if (getText().length() > 16) { setText(getText().substring(0, 16)); }
-       System.out.println("Token: " + getText() + " | Tipo: ID | Atributo: " + getText());
-   } ;
+ID : [a-z][a-z0-9]* {if (getText().length() > 16) { setText(getText().substring(0, 16)); }} ;
 
-CADEIA : '"' (~["\r\n])* '"'
-       { System.out.println("Token: " + getText() + " | Tipo: CADEIA | Atributo: " + getText()); } ;
+CADEIA : '"' (~["\r\n])* '"' ;
 
 WS_RULE : [ \t\r\n]+ -> skip ;
-COMMENT_RULE : '/' .*? '/' -> skip ;
 
 ERR : .
     {
-        System.out.println("Erro léxico: caractere inválido '" + getText() +
-            "' | Linha: " + getLine() +
-            " | Coluna: " + getCharPositionInLine());
+        System.out.println("Erro léxico: caractere inválido '" + getText()
+            + "' | Linha: " + getLine()
+            + " | Coluna: " + getCharPositionInLine());
+
         System.exit(1);
     } ;

@@ -1,0 +1,5 @@
+program varsemtipo;
+var x :;
+begin
+    write("var declarada sem tipo")
+end.

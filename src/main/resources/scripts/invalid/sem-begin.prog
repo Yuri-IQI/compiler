@@ -1,0 +1,6 @@
+program sembegin;
+var
+    x : integer;
+    x := 1;
+    write("sem começo")
+end.

@@ -1,0 +1,25 @@
+program ifaninhado;
+
+begin
+    write("teste7");
+
+    if 1 then begin
+        write("teste5");
+
+        if 2 then begin
+            write("teste3");
+
+            if 3 then begin
+                write("teste1");
+                write("teste2")
+            end;
+
+            write("teste4")
+
+        end;
+
+        write("teste6")
+    end;
+
+    write("teste8")
+end.
