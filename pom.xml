@@ -33,6 +33,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <readFile>true</readFile>
         <showTree>true</showTree>
+        <flag>@</flag>
     </properties>
 
     <build>
@@ -61,6 +62,10 @@
                         <systemProperty>
                             <key>showTree</key>
                             <value>${showTree}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>flag</key>
+                            <value>${flag}</value>
                         </systemProperty>
                     </systemProperties>
                 </configuration>

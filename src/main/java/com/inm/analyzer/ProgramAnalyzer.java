@@ -16,24 +16,24 @@ import java.util.stream.Stream;
 
 public class ProgramAnalyzer {
 
-    public void run(boolean shouldReadFile, boolean showTree) throws IOException {
+    public void run(boolean shouldReadFile, boolean showTree, String flag) throws IOException {
         String source;
 
         try (Scanner scanner = new Scanner(System.in)) {
             source = shouldReadFile
-                    ? readFile(scanner) : readScript(scanner);
+                    ? readFile(scanner) : readScript(scanner, flag);
         }
 
         analyze(source, showTree);
     }
 
-    private static String readScript(Scanner scanner) {
-        System.out.println("Escreva o script (digite . em nova linha para analisar):");
+    private static String readScript(Scanner scanner, String flag) {
+        System.out.println("Escreva o script (digite " + flag + " em nova linha para analisar):");
 
         StringBuilder sb = new StringBuilder();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            if (line.equals("@")) break;
+            if (line.equals(flag)) break;
             sb.append(line).append("\n");
         }
 
