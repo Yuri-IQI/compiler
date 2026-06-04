@@ -1,5 +1,6 @@
 package com.inm.helper;
 
+import com.inm.analyzer.PrintingLexer;
 import com.inm.antlr4.ProgramLexer;
 import com.inm.antlr4.ProgramParser;
 import org.antlr.v4.runtime.CharStreams;
@@ -15,7 +16,7 @@ public class ParseHelper {
     }
 
     public static ParseResult parse(String source, boolean printErrors) {
-        ProgramLexer lexer = new ProgramLexer(CharStreams.fromString(source));
+        PrintingLexer lexer = new PrintingLexer(CharStreams.fromString(source));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         ProgramParser parser = new ProgramParser(tokens);
 
@@ -26,8 +27,6 @@ public class ParseHelper {
 
         ParseTree nameNode = tree.getChildCount() > 1 ? tree.getChild(1) : null;
         String programName = nameNode != null ? nameNode.getText() : "<desconhecido>";
-
-        printer.printTokens(tokens, parser);
 
         if (printErrors) printer.printErrors();
 

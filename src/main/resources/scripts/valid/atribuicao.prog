@@ -2,5 +2,5 @@ program atribuicao;
 var variavel : integer;
 begin
     variavel := 2;
-    write(variavel)
+    write(variavel);
 end.

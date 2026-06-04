@@ -5,6 +5,6 @@ begin
     while id < 10 do
     begin
         id := i + 1;
-        id := 2
-    end
+        id := 2;
+    end;
 end.

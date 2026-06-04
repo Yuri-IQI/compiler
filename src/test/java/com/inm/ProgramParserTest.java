@@ -32,7 +32,8 @@ public class ProgramParserTest {
         "scripts/valid/variaveis.prog",
         "scripts/valid/while-script.prog",
         "scripts/valid/condicional.prog",
-        "scripts/valid/if-aninhado.prog"
+        "scripts/valid/if-aninhado.prog",
+        "scripts/valid/projeto-compiladores.prog"
     })
     void acceptsValidScripts(String path) throws Exception {
         var result = ParseHelper.parse(load(path));

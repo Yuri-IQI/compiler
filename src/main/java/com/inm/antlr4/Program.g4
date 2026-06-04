@@ -10,48 +10,43 @@ options {
 
 // Produções da Gramática
 prog : PROGRAM ID PVIG decls cmdComp PONTO EOF ;
-decls : (VAR listDecl)? ;
 
-// A produção ListDecl apresentava recursão a esquerda na gramática original,
-// então ela foi fatorada com a criação de ListDecl' (listDeclLine).
+decls : (VAR listDecl)? ;
 listDecl : declTip listDeclLine ;
 listDeclLine : (declTip listDeclLine)? ;
-
 declTip : listId DPONTOS tip PVIG ;
 listId : ID listIdLine ;
 listIdLine : (VIG ID listIdLine)? ;
 tip : INTEGER | BOOLEAN | STRING ;
 
 cmdComp : BEGIN listCmd END ;
-listCmd : cmd listCmdLine ;
-listCmdLine : (PVIG cmd listCmdLine)? ;
+listCmd : varDecl | cmdDecl ;
+varDecl : (VAR declTip listCmd)? ;
+cmdDecl : (cmd PVIG listCmd)? ;
 cmd : cmdIf | cmdWhile | cmdRead | cmdWrite | cmdAtrib | cmdComp ;
 
-// Para resolver o dangling else,
-// o cmdIf usará o bloco BEGIN END de cmdComp para demarcar o que ele precisa executar
 cmdIf : IF exprRel THEN cmdComp cmdIfLine ;
 cmdIfLine : (ELSE cmdComp)? ;
 
 cmdWhile : WHILE exprRel DO cmdComp ;
 
-cmdRead : READ ABPAR listId FPAR ; // Na gramática esses parenteses estão como literais
+cmdRead : READ ABPAR listId FPAR ;
 cmdWrite : WRITE ABPAR listW FPAR ;
 listW : elemW listWLine ;
 listWLine : (VIG elemW listWLine)? ;
 elemW : exprRel | CADEIA ;
-cmdAtrib : ID ATRIB exprRel ; // Na gramática essa atribuição está como literal
+cmdAtrib : ID ATRIB exprRel ;
 
-// expr separado para cada tipo de operação para resolver erros
 exprRel : exprLog exprRelLine ;
 exprRelLine : (OPREL exprLog exprRelLine)? ;
-exprLog : exprAd exprLogLine ; // OPLOGs não são aplicados em lugar nenhum, mas eu vou aplica-lo a expr como outros OPs
+exprLog : exprAd exprLogLine ;
 exprLogLine : (OPLOG exprAd exprLogLine)? ;
 exprAd : exprMult exprAdLine ;
 exprAdLine : (OPAD exprMult exprAdLine)? ;
 exprMult : exprNeg exprMultLine ;
 exprMultLine : (OPMULT exprNeg exprMultLine)? ;
 exprNeg : OPNEG exprNeg | exprPar ;
-exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE ;
+exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE | CADEIA ;
 
 // Tokens
 
@@ -73,10 +68,10 @@ IF : 'IF' ;
 THEN : 'THEN' ;
 ELSE : 'ELSE' ;
 
-CTE : [0-9]+  ;
+CTE : ('+' | '-')? [0-9]+  ;
 
 // O comentário vai dar conflito com a divisão enquante ele precisar de uma /
-COMMENT_RULE : '/' ~['\r\n]+ '/' -> skip ;
+COMMENT_RULE : '/' [ \t] ~[\r\n]* '/' -> skip ;
 
 // Operadores Aritméticos e Lógicos
 OPAD : '+' | '-'  ;

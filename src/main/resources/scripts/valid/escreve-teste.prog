@@ -1,4 +1,4 @@
 program EscreveTeste;
 begin
-    write("teste")
+    write("teste");
 end.

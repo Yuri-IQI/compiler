@@ -2,5 +2,5 @@ program nomeIdentificador;
 var variavelasdae32e2wqdr3asdsaerqwvx2314 : integer;
 begin
     variavelasdae32e2wqdr3asdsaerqwvx2314 := 2;
-    write(variavelasdae32e2wqdr3asdsaerqwvx2314)
+    write(variavelasdae32e2wqdr3asdsaerqwvx2314);
 end.

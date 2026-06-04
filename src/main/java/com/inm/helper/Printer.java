@@ -33,38 +33,4 @@ public class Printer extends BaseErrorListener {
     public void printErrors() {
         errors.forEach(System.out::println);
     }
-
-    public void printTokens(CommonTokenStream tokens, ProgramParser parser) {
-        tokens.fill();
-        for (Token tk : tokens.getTokens()) {
-            if (tk.getType() == Token.EOF) continue;
-
-            String token = parser.getVocabulary().getSymbolicName(tk.getType());
-            String text = tk.getText();
-
-            System.out.printf("Token: %-10s | Tipo: %-10s | Atributo: %s%n",
-                    text, token, resolveAttribute(token, text));
-        }
-    }
-
-    private static String resolveAttribute(String token, String text) {
-        return switch (token) {
-            case "ID", "CTE" -> text;
-            case "CADEIA" -> text.substring(1, text.length() - 1);
-            case "OPAD"   -> text.equals("+") ? "MAIS" : "MENOS";
-            case "OPMULT" -> text.equals("*") ? "VEZES" : "DIV";
-            case "OPLOG"  -> text.toUpperCase();
-            case "OPNEG"  -> "NEG";
-            case "OPREL"  -> switch (text) {
-                case "<>" -> "DIFER";
-                case "<=" -> "MENIG";
-                case "<"  -> "MENOR";
-                case ">=" -> "MAIG";
-                case ">"  -> "MAIOR";
-                case "==" -> "IGUAL";
-                default   -> text;
-            };
-            default -> "-";
-        };
-    }
 }

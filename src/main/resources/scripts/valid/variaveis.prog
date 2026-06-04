@@ -4,5 +4,5 @@ var x, y : integer;
 begin
     write(x);
     write(y);
-    read(z)
+    read(z);
 end.

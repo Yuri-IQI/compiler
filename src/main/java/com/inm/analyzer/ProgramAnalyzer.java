@@ -1,6 +1,7 @@
 package com.inm.analyzer;
 
 import com.inm.helper.ParseHelper;
+import com.inm.helper.Printer;
 import org.antlr.v4.gui.Trees;
 
 import java.io.IOException;
@@ -12,7 +13,6 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ProgramAnalyzer {
 
@@ -138,5 +138,7 @@ public class ProgramAnalyzer {
             result.tree(),
             result.parser()
         );
+
+        System.out.print(result.tree().toStringTree(result.parser()));
     }
 }

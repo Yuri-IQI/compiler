@@ -4,14 +4,10 @@ begin
     / comenatario_- -sdf093j8d¨ 72%W5sadr57(#@Q#Q1+_) /
 
     x := 5;
-    if x > 3 then
-    begin
+    if x > 3 then begin
         write("maior");
-        write("dois")
-    end
-
-    else
-    begin
-        write("menor")
-    end
+        write("dois");
+    end else begin
+        write("menor");
+    end;
 end.

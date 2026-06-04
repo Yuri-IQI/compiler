@@ -11,15 +11,15 @@ begin
 
             if 3 then begin
                 write("teste1");
-                write("teste2")
+                write("teste2");
             end;
 
-            write("teste4")
+            write("teste4");
 
         end;
 
-        write("teste6")
+        write("teste6");
     end;
 
-    write("teste8")
+    write("teste8");
 end.
