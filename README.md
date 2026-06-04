@@ -39,8 +39,7 @@ src/
 ### Via Maven
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4, 
-# substitui %ANTLR_JAR% pelo caminho para o jar do ANTLR
+# compilar classes de lexer e parser pelo ANTLR4 (substituir %ANTLR_JAR% pelo caminho para o jar do ANTLR)
 java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 
 # lê um script dos resources
@@ -56,8 +55,7 @@ java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 ### Via JAR
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4, 
-# substitui %ANTLR_JAR% pelo caminho para o jar do ANTLR
+# compilar classes de lexer e parser pelo ANTLR4 (substitui %ANTLR_JAR% pelo caminho para o jar do ANTLR)
 java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 
 # gerar o JAR
