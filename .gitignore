@@ -39,11 +39,4 @@ build/
 .DS_Store
 
 antlr-4.13.2-complete.jar
-*.jar
-src/main/java/com/inm/antlr4/ProgramLexer.java
-src/main/java/com/inm/antlr4/ProgramParser.java
-src/main/java/com/inm/antlr4/ProgramListener.java
-src/main/java/com/inm/antlr4/ProgramBaseListener.java
-src/main/java/com/inm/antlr4/*.tokens
-src/main/java/com/inm/antlr4/*.interp
 *.class

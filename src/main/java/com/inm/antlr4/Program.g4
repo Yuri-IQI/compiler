@@ -48,7 +48,7 @@ exprMultLine : (OPMULT exprNeg exprMultLine)? ;
 exprNeg : OPNEG exprNeg | exprPar ;
 exprPar : ABPAR exprRel FPAR | ID | CTE | TRUE | FALSE | CADEIA ;
 
-// Tokens
+// --- Tokens ---------------------------------------------
 
 // Palavras Reservadas
 PROGRAM : 'PROGRAM' ;
@@ -97,12 +97,3 @@ ID : [a-z][a-z0-9]* {if (getText().length() > 16) { setText(getText().substring(
 CADEIA : '"' (~["\r\n])* '"' ;
 
 WS_RULE : [ \t\r\n]+ -> skip ;
-
-ERR : .
-    {
-        System.out.println("Erro léxico: caractere inválido '" + getText()
-            + "' | Linha: " + getLine()
-            + " | Coluna: " + getCharPositionInLine());
-
-        System.exit(1);
-    } ;
