@@ -39,8 +39,7 @@ src/
 ### Via Maven
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4, 
-# substitui %ANTLR_JAR% pelo caminho para o jar do ANTLR
+# compilar classes de lexer e parser pelo ANTLR4 (substituir %ANTLR_JAR% pelo caminho para o jar do ANTLR)
 java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 
 # lê um script dos resources
@@ -56,8 +55,7 @@ java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 ### Via JAR
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4, 
-# substitui %ANTLR_JAR% pelo caminho para o jar do ANTLR
+# compilar classes de lexer e parser pelo ANTLR4 (substituir %ANTLR_JAR% pelo caminho para o jar do ANTLR)
 java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
 
 # gerar o JAR
@@ -154,7 +152,7 @@ Os testes verificam automaticamente todos os scripts em `src/test/resources/scri
 
 ## Estrutura do Código
 
-### `Program.g4`
+### Program.g4
 
 Gramática LL(1) da linguagem, processada pelo ANTLR4 para gerar automaticamente o lexer (`ProgramLexer`) e o parser (`ProgramParser`).
 
@@ -165,13 +163,13 @@ A gramática define:
 
 ---
 
-### `Main`
+### Main
 
 Ponto de entrada da aplicação. Lê as system properties `-DreadFile` e `-DshowTree` e delega para `ProgramAnalyzer`.
 
 ---
 
-### `ProgramAnalyzer`
+### ProgramAnalyzer
 
 Responsável pela leitura do código-fonte e pela orquestração da análise.
 
@@ -187,7 +185,7 @@ Responsável pela leitura do código-fonte e pela orquestração da análise.
 
 ---
 
-### `ParseHelper`
+### ParseHelper
 
 Responsável por construir a árvore sintática a partir de um código-fonte.
 
@@ -199,7 +197,7 @@ Responsável por construir a árvore sintática a partir de um código-fonte.
 
 ---
 
-### `Printer`
+### Printer
 
 Implementa `BaseErrorListener` do ANTLR4 para capturar erros sintáticos, além de imprimir os tokens e seus atributos.
 
