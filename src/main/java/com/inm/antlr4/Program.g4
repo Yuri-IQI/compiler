@@ -20,9 +20,9 @@ listIdLine : (VIG ID listIdLine)? ;
 tip : INTEGER | BOOLEAN | STRING ;
 
 cmdComp : BEGIN listCmd END ;
-listCmd : varDecl | cmdDecl ;
-varDecl : (VAR declTip listCmd)? ;
-cmdDecl : (cmd PVIG listCmd)? ;
+listCmd : varDecl | cmdDecl | ;
+varDecl : VAR declTip listCmd ;
+cmdDecl : cmd PVIG listCmd ;
 cmd : cmdIf | cmdWhile | cmdRead | cmdWrite | cmdAtrib | cmdComp ;
 
 cmdIf : IF exprRel THEN cmdComp cmdIfLine ;

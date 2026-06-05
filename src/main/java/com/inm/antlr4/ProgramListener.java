@@ -110,15 +110,25 @@ public interface ProgramListener extends ParseTreeListener {
 	 */
 	void exitListCmd(ProgramParser.ListCmdContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ProgramParser#listCmdLine}.
+	 * Enter a parse tree produced by {@link ProgramParser#varDecl}.
 	 * @param ctx the parse tree
 	 */
-	void enterListCmdLine(ProgramParser.ListCmdLineContext ctx);
+	void enterVarDecl(ProgramParser.VarDeclContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ProgramParser#listCmdLine}.
+	 * Exit a parse tree produced by {@link ProgramParser#varDecl}.
 	 * @param ctx the parse tree
 	 */
-	void exitListCmdLine(ProgramParser.ListCmdLineContext ctx);
+	void exitVarDecl(ProgramParser.VarDeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ProgramParser#cmdDecl}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdDecl(ProgramParser.CmdDeclContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProgramParser#cmdDecl}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdDecl(ProgramParser.CmdDeclContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ProgramParser#cmd}.
 	 * @param ctx the parse tree

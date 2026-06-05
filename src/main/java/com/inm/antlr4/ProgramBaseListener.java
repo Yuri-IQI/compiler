@@ -139,13 +139,25 @@ public class ProgramBaseListener implements ProgramListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterListCmdLine(ProgramParser.ListCmdLineContext ctx) { }
+	@Override public void enterVarDecl(ProgramParser.VarDeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitListCmdLine(ProgramParser.ListCmdLineContext ctx) { }
+	@Override public void exitVarDecl(ProgramParser.VarDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCmdDecl(ProgramParser.CmdDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCmdDecl(ProgramParser.CmdDeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
