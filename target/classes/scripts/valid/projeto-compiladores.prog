@@ -1,0 +1,25 @@
+PROGRAM ProjetoCompiladores;
+BEGIN
+    VAR nota1, nota2 : INTEGER;
+    VAR resultado : STRING;
+
+    READ(nota1);
+    READ(nota2);
+
+    VAR media : INTEGER;
+    media := (nota1 + nota2) / 2;
+
+    VAR aprovado : BOOLEAN;
+    aprovado := media >= 7;
+
+    IF aprovado THEN
+    BEGIN
+        resultado := "Aprovado";
+        WRITE(resultado);
+    END
+    ELSE
+    BEGIN
+        resultado := "Reprovado";
+        WRITE(resultado);
+    END;
+END.

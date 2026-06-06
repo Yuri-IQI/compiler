@@ -1,0 +1,5 @@
+program tipoinvalido;
+var x : real;
+begin
+    write("tipo real não existe")
+end.

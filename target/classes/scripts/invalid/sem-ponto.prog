@@ -1,0 +1,4 @@
+program semponto;
+begin
+    write("ponto final faltando")
+end

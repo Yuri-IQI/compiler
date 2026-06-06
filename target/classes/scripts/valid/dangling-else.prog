@@ -1,0 +1,13 @@
+program danglingelse;
+var x, y : integer;
+begin
+    x := 1;
+    y := 1;
+    if x == 1 then begin
+        if y == 2 then begin
+            write("se");
+        end;
+    end else begin
+        write("nao");
+    end;
+end.

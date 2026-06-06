@@ -1,0 +1,6 @@
+program comentarioEDiv;
+var div : integer;
+begin
+    div := 2 / 2;
+    / comentario /
+end.
