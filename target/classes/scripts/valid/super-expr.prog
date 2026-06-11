@@ -1,0 +1,8 @@
+program superExpr;
+var x, y, z : integer;
+begin
+    x := 10;
+    y := 5;
+    z := x + y * 2 - 4 / 2;
+    write(z);
+end.

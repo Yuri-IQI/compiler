@@ -18,6 +18,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     // Pilha auxiliar para gerenciar os resultados temporários das expressões
     private final Stack<String> exprStack = new Stack<>();
 
+    // Pilha para gerenciar os rótulos de desvios de controle de fluxo
     private final Stack<String> labelStack = new Stack<>();
 
     public String getGenerated3AC() {
@@ -85,11 +86,15 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             }
         }
 
-        if (ctx.getParent() instanceof ProgramParser.CmdIfContext && !labelStack.isEmpty()) {
-            if (!exprStack.isEmpty()) {
+        if (!labelStack.isEmpty() && !exprStack.isEmpty()) {
+            if (ctx.getParent() instanceof ProgramParser.CmdIfContext) {
                 String condicao = exprStack.pop();
-                String labelElse = labelStack.peek(); // Apenas espia o rótulo do Else
+                String labelElse = labelStack.peek();
                 tac.emit("ifFalse " + condicao + " goto " + labelElse);
+            } else if (ctx.getParent() instanceof ProgramParser.CmdWhileContext) {
+                String condicao = exprStack.pop();
+                String labelEnd = labelStack.get(labelStack.size() - 2);
+                tac.emit("ifFalse " + condicao + " goto " + labelEnd);
             }
         }
     }
@@ -111,11 +116,18 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
     @Override
     public void exitExprAd(ProgramParser.ExprAdContext ctx) {
-        if (ctx.exprAdLine() != null && ctx.exprAdLine().OPAD() != null) {
+        // Deixamos a sub-regra de cauda (exitExprAdLine) emitir as operações.
+    }
+
+    @Override
+    public void exitExprAdLine(ProgramParser.ExprAdLineContext ctx) {
+        if (ctx.OPAD() != null) {
             if (exprStack.size() >= 2) {
-                String left = exprStack.pop();
+                // Em estruturas recursivas à direita avaliadas no "exit", invertemos
+                // para manter a semântica correta (Esquerda OPERADOR Direita)
                 String right = exprStack.pop();
-                String op = ctx.exprAdLine().OPAD().getText();
+                String left = exprStack.pop();
+                String op = ctx.OPAD().getText();
 
                 String temp = tac.newTemp();
                 tac.emit(temp + " = " + left + " " + op + " " + right);
@@ -126,60 +138,21 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
     @Override
     public void exitExprMult(ProgramParser.ExprMultContext ctx) {
-        if (ctx.exprMultLine() != null && ctx.exprMultLine().OPMULT() != null) {
+        // Deixamos a sub-regra de cauda (exitExprMultLine) emitir as operações.
+    }
+
+    @Override
+    public void exitExprMultLine(ProgramParser.ExprMultLineContext ctx) {
+        if (ctx.OPMULT() != null) {
             if (exprStack.size() >= 2) {
-                String left = exprStack.pop();
                 String right = exprStack.pop();
-                String op = ctx.exprMultLine().OPMULT().getText();
+                String left = exprStack.pop();
+                String op = ctx.OPMULT().getText();
 
                 String temp = tac.newTemp();
                 tac.emit(temp + " = " + left + " " + op + " " + right);
                 exprStack.push(temp);
             }
-        }
-    }
-
-    @Override
-    public void enterCmdIf(ProgramParser.CmdIfContext ctx) {
-        // Ao entrar no IF, criamos os rótulos (Labels) que usaremos para os desvios
-        String labelElse = tac.newLabel(); // Rótulo para o bloco Else (ou fim do IF se não houver else)
-        String labelEnd = tac.newLabel();  // Rótulo para o fim definitivo do IF
-
-        // Guarda na pilha para sabermos como desviar quando sairmos dos nós filhos
-        labelStack.push(labelEnd);
-        labelStack.push(labelElse);
-    }
-
-    @Override
-    public void exitCmdIf(ProgramParser.CmdIfContext ctx) {
-        if (!labelStack.isEmpty()) {
-            // Se o IF não possuía bloco ELSE físico, o enterCmdIfLine não rodou.
-            // Precisamos garantir que o labelElse seja impresso caso ele não tenha sido impresso antes.
-            String labelElse = labelStack.pop();
-            String labelEnd = labelStack.pop();
-
-            // Se o código intermediário não contém o labelElse impresso, coloca ele antes do fim
-            if (!tac.getCode().contains(labelElse + ":")) {
-                tac.emit(labelElse + ":");
-            }
-
-            tac.emit(labelEnd + ":");
-        }
-    }
-
-    @Override
-    public void enterCmdIfLine(ProgramParser.CmdIfLineContext ctx) {
-        // Se a pilha tiver labels, significa que estamos em um IF válido
-        if (labelStack.size() >= 2 && ctx.ELSE() != null) {
-            // O topo da pilha (neste momento) é o labelElse, e abaixo dele está o labelEnd
-            String labelElse = labelStack.peek(); // Apenas espia sem desempilhar
-            String labelEnd = labelStack.get(labelStack.size() - 2);
-
-            // O bloco THEN acabou de rodar. Antes de entrar no ELSE, precisamos saltar para o FIM do IF
-            tac.emit("goto " + labelEnd);
-
-            // E aqui começa o bloco ELSE oficialmente, então colocamos o rótulo do Else
-            tac.emit(labelElse + ":");
         }
     }
 
@@ -195,7 +168,64 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         }
     }
 
-    // --- 4. VALORES FOLHA / TERMINAIS (BASE DA ARVORE) ---
+    // --- 4. CONTROLE DE FLUXO (IF / WHILE) ---
+    @Override
+    public void enterCmdIf(ProgramParser.CmdIfContext ctx) {
+        String labelElse = tac.newLabel();
+        String labelEnd = tac.newLabel();
+
+        labelStack.push(labelEnd);
+        labelStack.push(labelElse);
+    }
+
+    @Override
+    public void exitCmdIf(ProgramParser.CmdIfContext ctx) {
+        if (!labelStack.isEmpty()) {
+            String labelElse = labelStack.pop();
+            String labelEnd = labelStack.pop();
+
+            if (!tac.getCode().contains(labelElse + ":")) {
+                tac.emit(labelElse + ":");
+            }
+
+            tac.emit(labelEnd + ":");
+        }
+    }
+
+    @Override
+    public void enterCmdIfLine(ProgramParser.CmdIfLineContext ctx) {
+        if (labelStack.size() >= 2 && ctx.ELSE() != null) {
+            String labelElse = labelStack.peek();
+            String labelEnd = labelStack.get(labelStack.size() - 2);
+
+            tac.emit("goto " + labelEnd);
+            tac.emit(labelElse + ":");
+        }
+    }
+
+    @Override
+    public void enterCmdWhile(ProgramParser.CmdWhileContext ctx) {
+        String labelStart = tac.newLabel();
+        String labelEnd = tac.newLabel();
+
+        tac.emit(labelStart + ":");
+
+        labelStack.push(labelEnd);
+        labelStack.push(labelStart);
+    }
+
+    @Override
+    public void exitCmdWhile(ProgramParser.CmdWhileContext ctx) {
+        if (labelStack.size() >= 2) {
+            String labelStart = labelStack.pop();
+            String labelEnd = labelStack.pop();
+
+            tac.emit("goto " + labelStart);
+            tac.emit(labelEnd + ":");
+        }
+    }
+
+    // --- 5. VALORES FOLHA / TERMINAIS (BASE DA ARVORE) ---
     @Override
     public void exitExprPar(ProgramParser.ExprParContext ctx) {
         if (ctx.ID() != null) {
@@ -212,14 +242,12 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         } else if (ctx.FALSE() != null) {
             exprStack.push("FALSE");
         }
-        // Nota: Se a regra cair em ABPAR expr Rel FPAR, o valor de exprRel já terá sido processado e empilhado
     }
 
-    // --- 5. COMANDOS DE ENTRADA E SAÍDA (READ / WRITE) ---
+    // --- 6. COMANDOS DE ENTRADA E SAÍDA (READ / WRITE) ---
     @Override
     public void exitCmdRead(ProgramParser.CmdReadContext ctx) {
         Token t = ctx.getStart();
-        // Coleta todos os IDs disparados dentro do escopo do READ
         for (TerminalNode idNode : ctx.getTokens(ProgramParser.ID)) {
             String idName = idNode.getText();
             if (!idName.equalsIgnoreCase("READ")) {
@@ -231,7 +259,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
     @Override
     public void exitCmdWrite(ProgramParser.CmdWriteContext ctx) {
-        // No padrão Listener, as expressões ou cadeias de texto internas já foram empilhadas
         if (!exprStack.isEmpty()) {
             String target = exprStack.pop();
             tac.emit("WRITE " + target);
