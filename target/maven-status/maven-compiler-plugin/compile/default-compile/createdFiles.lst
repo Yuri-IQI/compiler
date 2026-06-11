@@ -6,6 +6,7 @@ com\inm\antlr4\ProgramParser$CmdContext.class
 com\inm\analyzer\ProgramAnalyzer.class
 com\inm\antlr4\ProgramParser$ListCmdContext.class
 com\inm\antlr4\ProgramParser$ExprLogContext.class
+com\inm\semantic\SymbolTable.class
 com\inm\antlr4\ProgramParser$CmdCompContext.class
 com\inm\antlr4\ProgramParser$DeclsContext.class
 com\inm\antlr4\ProgramParser$CmdDeclContext.class
@@ -33,7 +34,9 @@ com\inm\antlr4\ProgramParser$ListWLineContext.class
 com\inm\antlr4\ProgramBaseListener.class
 com\inm\antlr4\ProgramParser$ListIdLineContext.class
 com\inm\antlr4\ProgramParser.class
+com\inm\semantic\ThreeAddressCode.class
 com\inm\antlr4\ProgramParser$ElemWContext.class
+com\inm\semantic\SemanticAndIntermediateListener.class
 com\inm\antlr4\ProgramParser$CmdReadContext.class
 com\inm\antlr4\ProgramParser$CmdWhileContext.class
 com\inm\antlr4\ProgramParser$VarDeclContext.class

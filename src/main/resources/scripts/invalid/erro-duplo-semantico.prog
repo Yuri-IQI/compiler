@@ -1,0 +1,7 @@
+program erroSemantico;
+var a, b : integer;
+var a : boolean; { ERRO: Variável 'a' duplicada }
+begin
+    a := 10;
+    c := 20; { ERRO: Variável 'c' não declarada }
+end.

@@ -2,7 +2,9 @@ package com.inm.analyzer;
 
 import com.inm.helper.ParseHelper;
 import com.inm.helper.Printer;
+import com.inm.semantic.SemanticAndIntermediateListener; // IMPORTANTE: Importa o novo Listener
 import org.antlr.v4.gui.Trees;
+import org.antlr.v4.runtime.tree.ParseTreeWalker; // IMPORTANTE: Importa o Walker do ANTLR
 
 import java.io.IOException;
 import java.net.URI;
@@ -134,11 +136,42 @@ public class ProgramAnalyzer {
 
         System.out.println("Programa: " + result.programName());
 
-        if (showTree) Trees.inspect(
-            result.tree(),
-            result.parser()
-        );
+        if (!result.isValid()) {
+            System.err.println("\n[ERRO] Compilação interrompida devido a erros sintáticos/léxicos no código.");
+            for (String error : result.errors()) {
+                System.err.println(error);
+            }
+            return;
+        }
 
-        System.out.print(result.tree().toStringTree(result.parser()));
+        if (showTree) {
+            Trees.inspect(result.tree(), result.parser());
+        }
+        System.out.println("\n--- ÁRVORE SINTÁTICA EM TEXTO ---");
+        System.out.println(result.tree().toStringTree(result.parser()));
+        System.out.println("---------------------------------");
+
+        System.out.println("\\n--- INICIANDO ETAPAS: ANÁLISE SEMÂNTICA E CÓDIGO INTERMEDIÁRIO (3AC) ---");
+
+        SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener();
+        ParseTreeWalker walker = new ParseTreeWalker();
+
+        try {
+            walker.walk(listener, result.tree());
+
+            System.out.println("\n=======================================================");
+            System.out.println("  ANÁLISE SEMÂNTICA CONCLUÍDA COM SUCESSO (0 ERROS)   ");
+            System.out.println("=======================================================");
+
+            System.out.println("\n=== CÓDIGO INTERMEDIÁRIO GERADO (3AC) ===");
+            System.out.println(listener.getGenerated3AC());
+            System.out.println("=========================================\n");
+        } catch (RuntimeException semanticError) {
+            System.err.println("\n=======================================================");
+            System.err.println("            FALHA NA ANÁLISE SEMÂNTICA                 ");
+            System.err.println("=======================================================");
+            System.err.println(semanticError.getMessage());
+            System.err.println("=======================================================\n");
+        }
+        }
     }
-}
