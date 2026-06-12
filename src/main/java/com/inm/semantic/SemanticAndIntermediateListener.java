@@ -135,12 +135,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                 TypedOperand right = exprStack.pop();
                 TypedOperand left = exprStack.pop();
                 String op = ctx.exprLogLine().OPLOG().getText();
-                Token t = ctx.getStart();
-
-                // VALIDAÇÃO: Operações lógicas (AND/OR) exigem booleanos
-                if (!left.getType().equals("boolean") || !right.getType().equals("boolean")) {
-                    reportSemanticError(t, "Operação lógica '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
-                }
 
                 String temp = tac.newTemp();
                 tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
@@ -156,6 +150,11 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                 TypedOperand right = exprStack.pop();
                 TypedOperand left = exprStack.pop();
                 String op = ctx.OPLOG().getText();
+                Token t = ctx.getStart();
+
+                if (!left.getType().equals("boolean") || !right.getType().equals("boolean")) {
+                    reportSemanticError(t, "Operação lógica '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
+                }
 
                 String temp = tac.newTemp();
                 tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
@@ -307,9 +306,15 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
             // VALIDAÇÃO: Tamanho da constante (Evita estouro de limite numérico)
             try {
-                Integer.parseInt(cteValue); // Tenta converter para validar limites
+                long cte = Long.parseLong(cteValue);
+                if (cte < -32768 || cte > 32767) {
+                    reportSemanticError(t,
+                        "Constante numérica '" + cteValue + "' excede o limite de 2 bytes com sinal " +
+                                "(-32768 a 32767). Valor encontrado: " + cte + "."
+                    );
+                }
             } catch (NumberFormatException e) {
-                reportSemanticError(t, "Constante numérica '" + cteValue + "' excede o tamanho limite permitido para integer (32-bit).");
+                reportSemanticError(t, "Constante numérica '" + cteValue + "' não é um número.");
             }
 
             exprStack.push(new TypedOperand(cteValue, "integer"));

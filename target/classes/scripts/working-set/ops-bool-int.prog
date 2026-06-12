@@ -1,0 +1,8 @@
+program opsBoolComInt;
+var x, y : integer;
+    z : boolean;
+begin
+    x := 1;
+    y := 2;
+    z := x and y;
+end.
