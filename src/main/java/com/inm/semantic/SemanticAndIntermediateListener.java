@@ -56,6 +56,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     }
 
     // --- 2. COMANDO DE ATRIBUIÇÃO ---
+    // TODO: adicionar verificação de atribuição ao tipo (attrWrongType)
+    // TODO: adicionar validação de tamanho de constante
     @Override
     public void exitCmdAtrib(ProgramParser.CmdAtribContext ctx) {
         if (ctx.ID() != null) {
@@ -99,6 +101,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         }
     }
 
+    // TODO: restringir operações logicas apenas a operadores booleanos
     @Override
     public void exitExprLog(ProgramParser.ExprLogContext ctx) {
         if (ctx.exprLogLine() != null && ctx.exprLogLine().OPLOG() != null) {
@@ -119,6 +122,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         // Deixamos a sub-regra de cauda (exitExprAdLine) emitir as operações.
     }
 
+    // TODO: tratar a ocorrência de operações entre diferentes tipos
     @Override
     public void exitExprAdLine(ProgramParser.ExprAdLineContext ctx) {
         if (ctx.OPAD() != null) {
@@ -156,6 +160,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         }
     }
 
+    // TODO: permitir que a operação ocorra apenas com um right booleano
     @Override
     public void exitExprNeg(ProgramParser.ExprNegContext ctx) {
         if (ctx.OPNEG() != null) {
