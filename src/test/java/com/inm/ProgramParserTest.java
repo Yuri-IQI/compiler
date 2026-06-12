@@ -73,4 +73,26 @@ public class ProgramParserTest {
         var result = ParseHelper.parse("");
         assertFalse(result.isValid());
     }
+
+    /* Testes de casos que ainda precisam ser trabalhados.
+      O comportamento destes testes precisa ser avaliado caso a caso,
+      sem necessariamente resultar em falha ou sucesso
+     */
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "scripts/working-set/attr-wrong-type.prog",
+            "scripts/working-set/if-not-boolean.prog",
+            "scripts/working-set/ops-diferentes-tipos.prog",
+            "scripts/working-set/tamanho-constante.prog",
+    })
+    void evaluateWorkingSet(String path) throws Exception {
+        var result = ParseHelper.parse(load(path));
+        assertTrue(
+                result.isValid(),
+                "Avaliando cenários "
+                        + path
+                        + ": "
+                        + result.errors()
+        );
+    }
 }

@@ -1,0 +1,5 @@
+program tamanhoConstante;
+var x : integer;
+begin
+    x := 364767587876786765;
+end.

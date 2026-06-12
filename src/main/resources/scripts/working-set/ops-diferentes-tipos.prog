@@ -1,0 +1,6 @@
+program opsDiferentesTipos;
+/ uma operação entre string, inteiro e booleano não deveria ser possivel /
+var x : integer;
+begin
+    x := "abc" + 5 + FALSE;
+end.

@@ -1,0 +1,8 @@
+program ifnotboolean;
+begin
+    if 1 then begin
+    end;
+
+    var x : STRING;
+    x := ~"erro";
+end.

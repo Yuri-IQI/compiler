@@ -1,0 +1,6 @@
+program attrWrongType;
+/ uma string não deveria ser atribuida a um inteiro /
+var x : integer;
+begin
+    x := "abc";
+end.
