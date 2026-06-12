@@ -16,14 +16,27 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     private final ThreeAddressCode tac = new ThreeAddressCode();
 
     // Pilha auxiliar para gerenciar os resultados temporários das expressões
-    private final Stack<String> exprStack = new Stack<>();
+    private final Stack<TypedOperand> exprStack = new Stack<>();
 
     // Pilha para gerenciar os rótulos de desvios de controle de fluxo
     private final Stack<String> labelStack = new Stack<>();
 
+    private int errorCount = 0;
+
+    public int getErrorCount() { return errorCount; }
+
+    private void reportSemanticError(Token token, String message) {
+        this.errorCount++;
+        System.err.println("Erro Semântico [" + token.getLine() + ":" + token.getCharPositionInLine() + "]: " + message);
+    }
+
     public String getGenerated3AC() {
+        if (errorCount > 0) {
+            return "Código intermediario não gerado devido a " + errorCount + " erro(s) semânticos(s).";
+        }
         return tac.getCode();
     }
+
 
     // --- 1. CAPTURA DE DECLARAÇÃO DE VARIÁVEIS ---
     @Override
@@ -56,19 +69,25 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     }
 
     // --- 2. COMANDO DE ATRIBUIÇÃO ---
-    // TODO: adicionar verificação de atribuição ao tipo (attrWrongType)
-    // TODO: adicionar validação de tamanho de constante
     @Override
     public void exitCmdAtrib(ProgramParser.CmdAtribContext ctx) {
         if (ctx.ID() != null) {
             String idName = ctx.ID().getText();
             Token idToken = ctx.ID().getSymbol();
 
-            symbolTable.getType(idName, idToken.getLine(), idToken.getCharPositionInLine());
+            // Pega o tipo da variável destino
+            String idType = symbolTable.getType(idName, idToken.getLine(), idToken.getCharPositionInLine());
 
             if (!exprStack.isEmpty()) {
-                String exprResult = exprStack.pop();
-                tac.emit(idName + " = " + exprResult);
+                TypedOperand exprResult = exprStack.pop();
+
+                // VALIDAÇÃO: Tipo da variável destino deve ser igual ao tipo da expressão produzida
+                if (idType != null && !idType.toLowerCase().equals(exprResult.getType())) {
+                    reportSemanticError(idToken, "Incompatibilidade de tipos. Não é possível atribuir "
+                            + exprResult.getType() + " à variável '" + idName + "' do tipo " + idType.toUpperCase());
+                }
+
+                tac.emit(idName + " = " + exprResult.getValue());
             }
         }
     }
@@ -78,41 +97,69 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     public void exitExprRel(ProgramParser.ExprRelContext ctx) {
         if (ctx.exprRelLine() != null && ctx.exprRelLine().OPREL() != null) {
             if (exprStack.size() >= 2) {
-                String right = exprStack.pop();
-                String left = exprStack.pop();
+                TypedOperand right = exprStack.pop();
+                TypedOperand left = exprStack.pop();
                 String op = ctx.exprRelLine().OPREL().getText();
 
                 String temp = tac.newTemp();
-                tac.emit(temp + " = " + left + " " + op + " " + right);
-                exprStack.push(temp);
+                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
 
         if (!labelStack.isEmpty() && !exprStack.isEmpty()) {
+            TypedOperand condicao = exprStack.peek(); // Olhamos sem remover ainda
+            Token t = ctx.getStart();
+
+            // VALIDAÇÃO: Condição estrutural precisa ser estritamente booleana
+            if (!condicao.getType().equals("boolean")) {
+                reportSemanticError(t, "Expressão condicional deve resultar em tipo boolean, mas resultou em " + condicao.getType());
+            }
+
             if (ctx.getParent() instanceof ProgramParser.CmdIfContext) {
-                String condicao = exprStack.pop();
+                exprStack.pop();
                 String labelElse = labelStack.peek();
-                tac.emit("ifFalse " + condicao + " goto " + labelElse);
+                tac.emit("ifFalse " + condicao.getValue() + " goto " + labelElse);
             } else if (ctx.getParent() instanceof ProgramParser.CmdWhileContext) {
-                String condicao = exprStack.pop();
+                exprStack.pop();
                 String labelEnd = labelStack.get(labelStack.size() - 2);
-                tac.emit("ifFalse " + condicao + " goto " + labelEnd);
+                tac.emit("ifFalse " + condicao.getValue() + " goto " + labelEnd);
             }
         }
     }
 
-    // TODO: restringir operações logicas apenas a operadores booleanos
     @Override
     public void exitExprLog(ProgramParser.ExprLogContext ctx) {
         if (ctx.exprLogLine() != null && ctx.exprLogLine().OPLOG() != null) {
             if (exprStack.size() >= 2) {
-                String right = exprStack.pop();
-                String left = exprStack.pop();
+                TypedOperand right = exprStack.pop();
+                TypedOperand left = exprStack.pop();
                 String op = ctx.exprLogLine().OPLOG().getText();
+                Token t = ctx.getStart();
+
+                // VALIDAÇÃO: Operações lógicas (AND/OR) exigem booleanos
+                if (!left.getType().equals("boolean") || !right.getType().equals("boolean")) {
+                    reportSemanticError(t, "Operação lógica '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
+                }
 
                 String temp = tac.newTemp();
-                tac.emit(temp + " = " + left + " " + op + " " + right);
-                exprStack.push(temp);
+                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "boolean"));
+            }
+        }
+    }
+
+    @Override
+    public void exitExprLogLine(ProgramParser.ExprLogLineContext ctx) {
+        if (ctx.OPLOG() != null) {
+            if (exprStack.size() >= 2) {
+                TypedOperand right = exprStack.pop();
+                TypedOperand left = exprStack.pop();
+                String op = ctx.OPLOG().getText();
+
+                String temp = tac.newTemp();
+                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
     }
@@ -122,20 +169,23 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         // Deixamos a sub-regra de cauda (exitExprAdLine) emitir as operações.
     }
 
-    // TODO: tratar a ocorrência de operações entre diferentes tipos
     @Override
     public void exitExprAdLine(ProgramParser.ExprAdLineContext ctx) {
         if (ctx.OPAD() != null) {
             if (exprStack.size() >= 2) {
-                // Em estruturas recursivas à direita avaliadas no "exit", invertemos
-                // para manter a semântica correta (Esquerda OPERADOR Direita)
-                String right = exprStack.pop();
-                String left = exprStack.pop();
+                TypedOperand right = exprStack.pop();
+                TypedOperand left = exprStack.pop();
                 String op = ctx.OPAD().getText();
+                Token t = ctx.getStart();
+
+                // VALIDAÇÃO: Adição e Subtração exigem tipos numéricos (integer)
+                if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
+                    reportSemanticError(t, "Operação '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
+                }
 
                 String temp = tac.newTemp();
-                tac.emit(temp + " = " + left + " " + op + " " + right);
-                exprStack.push(temp);
+                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "integer"));
             }
         }
     }
@@ -149,26 +199,38 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     public void exitExprMultLine(ProgramParser.ExprMultLineContext ctx) {
         if (ctx.OPMULT() != null) {
             if (exprStack.size() >= 2) {
-                String right = exprStack.pop();
-                String left = exprStack.pop();
+                TypedOperand right = exprStack.pop();
+                TypedOperand left = exprStack.pop();
                 String op = ctx.OPMULT().getText();
+                Token t = ctx.getStart();
+
+                // VALIDAÇÃO: Multiplicação e Divisão exigem inteiros
+                if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
+                    reportSemanticError(t, "Operação '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
+                }
 
                 String temp = tac.newTemp();
-                tac.emit(temp + " = " + left + " " + op + " " + right);
-                exprStack.push(temp);
+                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "integer"));
             }
         }
     }
 
-    // TODO: permitir que a operação ocorra apenas com um right booleano
     @Override
     public void exitExprNeg(ProgramParser.ExprNegContext ctx) {
         if (ctx.OPNEG() != null) {
             if (!exprStack.isEmpty()) {
-                String right = exprStack.pop();
+                TypedOperand right = exprStack.pop();
+                Token t = ctx.getStart();
+
+                // VALIDAÇÃO: Operador unário de negação '~' exige booleano
+                if (!right.getType().equals("boolean")) {
+                    reportSemanticError(t, "Operador unário '~' inválido para o tipo " + right.getType());
+                }
+
                 String temp = tac.newTemp();
-                tac.emit(temp + " = ~" + right);
-                exprStack.push(temp);
+                tac.emit(temp + " = ~" + right.getValue());
+                exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
     }
@@ -236,16 +298,30 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (ctx.ID() != null) {
             String idName = ctx.ID().getText();
             Token t = ctx.ID().getSymbol();
-            symbolTable.getType(idName, t.getLine(), t.getCharPositionInLine());
-            exprStack.push(idName);
+            String idType = symbolTable.getType(idName, t.getLine(), t.getCharPositionInLine());
+            exprStack.push(new TypedOperand(idName, idType != null ? idType.toLowerCase() : "undefined"));
+
         } else if (ctx.CTE() != null) {
-            exprStack.push(ctx.CTE().getText());
+            String cteValue = ctx.CTE().getText();
+            Token t = ctx.CTE().getSymbol();
+
+            // VALIDAÇÃO: Tamanho da constante (Evita estouro de limite numérico)
+            try {
+                Integer.parseInt(cteValue); // Tenta converter para validar limites
+            } catch (NumberFormatException e) {
+                reportSemanticError(t, "Constante numérica '" + cteValue + "' excede o tamanho limite permitido para integer (32-bit).");
+            }
+
+            exprStack.push(new TypedOperand(cteValue, "integer"));
+
         } else if (ctx.CADEIA() != null) {
-            exprStack.push(ctx.CADEIA().getText());
+            exprStack.push(new TypedOperand(ctx.CADEIA().getText(), "string"));
+
         } else if (ctx.TRUE() != null) {
-            exprStack.push("TRUE");
+            exprStack.push(new TypedOperand("TRUE", "boolean"));
+
         } else if (ctx.FALSE() != null) {
-            exprStack.push("FALSE");
+            exprStack.push(new TypedOperand("FALSE", "boolean"));
         }
     }
 
@@ -265,15 +341,16 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     @Override
     public void exitCmdWrite(ProgramParser.CmdWriteContext ctx) {
         if (!exprStack.isEmpty()) {
-            String target = exprStack.pop();
-            tac.emit("WRITE " + target);
+            TypedOperand target = exprStack.pop();
+            tac.emit("WRITE " + target.getValue());
         }
     }
 
     @Override
     public void exitElemW(ProgramParser.ElemWContext ctx) {
         if (ctx.CADEIA() != null) {
-            exprStack.push(ctx.CADEIA().getText());
+            // Em vez de push de string pura, encapsulamos como um TypedOperand do tipo "string"
+            exprStack.push(new TypedOperand(ctx.CADEIA().getText(), "string"));
         }
     }
 }

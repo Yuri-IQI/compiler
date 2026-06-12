@@ -151,7 +151,7 @@ public class ProgramAnalyzer {
         System.out.println(result.tree().toStringTree(result.parser()));
         System.out.println("---------------------------------");
 
-        System.out.println("\\n--- INICIANDO ETAPAS: ANÁLISE SEMÂNTICA E CÓDIGO INTERMEDIÁRIO (3AC) ---");
+        System.out.println("\n--- INICIANDO ETAPAS: ANÁLISE SEMÂNTICA E CÓDIGO INTERMEDIÁRIO (3AC) ---");
 
         SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener();
         ParseTreeWalker walker = new ParseTreeWalker();
@@ -159,19 +159,27 @@ public class ProgramAnalyzer {
         try {
             walker.walk(listener, result.tree());
 
-            System.out.println("\n=======================================================");
-            System.out.println("  ANÁLISE SEMÂNTICA CONCLUÍDA COM SUCESSO (0 ERROS)   ");
-            System.out.println("=======================================================");
+            if (listener.getErrorCount() == 0) {
+                System.out.println("\n=======================================================");
+                System.out.println("  ANÁLISE SEMÂNTICA CONCLUÍDA COM SUCESSO (0 ERROS)   ");
+                System.out.println("=======================================================");
 
-            System.out.println("\n=== CÓDIGO INTERMEDIÁRIO GERADO (3AC) ===");
-            System.out.println(listener.getGenerated3AC());
-            System.out.println("=========================================\n");
+                System.out.println("\n=== CÓDIGO INTERMEDIÁRIO GERADO (3AC) ===");
+                System.out.println(listener.getGenerated3AC());
+                System.out.println("=========================================\n");
+            } else {
+                System.err.println("\n=======================================================");
+                System.err.println("   FALHA NA COMPILAÇÃO: " + listener.getErrorCount() + " ERRO(S) SEMÂNTICO(S) ENCONTRADO(S)   ");
+                System.err.println("=======================================================");
+                System.err.println("[AVISO] " + listener.getGenerated3AC());
+                System.err.println("=======================================================\n");
+            }
         } catch (RuntimeException semanticError) {
             System.err.println("\n=======================================================");
-            System.err.println("            FALHA NA ANÁLISE SEMÂNTICA                 ");
+            System.err.println("            FALHA FATAL NA ANÁLISE SEMÂNTICA           ");
             System.err.println("=======================================================");
             System.err.println(semanticError.getMessage());
             System.err.println("=======================================================\n");
         }
-        }
     }
+}
