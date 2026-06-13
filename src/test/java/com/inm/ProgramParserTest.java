@@ -84,33 +84,12 @@ public class ProgramParserTest {
             "scripts/working-set/ops-diferentes-tipos.prog",
             "scripts/working-set/if-not-boolean.prog",
             "scripts/working-set/tamanho-constante.prog",
+            "scripts/working-set/ops-bool-int.prog",
     })
-    void validateWorkingSet(String path) throws Exception {
+    void evaluateWorkingSet(String path) throws Exception {
         assertDoesNotThrow(
                 () -> CompilationExecutor.compile(load(path)),
                 "Script deveria ser válido, mas ocorreram erros em " + path
-        );
-    }
-
-    /* Testes de casos que ainda precisam ser trabalhados.
-      O comportamento destes testes precisa ser avaliado caso a caso,
-      sem necessariamente resultar em falha ou sucesso
-     */
-    @ParameterizedTest
-    @ValueSource(strings = {
-            "scripts/working-set/attr-wrong-type.prog",
-            "scripts/working-set/if-not-boolean.prog",
-            "scripts/working-set/ops-diferentes-tipos.prog",
-            "scripts/working-set/tamanho-constante.prog",
-    })
-    void evaluateWorkingSet(String path) throws Exception {
-        var result = ParseHelper.parse(load(path));
-        assertTrue(
-                result.isValid(),
-                "Avaliando cenários "
-                        + path
-                        + ": "
-                        + result.errors()
         );
     }
 }

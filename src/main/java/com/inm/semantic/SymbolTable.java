@@ -36,8 +36,11 @@ public class SymbolTable {
         }
         Symbol s = new Symbol(key, type, currentOffset);
         currentOffset += s.size();
-        assert parent != null;
-        parent.currentOffset = currentOffset;
+
+        if (parent != null) {
+            parent.currentOffset = currentOffset;
+        }
+
         table.put(key, s);
         root.table.put(key, s);
     }
