@@ -140,11 +140,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     }
 
     @Override
-    public void exitExprLog(ProgramParser.ExprLogContext ctx) {
-        // delegado ao exitExprLogLine
-    }
-
-    @Override
     public void exitExprLogLine(ProgramParser.ExprLogLineContext ctx) {
         if (ctx.OPLOG() == null || exprStack.size() < 2) return;
 
@@ -164,9 +159,16 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         exprStack.push(new TypedOperand(temp, "boolean"));
     }
 
-    @Override
-    public void exitExprAd(ProgramParser.ExprAdContext ctx) {
-        // delegado ao exitExprAdLine
+    private void writeOp(Token t, TypedOperand left, TypedOperand right, String op) {
+        if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
+            reportSemanticError(t,
+                    "Operação '" + op + "' inválida entre '"
+                            + left.getType() + "' e '" + right.getType() + "'.");
+        }
+
+        String temp = newTemp();
+        emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+        exprStack.push(new TypedOperand(temp, "integer"));
     }
 
     @Override
@@ -177,21 +179,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         TypedOperand left = exprStack.pop();
         String op = ctx.OPAD().getText();
         Token t = ctx.getStart();
-
-        if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
-            reportSemanticError(t,
-                    "Operação '" + op + "' inválida entre '"
-                            + left.getType() + "' e '" + right.getType() + "'.");
-        }
-
-        String temp = newTemp();
-        emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
-        exprStack.push(new TypedOperand(temp, "integer"));
-    }
-
-    @Override
-    public void exitExprMult(ProgramParser.ExprMultContext ctx) {
-        // delegado ao exitExprMultLine
+        writeOp(t, left, right, op);
     }
 
     @Override
@@ -202,16 +190,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         TypedOperand left = exprStack.pop();
         String op = ctx.OPMULT().getText();
         Token t = ctx.getStart();
-
-        if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
-            reportSemanticError(t,
-                    "Operação '" + op + "' inválida entre '"
-                            + left.getType() + "' e '" + right.getType() + "'.");
-        }
-
-        String temp = newTemp();
-        emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
-        exprStack.push(new TypedOperand(temp, "integer"));
+        writeOp(t, left, right, op);
     }
 
     @Override
@@ -323,11 +302,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             resolveType(idName, t);
             emit("READ " + SymbolTable.getPrefixedName(idName));
         }
-    }
-
-    @Override
-    public void exitCmdWrite(ProgramParser.CmdWriteContext ctx) {
-        // emissão feita em exitElemW
     }
 
     @Override
