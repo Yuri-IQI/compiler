@@ -1,6 +1,6 @@
 program tamanhoConstante;
 var y, z : integer;
 begin
-    y := -32768;
-    z := 32767;
+    y := -32769;
+    z := 32768;
 end.

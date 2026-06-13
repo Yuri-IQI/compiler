@@ -35,4 +35,8 @@ public class ThreeAddressCode {
     public void setInstructions(List<String> instructions) {
         this.instructions = instructions;
     }
+
+    public boolean hasLabel(String label) {
+        return instructions.contains(label + ":");
+    }
 }

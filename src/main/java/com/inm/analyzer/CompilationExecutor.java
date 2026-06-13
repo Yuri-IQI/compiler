@@ -12,55 +12,45 @@ import org.antlr.v4.gui.Trees;
 
 public class CompilationExecutor {
 
-    public static ExecutionContext context = new ExecutionContext();
-
     public static void compile(String source) {
         compile(source, false);
     }
 
     public static void compile(String source, boolean showTree) {
-
-        // Fase 1: Léxico + Sintático
-        context = runParsing(source, showTree);
-
-        // Fase 2: Semântica + 3AC
-        SemanticAndIntermediateListener listener = runSemantic();
-
-        // Fase 3: Otimização
-        runOptimization();
-
-        // Fase 4: Geração de Assembly
-        runAssembly();
+        ExecutionContext context = runParsing(source, showTree);
+        runSemantic(context);
+        runOptimization(context);
+        runAssembly(context);
     }
-    
+
     private static ExecutionContext runParsing(String source, boolean showTree) {
         System.out.println("\n=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===");
 
-        ExecutionContext result;
+        ExecutionContext context;
         try {
-            result = ParseHelper.parse(source);
+            context = ParseHelper.parse(source);
         } catch (ParsingException e) {
             System.err.println("[ERRO LÉXICO/SINTÁTICO] " + e.getMessage());
             throw e;
         }
 
         System.out.println("\n--- Árvore Sintática (texto) ---");
-        System.out.println(result.tree().toStringTree(result.parser()));
+        System.out.println(context.tree().toStringTree(context.parser()));
         System.out.println("--------------------------------");
 
         if (showTree) {
-            Trees.inspect(result.tree(), result.parser());
+            Trees.inspect(context.tree(), context.parser());
         }
 
-        System.out.println("Fase 1 concluída. Programa: " + result.programName());
-        return result;
+        System.out.println("Fase 1 concluída. Programa: " + context.programName());
+        return context;
     }
 
-    private static SemanticAndIntermediateListener runSemantic() {
+    private static void runSemantic(ExecutionContext context) {
         System.out.println("\n=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===");
 
-        SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener();
-        ContextualizedWalker walker = new ContextualizedWalker(listener);
+        SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener(context);
+        ContextualizedWalker walker = new ContextualizedWalker(listener, context);
         walker.walk();
 
         if (listener.getErrorCount() > 0) {
@@ -68,25 +58,32 @@ public class CompilationExecutor {
             throw new SemanticException(listener.getErrorCount() + " erro(s) semântico(s) encontrado(s).");
         }
 
+        context.setSymbolTable(listener.getSymbolTable());
+        context.setThreeAddressCode(listener.getThreeAddressCode());
+
         System.out.println("\n--- Código Intermediário (3AC) ---");
-        System.out.println(listener.getGenerated3AC());
+        System.out.println(context.threeAddressCode().getCode());
         System.out.println("----------------------------------");
         System.out.println("Fase 2 concluída com sucesso.");
-
-        return listener;
     }
 
-    private static void runOptimization() {
+    private static void runOptimization(ExecutionContext context) {
         System.out.println("\n=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===");
-        Optimizer.optimize();
-        Printer.printInstructions();
+
+        Optimizer optimizer = new Optimizer(context);
+        optimizer.optimize();
+        Printer.printInstructions(context);
+
         System.out.println("Fase 3 concluída.");
     }
 
-    private static void runAssembly() {
+    private static void runAssembly(ExecutionContext context) {
         System.out.println("\n=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===");
-        AssemblyGenerator assemblyGenerator = new AssemblyGenerator(context);
-        assemblyGenerator.generate();
+
+        AssemblyGenerator generator = new AssemblyGenerator(context);
+        String finalCode = generator.generate();
+        context.setFinalCode(finalCode);
+
         System.out.println("Fase 4 concluída.");
     }
 }

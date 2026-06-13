@@ -35,7 +35,10 @@ public class ProgramParserTest {
         "scripts/valid/while-script.prog",
         "scripts/valid/condicional.prog",
         "scripts/valid/if-aninhado.prog",
-        "scripts/valid/projeto-compiladores.prog"
+        "scripts/valid/projeto-compiladores.prog",
+        "scripts/valid/calculo-desconto.prog",
+        "scripts/valid/teste-while.prog",
+        "scripts/valid/super-expr.prog",
     })
     void acceptsValidScripts(String path) throws Exception {
         assertDoesNotThrow(
@@ -55,7 +58,9 @@ public class ProgramParserTest {
         "scripts/invalid/tipo-invalido.prog",
         "scripts/invalid/var-sem-tipo.prog",
         "scripts/invalid/while-sem-do.prog",
-        "scripts/invalid/id-reservado.prog"
+        "scripts/invalid/id-reservado.prog",
+        "scripts/invalid/erro-duplo-semantico.prog",
+        "scripts/invalid/id-reservado.prog",
     })
     void rejectsInvalidScripts(String path) throws Exception {
         assertThrows(

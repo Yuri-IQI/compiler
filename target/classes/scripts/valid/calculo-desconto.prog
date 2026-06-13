@@ -1,7 +1,10 @@
 program calculoDesconto;
 var preco, resultado : integer;
 begin
+    write(5/2);
+    write("Informe o Preço");
     read(preco);
+    write(preco);
     resultado := preco - 15;
     write(resultado);
 end.

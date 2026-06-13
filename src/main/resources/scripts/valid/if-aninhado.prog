@@ -3,13 +3,13 @@ program ifaninhado;
 begin
     write("teste7");
 
-    if 1 then begin
+    if true then begin
         write("teste5");
 
-        if 2 then begin
+        if 4 > 2 then begin
             write("teste3");
 
-            if 3 then begin
+            if ~false then begin
                 write("teste1");
                 write("teste2");
             end;

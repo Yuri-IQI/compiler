@@ -3,14 +3,19 @@ BEGIN
     VAR nota1, nota2 : INTEGER;
     VAR resultado : STRING;
 
+    WRITE("INFORME A PRIMEIRA NOTA");
     READ(nota1);
+
+    WRITE("INFORME A SEGUNDA NOTA");
     READ(nota2);
 
     VAR media : INTEGER;
     media := (nota1 + nota2) / 2;
+    WRITE(media);
 
     VAR aprovado : BOOLEAN;
     aprovado := media >= 7;
+    WRITE(aprovado);
 
     IF aprovado THEN
     BEGIN

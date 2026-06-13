@@ -14,6 +14,7 @@ public class SymbolTable {
     private int currentOffset;
 
     private final SymbolTable root;
+    public static final String prefix = "v_";
 
     public SymbolTable() {
         this.parent = null;
@@ -27,6 +28,11 @@ public class SymbolTable {
         this.root = parent.root;
     }
 
+    public static String getPrefixedName(String varName) {
+        if (varName.startsWith(prefix)) return varName;
+        return prefix + varName.toLowerCase();
+    }
+
     public void declare(String name, String type, int line, int col) {
         String key = name.toLowerCase();
         if (table.containsKey(key)) {
@@ -34,7 +40,7 @@ public class SymbolTable {
                     "Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' já declarada neste escopo."
             );
         }
-        Symbol s = new Symbol(key, type, currentOffset);
+        Symbol s = new Symbol(getPrefixedName(name), type, currentOffset);
         currentOffset += s.size();
 
         if (parent != null) {

@@ -1,5 +1,4 @@
 com\inm\antlr4\ProgramParser$ExprParContext.class
-com\inm\analyzer\PrintingLexer.class
 com\inm\antlr4\ProgramParser$ProgContext.class
 com\inm\antlr4\ProgramParser$CmdWriteContext.class
 com\inm\antlr4\ProgramParser$CmdContext.class
@@ -16,7 +15,6 @@ com\inm\antlr4\ProgramParser$ExprRelContext.class
 com\inm\antlr4\ProgramParser$TipContext.class
 com\inm\antlr4\ProgramParser$ExprAdContext.class
 com\inm\antlr4\ProgramParser$ExprAdLineContext.class
-com\inm\helper\ParseHelper$ParseResult.class
 com\inm\antlr4\ProgramParser$CmdIfContext.class
 com\inm\Main.class
 com\inm\antlr4\ProgramParser$DeclTipContext.class

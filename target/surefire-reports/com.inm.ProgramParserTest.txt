@@ -1,0 +1,148 @@
+-------------------------------------------------------------------------------
+Test set: com.inm.ProgramParserTest
+-------------------------------------------------------------------------------
+Tests run: 27, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 0.591 s <<< FAILURE! -- in com.inm.ProgramParserTest
+com.inm.ProgramParserTest.acceptsValidScripts(String)[3] -- Time elapsed: 0.019 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/dangling-else.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.acceptsValidScripts(ProgramParserTest.java:41)
+Caused by: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$acceptsValidScripts$0(ProgramParserTest.java:42)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.acceptsValidScripts(String)[8] -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/while-script.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 4 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.acceptsValidScripts(ProgramParserTest.java:41)
+Caused by: com.inm.exceptions.SemanticException: 4 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$acceptsValidScripts$0(ProgramParserTest.java:42)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.acceptsValidScripts(String)[9] -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/condicional.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 3 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.acceptsValidScripts(ProgramParserTest.java:41)
+Caused by: com.inm.exceptions.SemanticException: 3 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$acceptsValidScripts$0(ProgramParserTest.java:42)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.acceptsValidScripts(String)[10] -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/if-aninhado.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 9 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.acceptsValidScripts(ProgramParserTest.java:41)
+Caused by: com.inm.exceptions.SemanticException: 9 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$acceptsValidScripts$0(ProgramParserTest.java:42)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.acceptsValidScripts(String)[11] -- Time elapsed: 0.130 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/projeto-compiladores.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 4 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.acceptsValidScripts(ProgramParserTest.java:41)
+Caused by: com.inm.exceptions.SemanticException: 4 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$acceptsValidScripts$0(ProgramParserTest.java:42)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.evaluateWorkingSet(String)[1] -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/working-set/attr-wrong-type.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 1 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.evaluateWorkingSet(ProgramParserTest.java:90)
+Caused by: com.inm.exceptions.SemanticException: 1 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$evaluateWorkingSet$3(ProgramParserTest.java:91)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.evaluateWorkingSet(String)[2] -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/working-set/ops-diferentes-tipos.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.evaluateWorkingSet(ProgramParserTest.java:90)
+Caused by: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$evaluateWorkingSet$3(ProgramParserTest.java:91)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.evaluateWorkingSet(String)[3] -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/working-set/if-not-boolean.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 3 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.evaluateWorkingSet(ProgramParserTest.java:90)
+Caused by: com.inm.exceptions.SemanticException: 3 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$evaluateWorkingSet$3(ProgramParserTest.java:91)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+
+com.inm.ProgramParserTest.evaluateWorkingSet(String)[5] -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/working-set/ops-bool-int.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 1 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.ProgramParserTest.evaluateWorkingSet(ProgramParserTest.java:90)
+Caused by: com.inm.exceptions.SemanticException: 1 erro(s) semântico(s) encontrado(s).
+	at com.inm.analyzer.CompilationExecutor.runSemantic(CompilationExecutor.java:58)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:21)
+	at com.inm.analyzer.CompilationExecutor.compile(CompilationExecutor.java:16)
+	at com.inm.ProgramParserTest.lambda$evaluateWorkingSet$3(ProgramParserTest.java:91)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+

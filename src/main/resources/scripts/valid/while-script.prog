@@ -2,9 +2,8 @@ program whilescript;
 var id : integer;
 begin
     id := 0;
-    while id < 10 do
-    begin
-        id := i + 1;
-        id := 2;
+    while id < 10 do begin
+        id := id + 1;
+        write(id);
     end;
 end.

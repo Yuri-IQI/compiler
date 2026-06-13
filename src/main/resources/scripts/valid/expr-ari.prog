@@ -4,4 +4,5 @@ begin
     x := 10;
     y := 3;
     z := x + y * 2 - 1;
+    write(z);
 end.

@@ -6,8 +6,8 @@ begin
     if x == 1 then begin
         if y == 2 then begin
             write("se");
+        end else begin
+            write("nao");
         end;
-    end else begin
-        write("nao");
     end;
 end.
