@@ -1,5 +1,7 @@
 package com.inm;
 
+import com.inm.analyzer.CompilationExecutor;
+import com.inm.antlr4.ProgramParser;
 import com.inm.helper.ParseHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,13 +38,9 @@ public class ProgramParserTest {
         "scripts/valid/projeto-compiladores.prog"
     })
     void acceptsValidScripts(String path) throws Exception {
-        var result = ParseHelper.parse(load(path));
-        assertTrue(
-            result.isValid(),
-        "Script deveria ser válido, mas ocorreram erros em "
-                + path
-                + ": "
-                + result.errors()
+        assertDoesNotThrow(
+                () -> CompilationExecutor.compile(load(path)),
+                "Script deveria ser válido, mas ocorreram erros em " + path
         );
     }
 
@@ -60,18 +58,38 @@ public class ProgramParserTest {
         "scripts/invalid/id-reservado.prog"
     })
     void rejectsInvalidScripts(String path) throws Exception {
-        var result = ParseHelper.parse(load(path));
-
-        assertFalse(
-            result.isValid(),
-            "Script deveria ser inválido, mas foi aceito: " + path
+        assertThrows(
+                Exception.class,
+                () -> CompilationExecutor.compile(load(path)),
+                "Script deveria lançar exceção, mas foi aceito: " + path
         );
     }
 
     @Test
     void rejectsEmptyScript() {
-        var result = ParseHelper.parse("");
-        assertFalse(result.isValid());
+        assertThrows(
+                Exception.class,
+                () -> CompilationExecutor.compile(""),
+                "Script vázio deveria lançar exceção, mas foi aceito"
+        );
+    }
+
+    /*
+    Testes de casos sendo trabalhados
+    TODO: colocar o script em valid ou invalid quando ele for devidamente aceito ou rejeitado
+     */
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "scripts/working-set/attr-wrong-type.prog",
+            "scripts/working-set/ops-diferentes-tipos.prog",
+            "scripts/working-set/if-not-boolean.prog",
+            "scripts/working-set/tamanho-constante.prog",
+    })
+    void validateWorkingSet(String path) throws Exception {
+        assertDoesNotThrow(
+                () -> CompilationExecutor.compile(load(path)),
+                "Script deveria ser válido, mas ocorreram erros em " + path
+        );
     }
 
     /* Testes de casos que ainda precisam ser trabalhados.

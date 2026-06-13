@@ -1,29 +1,61 @@
 package com.inm.semantic;
 
+import com.inm.helper.Symbol;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SymbolTable {
-    private final Map<String, String> table = new HashMap<>();
 
-    // Insere uma variável na tabela e valida se ela já existe
+    private final Map<String, Symbol> table = new HashMap<>();
+    private final SymbolTable parent;
+    private int currentOffset;
+
+    private final SymbolTable root;
+
+    public SymbolTable() {
+        this.parent = null;
+        this.currentOffset = 0;
+        this.root = this;
+    }
+
+    public SymbolTable(SymbolTable parent) {
+        this.parent = parent;
+        this.currentOffset = parent.currentOffset;
+        this.root = parent.root;
+    }
+
     public void declare(String name, String type, int line, int col) {
-        if (table.containsKey(name.toLowerCase())) {
-            throw new RuntimeException("Erro Semântico [Linha ] " + line + ":" + col + "]: Variável '" + name + "' já declarada neste escopo.");
+        String key = name.toLowerCase();
+        if (table.containsKey(key)) {
+            throw new RuntimeException(
+                    "Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' já declarada neste escopo."
+            );
         }
-        table.put(name.toLowerCase(), type.toUpperCase());
+        Symbol s = new Symbol(key, type, currentOffset);
+        currentOffset += s.size();
+        assert parent != null;
+        parent.currentOffset = currentOffset;
+        table.put(key, s);
+        root.table.put(key, s);
     }
 
-    // Recupera o tipo de uma variável e valida se foi declarada
     public String getType(String name, int line, int col) {
-        String type = table.get(name.toLowerCase());
-        if (type == null) {
-            throw new RuntimeException("Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' não foi declarada.");
-        }
-        return type;
+        String key = name.toLowerCase();
+        if (table.containsKey(key))
+            return table.get(key).type();
+        if (parent != null)
+            return parent.getType(name, line, col);
+        throw new RuntimeException(
+                "Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' não foi declarada."
+        );
     }
 
-    public void clear() {
-        table.clear();
+    public SymbolTable getParent() { return parent; }
+
+    public List<Symbol> getAllSymbols() {
+        return new ArrayList<>(table.values());
     }
 }

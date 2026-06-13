@@ -1,4 +1,4 @@
-package com.inm.analyzer;
+package com.inm.helper;
 
 import com.inm.antlr4.ProgramLexer;
 import org.antlr.v4.runtime.CharStream;

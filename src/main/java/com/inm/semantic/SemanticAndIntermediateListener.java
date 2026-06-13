@@ -1,5 +1,7 @@
 package com.inm.semantic;
 
+import com.inm.analyzer.CompilationExecutor;
+import com.inm.analyzer.ExecutionContext;
 import com.inm.antlr4.ProgramBaseListener;
 import com.inm.antlr4.ProgramParser;
 
@@ -12,8 +14,8 @@ import java.util.Stack;
 
 public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
-    private final SymbolTable symbolTable = new SymbolTable();
-    private final ThreeAddressCode tac = new ThreeAddressCode();
+    private final ExecutionContext context = CompilationExecutor.context;
+    private SymbolTable currentScope = new SymbolTable();
 
     // Pilha auxiliar para gerenciar os resultados temporários das expressões
     private final Stack<TypedOperand> exprStack = new Stack<>();
@@ -34,7 +36,17 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (errorCount > 0) {
             return "Código intermediario não gerado devido a " + errorCount + " erro(s) semânticos(s).";
         }
-        return tac.getCode();
+        return context.threeAddressCode().getCode();
+    }
+
+    @Override
+    public void enterCmdComp(ProgramParser.CmdCompContext ctx) {
+        currentScope = new SymbolTable(currentScope);
+    }
+
+    @Override
+    public void exitCmdComp(ProgramParser.CmdCompContext ctx) {
+        currentScope = currentScope.getParent();
     }
 
 
@@ -51,7 +63,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             String type = ctx.tip().getText();
             Token startToken = ctx.getStart();
             for(String id : idList) {
-                symbolTable.declare(id, type, startToken.getLine(), startToken.getCharPositionInLine());
+                currentScope.declare(id, type, startToken.getLine(), startToken.getCharPositionInLine());
             }
         }
     }
@@ -76,7 +88,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             Token idToken = ctx.ID().getSymbol();
 
             // Pega o tipo da variável destino
-            String idType = symbolTable.getType(idName, idToken.getLine(), idToken.getCharPositionInLine());
+            String idType = currentScope.getType(idName, idToken.getLine(), idToken.getCharPositionInLine());
 
             if (!exprStack.isEmpty()) {
                 TypedOperand exprResult = exprStack.pop();
@@ -87,7 +99,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                             + exprResult.getType() + " à variável '" + idName + "' do tipo " + idType.toUpperCase());
                 }
 
-                tac.emit(idName + " = " + exprResult.getValue());
+                context.threeAddressCode().emit(idName + " = " + exprResult.getValue());
             }
         }
     }
@@ -101,8 +113,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                 TypedOperand left = exprStack.pop();
                 String op = ctx.exprRelLine().OPREL().getText();
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
@@ -119,11 +131,11 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             if (ctx.getParent() instanceof ProgramParser.CmdIfContext) {
                 exprStack.pop();
                 String labelElse = labelStack.peek();
-                tac.emit("ifFalse " + condicao.getValue() + " goto " + labelElse);
+                context.threeAddressCode().emit("ifFalse " + condicao.getValue() + " goto " + labelElse);
             } else if (ctx.getParent() instanceof ProgramParser.CmdWhileContext) {
                 exprStack.pop();
                 String labelEnd = labelStack.get(labelStack.size() - 2);
-                tac.emit("ifFalse " + condicao.getValue() + " goto " + labelEnd);
+                context.threeAddressCode().emit("ifFalse " + condicao.getValue() + " goto " + labelEnd);
             }
         }
     }
@@ -136,8 +148,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                 TypedOperand left = exprStack.pop();
                 String op = ctx.exprLogLine().OPLOG().getText();
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
@@ -156,8 +168,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                     reportSemanticError(t, "Operação lógica '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
                 }
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
@@ -182,8 +194,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                     reportSemanticError(t, "Operação '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
                 }
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "integer"));
             }
         }
@@ -208,8 +220,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                     reportSemanticError(t, "Operação '" + op + "' inválida entre os tipos " + left.getType() + " e " + right.getType());
                 }
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "integer"));
             }
         }
@@ -227,8 +239,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                     reportSemanticError(t, "Operador unário '~' inválido para o tipo " + right.getType());
                 }
 
-                String temp = tac.newTemp();
-                tac.emit(temp + " = ~" + right.getValue());
+                String temp = context.threeAddressCode().newTemp();
+                context.threeAddressCode().emit(temp + " = ~" + right.getValue());
                 exprStack.push(new TypedOperand(temp, "boolean"));
             }
         }
@@ -237,8 +249,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     // --- 4. CONTROLE DE FLUXO (IF / WHILE) ---
     @Override
     public void enterCmdIf(ProgramParser.CmdIfContext ctx) {
-        String labelElse = tac.newLabel();
-        String labelEnd = tac.newLabel();
+        String labelElse = context.threeAddressCode().newLabel();
+        String labelEnd = context.threeAddressCode().newLabel();
 
         labelStack.push(labelEnd);
         labelStack.push(labelElse);
@@ -250,11 +262,11 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             String labelElse = labelStack.pop();
             String labelEnd = labelStack.pop();
 
-            if (!tac.getCode().contains(labelElse + ":")) {
-                tac.emit(labelElse + ":");
+            if (!context.threeAddressCode().getCode().contains(labelElse + ":")) {
+                context.threeAddressCode().emit(labelElse + ":");
             }
 
-            tac.emit(labelEnd + ":");
+            context.threeAddressCode().emit(labelEnd + ":");
         }
     }
 
@@ -264,17 +276,17 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             String labelElse = labelStack.peek();
             String labelEnd = labelStack.get(labelStack.size() - 2);
 
-            tac.emit("goto " + labelEnd);
-            tac.emit(labelElse + ":");
+            context.threeAddressCode().emit("goto " + labelEnd);
+            context.threeAddressCode().emit(labelElse + ":");
         }
     }
 
     @Override
     public void enterCmdWhile(ProgramParser.CmdWhileContext ctx) {
-        String labelStart = tac.newLabel();
-        String labelEnd = tac.newLabel();
+        String labelStart = context.threeAddressCode().newLabel();
+        String labelEnd = context.threeAddressCode().newLabel();
 
-        tac.emit(labelStart + ":");
+        context.threeAddressCode().emit(labelStart + ":");
 
         labelStack.push(labelEnd);
         labelStack.push(labelStart);
@@ -286,8 +298,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             String labelStart = labelStack.pop();
             String labelEnd = labelStack.pop();
 
-            tac.emit("goto " + labelStart);
-            tac.emit(labelEnd + ":");
+            context.threeAddressCode().emit("goto " + labelStart);
+            context.threeAddressCode().emit(labelEnd + ":");
         }
     }
 
@@ -297,7 +309,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (ctx.ID() != null) {
             String idName = ctx.ID().getText();
             Token t = ctx.ID().getSymbol();
-            String idType = symbolTable.getType(idName, t.getLine(), t.getCharPositionInLine());
+            String idType = currentScope.getType(idName, t.getLine(), t.getCharPositionInLine());
             exprStack.push(new TypedOperand(idName, idType != null ? idType.toLowerCase() : "undefined"));
 
         } else if (ctx.CTE() != null) {
@@ -337,8 +349,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         for (TerminalNode idNode : ctx.getTokens(ProgramParser.ID)) {
             String idName = idNode.getText();
             if (!idName.equalsIgnoreCase("READ")) {
-                symbolTable.getType(idName, t.getLine(), t.getCharPositionInLine());
-                tac.emit("READ " + idName);
+                currentScope.getType(idName, t.getLine(), t.getCharPositionInLine());
+                context.threeAddressCode().emit("READ " + idName);
             }
         }
     }
@@ -347,7 +359,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     public void exitCmdWrite(ProgramParser.CmdWriteContext ctx) {
         if (!exprStack.isEmpty()) {
             TypedOperand target = exprStack.pop();
-            tac.emit("WRITE " + target.getValue());
+            context.threeAddressCode().emit("WRITE " + target.getValue());
         }
     }
 

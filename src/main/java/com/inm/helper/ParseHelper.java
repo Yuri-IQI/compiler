@@ -1,39 +1,26 @@
-    package com.inm.helper;
+package com.inm.helper;
 
-    import com.inm.analyzer.PrintingLexer;
-    import com.inm.antlr4.ProgramLexer;
-    import com.inm.antlr4.ProgramParser;
-    import org.antlr.v4.runtime.CharStreams;
-    import org.antlr.v4.runtime.CommonTokenStream;
-    import org.antlr.v4.runtime.tree.ParseTree;
+import com.inm.analyzer.ExecutionContext;
+import com.inm.antlr4.ProgramParser;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 
-    import java.util.List;
 
-    public class ParseHelper {
+public class ParseHelper {
+    public static ExecutionContext parse(String source) {
+        PrintingLexer lexer = new PrintingLexer(CharStreams.fromString(source));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        ProgramParser parser = new ProgramParser(tokens);
 
-        public record ParseResult(String programName, ParseTree tree, ProgramParser parser, List<String> errors) {
-            public boolean isValid() { return errors.isEmpty(); }
-        }
+        ExceptionPrinter exceptionPrinter = new ExceptionPrinter();
+        exceptionPrinter.setErrorListener(parser);
 
-        public static ParseResult parse(String source, boolean printErrors) {
-            PrintingLexer lexer = new PrintingLexer(CharStreams.fromString(source));
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            ProgramParser parser = new ProgramParser(tokens);
+        ParseTree tree = parser.prog();
 
-            Printer printer = new Printer();
-            printer.setErrorListener(parser);
+        ParseTree nameNode = tree.getChildCount() > 1 ? tree.getChild(1) : null;
+        String programName = nameNode != null ? nameNode.getText() : "<desconhecido>";
 
-            ParseTree tree = parser.prog();
-
-            ParseTree nameNode = tree.getChildCount() > 1 ? tree.getChild(1) : null;
-            String programName = nameNode != null ? nameNode.getText() : "<desconhecido>";
-
-            if (printErrors) printer.printErrors();
-
-            return new ParseResult(programName, tree, parser, printer.getErrors());
-        }
-
-        public static ParseResult parse(String source) {
-            return parse(source, true);
-        }
+        return new ExecutionContext(programName, tree, parser);
     }
+}

@@ -1,6 +1,12 @@
 program tamanhoConstante;
+<<<<<<< HEAD
 var y, z : integer;
 begin
     y := -32768;
     z := 32767;
+=======
+var x : integer;
+begin
+    x := 364767587876786765;
+>>>>>>> 2afe59f (feat: começa geração de código)
 end.

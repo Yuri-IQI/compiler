@@ -23,49 +23,33 @@ public class ProgramAnalyzer {
 
         try (Scanner scanner = new Scanner(System.in)) {
             source = shouldReadFile
-                    ? readFile(scanner) : readScript(scanner, flag);
+                    ? readFile(scanner)
+                    : readScript(scanner, flag);
         }
 
-        analyze(source, showTree);
+        if (showTree) {
+            var result = ParseHelper.parse(source);
+            Trees.inspect(result.tree(), result.parser());
+        }
+
+        CompilationExecutor.compile(source);
     }
 
     private static String readScript(Scanner scanner, String flag) {
         System.out.println("Escreva o script (digite " + flag + " em nova linha para analisar):");
-
         StringBuilder sb = new StringBuilder();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             if (line.equals(flag)) break;
             sb.append(line).append("\n");
         }
-
         return sb.toString();
-    }
-
-    private static Map<String, List<Path>> mapFiles() throws IOException {
-        Map<String, List<Path>> fileMap = new LinkedHashMap<>();
-        fileMap.put("Válidos", listResourceFiles("scripts/valid"));
-        fileMap.put("Inválidos", listResourceFiles("scripts/invalid"));
-
-        boolean empty = fileMap.values().stream().allMatch(List::isEmpty);
-        if (empty) throw new IOException("Nenhum arquivo encontrado em resources/scripts");
-
-        System.out.println("Arquivos disponíveis:");
-        fileMap.forEach((key, paths) -> {
-            System.out.println(key);
-            for (int i = 0; i < paths.size(); i++) {
-                System.out.printf("  [%c%d] %s%n",
-                        key.charAt(0), i + 1, paths.get(i).getFileName());
-            }
-        });
-
-        return fileMap;
     }
 
     private static String readFile(Scanner scanner) throws IOException {
         Map<String, List<Path>> fileMap = mapFiles();
 
-        System.out.print("\nEscolha um código (ex: V1, I2) ou digite o caminho (ex: scripts/valid/expr-ari.prog): ");
+        System.out.print("\nEscolha um código (ex: V1, I2) ou caminho: ");
         String input = scanner.nextLine().trim();
 
         try {
@@ -76,14 +60,11 @@ public class ProgramAnalyzer {
                     : prefix == 'I' ? "Inválidos"
                       : null;
 
-            if (key == null) {
-                throw new IOException("Prefixo inválido: " + prefix + " (use V ou I)");
-            }
+            if (key == null) throw new IOException("Prefixo inválido: " + prefix);
 
             List<Path> paths = fileMap.get(key);
-            if (index < 0 || index >= paths.size()) {
+            if (index < 0 || index >= paths.size())
                 throw new IOException("Índice fora do intervalo: " + (index + 1));
-            }
 
             String folder = key.equals("Válidos") ? "scripts/valid/" : "scripts/invalid/";
             String resourcePath = folder + paths.get(index).getFileName();
@@ -97,13 +78,30 @@ public class ProgramAnalyzer {
             try (var is = ProgramAnalyzer.class.getClassLoader().getResourceAsStream(input)) {
                 if (is != null) return new String(is.readAllBytes(), StandardCharsets.UTF_8);
             }
-
             try {
                 return Files.readString(Path.of(input), StandardCharsets.UTF_8);
             } catch (NoSuchFileException ex) {
                 throw new IOException("Arquivo não encontrado: " + input, ex);
             }
         }
+    }
+
+    private static Map<String, List<Path>> mapFiles() throws IOException {
+        Map<String, List<Path>> fileMap = new LinkedHashMap<>();
+        fileMap.put("Válidos", listResourceFiles("scripts/valid"));
+        fileMap.put("Inválidos", listResourceFiles("scripts/invalid"));
+
+        boolean empty = fileMap.values().stream().allMatch(List::isEmpty);
+        if (empty) throw new IOException("Nenhum arquivo encontrado em resources/scripts");
+
+        System.out.println("Arquivos disponíveis:");
+        fileMap.forEach((key, paths) -> {
+            System.out.println(key);
+            for (int i = 0; i < paths.size(); i++)
+                System.out.printf("  [%c%d] %s%n", key.charAt(0), i + 1, paths.get(i).getFileName());
+        });
+
+        return fileMap;
     }
 
     private static List<Path> listResourceFiles(String folder) throws IOException {
@@ -115,9 +113,9 @@ public class ProgramAnalyzer {
             try (var fs = FileSystems.newFileSystem(jarUri, Map.of());
                  var stream = Files.list(fs.getPath("/" + folder))) {
                 return stream
-                    .filter(p -> p.toString().endsWith(".prog"))
-                    .sorted()
-                    .collect(Collectors.toCollection(ArrayList::new));
+                        .filter(p -> p.toString().endsWith(".prog"))
+                        .sorted()
+                        .collect(Collectors.toCollection(ArrayList::new));
             }
         }
 
@@ -128,58 +126,6 @@ public class ProgramAnalyzer {
                     .collect(Collectors.toCollection(ArrayList::new));
         } catch (Exception e) {
             return new ArrayList<>();
-        }
-    }
-
-    public static void analyze(String source, boolean showTree) {
-        var result = ParseHelper.parse(source);
-
-        System.out.println("Programa: " + result.programName());
-
-        if (!result.isValid()) {
-            System.err.println("\n[ERRO] Compilação interrompida devido a erros sintáticos/léxicos no código.");
-            for (String error : result.errors()) {
-                System.err.println(error);
-            }
-            return;
-        }
-
-        if (showTree) {
-            Trees.inspect(result.tree(), result.parser());
-        }
-        System.out.println("\n--- ÁRVORE SINTÁTICA EM TEXTO ---");
-        System.out.println(result.tree().toStringTree(result.parser()));
-        System.out.println("---------------------------------");
-
-        System.out.println("\n--- INICIANDO ETAPAS: ANÁLISE SEMÂNTICA E CÓDIGO INTERMEDIÁRIO (3AC) ---");
-
-        SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener();
-        ParseTreeWalker walker = new ParseTreeWalker();
-
-        try {
-            walker.walk(listener, result.tree());
-
-            if (listener.getErrorCount() == 0) {
-                System.out.println("\n=======================================================");
-                System.out.println("  ANÁLISE SEMÂNTICA CONCLUÍDA COM SUCESSO (0 ERROS)   ");
-                System.out.println("=======================================================");
-
-                System.out.println("\n=== CÓDIGO INTERMEDIÁRIO GERADO (3AC) ===");
-                System.out.println(listener.getGenerated3AC());
-                System.out.println("=========================================\n");
-            } else {
-                System.err.println("\n=======================================================");
-                System.err.println("   FALHA NA COMPILAÇÃO: " + listener.getErrorCount() + " ERRO(S) SEMÂNTICO(S) ENCONTRADO(S)   ");
-                System.err.println("=======================================================");
-                System.err.println("[AVISO] " + listener.getGenerated3AC());
-                System.err.println("=======================================================\n");
-            }
-        } catch (RuntimeException semanticError) {
-            System.err.println("\n=======================================================");
-            System.err.println("            FALHA FATAL NA ANÁLISE SEMÂNTICA           ");
-            System.err.println("=======================================================");
-            System.err.println(semanticError.getMessage());
-            System.err.println("=======================================================\n");
         }
     }
 }
