@@ -1,10 +1,10 @@
 package com.inm.helper;
 
-import com.inm.analyzer.ExecutionContext;
+import com.inm.compilation.CompilationContext;
 
 public class Printer {
 
-    public static void printInstructions(ExecutionContext context) {
+    public static void printInstructions(CompilationContext context) {
         System.out.println("\n--- Instruções Otimizadas (3AC) ---");
         context.threeAddressCode()
                 .getInstructions()

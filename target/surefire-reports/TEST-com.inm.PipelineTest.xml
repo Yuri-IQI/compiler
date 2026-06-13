@@ -1,0 +1,3038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.inm.PipelineTest" time="0.873" tests="31" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Yuri\Projetos\compiler\target\test-classes;C:\Users\Yuri\Projetos\compiler\target\classes;C:\Users\Yuri\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr4\4.13.2\antlr4-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\Yuri\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\Yuri\.m2\repository\org\abego\treelayout\org.abego.treelayout.core\1.0.3\org.abego.treelayout.core-1.0.3.jar;C:\Users\Yuri\.m2\repository\com\ibm\icu\icu4j\72.1\icu4j-72.1.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Yuri\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;"/>
+    <property name="java.vm.vendor" value="GraalVM Community"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://www.graalvm.org/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Users\Yuri\graalvm21\bin"/>
+    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire17785489990043412621\surefirebooter-20260613181505564_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire17785489990043412621 2026-06-13T18-15-05_443-jvmRun1 surefire-20260613181505564_1tmp surefire_0-20260613181505564_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Yuri\Projetos\compiler\target\test-classes;C:\Users\Yuri\Projetos\compiler\target\classes;C:\Users\Yuri\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr4\4.13.2\antlr4-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\Yuri\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\Yuri\.m2\repository\org\abego\treelayout\org.abego.treelayout.core\1.0.3\org.abego.treelayout.core-1.0.3.jar;C:\Users\Yuri\.m2\repository\com\ibm\icu\icu4j\72.1\icu4j-72.1.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Yuri\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Yuri"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Users\Yuri\graalvm21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Yuri\Projetos\compiler"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="jdk.internal.vm.ci.enabled" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire17785489990043412621\surefirebooter-20260613181505564_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-jvmci-23.1-b30"/>
+    <property name="user.name" value="Yuri"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="GraalVM CE 21.0.2+13.1"/>
+    <property name="localRepository" value="C:\Users\Yuri\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/oracle/graal/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\Yuri\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\Users\Yuri\Projetos\compiler"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\Yuri\graalvm21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\VulkanSDK\1.4.335.0\Bin;C:\Python313\Scripts\;C:\Python313\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\Yuri\apache-maven-3.9.9\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\Yuri\AppData\Roaming\Python\Python313\Scripts;C:\Users\Yuri\AppData\Local\Muse Hub\lib;C:\Program Files\Go\bin;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Users\Yuri\graalvm21\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Yuri\AppData\Local\Programs\Opera GX;C:\VulkanSDK\1.4.335.0\Bin;C:\Python313\Scripts\;C:\Python313\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\Yuri\apache-maven-3.9.9\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\Yuri\AppData\Roaming\Python\Python313\Scripts;C:\Users\Yuri\AppData\Local\Muse Hub\lib;C:\Program Files\Go\bin;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Users\Yuri\graalvm21\bin;C:\VulkanSDK\1.4.335.0\Bin;C:\Python313\Scripts\;C:\Python313\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\Yuri\apache-maven-3.9.9\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\Yuri\AppData\Roaming\Python\Python313\Scripts;C:\Users\Yuri\AppData\Local\Muse Hub\lib;C:\Program Files\Go\bin;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Users\Yuri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Yuri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Yuri\AppData\Local\JetBrains\Toolbox\scripts;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="GraalVM Community"/>
+    <property name="java.vm.version" value="21.0.2+13-jvmci-23.1-b30"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="rejectsInvalidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.132">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-sem-expr.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: attrsemexpr | Tipo: ID         | Atributo: attrsemexpr
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 5:0 mismatched input 'end' expecting {'FALSE', 'TRUE', CTE, '~', '(', ID, CADEIA}
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.01">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/if-sem-then.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: ifsemthen  | Tipo: ID         | Atributo: ifsemthen
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: >          | Tipo: OPREL      | Atributo: MAIOR
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 6:4 missing 'THEN' at 'begin'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.004">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/read-sem-pars.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: readsempars | Tipo: ID         | Atributo: readsempars
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: read       | Tipo: READ       | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: end        | Tipo: END        | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 4:9 missing '(' at 'x'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-begin.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: sembegin   | Tipo: ID         | Atributo: sembegin
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 4:6 mismatched input ':=' expecting {':', ','}
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.011">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-ponto.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: semponto   | Tipo: ID         | Atributo: semponto
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "ponto final faltando" | Tipo: CADEIA     | Atributo: ponto final faltando
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 4:0 missing ';' at 'end'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-pvig.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: sempvig    | Tipo: ID         | Atributo: sempvig
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 5:4 missing ';' at 'x'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/tipo-invalido.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: tipoinvalido | Tipo: ID         | Atributo: tipoinvalido
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: real       | Tipo: ID         | Atributo: real
+Token: ;          | Tipo: PVIG       | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 2:8 mismatched input 'real' expecting {':', ','}
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.004">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/var-sem-tipo.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: varsemtipo | Tipo: ID         | Atributo: varsemtipo
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 2:7 missing {'INTEGER', 'BOOLEAN', 'STRING'} at ';'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/while-sem-do.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: whilesemdo | Tipo: ID         | Atributo: whilesemdo
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: while      | Tipo: WHILE      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: <          | Tipo: OPREL      | Atributo: MENOR
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 6:4 missing 'DO' at 'begin'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[10]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/id-reservado.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: idreservado | Tipo: ID         | Atributo: idreservado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: while      | Tipo: WHILE      | Atributo: -
+Token: :          | Tipo: DPONTOS    | Atributo: -
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 2:4 mismatched input 'while' expecting ID
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.006">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-duplo-semantico.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: erroSemantico | Tipo: ID         | Atributo: erroSemantico
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: b          | Tipo: ID         | Atributo: b
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 3:0 missing 'BEGIN' at 'var'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.03">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-wrong-type.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: attrWrongType | Tipo: ID         | Atributo: attrWrongType
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "abc"      | Tipo: CADEIA     | Atributo: abc
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program attrWrongType ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "abc")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: attrWrongType
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [5:4]: Incompatibilidade de tipos: não é possível atribuir 'string' à variável 'x' do tipo 'INTEGER'.
+
+[FALHA SEMÂNTICA] 1 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-diferentes-tipos.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: opsDiferentesTip | Tipo: ID         | Atributo: opsDiferentesTip
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "abc"      | Tipo: CADEIA     | Atributo: abc
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: FALSE      | Tipo: FALSE      | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program opsDiferentesTip ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "abc")) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 5)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: opsDiferentesTip
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [5:19]: Operação '+' inválida entre 'integer' e 'boolean'.
+Erro Semântico [5:15]: Operação '+' inválida entre 'string' e 'integer'.
+
+[FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/if-not-boolean.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: ifnotboolean | Tipo: ID         | Atributo: ifnotboolean
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: ~          | Tipo: OPNEG      | Atributo: NEG
+Token: "erro"     | Tipo: CADEIA     | Atributo: erro
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program ifnotboolean ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin listCmd end) cmdIfLine)) ; (listCmd (varDecl var (declTip (listId x listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar "erro"))) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: ifnotboolean
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [3:7]: Expressão condicional deve resultar em 'boolean', mas resultou em 'integer'.
+Erro Semântico [7:9]: Operador '~' inválido para o tipo 'string'. Esperado 'boolean'.
+Erro Semântico [7:4]: Incompatibilidade de tipos: não é possível atribuir 'boolean' à variável 'x' do tipo 'STRING'.
+
+[FALHA SEMÂNTICA] 3 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.004">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/tamanho-constante.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: tamanhoConstante | Tipo: ID         | Atributo: tamanhoConstante
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: -32769     | Tipo: CTE        | Atributo: -32769
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 32768      | Tipo: CTE        | Atributo: 32768
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program tamanhoConstante ; (decls var (listDecl (declTip (listId y (listIdLine , z listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar -32769)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 32768)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: tamanhoConstante
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [4:9]: Constante '-32769' excede o limite de 2 bytes (-32768 a 32767).
+Erro Semântico [5:9]: Constante '32768' excede o limite de 2 bytes (-32768 a 32767).
+
+[FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.004">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-bool-int.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: opsBoolComInt | Tipo: ID         | Atributo: opsBoolComInt
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: boolean    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: and        | Tipo: OPLOG      | Atributo: AND
+Token: y          | Tipo: ID         | Atributo: y
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program opsBoolComInt ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) (listDeclLine (declTip (listId z listIdLine) : (tip boolean) ;) listDeclLine))) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) (exprLogLine and (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; listCmd)))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: opsBoolComInt
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [7:11]: Operação lógica 'and' inválida entre 'integer' e 'integer'.
+
+[FALHA SEMÂNTICA] 1 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsEmptyScript" classname="com.inm.PipelineTest" time="0.004">
+    <system-out><![CDATA[
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+]]></system-out>
+    <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 1:0 mismatched input '<EOF>' expecting 'PROGRAM'
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.028">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/atribuicao.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: atribuicao | Tipo: ID         | Atributo: atribuicao
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: variavel   | Tipo: ID         | Atributo: variavel
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: variavel   | Tipo: ID         | Atributo: variavel
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: variavel   | Tipo: ID         | Atributo: variavel
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program atribuicao ; (decls var (listDecl (declTip (listId variavel listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib variavel := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar variavel)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: atribuicao
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_variavel = 2
+WRITE v_variavel
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_variavel = 2
+WRITE 2
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : atribuicao
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_variavel dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_variavel = 2
+	mov word [v_variavel], 2
+
+	; WRITE 2
+	mov eax, 2
+	push eax
+	call _print_int
+	add esp, 4
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\atribuicao.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.01">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/comentario-e-div.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: comentarioEDiv | Tipo: ID         | Atributo: comentarioEDiv
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: div        | Tipo: ID         | Atributo: div
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: div        | Tipo: ID         | Atributo: div
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program comentarioEDiv ; (decls var (listDecl (declTip (listId div listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib div := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: comentarioEDiv
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+t0 = 2 / 2
+v_div = t0
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+t0 = 1
+v_div = 1
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : comentarioEDiv
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_div dw 0
+	t0 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; t0 = 1
+	mov word [t0], 1
+
+	; v_div = 1
+	mov word [v_div], 1
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\comentarioediv.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.017">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/dangling-else.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: danglingelse | Tipo: ID         | Atributo: danglingelse
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ==         | Tipo: OPREL      | Atributo: IGUAL
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: ==         | Tipo: OPREL      | Atributo: IGUAL
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "se"       | Tipo: CADEIA     | Atributo: se
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: else       | Tipo: ELSE       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "nao"      | Tipo: CADEIA     | Atributo: nao
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program danglingelse ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine == (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine == (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "se")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end) (cmdIfLine else (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "nao")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end)))) ; listCmd)) end) cmdIfLine)) ; listCmd)))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: danglingelse
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_x = 1
+v_y = 1
+t0 = v_x == 1
+ifFalse t0 goto L0
+t1 = v_y == 2
+ifFalse t1 goto L2
+WRITE "se"
+goto L3
+L2:
+WRITE "nao"
+L3:
+L0:
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_x = 1
+v_y = 1
+t0 = 1 == 1
+ifFalse t0 goto L0
+t1 = 1 == 2
+ifFalse t1 goto L2
+WRITE "se"
+goto L3
+L2:
+WRITE "nao"
+L3:
+L0:
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : danglingelse
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	v_y dw 0
+	t0 dw 0
+	t1 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'se', 10
+	_str0_len equ $ - _str0
+	_str1 db 'nao', 10
+	_str1_len equ $ - _str1
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_x = 1
+	mov word [v_x], 1
+
+	; v_y = 1
+	mov word [v_y], 1
+
+	; t0 = 1 == 1
+	mov ax, 1
+	cmp ax, 1
+	je cmp_t_t0
+	mov byte [t0], 0
+	jmp cmp_e_t0
+cmp_t_t0:
+	mov byte [t0], 1
+cmp_e_t0:
+
+	; ifFalse t0 goto L0
+	movzx eax, byte [t0]
+	cmp eax, 0
+	je L0
+
+	; t1 = 1 == 2
+	mov ax, 1
+	cmp ax, 2
+	je cmp_t_t1
+	mov byte [t1], 0
+	jmp cmp_e_t1
+cmp_t_t1:
+	mov byte [t1], 1
+cmp_e_t1:
+
+	; ifFalse t1 goto L2
+	movzx eax, byte [t1]
+	cmp eax, 0
+	je L2
+
+	; WRITE "se"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; goto L3
+	jmp L3
+
+	; L2:
+L2:
+
+	; WRITE "nao"
+	mov ecx, _str1
+	mov edx, _str1_len
+	call _print_str
+
+	; L3:
+L3:
+
+	; L0:
+L0:
+
+	; L1:
+L1:
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\danglingelse.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/escreve-teste.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: EscreveTeste | Tipo: ID         | Atributo: EscreveTeste
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste"    | Tipo: CADEIA     | Atributo: teste
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program EscreveTeste ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: EscreveTeste
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE "teste"
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE "teste"
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : EscreveTeste
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'teste', 10
+	_str0_len equ $ - _str0
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; WRITE "teste"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\escreveteste.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.019">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/expr-ari.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: exprAri    | Tipo: ID         | Atributo: exprAri
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 3          | Tipo: CTE        | Atributo: 3
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: y          | Tipo: ID         | Atributo: y
+Token: *          | Tipo: OPMULT     | Atributo: VEZES
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program exprAri ; (decls var (listDecl (declTip (listId x (listIdLine , y (listIdLine , z listIdLine))) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 3)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar y)) (exprMultLine * (exprNeg (exprPar 2)) exprMultLine)) (exprAdLine - (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar z)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: exprAri
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_x = 10
+v_y = 3
+t0 = v_y * 2
+t1 = t0 - 1
+t2 = v_x + t1
+v_z = t2
+WRITE v_z
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_x = 10
+v_y = 3
+t0 = 3 << 1
+t1 = t0 - 1
+t2 = 10 + t1
+v_z = t2
+WRITE v_z
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : exprAri
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	v_y dw 0
+	v_z dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_x = 10
+	mov word [v_x], 10
+
+	; v_y = 3
+	mov word [v_y], 3
+
+	; t0 = 3 << 1
+	mov ax, 3
+	shl ax, 1
+	mov word [t0], ax
+
+	; t1 = t0 - 1
+	mov ax, word [t0]
+	sub ax, 1
+	mov word [t1], ax
+
+	; t2 = 10 + t1
+	mov ax, 10
+	add ax, word [t1]
+	mov word [t2], ax
+
+	; v_z = t2
+	mov ax, word [t2]
+	mov word [v_z], ax
+
+	; WRITE v_z
+	movsx eax, word [v_z]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\exprari.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.007">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/nome-identificador.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: nomeIdentificado | Tipo: ID         | Atributo: nomeIdentificado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: variavelasdae32e | Tipo: ID         | Atributo: variavelasdae32e
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: variavelasdae32e | Tipo: ID         | Atributo: variavelasdae32e
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: variavelasdae32e | Tipo: ID         | Atributo: variavelasdae32e
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program nomeIdentificado ; (decls var (listDecl (declTip (listId variavelasdae32e listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib variavelasdae32e := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar variavelasdae32e)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: nomeIdentificado
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_variavelasdae32e = 2
+WRITE v_variavelasdae32e
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_variavelasdae32e = 2
+WRITE 2
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : nomeIdentificado
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_variavelasdae32e dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_variavelasdae32e = 2
+	mov word [v_variavelasdae32e], 2
+
+	; WRITE 2
+	mov eax, 2
+	push eax
+	call _print_int
+	add esp, 4
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\nomeidentificado.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/variaveis.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: variaveis  | Tipo: ID         | Atributo: variaveis
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: sTrInG     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: read       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program variaveis ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) (listDeclLine (declTip (listId z listIdLine) : (tip sTrInG) ;) listDeclLine))) (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId z listIdLine) ))) ; listCmd)))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: variaveis
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE v_x
+WRITE v_y
+READ v_z
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE v_x
+WRITE v_y
+READ v_z
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : variaveis
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	v_y dw 0
+	v_z times 256 db 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; WRITE v_x
+	movsx eax, word [v_x]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; WRITE v_y
+	movsx eax, word [v_y]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; READ v_z
+	call _read_int
+	mov word [v_z], ax
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+_read_int:
+	mov eax, 3
+	mov ebx, 0
+	mov ecx, _ibuf
+	mov edx, 12
+	int 0x80
+	mov esi, _ibuf
+	xor eax, eax
+	xor ecx, ecx
+.rloop:
+	mov cl, [esi]
+	cmp cl, 10
+	je .rdone
+	cmp cl, 0
+	je .rdone
+	sub cl, '0'
+	imul eax, 10
+	add eax, ecx
+	inc esi
+	jmp .rloop
+.rdone:
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\variaveis.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/while-script.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: whilescript | Tipo: ID         | Atributo: whilescript
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: while      | Tipo: WHILE      | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: <          | Tipo: OPREL      | Atributo: MENOR
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: do         | Tipo: DO         | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: id         | Tipo: ID         | Atributo: id
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program whilescript ; (decls var (listDecl (declTip (listId id listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib id := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile while (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) do (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib id := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: whilescript
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_id = 0
+L0:
+t0 = v_id < 10
+ifFalse t0 goto L1
+t1 = v_id + 1
+v_id = t1
+WRITE v_id
+goto L0
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_id = 0
+L0:
+t0 = v_id < 10
+ifFalse t0 goto L1
+t1 = v_id + 1
+v_id = t1
+WRITE v_id
+goto L0
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : whilescript
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_id dw 0
+	t0 dw 0
+	t1 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_id = 0
+	mov word [v_id], 0
+
+	; L0:
+L0:
+
+	; t0 = v_id < 10
+	mov ax, word [v_id]
+	cmp ax, 10
+	jl cmp_t_t0
+	mov byte [t0], 0
+	jmp cmp_e_t0
+cmp_t_t0:
+	mov byte [t0], 1
+cmp_e_t0:
+
+	; ifFalse t0 goto L1
+	movzx eax, byte [t0]
+	cmp eax, 0
+	je L1
+
+	; t1 = v_id + 1
+	mov ax, word [v_id]
+	add ax, 1
+	mov word [t1], ax
+
+	; v_id = t1
+	mov ax, word [t1]
+	mov word [v_id], ax
+
+	; WRITE v_id
+	movsx eax, word [v_id]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; goto L0
+	jmp L0
+
+	; L1:
+L1:
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\whilescript.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.013">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/condicional.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: condicional | Tipo: ID         | Atributo: condicional
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: >          | Tipo: OPREL      | Atributo: MAIOR
+Token: 3          | Tipo: CTE        | Atributo: 3
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "maior"    | Tipo: CADEIA     | Atributo: maior
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "dois"     | Tipo: CADEIA     | Atributo: dois
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: else       | Tipo: ELSE       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "menor"    | Tipo: CADEIA     | Atributo: menor
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program condicional ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar 3)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "maior")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "dois")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) (cmdIfLine else (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "menor")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end)))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: condicional
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_x = 5
+t0 = v_x > 3
+ifFalse t0 goto L0
+WRITE "maior"
+WRITE "dois"
+goto L1
+L0:
+WRITE "menor"
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_x = 5
+t0 = 5 > 3
+ifFalse t0 goto L0
+WRITE "maior"
+WRITE "dois"
+goto L1
+L0:
+WRITE "menor"
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : condicional
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	t0 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'maior', 10
+	_str0_len equ $ - _str0
+	_str1 db 'dois', 10
+	_str1_len equ $ - _str1
+	_str2 db 'menor', 10
+	_str2_len equ $ - _str2
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_x = 5
+	mov word [v_x], 5
+
+	; t0 = 5 > 3
+	mov ax, 5
+	cmp ax, 3
+	jg cmp_t_t0
+	mov byte [t0], 0
+	jmp cmp_e_t0
+cmp_t_t0:
+	mov byte [t0], 1
+cmp_e_t0:
+
+	; ifFalse t0 goto L0
+	movzx eax, byte [t0]
+	cmp eax, 0
+	je L0
+
+	; WRITE "maior"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; WRITE "dois"
+	mov ecx, _str1
+	mov edx, _str1_len
+	call _print_str
+
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; WRITE "menor"
+	mov ecx, _str2
+	mov edx, _str2_len
+	call _print_str
+
+	; L1:
+L1:
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\condicional.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[10]" classname="com.inm.PipelineTest" time="0.012">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/if-aninhado.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: ifaninhado | Tipo: ID         | Atributo: ifaninhado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste7"   | Tipo: CADEIA     | Atributo: teste7
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: true       | Tipo: TRUE       | Atributo: -
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste5"   | Tipo: CADEIA     | Atributo: teste5
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: 4          | Tipo: CTE        | Atributo: 4
+Token: >          | Tipo: OPREL      | Atributo: MAIOR
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste3"   | Tipo: CADEIA     | Atributo: teste3
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: if         | Tipo: IF         | Atributo: -
+Token: ~          | Tipo: OPNEG      | Atributo: NEG
+Token: false      | Tipo: FALSE      | Atributo: -
+Token: then       | Tipo: THEN       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste1"   | Tipo: CADEIA     | Atributo: teste1
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste2"   | Tipo: CADEIA     | Atributo: teste2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste4"   | Tipo: CADEIA     | Atributo: teste4
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste6"   | Tipo: CADEIA     | Atributo: teste6
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "teste8"   | Tipo: CADEIA     | Atributo: teste8
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program ifaninhado ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste7")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar true)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste5")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 4)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste3")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar false))) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste1")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste2")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste4")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste6")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste8")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: ifaninhado
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE "teste7"
+ifFalse TRUE goto L0
+WRITE "teste5"
+t0 = 4 > 2
+ifFalse t0 goto L2
+WRITE "teste3"
+t1 = ~FALSE
+ifFalse t1 goto L4
+WRITE "teste1"
+WRITE "teste2"
+L4:
+L5:
+WRITE "teste4"
+L2:
+L3:
+WRITE "teste6"
+L0:
+L1:
+WRITE "teste8"
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE "teste7"
+ifFalse TRUE goto L0
+WRITE "teste5"
+t0 = 4 > 2
+ifFalse t0 goto L2
+WRITE "teste3"
+t1 = ~FALSE
+ifFalse t1 goto L4
+WRITE "teste1"
+WRITE "teste2"
+L4:
+L5:
+WRITE "teste4"
+L2:
+L3:
+WRITE "teste6"
+L0:
+L1:
+WRITE "teste8"
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : ifaninhado
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	t0 dw 0
+	t1 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'teste7', 10
+	_str0_len equ $ - _str0
+	_str1 db 'teste5', 10
+	_str1_len equ $ - _str1
+	_str2 db 'teste3', 10
+	_str2_len equ $ - _str2
+	_str3 db 'teste1', 10
+	_str3_len equ $ - _str3
+	_str4 db 'teste2', 10
+	_str4_len equ $ - _str4
+	_str5 db 'teste4', 10
+	_str5_len equ $ - _str5
+	_str6 db 'teste6', 10
+	_str6_len equ $ - _str6
+	_str7 db 'teste8', 10
+	_str7_len equ $ - _str7
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; WRITE "teste7"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; ifFalse TRUE goto L0
+	mov eax, 1
+	cmp eax, 0
+	je L0
+
+	; WRITE "teste5"
+	mov ecx, _str1
+	mov edx, _str1_len
+	call _print_str
+
+	; t0 = 4 > 2
+	mov ax, 4
+	cmp ax, 2
+	jg cmp_t_t0
+	mov byte [t0], 0
+	jmp cmp_e_t0
+cmp_t_t0:
+	mov byte [t0], 1
+cmp_e_t0:
+
+	; ifFalse t0 goto L2
+	movzx eax, byte [t0]
+	cmp eax, 0
+	je L2
+
+	; WRITE "teste3"
+	mov ecx, _str2
+	mov edx, _str2_len
+	call _print_str
+
+	; t1 = ~FALSE
+	mov al, 0
+	xor al, 1
+	mov byte [t1], al
+
+	; ifFalse t1 goto L4
+	movzx eax, byte [t1]
+	cmp eax, 0
+	je L4
+
+	; WRITE "teste1"
+	mov ecx, _str3
+	mov edx, _str3_len
+	call _print_str
+
+	; WRITE "teste2"
+	mov ecx, _str4
+	mov edx, _str4_len
+	call _print_str
+
+	; L4:
+L4:
+
+	; L5:
+L5:
+
+	; WRITE "teste4"
+	mov ecx, _str5
+	mov edx, _str5_len
+	call _print_str
+
+	; L2:
+L2:
+
+	; L3:
+L3:
+
+	; WRITE "teste6"
+	mov ecx, _str6
+	mov edx, _str6_len
+	call _print_str
+
+	; L0:
+L0:
+
+	; L1:
+L1:
+
+	; WRITE "teste8"
+	mov ecx, _str7
+	mov edx, _str7_len
+	call _print_str
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\ifaninhado.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.013">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/projeto-compiladores.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: ProjetoCompilado | Tipo: ID         | Atributo: ProjetoCompilado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "INFORME A PRIMEIRA NOTA" | Tipo: CADEIA     | Atributo: INFORME A PRIMEIRA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "INFORME A SEGUNDA NOTA" | Tipo: CADEIA     | Atributo: INFORME A SEGUNDA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: BOOLEAN    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: >=         | Tipo: OPREL      | Atributo: MAIG
+Token: 7          | Tipo: CTE        | Atributo: 7
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: IF         | Tipo: IF         | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: THEN       | Tipo: THEN       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "Aprovado" | Tipo: CADEIA     | Atributo: Aprovado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ELSE       | Tipo: ELSE       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "Reprovado" | Tipo: CADEIA     | Atributo: Reprovado
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM ProjetoCompilado ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId nota1 (listIdLine , nota2 listIdLine)) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId resultado listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "INFORME A PRIMEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota1 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "INFORME A SEGUNDA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota2 listIdLine) ))) ; (listCmd (varDecl VAR (declTip (listId media listIdLine) : (tip INTEGER) ;) (listCmd (cmdDecl (cmd (cmdAtrib media := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar nota1)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota2)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (varDecl VAR (declTip (listId aprovado listIdLine) : (tip BOOLEAN) ;) (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Aprovado")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Reprovado")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; listCmd)))))))))))))))))))))))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: ProjetoCompilado
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE "INFORME A PRIMEIRA NOTA"
+READ v_nota1
+WRITE "INFORME A SEGUNDA NOTA"
+READ v_nota2
+t0 = v_nota1 + v_nota2
+t1 = t0 / 2
+v_media = t1
+WRITE v_media
+t2 = v_media >= 7
+v_aprovado = t2
+WRITE v_aprovado
+ifFalse v_aprovado goto L0
+v_resultado = "Aprovado"
+WRITE v_resultado
+goto L1
+L0:
+v_resultado = "Reprovado"
+WRITE v_resultado
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE "INFORME A PRIMEIRA NOTA"
+READ v_nota1
+WRITE "INFORME A SEGUNDA NOTA"
+READ v_nota2
+t0 = v_nota1 + v_nota2
+t1 = t0 / 2
+v_media = t1
+WRITE v_media
+t2 = v_media >= 7
+v_aprovado = t2
+WRITE v_aprovado
+ifFalse v_aprovado goto L0
+v_resultado = "Aprovado"
+WRITE v_resultado
+goto L1
+L0:
+v_resultado = "Reprovado"
+WRITE v_resultado
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : ProjetoCompilado
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_nota1 dw 0
+	v_resultado times 256 db 0
+	v_aprovado db 0
+	v_nota2 dw 0
+	v_media dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'INFORME A PRIMEIRA NOTA', 10
+	_str0_len equ $ - _str0
+	_str1 db 'INFORME A SEGUNDA NOTA', 10
+	_str1_len equ $ - _str1
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; WRITE "INFORME A PRIMEIRA NOTA"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; READ v_nota1
+	call _read_int
+	mov word [v_nota1], ax
+
+	; WRITE "INFORME A SEGUNDA NOTA"
+	mov ecx, _str1
+	mov edx, _str1_len
+	call _print_str
+
+	; READ v_nota2
+	call _read_int
+	mov word [v_nota2], ax
+
+	; t0 = v_nota1 + v_nota2
+	mov ax, word [v_nota1]
+	add ax, word [v_nota2]
+	mov word [t0], ax
+
+	; t1 = t0 / 2
+	mov ax, word [t0]
+	cwd
+	mov bx, 2
+	idiv bx
+	mov word [t1], ax
+
+	; v_media = t1
+	mov ax, word [t1]
+	mov word [v_media], ax
+
+	; WRITE v_media
+	movsx eax, word [v_media]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; t2 = v_media >= 7
+	mov ax, word [v_media]
+	cmp ax, 7
+	jge cmp_t_t2
+	mov byte [t2], 0
+	jmp cmp_e_t2
+cmp_t_t2:
+	mov byte [t2], 1
+cmp_e_t2:
+
+	; v_aprovado = t2
+	mov al, byte [t2]
+	mov byte [v_aprovado], al
+
+	; WRITE v_aprovado
+	movzx eax, byte [v_aprovado]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; ifFalse v_aprovado goto L0
+	movzx eax, byte [v_aprovado]
+	cmp eax, 0
+	je L0
+
+	; v_resultado = "Aprovado"
+	; [NÃO TRADUZIDO] v_resultado = "Aprovado"
+
+	; WRITE v_resultado
+	mov ecx, v_resultado
+	mov edx, 256
+	call _print_str
+
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; v_resultado = "Reprovado"
+	; [NÃO TRADUZIDO] v_resultado = "Reprovado"
+
+	; WRITE v_resultado
+	mov ecx, v_resultado
+	mov edx, 256
+	call _print_str
+
+	; L1:
+L1:
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+_read_int:
+	mov eax, 3
+	mov ebx, 0
+	mov ecx, _ibuf
+	mov edx, 12
+	int 0x80
+	mov esi, _ibuf
+	xor eax, eax
+	xor ecx, ecx
+.rloop:
+	mov cl, [esi]
+	cmp cl, 10
+	je .rdone
+	cmp cl, 0
+	je .rdone
+	sub cl, '0'
+	imul eax, 10
+	add eax, ecx
+	inc esi
+	jmp .rloop
+.rdone:
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\projetocompilado.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.007">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/calculo-desconto.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: calculoDesconto | Tipo: ID         | Atributo: calculoDesconto
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: preco      | Tipo: ID         | Atributo: preco
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "Informe o Preço" | Tipo: CADEIA     | Atributo: Informe o Preço
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: read       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: preco      | Tipo: ID         | Atributo: preco
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: preco      | Tipo: ID         | Atributo: preco
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: preco      | Tipo: ID         | Atributo: preco
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: 15         | Tipo: CTE        | Atributo: 15
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: resultado  | Tipo: ID         | Atributo: resultado
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program calculoDesconto ; (decls var (listDecl (declTip (listId preco (listIdLine , resultado listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Informe o Preço")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId preco listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar preco)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar preco)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar 15)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: calculoDesconto
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+t0 = 5 / 2
+WRITE t0
+WRITE "Informe o Preço"
+READ v_preco
+WRITE v_preco
+t1 = v_preco - 15
+v_resultado = t1
+WRITE v_resultado
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+t0 = 2
+WRITE 2
+WRITE "Informe o Preço"
+READ v_preco
+WRITE v_preco
+t1 = v_preco - 15
+v_resultado = t1
+WRITE v_resultado
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : calculoDesconto
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_preco dw 0
+	v_resultado dw 0
+	t0 dw 0
+	t1 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+	_str0 db 'Informe o Preço', 10
+	_str0_len equ $ - _str0
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; t0 = 2
+	mov word [t0], 2
+
+	; WRITE 2
+	mov eax, 2
+	push eax
+	call _print_int
+	add esp, 4
+
+	; WRITE "Informe o Preço"
+	mov ecx, _str0
+	mov edx, _str0_len
+	call _print_str
+
+	; READ v_preco
+	call _read_int
+	mov word [v_preco], ax
+
+	; WRITE v_preco
+	movsx eax, word [v_preco]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; t1 = v_preco - 15
+	mov ax, word [v_preco]
+	sub ax, 15
+	mov word [t1], ax
+
+	; v_resultado = t1
+	mov ax, word [t1]
+	mov word [v_resultado], ax
+
+	; WRITE v_resultado
+	movsx eax, word [v_resultado]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+_print_str:
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	ret
+
+_read_int:
+	mov eax, 3
+	mov ebx, 0
+	mov ecx, _ibuf
+	mov edx, 12
+	int 0x80
+	mov esi, _ibuf
+	xor eax, eax
+	xor ecx, ecx
+.rloop:
+	mov cl, [esi]
+	cmp cl, 10
+	je .rdone
+	cmp cl, 0
+	je .rdone
+	sub cl, '0'
+	imul eax, 10
+	add eax, ecx
+	inc esi
+	jmp .rloop
+.rdone:
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\calculodesconto.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/teste-while.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: loopTest   | Tipo: ID         | Atributo: loopTest
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: while      | Tipo: WHILE      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: <          | Tipo: OPREL      | Atributo: MENOR
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: do         | Tipo: DO         | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: 1          | Tipo: CTE        | Atributo: 1
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program loopTest ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile while (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) do (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; listCmd)))) end))) ; listCmd)))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: loopTest
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_x = 0
+L0:
+t0 = v_x < 5
+ifFalse t0 goto L1
+WRITE v_x
+t1 = v_x + 1
+v_x = t1
+goto L0
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_x = 0
+L0:
+t0 = v_x < 5
+ifFalse t0 goto L1
+WRITE v_x
+t1 = v_x + 1
+v_x = t1
+goto L0
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : loopTest
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	t0 dw 0
+	t1 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_x = 0
+	mov word [v_x], 0
+
+	; L0:
+L0:
+
+	; t0 = v_x < 5
+	mov ax, word [v_x]
+	cmp ax, 5
+	jl cmp_t_t0
+	mov byte [t0], 0
+	jmp cmp_e_t0
+cmp_t_t0:
+	mov byte [t0], 1
+cmp_e_t0:
+
+	; ifFalse t0 goto L1
+	movzx eax, byte [t0]
+	cmp eax, 0
+	je L1
+
+	; WRITE v_x
+	movsx eax, word [v_x]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; t1 = v_x + 1
+	mov ax, word [v_x]
+	add ax, 1
+	mov word [t1], ax
+
+	; v_x = t1
+	mov ax, word [t1]
+	mov word [v_x], ax
+
+	; goto L0
+	jmp L0
+
+	; L1:
+L1:
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\looptest.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.007">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/super-expr.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: program    | Tipo: PROGRAM    | Atributo: -
+Token: superExpr  | Tipo: ID         | Atributo: superExpr
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: integer    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: begin      | Tipo: BEGIN      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: y          | Tipo: ID         | Atributo: y
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: x          | Tipo: ID         | Atributo: x
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: y          | Tipo: ID         | Atributo: y
+Token: *          | Tipo: OPMULT     | Atributo: VEZES
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: 4          | Tipo: CTE        | Atributo: 4
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: z          | Tipo: ID         | Atributo: z
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: end        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog program superExpr ; (decls var (listDecl (declTip (listId x (listIdLine , y (listIdLine , z listIdLine))) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar y)) (exprMultLine * (exprNeg (exprPar 2)) exprMultLine)) (exprAdLine - (exprMult (exprNeg (exprPar 4)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar z)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))) end) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: superExpr
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_x = 10
+v_y = 5
+t0 = v_y * 2
+t1 = 4 / 2
+t2 = t0 - t1
+t3 = v_x + t2
+v_z = t3
+WRITE v_z
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_x = 10
+v_y = 5
+t0 = 5 << 1
+t1 = 2
+t2 = t0 - 2
+t3 = 10 + t2
+v_z = t3
+WRITE v_z
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (Sintaxe Intel Clássica) ---
+; ============================================
+; Programa  : superExpr
+; Gerado por: Compilador INM
+; Alvo      : x86 32 bits (NASM, Linux i386)
+; ============================================
+
+bits 32
+
+section .data
+	v_x dw 0
+	v_y dw 0
+	v_z dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 dw 0
+	t3 dw 0
+	_buf times 12 db 0
+	_nl  db 10
+
+section .bss
+	_ibuf resb 12
+
+section .text
+global _start
+
+_start:
+	; v_x = 10
+	mov word [v_x], 10
+
+	; v_y = 5
+	mov word [v_y], 5
+
+	; t0 = 5 << 1
+	mov ax, 5
+	shl ax, 1
+	mov word [t0], ax
+
+	; t1 = 2
+	mov word [t1], 2
+
+	; t2 = t0 - 2
+	mov ax, word [t0]
+	sub ax, 2
+	mov word [t2], ax
+
+	; t3 = 10 + t2
+	mov ax, 10
+	add ax, word [t2]
+	mov word [t3], ax
+
+	; v_z = t3
+	mov ax, word [t3]
+	mov word [v_z], ax
+
+	; WRITE v_z
+	movsx eax, word [v_z]
+	push eax
+	call _print_int
+	add esp, 4
+
+	; encerramento: syscall exit(0)
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	mov eax, [ebp+8]
+	lea ecx, [_buf+11]
+	mov byte [ecx], 10
+	mov ebx, 10
+	test eax, eax
+	jns .ppos
+	neg eax
+.ppos:
+	dec ecx
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov [ecx], dl
+	test eax, eax
+	jnz .ppos
+	mov eax, [ebp+8]
+	test eax, eax
+	jns .pwrite
+	dec ecx
+	mov byte [ecx], '-'
+.pwrite:
+	lea edx, [_buf+12]
+	sub edx, ecx
+	mov eax, 4
+	mov ebx, 1
+	int 0x80
+	pop ebp
+	ret
+
+----------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\superexpr.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+</testsuite>

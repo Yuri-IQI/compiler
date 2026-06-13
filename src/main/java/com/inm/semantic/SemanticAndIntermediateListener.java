@@ -1,10 +1,9 @@
 package com.inm.semantic;
 
-import com.inm.analyzer.ExecutionContext;
+import com.inm.compilation.CompilationContext;
 import com.inm.antlr4.ProgramBaseListener;
 import com.inm.antlr4.ProgramParser;
 import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     private final Stack<String> labelStack = new Stack<>();
     private int errorCount = 0;
 
-    public SemanticAndIntermediateListener(ExecutionContext context) {
+    public SemanticAndIntermediateListener(CompilationContext context) {
         this.tac = context.threeAddressCode();
         this.currentScope = new SymbolTable();
     }
@@ -57,7 +56,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         currentScope = currentScope.getParent();
     }
 
-    // --- 1. CAPTURA DE DECLARAÇÃO DE VARIÁVEIS ---
     @Override
     public void exitDeclTip(ProgramParser.DeclTipContext ctx) {
         if (ctx.listId() == null || ctx.tip() == null) return;
@@ -84,7 +82,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         findIdsInLine(lineCtx.listIdLine(), idList);
     }
 
-    // --- 2. COMANDO DE ATRIBUIÇÃO ---
     @Override
     public void exitCmdAtrib(ProgramParser.CmdAtribContext ctx) {
         if (ctx.ID() == null || exprStack.isEmpty()) return;
@@ -104,7 +101,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         emit(SymbolTable.getPrefixedName(idName) + " = " + expr.getValue());
     }
 
-    // --- 3. OPERAÇÕES MATEMÁTICAS, RELACIONAIS E LOGICAS (EXPR) ---
     @Override
     public void exitExprRel(ProgramParser.ExprRelContext ctx) {
         if (ctx.exprRelLine() != null && ctx.exprRelLine().OPREL() != null

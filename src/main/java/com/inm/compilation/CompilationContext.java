@@ -1,11 +1,12 @@
-package com.inm.analyzer;
+package com.inm.compilation;
 
 import com.inm.antlr4.ProgramParser;
 import com.inm.semantic.SymbolTable;
 import com.inm.semantic.ThreeAddressCode;
+import com.inm.terminal.ExecutionParams;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-public class ExecutionContext {
+public class CompilationContext {
 
     private String programName;
     private ParseTree tree;
@@ -13,18 +14,21 @@ public class ExecutionContext {
     private SymbolTable symbolTable;
     private ThreeAddressCode threeAddressCode;
     private String finalCode;
+    private String asmPath;
+    private ExecutionParams executionParams;
 
-    public ExecutionContext() {
+    public CompilationContext() {
         this.symbolTable = new SymbolTable();
         this.threeAddressCode = new ThreeAddressCode();
     }
 
-    public ExecutionContext(String programName, ParseTree tree, ProgramParser parser) {
+    public CompilationContext(String programName, ParseTree tree, ProgramParser parser, ExecutionParams executionParams) {
         this.programName = programName;
         this.tree = tree;
         this.parser = parser;
         this.symbolTable = new SymbolTable();
         this.threeAddressCode = new ThreeAddressCode();
+        this.executionParams = executionParams;
     }
 
     public String programName() { return programName; }
@@ -32,9 +36,11 @@ public class ExecutionContext {
     public ProgramParser parser() { return parser; }
     public SymbolTable symbolTable() { return symbolTable; }
     public ThreeAddressCode threeAddressCode() { return threeAddressCode; }
-    public String finalCode() { return finalCode; }
+    public String asmPath() { return asmPath; }
+    public ExecutionParams executionParams() { return executionParams; }
 
     public void setSymbolTable(SymbolTable symbolTable) { this.symbolTable = symbolTable; }
     public void setThreeAddressCode(ThreeAddressCode tac) { this.threeAddressCode = tac; }
     public void setFinalCode(String finalCode) { this.finalCode = finalCode; }
+    public void setAsmPath(String asmPath) { this.asmPath = asmPath; }
 }

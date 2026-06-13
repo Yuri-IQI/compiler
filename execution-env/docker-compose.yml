@@ -1,0 +1,13 @@
+services:
+  service:
+    build: .
+    container_name: execution
+    volumes:
+      - ./outputs:/execution-env/outputs
+      - ./scripts:/execution-env/scripts
+      - ./run.sh:/execution-env/run.sh
+      - ../target/compiler.jar:/execution-env/compiler.jar
+    working_dir: /execution-env
+    stdin_open: true
+    tty: true
+    command: sh

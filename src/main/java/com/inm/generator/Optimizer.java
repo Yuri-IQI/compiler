@@ -1,6 +1,6 @@
 package com.inm.generator;
 
-import com.inm.analyzer.ExecutionContext;
+import com.inm.compilation.CompilationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class Optimizer {
 
-    private final ExecutionContext context;
+    private final CompilationContext context;
 
-    public Optimizer(ExecutionContext context) {
+    public Optimizer(CompilationContext context) {
         this.context = context;
     }
 
@@ -90,7 +90,7 @@ public class Optimizer {
         for (String line : inst) {
             if (line.endsWith(":")) dead = false;
             if (!dead) result.add(line);
-            if (line.startsWith("goto ")) dead = true; // minúsculo, conforme o listener
+            if (line.startsWith("goto ")) dead = true;
         }
         return result;
     }

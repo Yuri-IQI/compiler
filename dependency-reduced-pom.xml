@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.inm</groupId>
-  <artifactId>analisador</artifactId>
+  <artifactId>compiler</artifactId>
   <version>1.0-SNAPSHOT</version>
   <build>
     <plugins>
@@ -17,6 +17,9 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <visitor>true</visitor>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -26,8 +29,8 @@
           <mainClass>com.inm.Main</mainClass>
           <systemProperties>
             <systemProperty>
-              <key>readFile</key>
-              <value>${readFile}</value>
+              <key>mode</key>
+              <value>${mode}</value>
             </systemProperty>
             <systemProperty>
               <key>showTree</key>
@@ -36,6 +39,18 @@
             <systemProperty>
               <key>flag</key>
               <value>${flag}</value>
+            </systemProperty>
+            <systemProperty>
+              <key>output</key>
+              <value>${output}</value>
+            </systemProperty>
+            <systemProperty>
+              <key>filePath</key>
+              <value>${filePath}</value>
+            </systemProperty>
+            <systemProperty>
+              <key>exec</key>
+              <value>${exec}</value>
             </systemProperty>
           </systemProperties>
         </configuration>
@@ -50,7 +65,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <finalName>analisador</finalName>
+              <finalName>compiler</finalName>
               <transformers>
                 <transformer>
                   <mainClass>com.inm.Main</mainClass>
@@ -87,9 +102,13 @@
   <properties>
     <flag>@</flag>
     <maven.compiler.source>21</maven.compiler.source>
+    <filePath>./</filePath>
+    <exex>false</exex>
+    <mode>SCRIPT</mode>
+    <output>output</output>
     <maven.compiler.target>21</maven.compiler.target>
-    <readFile>true</readFile>
-    <showTree>true</showTree>
+    <showTree>false</showTree>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <exec>false</exec>
   </properties>
 </project>

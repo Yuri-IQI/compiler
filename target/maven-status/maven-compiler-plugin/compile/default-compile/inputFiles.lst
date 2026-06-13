@@ -1,13 +1,16 @@
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\analyzer\CompilationExecutor.java
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\analyzer\ExecutionContext.java
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\analyzer\ProgramAnalyzer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramBaseListener.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramLexer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramListener.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramParser.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\CompilationContext.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\CompilationPipeline.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\exceptions\ParsingException.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\exceptions\SemanticException.java
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\AssemblyGenerator.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\AssemblyGenerator.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\HelperInstructions.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\InstructionEmitter.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\InstructionTranslator.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\Writer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\Optimizer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ExceptionPrinter.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ParseHelper.java
@@ -20,3 +23,6 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SemanticAndInterm
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SymbolTable.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\ThreeAddressCode.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\TypedOperand.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\terminal\ExecutionMode.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\terminal\ExecutionParams.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\terminal\TerminalHandler.java

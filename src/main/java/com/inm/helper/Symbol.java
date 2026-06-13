@@ -9,7 +9,7 @@ public record Symbol(
         return switch (type.toUpperCase()) {
             case "INTEGER" -> 2;
             case "BOOLEAN" -> 1;
-            case "STRING"  -> 256;
+            case "STRING" -> 256;
             default -> 0;
         };
     }

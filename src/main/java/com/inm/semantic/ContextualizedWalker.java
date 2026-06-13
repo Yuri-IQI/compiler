@@ -1,14 +1,14 @@
 package com.inm.semantic;
 
-import com.inm.analyzer.ExecutionContext;
+import com.inm.compilation.CompilationContext;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 public class ContextualizedWalker extends ParseTreeWalker {
 
     private final SemanticAndIntermediateListener listener;
-    private final ExecutionContext context;
+    private final CompilationContext context;
 
-    public ContextualizedWalker(SemanticAndIntermediateListener listener, ExecutionContext context) {
+    public ContextualizedWalker(SemanticAndIntermediateListener listener, CompilationContext context) {
         this.listener = listener;
         this.context = context;
     }

@@ -29,18 +29,18 @@ public class PrintingLexer extends ProgramLexer {
         return switch (token) {
             case "ID", "CTE" -> text;
             case "CADEIA" -> text.substring(1, text.length() - 1);
-            case "OPAD"   -> text.equals("+") ? "MAIS" : "MENOS";
+            case "OPAD" -> text.equals("+") ? "MAIS" : "MENOS";
             case "OPMULT" -> text.equals("*") ? "VEZES" : "DIV";
-            case "OPLOG"  -> text.toUpperCase();
-            case "OPNEG"  -> "NEG";
-            case "OPREL"  -> switch (text) {
+            case "OPLOG" -> text.toUpperCase();
+            case "OPNEG" -> "NEG";
+            case "OPREL" -> switch (text) {
                 case "<>" -> "DIFER";
                 case "<=" -> "MENIG";
-                case "<"  -> "MENOR";
+                case "<" -> "MENOR";
                 case ">=" -> "MAIG";
-                case ">"  -> "MAIOR";
+                case ">" -> "MAIOR";
                 case "==" -> "IGUAL";
-                default   -> text;
+                default -> text;
             };
             default -> "-";
         };

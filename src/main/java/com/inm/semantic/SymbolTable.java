@@ -40,19 +40,17 @@ public class SymbolTable {
                     "Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' já declarada neste escopo."
             );
         }
-        Symbol s = new Symbol(getPrefixedName(name), type, currentOffset);
-        currentOffset += s.size();
 
-        if (parent != null) {
-            parent.currentOffset = currentOffset;
-        }
+        Symbol s = new Symbol(getPrefixedName(name), type, root.currentOffset);
+        root.currentOffset += s.size();
+        this.currentOffset = root.currentOffset;
 
         table.put(key, s);
-        root.table.put(key, s);
+        root.table.putIfAbsent(key, s);
     }
 
     public String getType(String name, int line, int col) {
-        String key = name.toLowerCase();
+        String key = name.toLowerCase().replace(prefix, "");
         if (table.containsKey(key))
             return table.get(key).type();
         if (parent != null)

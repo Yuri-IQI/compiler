@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.inm</groupId>
-    <artifactId>analisador</artifactId>
+    <artifactId>compiler</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -31,9 +31,13 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <readFile>true</readFile>
-        <showTree>true</showTree>
+        <mode>SCRIPT</mode>
+        <showTree>false</showTree>
         <flag>@</flag>
+        <exec>false</exec>
+        <output>output</output>
+        <exex>false</exex>
+        <filePath>./</filePath>
     </properties>
 
     <build>
@@ -59,8 +63,8 @@
                     <mainClass>com.inm.Main</mainClass>
                     <systemProperties>
                         <systemProperty>
-                            <key>readFile</key>
-                            <value>${readFile}</value>
+                            <key>mode</key>
+                            <value>${mode}</value>
                         </systemProperty>
                         <systemProperty>
                             <key>showTree</key>
@@ -70,7 +74,27 @@
                             <key>flag</key>
                             <value>${flag}</value>
                         </systemProperty>
+                        <systemProperty>
+                            <key>output</key>
+                            <value>${output}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>filePath</key>
+                            <value>${filePath}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>exec</key>
+                            <value>${exec}</value>
+                        </systemProperty>
                     </systemProperties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.4</version>
+                <configuration>
+                    <runOrder>alphabetical</runOrder>
                 </configuration>
             </plugin>
             <plugin>
@@ -84,7 +108,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>analisador</finalName>
+                            <finalName>compiler</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>com.inm.Main</mainClass>
