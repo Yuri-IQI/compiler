@@ -70,7 +70,6 @@ ELSE : 'ELSE' ;
 
 CTE : ('+' | '-')? [0-9]+  ;
 
-// O comentário vai dar conflito com a divisão enquante ele precisar de uma /
 COMMENT_RULE : '/' [ \t] ~[\r\n]* '/' -> skip ;
 
 // Operadores Aritméticos e Lógicos

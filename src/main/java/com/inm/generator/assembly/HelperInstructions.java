@@ -14,6 +14,8 @@ public class HelperInstructions {
         if (translator.needsPrintBool) generatePrintBool();
         if (translator.needsPrintStr) generatePrintStr();
         if (translator.needsReadInt) generateReadInt();
+        if (translator.needsReadBool) generateReadBool();
+        if (translator.needsReadStr) generateReadStr();
     }
 
     private void generatePrintInt() {
@@ -25,7 +27,9 @@ public class HelperInstructions {
         writer.code("push esi");
         writer.code("movsx eax, word ptr [ebp+8]");
 
-        writer.code("lea ecx, [_buf+13]");
+        writer.code("lea ecx, [_buf+12]");
+        writer.code("mov byte ptr [ecx], 13");
+        writer.code("inc ecx");
         writer.code("mov byte ptr [ecx], 10");
         writer.code("dec ecx");
 
@@ -74,12 +78,12 @@ public class HelperInstructions {
         writer.code("jz pb_false");
 
         writer.code("mov ecx, offset _s_true");
-        writer.code("mov edx, 5");
+        writer.code("mov edx, 6");
         writer.code("jmp pb_write");
 
         writer.label("pb_false:");
         writer.code("mov ecx, offset _s_false");
-        writer.code("mov edx, 6");
+        writer.code("mov edx, 7");
 
         writer.label("pb_write:");
         writer.code("invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0");
@@ -94,21 +98,20 @@ public class HelperInstructions {
         writer.code("push ebp");
         writer.code("mov ebp, esp");
         writer.code("push esi");
-        writer.code("push edi");
+
         writer.code("mov esi, ecx");
+        writer.code("xor edx, edx");
 
-        writer.code("mov edi, ecx");
-        writer.code("xor eax, eax");
-        writer.code("mov ecx, 256");
-        writer.code("repne scasb");
+        writer.label("ps_len:");
+        writer.code("cmp byte ptr [esi+edx], 0");
+        writer.code("je ps_write");
+        writer.code("inc edx");
+        writer.code("jmp ps_len");
 
-        writer.code("mov eax, 256");
-        writer.code("sub eax, ecx");
-        writer.code("dec eax");
+        writer.label("ps_write:");
+        writer.code("invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0");
+        writer.code("invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0");
 
-        writer.code("invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0");
-
-        writer.code("pop edi");
         writer.code("pop esi");
         writer.code("pop ebp");
         writer.code("ret");
@@ -121,12 +124,10 @@ public class HelperInstructions {
         writer.code("mov ebp, esp");
         writer.code("push esi");
         writer.code("push ebx");
-
-        writer.code("invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0");
+        writer.code("invoke ReadFile, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0");
         writer.code("mov esi, offset _ibuf");
         writer.code("xor eax, eax");
         writer.code("xor ebx, ebx");
-
         writer.code("mov cl, byte ptr [esi]");
         writer.code("cmp cl, '-'");
         writer.code("jne ri_loop");
@@ -135,12 +136,10 @@ public class HelperInstructions {
 
         writer.label("ri_loop:");
         writer.code("mov cl, byte ptr [esi]");
-
         writer.code("cmp cl, '0'");
         writer.code("jl ri_done");
         writer.code("cmp cl, '9'");
         writer.code("jg ri_done");
-
         writer.code("sub cl, '0'");
         writer.code("imul eax, eax, 10");
         writer.code("movzx ecx, cl");
@@ -155,6 +154,65 @@ public class HelperInstructions {
 
         writer.label("ri_pos:");
         writer.code("pop ebx");
+        writer.code("pop esi");
+        writer.code("pop ebp");
+        writer.code("ret");
+    }
+
+    private void generateReadBool() {
+        writer.blank();
+        writer.label("_read_bool:");
+        writer.code("push ebp");
+        writer.code("mov ebp, esp");
+        writer.code("push esi");
+        writer.code("invoke ReadFile, dword ptr [_hIn], addr _ibuf, 6, addr _read, 0");
+        writer.code("mov esi, offset _ibuf");
+        writer.code("mov al, byte ptr [esi]");
+        writer.code("or al, 20h");
+        writer.code("cmp al, 't'");
+        writer.code("je rb_true");
+        writer.code("xor al, al");
+        writer.code("jmp rb_done");
+
+        writer.label("rb_true:");
+        writer.code("mov al, 1");
+
+        writer.label("rb_done:");
+        writer.code("pop esi");
+        writer.code("pop ebp");
+        writer.code("ret");
+    }
+
+    private void generateReadStr() {
+        writer.blank();
+        writer.label("_read_str:");
+        writer.code("push ebp");
+        writer.code("mov ebp, esp");
+        writer.code("push esi");
+        writer.code("push edi");
+        writer.code("push ebx");
+        writer.code("mov edi, ecx");
+        writer.code("invoke ReadFile, dword ptr [_hIn], edi, 255, addr _read, 0");
+        writer.code("mov esi, edi");
+        writer.code("xor ebx, ebx");
+
+        writer.label("rs_scan:");
+        writer.code("mov al, byte ptr [esi+ebx]");
+        writer.code("cmp al, 13");
+        writer.code("je rs_trim");
+        writer.code("cmp al, 10");
+        writer.code("je rs_trim");
+        writer.code("cmp al, 0");
+        writer.code("je rs_done");
+        writer.code("inc ebx");
+        writer.code("jmp rs_scan");
+
+        writer.label("rs_trim:");
+        writer.code("mov byte ptr [esi+ebx], 0");
+
+        writer.label("rs_done:");
+        writer.code("pop ebx");
+        writer.code("pop edi");
         writer.code("pop esi");
         writer.code("pop ebp");
         writer.code("ret");

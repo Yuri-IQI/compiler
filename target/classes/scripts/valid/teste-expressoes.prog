@@ -1,0 +1,41 @@
+PROGRAM TesteExpressoes;
+
+BEGIN
+    VAR a, b, c, d : INTEGER;
+    VAR r1, r2 : INTEGER;
+    VAR comp1, comp2, final : BOOLEAN;
+    VAR texto : STRING;
+
+    a := 10;
+    b := 5;
+    c := 2;
+    d := 8;
+
+    r1 := (a + b) * (c + d);
+
+    r2 := (a * b) - (d / c) + (a - c);
+
+    comp1 := r1 > r2;
+
+    comp2 := (a >= b) AND (d <> c);
+
+    final := comp1 OR comp2;
+
+    WRITE(r1);
+    WRITE(r2);
+
+    WRITE(comp1);
+    WRITE(comp2);
+    WRITE(final);
+
+    IF final THEN
+    BEGIN
+        texto := "VERDADEIRO";
+        WRITE(texto);
+    END
+    ELSE
+    BEGIN
+        texto := "FALSO";
+        WRITE(texto);
+    END;
+END.

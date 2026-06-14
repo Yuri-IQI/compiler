@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 public class SymbolTable {
-
     private final Map<String, Symbol> table = new HashMap<>();
     private final SymbolTable parent;
     private int currentOffset;

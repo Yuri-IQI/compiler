@@ -1,15 +1,20 @@
 package com.inm.semantic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ThreeAddressCode {
+    private final Map<String, String> tempTypes = new HashMap<>();
     private List<String> instructions = new ArrayList<>();
     private int tempCounter = 0;
     private int labelCounter = 0;
 
-    public String newTemp() {
-        return "t" + (tempCounter++);
+    public String newTemp(String type) {
+        String temp = "t" + (tempCounter++);
+        tempTypes.put(temp, type);
+        return temp;
     }
 
     public String newLabel() {
@@ -34,5 +39,9 @@ public class ThreeAddressCode {
 
     public boolean hasLabel(String label) {
         return instructions.contains(label + ":");
+    }
+
+    public String getTempType(String temp) {
+        return tempTypes.get(temp);
     }
 }

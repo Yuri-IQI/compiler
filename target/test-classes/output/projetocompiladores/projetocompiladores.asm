@@ -1,7 +1,6 @@
 ; ============================================
-; Programa  : ProjetoCompiladores
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : ProjetoCompiladores
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -20,10 +19,11 @@ includelib kernel32.lib
 	v_media dw 0
 	t0 dw 0
 	t1 dw 0
-	t2 dw 0
+	t2 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -31,6 +31,8 @@ includelib kernel32.lib
 
 	_str0 db 'INFORME A PRIMEIRA NOTA', 0
 	_str1 db 'INFORME A SEGUNDA NOTA', 0
+	_lit_2 db 'Aprovado', 0
+	_lit_3 db 'Reprovado', 0
 
 .data?
 	_ibuf db 12 dup(?)
@@ -48,7 +50,7 @@ start:
 	mov ecx, offset _str0
 	call _print_str
 
-	; READ v_nota1
+	; READ_INTEGER v_nota1
 	call _read_int
 	mov word ptr [v_nota1], ax
 
@@ -56,7 +58,7 @@ start:
 	mov ecx, offset _str1
 	call _print_str
 
-	; READ v_nota2
+	; READ_INTEGER v_nota2
 	call _read_int
 	mov word ptr [v_nota2], ax
 
@@ -104,9 +106,19 @@ cmp_e_t2:
 	movzx eax, byte ptr [v_aprovado]
 	cmp eax, 0
 	je L0
+	cmp eax, 0
+	je L0
 
 	; v_resultado = "Aprovado"
-	; [NÃO TRADUZIDO] v_resultado = "Aprovado"
+	lea esi, _lit_2
+	lea edi, v_resultado
+copy_3:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_3
 
 	; WRITE v_resultado
 	mov ecx, offset v_resultado
@@ -119,7 +131,15 @@ cmp_e_t2:
 L0:
 
 	; v_resultado = "Reprovado"
-	; [NÃO TRADUZIDO] v_resultado = "Reprovado"
+	lea esi, _lit_3
+	lea edi, v_resultado
+copy_4:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_4
 
 	; WRITE v_resultado
 	mov ecx, offset v_resultado
@@ -137,7 +157,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -175,11 +197,11 @@ _print_bool:
 	test eax, eax
 	jz pb_false
 	mov ecx, offset _s_true
-	mov edx, 5
+	mov edx, 6
 	jmp pb_write
 pb_false:
 	mov ecx, offset _s_false
-	mov edx, 6
+	mov edx, 7
 pb_write:
 	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
 	pop ebp
@@ -189,17 +211,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -209,7 +230,7 @@ _read_int:
 	mov ebp, esp
 	push esi
 	push ebx
-	invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
+	invoke ReadFile, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
 	mov esi, offset _ibuf
 	xor eax, eax
 	xor ebx, ebx

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.PipelineTest" time="0.811" tests="31" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.PipelineTest" time="0.815" tests="37" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="C:\Users\Yuri\graalvm21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire16779713370059134463\surefirebooter-20260614152458532_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire16779713370059134463 2026-06-14T15-24-58_423-jvmRun1 surefire-20260614152458532_1tmp surefire_0-20260614152458532_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260 2026-06-14T18-39-43_464-jvmRun1 surefire-20260614183943581_1tmp surefire_0-20260614183943581_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Yuri\Projetos\compiler\target\test-classes;C:\Users\Yuri\Projetos\compiler\target\classes;C:\Users\Yuri\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr4\4.13.2\antlr4-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\Yuri\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\Yuri\.m2\repository\org\abego\treelayout\org.abego.treelayout.core\1.0.3\org.abego.treelayout.core-1.0.3.jar;C:\Users\Yuri\.m2\repository\com\ibm\icu\icu4j\72.1\icu4j-72.1.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Yuri\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire16779713370059134463\surefirebooter-20260614152458532_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-jvmci-23.1-b30"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="rejectsInvalidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.112">
+  <testcase name="rejectsInvalidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.125">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-sem-expr.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -84,7 +84,7 @@ Linha 5:0 mismatched input 'end' expecting {'FALSE', 'TRUE', CTE, '~', '(', ID, 
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.013">
+  <testcase name="rejectsInvalidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/if-sem-then.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -179,7 +179,7 @@ Linha 4:0 missing ';' at 'end'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.004">
+  <testcase name="rejectsInvalidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-pvig.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -204,7 +204,7 @@ Linha 5:4 missing ';' at 'x'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="rejectsInvalidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/tipo-invalido.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -242,7 +242,7 @@ Linha 2:7 missing {'INTEGER', 'BOOLEAN', 'STRING'} at ';'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="rejectsInvalidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.003">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/while-sem-do.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -289,7 +289,7 @@ Linha 2:4 mismatched input 'while' expecting ID
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.003">
+  <testcase name="rejectsInvalidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-duplo-semantico.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -312,7 +312,7 @@ Linha 3:0 missing 'BEGIN' at 'var'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.035">
+  <testcase name="rejectsInvalidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.025">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-wrong-type.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -344,7 +344,7 @@ Fase 1 concluída. Programa: attrWrongType
 [FALHA SEMÂNTICA] 1 erro(s) encontrado(s). Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="rejectsInvalidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-diferentes-tipos.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -375,8 +375,8 @@ Fase 1 concluída. Programa: opsDiferentesTipos
 
 === FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
 ]]></system-out>
-    <system-err><![CDATA[Erro Semântico [5:19]: Operação '+' inválida entre 'integer' e 'boolean'. Esperado 'integer'.
-Erro Semântico [5:15]: Operação '+' inválida entre 'string' e 'undefined'. Esperado 'integer'.
+    <system-err><![CDATA[Erro Semântico [5:19]: Operação '+' inválida... Esperado 'integer'.
+Erro Semântico [5:15]: Operação '+' inválida... Esperado 'integer'.
 Erro Semântico [5:4]: Incompatibilidade de tipos: não é possível atribuir 'undefined' à variável 'x' do tipo 'INTEGER'.
 
 [FALHA SEMÂNTICA] 3 erro(s) encontrado(s). Compilação interrompida.
@@ -462,7 +462,7 @@ Erro Semântico [5:9]: Constante '32768' excede o limite de 2 bytes (-32768 a 32
 [FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.004">
+  <testcase name="rejectsInvalidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-bool-int.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -511,7 +511,105 @@ Erro Semântico [7:4]: Incompatibilidade de tipos: não é possível atribuir 'u
 [FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsEmptyScript" classname="com.inm.PipelineTest" time="0.004">
+  <testcase name="rejectsInvalidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-lexico.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: TesteLexico | Tipo: ID         | Atributo: TesteLexico
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: nome       | Tipo: ID         | Atributo: nome
+Token: muito      | Tipo: ID         | Atributo: muito
+Token: grande     | Tipo: ID         | Atributo: grande
+]]></system-out>
+    <system-err><![CDATA[line 4:12 token recognition error at: '_'
+line 4:18 token recognition error at: '_'
+[ERRO LÉXICO/SINTÁTICO] 
+------ERRO-----------------------------
+Linha 4:13 mismatched input 'muito' expecting {':', ','}
+------ERRO-----------------------------
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsInvalidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.008">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-semantico.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: TesteErros | Tipo: ID         | Atributo: TesteErros
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: numero     | Tipo: ID         | Atributo: numero
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: ativo      | Tipo: ID         | Atributo: ativo
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: BOOLEAN    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: numero     | Tipo: ID         | Atributo: numero
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: TRUE       | Tipo: TRUE       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: ativo      | Tipo: ID         | Atributo: ativo
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: FALSE      | Tipo: FALSE      | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: ativo      | Tipo: ID         | Atributo: ativo
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: numero     | Tipo: ID         | Atributo: numero
+Token: AND        | Tipo: OPLOG      | Atributo: AND
+Token: TRUE       | Tipo: TRUE       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: numero     | Tipo: ID         | Atributo: numero
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "ABC"      | Tipo: CADEIA     | Atributo: ABC
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: IF         | Tipo: IF         | Atributo: -
+Token: numero     | Tipo: ID         | Atributo: numero
+Token: THEN       | Tipo: THEN       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "ERRO"     | Tipo: CADEIA     | Atributo: ERRO
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM TesteErros ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId numero listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId ativo listIdLine) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId texto listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib numero := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib ativo := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib ativo := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar numero)) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib numero := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ABC")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar numero)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ERRO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) END) cmdIfLine)) ; listCmd)))))))))))))))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: TesteErros
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+]]></system-out>
+    <system-err><![CDATA[Erro Semântico [8:4]: Incompatibilidade de tipos: não é possível atribuir 'boolean' à variável 'numero' do tipo 'INTEGER'.
+Erro Semântico [9:4]: Incompatibilidade de tipos: não é possível atribuir 'integer' à variável 'ativo' do tipo 'BOOLEAN'.
+Erro Semântico [10:4]: Incompatibilidade de tipos: não é possível atribuir 'boolean' à variável 'texto' do tipo 'STRING'.
+Erro Semântico [12:20]: Operação lógica 'AND' inválida entre 'integer' e 'boolean'. Esperado 'boolean'.
+Erro Semântico [12:4]: Incompatibilidade de tipos: não é possível atribuir 'undefined' à variável 'ativo' do tipo 'BOOLEAN'.
+Erro Semântico [14:4]: Incompatibilidade de tipos: não é possível atribuir 'string' à variável 'numero' do tipo 'INTEGER'.
+Erro Semântico [16:7]: Expressão condicional deve resultar em 'boolean', mas resultou em 'integer'.
+
+[FALHA SEMÂNTICA] 7 erro(s) encontrado(s). Compilação interrompida.
+]]></system-err>
+  </testcase>
+  <testcase name="rejectsEmptyScript" classname="com.inm.PipelineTest" time="0.002">
     <system-out><![CDATA[
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
 ]]></system-out>
@@ -521,7 +619,7 @@ Linha 1:0 mismatched input '<EOF>' expecting 'PROGRAM'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.027">
+  <testcase name="acceptsValidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.023">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/atribuicao.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -571,9 +669,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : atribuicao
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : atribuicao
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -587,8 +684,9 @@ includelib kernel32.lib
 .data
 	v_variavel dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -623,7 +721,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -661,7 +761,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\atr
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.009">
+  <testcase name="acceptsValidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.008">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/comentario-e-div.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -708,9 +808,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : comentarioEDiv
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : comentarioEDiv
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -725,8 +824,9 @@ includelib kernel32.lib
 	v_div dw 0
 	t0 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -761,7 +861,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\com
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.01">
+  <testcase name="acceptsValidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/dangling-else.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -863,9 +963,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : danglingelse
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : danglingelse
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -879,11 +978,12 @@ includelib kernel32.lib
 .data
 	v_x dw 0
 	v_y dw 0
-	t0 dw 0
-	t1 dw 0
+	t0 db 0
+	t1 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -924,6 +1024,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L0
+	cmp eax, 0
+	je L0
 
 	; t1 = 1 == 2
 	mov ax, 1
@@ -937,6 +1039,8 @@ cmp_e_t1:
 
 	; ifFalse t1 goto L2
 	movzx eax, byte ptr [t1]
+	cmp eax, 0
+	je L2
 	cmp eax, 0
 	je L2
 
@@ -970,17 +1074,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -992,7 +1095,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\dan
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.004">
+  <testcase name="acceptsValidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/escreve-teste.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1031,9 +1134,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : EscreveTeste
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : EscreveTeste
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -1046,8 +1148,9 @@ includelib kernel32.lib
 
 .data
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -1078,17 +1181,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -1100,7 +1202,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\esc
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.011">
+  <testcase name="acceptsValidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.015">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/expr-ari.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1178,9 +1280,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : exprAri
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : exprAri
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -1199,8 +1300,9 @@ includelib kernel32.lib
 	t1 dw 0
 	t2 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -1258,7 +1360,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -1296,22 +1400,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\exp
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.016">
-    <failure message="Script deveria ser válido, mas ocorreram erros em scripts/valid/nome-identificador.prog ==&gt; Unexpected exception thrown: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s)." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/nome-identificador.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
-	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
-	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
-	at com.inm.PipelineTest.acceptsValidScripts(PipelineTest.java:63)
-Caused by: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
-	at com.inm.compilation.CompilationPipeline.runSemantic(CompilationPipeline.java:79)
-	at com.inm.compilation.CompilationPipeline.compile(CompilationPipeline.java:38)
-	at com.inm.compilation.CompilationPipeline.compile(CompilationPipeline.java:33)
-	at com.inm.PipelineTest.lambda$acceptsValidScripts$0(PipelineTest.java:64)
-	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
-	... 3 more
-]]></failure>
+  <testcase name="acceptsValidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.009">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/nome-identificador.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1343,14 +1432,118 @@ Fase 1 concluída. Programa: nomeIdentificador
 
 === FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
 Aviso [2:4]: Identificador 'variavelasdae32e2wqdr3asdsaerqwvx2314' truncado para 'variavelasdae32e'.
-]]></system-out>
-    <system-err><![CDATA[Erro Semântico [4:4]: Erro Semântico [Linha 4:4]: Variável 'variavelasdae32e2wqdr3asdsaerqwvx2314' não foi declarada.
-Erro Semântico [5:10]: Erro Semântico [Linha 5:10]: Variável 'variavelasdae32e2wqdr3asdsaerqwvx2314' não foi declarada.
 
-[FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
-]]></system-err>
+--- Código Intermediário (3AC) ---
+v_variavelasdae32e2wqdr3asdsaerqwvx2314 = 2
+WRITE v_variavelasdae32e2wqdr3asdsaerqwvx2314
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_variavelasdae32e2wqdr3asdsaerqwvx2314 = 2
+WRITE 2
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
+; ============================================
+; Programa : nomeIdentificador
+; Alvo     : x86 32 bits (MASM, Windows i386)
+; ============================================
+
+.386
+.model flat, stdcall
+option casemap:none
+
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
+	v_variavelasdae32e dw 0
+	_buf db 14 dup(0)
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
+
+
+.data?
+	_ibuf db 12 dup(?)
+
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
+	; v_variavelasdae32e2wqdr3asdsaerqwvx2314 = 2
+	mov word ptr [v_variavelasdae32e2wqdr3asdsaerqwvx2314], 2
+
+	; WRITE 2
+	push 2
+	call _print_int
+
+	invoke Sleep, 50
+	invoke ExitProcess, 0
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	push ebx
+	push esi
+	movsx eax, word ptr [ebp+8]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
+	mov byte ptr [ecx], 10
+	dec ecx
+	mov esi, eax
+	test eax, eax
+	jns pi_pos
+	neg eax
+pi_pos:
+	mov ebx, 10
+pi_loop:
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov byte ptr [ecx], dl
+	dec ecx
+	test eax, eax
+	jnz pi_loop
+	test esi, esi
+	jns pi_write
+	mov byte ptr [ecx], '-'
+	dec ecx
+pi_write:
+	inc ecx
+	lea edx, [_buf+14]
+	sub edx, ecx
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop esi
+	pop ebx
+	pop ebp
+	ret 4
+
+end start
+
+-----------------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\nomeidentificador.asm
+Fase 4 concluída.
+]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="acceptsValidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/variaveis.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1397,7 +1590,7 @@ Fase 1 concluída. Programa: variaveis
 --- Código Intermediário (3AC) ---
 WRITE v_x
 WRITE v_y
-READ v_z
+READ_STRING v_z
 ----------------------------------
 Fase 2 concluída com sucesso.
 
@@ -1406,7 +1599,7 @@ Fase 2 concluída com sucesso.
 --- Instruções Otimizadas (3AC) ---
 WRITE v_x
 WRITE v_y
-READ v_z
+READ_STRING v_z
 -----------------------------------
 Fase 3 concluída.
 
@@ -1414,9 +1607,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : variaveis
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : variaveis
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -1432,8 +1624,9 @@ includelib kernel32.lib
 	v_y dw 0
 	v_z db 256 dup(0)
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -1462,9 +1655,9 @@ start:
 	push eax
 	call _print_int
 
-	; READ v_z
-	call _read_int
-	mov word ptr [v_z], ax
+	; READ_STRING v_z
+	lea ecx, v_z
+	call _read_str
 
 	invoke Sleep, 50
 	invoke ExitProcess, 0
@@ -1475,7 +1668,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -1506,38 +1701,31 @@ pi_write:
 	pop ebp
 	ret 4
 
-_read_int:
+_read_str:
 	push ebp
 	mov ebp, esp
 	push esi
+	push edi
 	push ebx
-	invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
-	mov esi, offset _ibuf
-	xor eax, eax
+	mov edi, ecx
+	invoke ReadFile, dword ptr [_hIn], edi, 255, addr _read, 0
+	mov esi, edi
 	xor ebx, ebx
-	mov cl, byte ptr [esi]
-	cmp cl, '-'
-	jne ri_loop
-	mov ebx, 1
-	inc esi
-ri_loop:
-	mov cl, byte ptr [esi]
-	cmp cl, '0'
-	jl ri_done
-	cmp cl, '9'
-	jg ri_done
-	sub cl, '0'
-	imul eax, eax, 10
-	movzx ecx, cl
-	add eax, ecx
-	inc esi
-	jmp ri_loop
-ri_done:
-	test ebx, ebx
-	jz ri_pos
-	neg eax
-ri_pos:
+rs_scan:
+	mov al, byte ptr [esi+ebx]
+	cmp al, 13
+	je rs_trim
+	cmp al, 10
+	je rs_trim
+	cmp al, 0
+	je rs_done
+	inc ebx
+	jmp rs_scan
+rs_trim:
+	mov byte ptr [esi+ebx], 0
+rs_done:
 	pop ebx
+	pop edi
 	pop esi
 	pop ebp
 	ret
@@ -1549,7 +1737,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\var
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="acceptsValidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.01">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/while-script.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1627,9 +1815,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : whilescript
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : whilescript
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -1642,11 +1829,12 @@ includelib kernel32.lib
 
 .data
 	v_id dw 0
-	t0 dw 0
+	t0 db 0
 	t1 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -1685,6 +1873,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L1
+	cmp eax, 0
+	je L1
 
 	; t1 = v_id + 1
 	mov ax, word ptr [v_id]
@@ -1715,7 +1905,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -1753,7 +1945,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\whi
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.031">
+  <testcase name="acceptsValidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.007">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/condicional.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -1838,9 +2030,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : condicional
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : condicional
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -1853,10 +2044,11 @@ includelib kernel32.lib
 
 .data
 	v_x dw 0
-	t0 dw 0
+	t0 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -1895,6 +2087,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L0
+	cmp eax, 0
+	je L0
 
 	; WRITE "maior"
 	mov ecx, offset _str0
@@ -1924,17 +2118,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -2077,9 +2270,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : ifaninhado
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : ifaninhado
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -2091,11 +2283,12 @@ include kernel32.inc
 includelib kernel32.lib
 
 .data
-	t0 dw 0
-	t1 dw 0
+	t0 db 0
+	t1 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -2149,6 +2342,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L2
+	cmp eax, 0
+	je L2
 
 	; WRITE "teste3"
 	mov ecx, offset _str2
@@ -2161,6 +2356,8 @@ cmp_e_t0:
 
 	; ifFalse t1 goto L4
 	movzx eax, byte ptr [t1]
+	cmp eax, 0
+	je L4
 	cmp eax, 0
 	je L4
 
@@ -2209,17 +2406,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -2231,7 +2427,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\ifa
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.015">
+  <testcase name="acceptsValidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.012">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/projeto-compiladores.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -2346,9 +2542,9 @@ Fase 1 concluída. Programa: ProjetoCompiladores
 
 --- Código Intermediário (3AC) ---
 WRITE "INFORME A PRIMEIRA NOTA"
-READ v_nota1
+READ_INTEGER v_nota1
 WRITE "INFORME A SEGUNDA NOTA"
-READ v_nota2
+READ_INTEGER v_nota2
 t0 = v_nota1 + v_nota2
 t1 = t0 / 2
 v_media = t1
@@ -2371,9 +2567,9 @@ Fase 2 concluída com sucesso.
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "INFORME A PRIMEIRA NOTA"
-READ v_nota1
+READ_INTEGER v_nota1
 WRITE "INFORME A SEGUNDA NOTA"
-READ v_nota2
+READ_INTEGER v_nota2
 t0 = v_nota1 + v_nota2
 t1 = t0 / 2
 v_media = t1
@@ -2396,9 +2592,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : ProjetoCompiladores
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : ProjetoCompiladores
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -2417,10 +2612,11 @@ includelib kernel32.lib
 	v_media dw 0
 	t0 dw 0
 	t1 dw 0
-	t2 dw 0
+	t2 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -2428,6 +2624,8 @@ includelib kernel32.lib
 
 	_str0 db 'INFORME A PRIMEIRA NOTA', 0
 	_str1 db 'INFORME A SEGUNDA NOTA', 0
+	_lit_2 db 'Aprovado', 0
+	_lit_3 db 'Reprovado', 0
 
 .data?
 	_ibuf db 12 dup(?)
@@ -2445,7 +2643,7 @@ start:
 	mov ecx, offset _str0
 	call _print_str
 
-	; READ v_nota1
+	; READ_INTEGER v_nota1
 	call _read_int
 	mov word ptr [v_nota1], ax
 
@@ -2453,7 +2651,7 @@ start:
 	mov ecx, offset _str1
 	call _print_str
 
-	; READ v_nota2
+	; READ_INTEGER v_nota2
 	call _read_int
 	mov word ptr [v_nota2], ax
 
@@ -2501,9 +2699,19 @@ cmp_e_t2:
 	movzx eax, byte ptr [v_aprovado]
 	cmp eax, 0
 	je L0
+	cmp eax, 0
+	je L0
 
 	; v_resultado = "Aprovado"
-	; [NÃO TRADUZIDO] v_resultado = "Aprovado"
+	lea esi, _lit_2
+	lea edi, v_resultado
+copy_3:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_3
 
 	; WRITE v_resultado
 	mov ecx, offset v_resultado
@@ -2516,7 +2724,15 @@ cmp_e_t2:
 L0:
 
 	; v_resultado = "Reprovado"
-	; [NÃO TRADUZIDO] v_resultado = "Reprovado"
+	lea esi, _lit_3
+	lea edi, v_resultado
+copy_4:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_4
 
 	; WRITE v_resultado
 	mov ecx, offset v_resultado
@@ -2534,7 +2750,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -2572,11 +2790,11 @@ _print_bool:
 	test eax, eax
 	jz pb_false
 	mov ecx, offset _s_true
-	mov edx, 5
+	mov edx, 6
 	jmp pb_write
 pb_false:
 	mov ecx, offset _s_false
-	mov edx, 6
+	mov edx, 7
 pb_write:
 	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
 	pop ebp
@@ -2586,17 +2804,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -2606,7 +2823,7 @@ _read_int:
 	mov ebp, esp
 	push esi
 	push ebx
-	invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
+	invoke ReadFile, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
 	mov esi, offset _ibuf
 	xor eax, eax
 	xor ebx, ebx
@@ -2644,7 +2861,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\pro
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.007">
+  <testcase name="acceptsValidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/calculo-desconto.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -2706,7 +2923,7 @@ Fase 1 concluída. Programa: calculoDesconto
 t0 = 5 / 2
 WRITE t0
 WRITE "Informe o Preço"
-READ v_preco
+READ_INTEGER v_preco
 WRITE v_preco
 t1 = v_preco - 15
 v_resultado = t1
@@ -2720,7 +2937,7 @@ Fase 2 concluída com sucesso.
 t0 = 2
 WRITE 2
 WRITE "Informe o Preço"
-READ v_preco
+READ_INTEGER v_preco
 WRITE v_preco
 t1 = v_preco - 15
 v_resultado = t1
@@ -2732,9 +2949,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : calculoDesconto
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : calculoDesconto
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -2751,8 +2967,9 @@ includelib kernel32.lib
 	t0 dw 0
 	t1 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -2783,7 +3000,7 @@ start:
 	mov ecx, offset _str0
 	call _print_str
 
-	; READ v_preco
+	; READ_INTEGER v_preco
 	call _read_int
 	mov word ptr [v_preco], ax
 
@@ -2815,7 +3032,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -2850,17 +3069,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret
@@ -2870,7 +3088,7 @@ _read_int:
 	mov ebp, esp
 	push esi
 	push ebx
-	invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
+	invoke ReadFile, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
 	mov esi, offset _ibuf
 	xor eax, eax
 	xor ebx, ebx
@@ -2986,9 +3204,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : loopTest
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : loopTest
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -3001,11 +3218,12 @@ includelib kernel32.lib
 
 .data
 	v_x dw 0
-	t0 dw 0
+	t0 db 0
 	t1 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -3044,6 +3262,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L1
+	cmp eax, 0
+	je L1
 
 	; WRITE v_x
 	movsx eax, word ptr [v_x]
@@ -3074,7 +3294,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -3112,7 +3334,7 @@ Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\loo
 Fase 4 concluída.
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="acceptsValidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.264">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/super-expr.prog
 
 === FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
@@ -3194,9 +3416,8 @@ Fase 3 concluída.
 
 --- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
 ; ============================================
-; Programa  : superExpr
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : superExpr
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -3216,8 +3437,9 @@ includelib kernel32.lib
 	t2 dw 0
 	t3 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -3278,7 +3500,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -3313,6 +3537,1734 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\superexpr.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.017">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/teste-expressoes.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: TesteExpressoes | Tipo: ID         | Atributo: TesteExpressoes
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: b          | Tipo: ID         | Atributo: b
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: c          | Tipo: ID         | Atributo: c
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: d          | Tipo: ID         | Atributo: d
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: r1         | Tipo: ID         | Atributo: r1
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: r2         | Tipo: ID         | Atributo: r2
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: comp1      | Tipo: ID         | Atributo: comp1
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: comp2      | Tipo: ID         | Atributo: comp2
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: final      | Tipo: ID         | Atributo: final
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: BOOLEAN    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 10         | Tipo: CTE        | Atributo: 10
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: b          | Tipo: ID         | Atributo: b
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 5          | Tipo: CTE        | Atributo: 5
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: c          | Tipo: ID         | Atributo: c
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: d          | Tipo: ID         | Atributo: d
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 8          | Tipo: CTE        | Atributo: 8
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: r1         | Tipo: ID         | Atributo: r1
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: b          | Tipo: ID         | Atributo: b
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: *          | Tipo: OPMULT     | Atributo: VEZES
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: c          | Tipo: ID         | Atributo: c
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: d          | Tipo: ID         | Atributo: d
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: r2         | Tipo: ID         | Atributo: r2
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: *          | Tipo: OPMULT     | Atributo: VEZES
+Token: b          | Tipo: ID         | Atributo: b
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: d          | Tipo: ID         | Atributo: d
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: c          | Tipo: ID         | Atributo: c
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: c          | Tipo: ID         | Atributo: c
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: comp1      | Tipo: ID         | Atributo: comp1
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: r1         | Tipo: ID         | Atributo: r1
+Token: >          | Tipo: OPREL      | Atributo: MAIOR
+Token: r2         | Tipo: ID         | Atributo: r2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: comp2      | Tipo: ID         | Atributo: comp2
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: a          | Tipo: ID         | Atributo: a
+Token: >=         | Tipo: OPREL      | Atributo: MAIG
+Token: b          | Tipo: ID         | Atributo: b
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: AND        | Tipo: OPLOG      | Atributo: AND
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: d          | Tipo: ID         | Atributo: d
+Token: <>         | Tipo: OPREL      | Atributo: DIFER
+Token: c          | Tipo: ID         | Atributo: c
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: final      | Tipo: ID         | Atributo: final
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: comp1      | Tipo: ID         | Atributo: comp1
+Token: OR         | Tipo: OPLOG      | Atributo: OR
+Token: comp2      | Tipo: ID         | Atributo: comp2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: r1         | Tipo: ID         | Atributo: r1
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: r2         | Tipo: ID         | Atributo: r2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: comp1      | Tipo: ID         | Atributo: comp1
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: comp2      | Tipo: ID         | Atributo: comp2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: final      | Tipo: ID         | Atributo: final
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: IF         | Tipo: IF         | Atributo: -
+Token: final      | Tipo: ID         | Atributo: final
+Token: THEN       | Tipo: THEN       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "VERDADEIRO" | Tipo: CADEIA     | Atributo: VERDADEIRO
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ELSE       | Tipo: ELSE       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "FALSO"    | Tipo: CADEIA     | Atributo: FALSO
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: texto      | Tipo: ID         | Atributo: texto
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM TesteExpressoes ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId a (listIdLine , b (listIdLine , c (listIdLine , d listIdLine)))) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId r1 (listIdLine , r2 listIdLine)) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId comp1 (listIdLine , comp2 (listIdLine , final listIdLine))) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId texto listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib a := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib b := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib c := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib d := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 8)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib r1 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar b)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) (exprMultLine * (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar c)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar d)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib r2 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) (exprMultLine * (exprNeg (exprPar b)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine) ))) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar d)) (exprMultLine / (exprNeg (exprPar c)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine) ))) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar c)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib comp1 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r1)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar r2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdAtrib comp2 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar b)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) ))) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar d)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine <> (exprLog (exprAd (exprMult (exprNeg (exprPar c)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) ))) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib final := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp1)) exprMultLine) exprAdLine) (exprLogLine OR (exprAd (exprMult (exprNeg (exprPar comp2)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar final)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar final)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "VERDADEIRO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar texto)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "FALSO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar texto)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; listCmd)))))))))))))))))))))))))))))))))))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: TesteExpressoes
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_a = 10
+v_b = 5
+v_c = 2
+v_d = 8
+t0 = v_a + v_b
+t1 = v_c + v_d
+t2 = t0 * t1
+v_r1 = t2
+t3 = v_a * v_b
+t4 = v_d / v_c
+t5 = v_a - v_c
+t6 = t4 + t5
+t7 = t3 - t6
+v_r2 = t7
+t8 = v_r1 > v_r2
+v_comp1 = t8
+t9 = v_a >= v_b
+t10 = v_d <> v_c
+t11 = t9 AND t10
+v_comp2 = t11
+t12 = v_comp1 OR v_comp2
+v_final = t12
+WRITE v_r1
+WRITE v_r2
+WRITE v_comp1
+WRITE v_comp2
+WRITE v_final
+ifFalse v_final goto L0
+v_texto = "VERDADEIRO"
+WRITE v_texto
+goto L1
+L0:
+v_texto = "FALSO"
+WRITE v_texto
+L1:
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_a = 10
+v_b = 5
+v_c = 2
+v_d = 8
+t0 = 10 + 5
+t1 = 2 + 8
+t2 = t0 * t1
+v_r1 = t2
+t3 = 10 * 5
+t4 = 8 / 2
+t5 = 10 - 2
+t6 = t4 + t5
+t7 = t3 - t6
+v_r2 = t7
+t8 = v_r1 > v_r2
+v_comp1 = t8
+t9 = 10 >= 5
+t10 = 8 <> 2
+t11 = t9 AND t10
+v_comp2 = t11
+t12 = v_comp1 OR v_comp2
+v_final = t12
+WRITE v_r1
+WRITE v_r2
+WRITE v_comp1
+WRITE v_comp2
+WRITE v_final
+ifFalse v_final goto L0
+v_texto = "VERDADEIRO"
+WRITE v_texto
+goto L1
+L0:
+v_texto = "FALSO"
+WRITE v_texto
+L1:
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
+; ============================================
+; Programa : TesteExpressoes
+; Alvo     : x86 32 bits (MASM, Windows i386)
+; ============================================
+
+.386
+.model flat, stdcall
+option casemap:none
+
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
+	v_r2 dw 0
+	v_texto db 256 dup(0)
+	v_a dw 0
+	v_b dw 0
+	v_c dw 0
+	v_d dw 0
+	v_comp2 db 0
+	v_comp1 db 0
+	v_final db 0
+	v_r1 dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 dw 0
+	t3 dw 0
+	t4 dw 0
+	t5 dw 0
+	t6 dw 0
+	t7 dw 0
+	t8 db 0
+	t9 db 0
+	t10 db 0
+	t11 db 0
+	t12 db 0
+	_buf db 14 dup(0)
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
+
+	_lit_0 db 'VERDADEIRO', 0
+	_lit_1 db 'FALSO', 0
+
+.data?
+	_ibuf db 12 dup(?)
+
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
+	; v_a = 10
+	mov word ptr [v_a], 10
+
+	; v_b = 5
+	mov word ptr [v_b], 5
+
+	; v_c = 2
+	mov word ptr [v_c], 2
+
+	; v_d = 8
+	mov word ptr [v_d], 8
+
+	; t0 = 10 + 5
+	mov ax, 10
+	add ax, 5
+	mov word ptr [t0], ax
+
+	; t1 = 2 + 8
+	mov ax, 2
+	add ax, 8
+	mov word ptr [t1], ax
+
+	; t2 = t0 * t1
+	mov ax, word ptr [t0]
+	imul word ptr [t1]
+	mov word ptr [t2], ax
+
+	; v_r1 = t2
+	mov ax, word ptr [t2]
+	mov word ptr [v_r1], ax
+
+	; t3 = 10 * 5
+	mov ax, 10
+	imul ax, ax, 5
+	mov word ptr [t3], ax
+
+	; t4 = 8 / 2
+	mov ax, 8
+	cwd
+	mov bx, 2
+	idiv bx
+	mov word ptr [t4], ax
+
+	; t5 = 10 - 2
+	mov ax, 10
+	sub ax, 2
+	mov word ptr [t5], ax
+
+	; t6 = t4 + t5
+	mov ax, word ptr [t4]
+	add ax, word ptr [t5]
+	mov word ptr [t6], ax
+
+	; t7 = t3 - t6
+	mov ax, word ptr [t3]
+	sub ax, word ptr [t6]
+	mov word ptr [t7], ax
+
+	; v_r2 = t7
+	mov ax, word ptr [t7]
+	mov word ptr [v_r2], ax
+
+	; t8 = v_r1 > v_r2
+	mov ax, word ptr [v_r1]
+	cmp ax, word ptr [v_r2]
+	jg cmp_t_t8
+	mov byte ptr [t8], 0
+	jmp cmp_e_t8
+cmp_t_t8:
+	mov byte ptr [t8], 1
+cmp_e_t8:
+
+	; v_comp1 = t8
+	mov al, byte ptr [t8]
+	mov byte ptr [v_comp1], al
+
+	; t9 = 10 >= 5
+	mov ax, 10
+	cmp ax, 5
+	jge cmp_t_t9
+	mov byte ptr [t9], 0
+	jmp cmp_e_t9
+cmp_t_t9:
+	mov byte ptr [t9], 1
+cmp_e_t9:
+
+	; t10 = 8 <> 2
+	mov ax, 8
+	cmp ax, 2
+	jne cmp_t_t10
+	mov byte ptr [t10], 0
+	jmp cmp_e_t10
+cmp_t_t10:
+	mov byte ptr [t10], 1
+cmp_e_t10:
+
+	; t11 = t9 AND t10
+	mov al, byte ptr [t9]
+	and al, byte ptr [t10]
+	mov byte ptr [t11], al
+
+	; v_comp2 = t11
+	mov al, byte ptr [t11]
+	mov byte ptr [v_comp2], al
+
+	; t12 = v_comp1 OR v_comp2
+	mov al, byte ptr [v_comp1]
+	or al, byte ptr [v_comp2]
+	mov byte ptr [t12], al
+
+	; v_final = t12
+	mov al, byte ptr [t12]
+	mov byte ptr [v_final], al
+
+	; WRITE v_r1
+	movsx eax, word ptr [v_r1]
+	push eax
+	call _print_int
+
+	; WRITE v_r2
+	movsx eax, word ptr [v_r2]
+	push eax
+	call _print_int
+
+	; WRITE v_comp1
+	movzx eax, byte ptr [v_comp1]
+	push eax
+	call _print_bool
+
+	; WRITE v_comp2
+	movzx eax, byte ptr [v_comp2]
+	push eax
+	call _print_bool
+
+	; WRITE v_final
+	movzx eax, byte ptr [v_final]
+	push eax
+	call _print_bool
+
+	; ifFalse v_final goto L0
+	movzx eax, byte ptr [v_final]
+	cmp eax, 0
+	je L0
+	cmp eax, 0
+	je L0
+
+	; v_texto = "VERDADEIRO"
+	lea esi, _lit_0
+	lea edi, v_texto
+copy_1:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_1
+
+	; WRITE v_texto
+	mov ecx, offset v_texto
+	call _print_str
+
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; v_texto = "FALSO"
+	lea esi, _lit_1
+	lea edi, v_texto
+copy_2:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_2
+
+	; WRITE v_texto
+	mov ecx, offset v_texto
+	call _print_str
+
+	; L1:
+L1:
+
+	invoke Sleep, 50
+	invoke ExitProcess, 0
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	push ebx
+	push esi
+	movsx eax, word ptr [ebp+8]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
+	mov byte ptr [ecx], 10
+	dec ecx
+	mov esi, eax
+	test eax, eax
+	jns pi_pos
+	neg eax
+pi_pos:
+	mov ebx, 10
+pi_loop:
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov byte ptr [ecx], dl
+	dec ecx
+	test eax, eax
+	jnz pi_loop
+	test esi, esi
+	jns pi_write
+	mov byte ptr [ecx], '-'
+	dec ecx
+pi_write:
+	inc ecx
+	lea edx, [_buf+14]
+	sub edx, ecx
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop esi
+	pop ebx
+	pop ebp
+	ret 4
+
+_print_bool:
+	push ebp
+	mov ebp, esp
+	movzx eax, byte ptr [ebp+8]
+	test eax, eax
+	jz pb_false
+	mov ecx, offset _s_true
+	mov edx, 6
+	jmp pb_write
+pb_false:
+	mov ecx, offset _s_false
+	mov edx, 7
+pb_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop ebp
+	ret 4
+
+_print_str:
+	push ebp
+	mov ebp, esp
+	push esi
+	mov esi, ecx
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
+	pop esi
+	pop ebp
+	ret
+
+end start
+
+-----------------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\testeexpressoes.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.012">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/sistema-academico.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: SistemaAcademico | Tipo: ID         | Atributo: SistemaAcademico
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: nota3      | Tipo: ID         | Atributo: nota3
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: frequenciaOk | Tipo: ID         | Atributo: frequenciaOk
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: resultadoFinal | Tipo: ID         | Atributo: resultadoFinal
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: BOOLEAN    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: situacao   | Tipo: ID         | Atributo: situacao
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "DIGITE A PRIMEIRA NOTA" | Tipo: CADEIA     | Atributo: DIGITE A PRIMEIRA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "DIGITE A SEGUNDA NOTA" | Tipo: CADEIA     | Atributo: DIGITE A SEGUNDA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "DIGITE A TERCEIRA NOTA" | Tipo: CADEIA     | Atributo: DIGITE A TERCEIRA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota3      | Tipo: ID         | Atributo: nota3
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota1      | Tipo: ID         | Atributo: nota1
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: nota2      | Tipo: ID         | Atributo: nota2
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: nota3      | Tipo: ID         | Atributo: nota3
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: /          | Tipo: OPMULT     | Atributo: DIV
+Token: 3          | Tipo: CTE        | Atributo: 3
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "MEDIA CALCULADA" | Tipo: CADEIA     | Atributo: MEDIA CALCULADA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: >=         | Tipo: OPREL      | Atributo: MAIG
+Token: 7          | Tipo: CTE        | Atributo: 7
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: frequenciaOk | Tipo: ID         | Atributo: frequenciaOk
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: TRUE       | Tipo: TRUE       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: resultadoFinal | Tipo: ID         | Atributo: resultadoFinal
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: AND        | Tipo: OPLOG      | Atributo: AND
+Token: frequenciaOk | Tipo: ID         | Atributo: frequenciaOk
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: resultadoFinal | Tipo: ID         | Atributo: resultadoFinal
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: IF         | Tipo: IF         | Atributo: -
+Token: resultadoFinal | Tipo: ID         | Atributo: resultadoFinal
+Token: THEN       | Tipo: THEN       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: situacao   | Tipo: ID         | Atributo: situacao
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "APROVADO" | Tipo: CADEIA     | Atributo: APROVADO
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: situacao   | Tipo: ID         | Atributo: situacao
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ELSE       | Tipo: ELSE       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: situacao   | Tipo: ID         | Atributo: situacao
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: "REPROVADO" | Tipo: CADEIA     | Atributo: REPROVADO
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: situacao   | Tipo: ID         | Atributo: situacao
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: ~          | Tipo: OPNEG      | Atributo: NEG
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: media      | Tipo: ID         | Atributo: media
+Token: <          | Tipo: OPREL      | Atributo: MENOR
+Token: 7          | Tipo: CTE        | Atributo: 7
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: aprovado   | Tipo: ID         | Atributo: aprovado
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM SistemaAcademico ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId nota1 (listIdLine , nota2 (listIdLine , nota3 listIdLine))) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId media listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId aprovado (listIdLine , frequenciaOk (listIdLine , resultadoFinal listIdLine))) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId situacao listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A PRIMEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota1 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A SEGUNDA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota2 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A TERCEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota3 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib media := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar nota1)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota2)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota3)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine) ))) (exprMultLine / (exprNeg (exprPar 3)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "MEDIA CALCULADA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdAtrib frequenciaOk := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib resultadoFinal := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar frequenciaOk)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "APROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "REPROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) )))) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))))))))))))))))))))))))))))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: SistemaAcademico
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE "DIGITE A PRIMEIRA NOTA"
+READ_INTEGER v_nota1
+WRITE "DIGITE A SEGUNDA NOTA"
+READ_INTEGER v_nota2
+WRITE "DIGITE A TERCEIRA NOTA"
+READ_INTEGER v_nota3
+t0 = v_nota2 + v_nota3
+t1 = v_nota1 + t0
+t2 = t1 / 3
+v_media = t2
+WRITE "MEDIA CALCULADA"
+WRITE v_media
+t3 = v_media >= 7
+v_aprovado = t3
+v_frequenciaok = TRUE
+t4 = v_aprovado AND v_frequenciaok
+v_resultadofinal = t4
+WRITE v_resultadofinal
+ifFalse v_resultadofinal goto L0
+v_situacao = "APROVADO"
+WRITE v_situacao
+goto L1
+L0:
+v_situacao = "REPROVADO"
+WRITE v_situacao
+L1:
+t5 = v_media < 7
+t6 = ~t5
+v_aprovado = t6
+WRITE v_aprovado
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE "DIGITE A PRIMEIRA NOTA"
+READ_INTEGER v_nota1
+WRITE "DIGITE A SEGUNDA NOTA"
+READ_INTEGER v_nota2
+WRITE "DIGITE A TERCEIRA NOTA"
+READ_INTEGER v_nota3
+t0 = v_nota2 + v_nota3
+t1 = v_nota1 + t0
+t2 = t1 / 3
+v_media = t2
+WRITE "MEDIA CALCULADA"
+WRITE v_media
+t3 = v_media >= 7
+v_aprovado = t3
+v_frequenciaok = TRUE
+t4 = v_aprovado AND v_frequenciaok
+v_resultadofinal = t4
+WRITE v_resultadofinal
+ifFalse v_resultadofinal goto L0
+v_situacao = "APROVADO"
+WRITE v_situacao
+goto L1
+L0:
+v_situacao = "REPROVADO"
+WRITE v_situacao
+L1:
+t5 = v_media < 7
+t6 = ~t5
+v_aprovado = t6
+WRITE v_aprovado
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
+; ============================================
+; Programa : SistemaAcademico
+; Alvo     : x86 32 bits (MASM, Windows i386)
+; ============================================
+
+.386
+.model flat, stdcall
+option casemap:none
+
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
+	v_nota1 dw 0
+	v_situacao db 256 dup(0)
+	v_aprovado db 0
+	v_nota2 dw 0
+	v_nota3 dw 0
+	v_frequenciaok db 0
+	v_resultadofinal db 0
+	v_media dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 dw 0
+	t3 db 0
+	t4 db 0
+	t5 db 0
+	t6 db 0
+	_buf db 14 dup(0)
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
+
+	_str0 db 'DIGITE A PRIMEIRA NOTA', 0
+	_str1 db 'DIGITE A SEGUNDA NOTA', 0
+	_str2 db 'DIGITE A TERCEIRA NOTA', 0
+	_str3 db 'MEDIA CALCULADA', 0
+	_lit_4 db 'APROVADO', 0
+	_lit_5 db 'REPROVADO', 0
+
+.data?
+	_ibuf db 12 dup(?)
+
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
+	; WRITE "DIGITE A PRIMEIRA NOTA"
+	mov ecx, offset _str0
+	call _print_str
+
+	; READ_INTEGER v_nota1
+	call _read_int
+	mov word ptr [v_nota1], ax
+
+	; WRITE "DIGITE A SEGUNDA NOTA"
+	mov ecx, offset _str1
+	call _print_str
+
+	; READ_INTEGER v_nota2
+	call _read_int
+	mov word ptr [v_nota2], ax
+
+	; WRITE "DIGITE A TERCEIRA NOTA"
+	mov ecx, offset _str2
+	call _print_str
+
+	; READ_INTEGER v_nota3
+	call _read_int
+	mov word ptr [v_nota3], ax
+
+	; t0 = v_nota2 + v_nota3
+	mov ax, word ptr [v_nota2]
+	add ax, word ptr [v_nota3]
+	mov word ptr [t0], ax
+
+	; t1 = v_nota1 + t0
+	mov ax, word ptr [v_nota1]
+	add ax, word ptr [t0]
+	mov word ptr [t1], ax
+
+	; t2 = t1 / 3
+	mov ax, word ptr [t1]
+	cwd
+	mov bx, 3
+	idiv bx
+	mov word ptr [t2], ax
+
+	; v_media = t2
+	mov ax, word ptr [t2]
+	mov word ptr [v_media], ax
+
+	; WRITE "MEDIA CALCULADA"
+	mov ecx, offset _str3
+	call _print_str
+
+	; WRITE v_media
+	movsx eax, word ptr [v_media]
+	push eax
+	call _print_int
+
+	; t3 = v_media >= 7
+	mov ax, word ptr [v_media]
+	cmp ax, 7
+	jge cmp_t_t3
+	mov byte ptr [t3], 0
+	jmp cmp_e_t3
+cmp_t_t3:
+	mov byte ptr [t3], 1
+cmp_e_t3:
+
+	; v_aprovado = t3
+	mov al, byte ptr [t3]
+	mov byte ptr [v_aprovado], al
+
+	; v_frequenciaok = TRUE
+	mov byte ptr [v_frequenciaok], 1
+
+	; t4 = v_aprovado AND v_frequenciaok
+	mov al, byte ptr [v_aprovado]
+	and al, byte ptr [v_frequenciaok]
+	mov byte ptr [t4], al
+
+	; v_resultadofinal = t4
+	mov al, byte ptr [t4]
+	mov byte ptr [v_resultadofinal], al
+
+	; WRITE v_resultadofinal
+	movzx eax, byte ptr [v_resultadofinal]
+	push eax
+	call _print_bool
+
+	; ifFalse v_resultadofinal goto L0
+	movzx eax, byte ptr [v_resultadofinal]
+	cmp eax, 0
+	je L0
+	cmp eax, 0
+	je L0
+
+	; v_situacao = "APROVADO"
+	lea esi, _lit_4
+	lea edi, v_situacao
+copy_5:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_5
+
+	; WRITE v_situacao
+	mov ecx, offset v_situacao
+	call _print_str
+
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; v_situacao = "REPROVADO"
+	lea esi, _lit_5
+	lea edi, v_situacao
+copy_6:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_6
+
+	; WRITE v_situacao
+	mov ecx, offset v_situacao
+	call _print_str
+
+	; L1:
+L1:
+
+	; t5 = v_media < 7
+	mov ax, word ptr [v_media]
+	cmp ax, 7
+	jl cmp_t_t5
+	mov byte ptr [t5], 0
+	jmp cmp_e_t5
+cmp_t_t5:
+	mov byte ptr [t5], 1
+cmp_e_t5:
+
+	; t6 = ~t5
+	mov al, byte ptr [t5]
+	xor al, 1
+	mov byte ptr [t6], al
+
+	; v_aprovado = t6
+	mov al, byte ptr [t6]
+	mov byte ptr [v_aprovado], al
+
+	; WRITE v_aprovado
+	movzx eax, byte ptr [v_aprovado]
+	push eax
+	call _print_bool
+
+	invoke Sleep, 50
+	invoke ExitProcess, 0
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	push ebx
+	push esi
+	movsx eax, word ptr [ebp+8]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
+	mov byte ptr [ecx], 10
+	dec ecx
+	mov esi, eax
+	test eax, eax
+	jns pi_pos
+	neg eax
+pi_pos:
+	mov ebx, 10
+pi_loop:
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov byte ptr [ecx], dl
+	dec ecx
+	test eax, eax
+	jnz pi_loop
+	test esi, esi
+	jns pi_write
+	mov byte ptr [ecx], '-'
+	dec ecx
+pi_write:
+	inc ecx
+	lea edx, [_buf+14]
+	sub edx, ecx
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop esi
+	pop ebx
+	pop ebp
+	ret 4
+
+_print_bool:
+	push ebp
+	mov ebp, esp
+	movzx eax, byte ptr [ebp+8]
+	test eax, eax
+	jz pb_false
+	mov ecx, offset _s_true
+	mov edx, 6
+	jmp pb_write
+pb_false:
+	mov ecx, offset _s_false
+	mov edx, 7
+pb_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop ebp
+	ret 4
+
+_print_str:
+	push ebp
+	mov ebp, esp
+	push esi
+	mov esi, ecx
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
+	pop esi
+	pop ebp
+	ret
+
+_read_int:
+	push ebp
+	mov ebp, esp
+	push esi
+	push ebx
+	invoke ReadFile, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
+	mov esi, offset _ibuf
+	xor eax, eax
+	xor ebx, ebx
+	mov cl, byte ptr [esi]
+	cmp cl, '-'
+	jne ri_loop
+	mov ebx, 1
+	inc esi
+ri_loop:
+	mov cl, byte ptr [esi]
+	cmp cl, '0'
+	jl ri_done
+	cmp cl, '9'
+	jg ri_done
+	sub cl, '0'
+	imul eax, eax, 10
+	movzx ecx, cl
+	add eax, ecx
+	inc esi
+	jmp ri_loop
+ri_done:
+	test ebx, ebx
+	jz ri_pos
+	neg eax
+ri_pos:
+	pop ebx
+	pop esi
+	pop ebp
+	ret
+
+end start
+
+-----------------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\sistemaacademico.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.011">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/controle-estoque.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: ControleEstoque | Tipo: ID         | Atributo: ControleEstoque
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: quantidade | Tipo: ID         | Atributo: quantidade
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: restante   | Tipo: ID         | Atributo: restante
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: INTEGER    | Tipo: INTEGER    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: VAR        | Tipo: VAR        | Atributo: -
+Token: continuar  | Tipo: ID         | Atributo: continuar
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: BOOLEAN    | Tipo: BOOLEAN    | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: quantidade | Tipo: ID         | Atributo: quantidade
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 20         | Tipo: CTE        | Atributo: 20
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: continuar  | Tipo: ID         | Atributo: continuar
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: TRUE       | Tipo: TRUE       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WHILE      | Tipo: WHILE      | Atributo: -
+Token: continuar  | Tipo: ID         | Atributo: continuar
+Token: DO         | Tipo: DO         | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: 2          | Tipo: CTE        | Atributo: 2
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: restante   | Tipo: ID         | Atributo: restante
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: quantidade | Tipo: ID         | Atributo: quantidade
+Token: -          | Tipo: OPAD       | Atributo: MENOS
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "VENDIDOS" | Tipo: CADEIA     | Atributo: VENDIDOS
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: vendidos   | Tipo: ID         | Atributo: vendidos
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "RESTANTE" | Tipo: CADEIA     | Atributo: RESTANTE
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: restante   | Tipo: ID         | Atributo: restante
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: IF         | Tipo: IF         | Atributo: -
+Token: restante   | Tipo: ID         | Atributo: restante
+Token: <=         | Tipo: OPREL      | Atributo: MENIG
+Token: 0          | Tipo: CTE        | Atributo: 0
+Token: THEN       | Tipo: THEN       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: continuar  | Tipo: ID         | Atributo: continuar
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: FALSE      | Tipo: FALSE      | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ELSE       | Tipo: ELSE       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: continuar  | Tipo: ID         | Atributo: continuar
+Token: :=         | Tipo: ATRIB      | Atributo: -
+Token: TRUE       | Tipo: TRUE       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "ESTOQUE ENCERRADO" | Tipo: CADEIA     | Atributo: ESTOQUE ENCERRADO
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM ControleEstoque ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId quantidade listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId vendidos listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId restante listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId continuar listIdLine) : (tip BOOLEAN) ;) (listCmd (cmdDecl (cmd (cmdAtrib quantidade := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 20)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib vendidos := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile WHILE (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar continuar)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) DO (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib vendidos := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar vendidos)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib restante := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar quantidade)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar vendidos)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "VENDIDOS")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar vendidos)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "RESTANTE")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar restante)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar restante)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine <= (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) END)))) ; listCmd)))))))))))))) END))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ESTOQUE ENCERRADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))))))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: ControleEstoque
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+v_quantidade = 20
+v_vendidos = 0
+v_continuar = TRUE
+L0:
+ifFalse v_continuar goto L1
+t0 = v_vendidos + 2
+v_vendidos = t0
+t1 = v_quantidade - v_vendidos
+v_restante = t1
+WRITE "VENDIDOS"
+WRITE v_vendidos
+WRITE "RESTANTE"
+WRITE v_restante
+t2 = v_restante <= 0
+ifFalse t2 goto L2
+v_continuar = FALSE
+goto L3
+L2:
+v_continuar = TRUE
+L3:
+goto L0
+L1:
+WRITE "ESTOQUE ENCERRADO"
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+v_quantidade = 20
+v_vendidos = 0
+v_continuar = TRUE
+L0:
+ifFalse v_continuar goto L1
+t0 = v_vendidos + 2
+v_vendidos = t0
+t1 = v_quantidade - v_vendidos
+v_restante = t1
+WRITE "VENDIDOS"
+WRITE v_vendidos
+WRITE "RESTANTE"
+WRITE v_restante
+t2 = v_restante <= 0
+ifFalse t2 goto L2
+v_continuar = FALSE
+goto L3
+L2:
+v_continuar = TRUE
+L3:
+goto L0
+L1:
+WRITE "ESTOQUE ENCERRADO"
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
+; ============================================
+; Programa : ControleEstoque
+; Alvo     : x86 32 bits (MASM, Windows i386)
+; ============================================
+
+.386
+.model flat, stdcall
+option casemap:none
+
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
+	v_vendidos dw 0
+	v_restante dw 0
+	v_continuar db 0
+	v_quantidade dw 0
+	t0 dw 0
+	t1 dw 0
+	t2 db 0
+	_buf db 14 dup(0)
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
+
+	_str0 db 'VENDIDOS', 0
+	_str1 db 'RESTANTE', 0
+	_str2 db 'ESTOQUE ENCERRADO', 0
+
+.data?
+	_ibuf db 12 dup(?)
+
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
+	; v_quantidade = 20
+	mov word ptr [v_quantidade], 20
+
+	; v_vendidos = 0
+	mov word ptr [v_vendidos], 0
+
+	; v_continuar = TRUE
+	mov byte ptr [v_continuar], 1
+
+	; L0:
+L0:
+
+	; ifFalse v_continuar goto L1
+	movzx eax, byte ptr [v_continuar]
+	cmp eax, 0
+	je L1
+	cmp eax, 0
+	je L1
+
+	; t0 = v_vendidos + 2
+	mov ax, word ptr [v_vendidos]
+	add ax, 2
+	mov word ptr [t0], ax
+
+	; v_vendidos = t0
+	mov ax, word ptr [t0]
+	mov word ptr [v_vendidos], ax
+
+	; t1 = v_quantidade - v_vendidos
+	mov ax, word ptr [v_quantidade]
+	sub ax, word ptr [v_vendidos]
+	mov word ptr [t1], ax
+
+	; v_restante = t1
+	mov ax, word ptr [t1]
+	mov word ptr [v_restante], ax
+
+	; WRITE "VENDIDOS"
+	mov ecx, offset _str0
+	call _print_str
+
+	; WRITE v_vendidos
+	movsx eax, word ptr [v_vendidos]
+	push eax
+	call _print_int
+
+	; WRITE "RESTANTE"
+	mov ecx, offset _str1
+	call _print_str
+
+	; WRITE v_restante
+	movsx eax, word ptr [v_restante]
+	push eax
+	call _print_int
+
+	; t2 = v_restante <= 0
+	mov ax, word ptr [v_restante]
+	cmp ax, 0
+	jle cmp_t_t2
+	mov byte ptr [t2], 0
+	jmp cmp_e_t2
+cmp_t_t2:
+	mov byte ptr [t2], 1
+cmp_e_t2:
+
+	; ifFalse t2 goto L2
+	movzx eax, byte ptr [t2]
+	cmp eax, 0
+	je L2
+	cmp eax, 0
+	je L2
+
+	; v_continuar = FALSE
+	mov byte ptr [v_continuar], 0
+
+	; goto L3
+	jmp L3
+
+	; L2:
+L2:
+
+	; v_continuar = TRUE
+	mov byte ptr [v_continuar], 1
+
+	; L3:
+L3:
+
+	; goto L0
+	jmp L0
+
+	; L1:
+L1:
+
+	; WRITE "ESTOQUE ENCERRADO"
+	mov ecx, offset _str2
+	call _print_str
+
+	invoke Sleep, 50
+	invoke ExitProcess, 0
+
+_print_int:
+	push ebp
+	mov ebp, esp
+	push ebx
+	push esi
+	movsx eax, word ptr [ebp+8]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
+	mov byte ptr [ecx], 10
+	dec ecx
+	mov esi, eax
+	test eax, eax
+	jns pi_pos
+	neg eax
+pi_pos:
+	mov ebx, 10
+pi_loop:
+	xor edx, edx
+	div ebx
+	add dl, '0'
+	mov byte ptr [ecx], dl
+	dec ecx
+	test eax, eax
+	jnz pi_loop
+	test esi, esi
+	jns pi_write
+	mov byte ptr [ecx], '-'
+	dec ecx
+pi_write:
+	inc ecx
+	lea edx, [_buf+14]
+	sub edx, ecx
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop esi
+	pop ebx
+	pop ebp
+	ret 4
+
+_print_str:
+	push ebp
+	mov ebp, esp
+	push esi
+	mov esi, ecx
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
+	pop esi
+	pop ebp
+	ret
+
+end start
+
+-----------------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\controleestoque.asm
+Fase 4 concluída.
+]]></system-out>
+  </testcase>
+  <testcase name="acceptsValidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.005">
+    <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/hello-world.prog
+
+=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
+Token: helloWorld | Tipo: ID         | Atributo: helloWorld
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: var        | Tipo: VAR        | Atributo: -
+Token: name       | Tipo: ID         | Atributo: name
+Token: :          | Tipo: DPONTOS    | Atributo: -
+Token: STRING     | Tipo: STRING     | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: BEGIN      | Tipo: BEGIN      | Atributo: -
+Token: write      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "Qual o seu nome?" | Tipo: CADEIA     | Atributo: Qual o seu nome?
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: read       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: name       | Tipo: ID         | Atributo: name
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "Ola, "    | Tipo: CADEIA     | Atributo: Ola, 
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: name       | Tipo: ID         | Atributo: name
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: END        | Tipo: END        | Atributo: -
+Token: .          | Tipo: PONTO      | Atributo: -
+
+--- Árvore Sintática (texto) ---
+(prog PROGRAM helloWorld ; (decls var (listDecl (declTip (listId name listIdLine) : (tip STRING) ;) listDeclLine)) (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Qual o seu nome?")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId name listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Ola, ")) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar name)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) END) . <EOF>)
+--------------------------------
+Fase 1 concluída. Programa: helloWorld
+
+=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+
+--- Código Intermediário (3AC) ---
+WRITE "Qual o seu nome?"
+READ_STRING v_name
+t0 = "Ola, " CONCAT v_name
+WRITE t0
+----------------------------------
+Fase 2 concluída com sucesso.
+
+=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+
+--- Instruções Otimizadas (3AC) ---
+WRITE "Qual o seu nome?"
+READ_STRING v_name
+t0 = "Ola, " CONCAT v_name
+WRITE t0
+-----------------------------------
+Fase 3 concluída.
+
+=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+
+--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
+; ============================================
+; Programa : helloWorld
+; Alvo     : x86 32 bits (MASM, Windows i386)
+; ============================================
+
+.386
+.model flat, stdcall
+option casemap:none
+
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
+	v_name db 256 dup(0)
+	t0 db 256 dup(0)
+	_buf db 14 dup(0)
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
+
+	_str0 db 'Qual o seu nome?', 0
+	_lit_concat_1 db 'Ola, ', 0
+
+.data?
+	_ibuf db 12 dup(?)
+
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
+	; WRITE "Qual o seu nome?"
+	mov ecx, offset _str0
+	call _print_str
+
+	; READ_STRING v_name
+	lea ecx, v_name
+	call _read_str
+
+	; t0 = "Ola, " CONCAT v_name
+	lea esi, _lit_concat_1
+	lea edi, t0
+concat1_2:
+	mov al, [esi]
+	test al, al
+	jz concat2_2
+	mov [edi], al
+	inc esi
+	inc edi
+	jmp concat1_2
+concat2_2:
+	lea esi, v_name
+concat2_body_3:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz concat2_body_3
+
+	; WRITE t0
+	mov ecx, offset t0
+	call _print_str
+
+	invoke Sleep, 50
+	invoke ExitProcess, 0
+
+_print_str:
+	push ebp
+	mov ebp, esp
+	push esi
+	mov esi, ecx
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
+	pop esi
+	pop ebp
+	ret
+
+_read_str:
+	push ebp
+	mov ebp, esp
+	push esi
+	push edi
+	push ebx
+	mov edi, ecx
+	invoke ReadFile, dword ptr [_hIn], edi, 255, addr _read, 0
+	mov esi, edi
+	xor ebx, ebx
+rs_scan:
+	mov al, byte ptr [esi+ebx]
+	cmp al, 13
+	je rs_trim
+	cmp al, 10
+	je rs_trim
+	cmp al, 0
+	je rs_done
+	inc ebx
+	jmp rs_scan
+rs_trim:
+	mov byte ptr [esi+ebx], 0
+rs_done:
+	pop ebx
+	pop edi
+	pop esi
+	pop ebp
+	ret
+
+end start
+
+-----------------------------------------------------------
+Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\helloworld.asm
 Fase 4 concluída.
 ]]></system-out>
   </testcase>

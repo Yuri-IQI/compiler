@@ -1,0 +1,7 @@
+PROGRAM helloWorld;
+var name : STRING;
+BEGIN
+    write("Qual o seu nome?");
+    read(name);
+    WRITE("Ola, " + name);
+END.

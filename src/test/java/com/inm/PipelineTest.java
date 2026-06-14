@@ -35,6 +35,35 @@ public class PipelineTest {
         }
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "scripts/invalid/attr-sem-expr.prog",
+            "scripts/invalid/if-sem-then.prog",
+            "scripts/invalid/read-sem-pars.prog",
+            "scripts/invalid/sem-begin.prog",
+            "scripts/invalid/sem-ponto.prog",
+            "scripts/invalid/sem-pvig.prog",
+            "scripts/invalid/tipo-invalido.prog",
+            "scripts/invalid/var-sem-tipo.prog",
+            "scripts/invalid/while-sem-do.prog",
+            "scripts/invalid/id-reservado.prog",
+            "scripts/invalid/erro-duplo-semantico.prog",
+            "scripts/invalid/attr-wrong-type.prog",
+            "scripts/invalid/ops-diferentes-tipos.prog",
+            "scripts/invalid/if-not-boolean.prog",
+            "scripts/invalid/tamanho-constante.prog",
+            "scripts/invalid/ops-bool-int.prog",
+            "scripts/invalid/erro-lexico.prog",
+            "scripts/invalid/erro-semantico.prog",
+    })
+    void rejectsInvalidScripts(String path) throws Exception {
+        assertThrows(
+                Exception.class,
+                () -> new CompilationPipeline().compile(load(path), ExecutionMode.TEST, false, OUTPUT_DIR),
+                "Script deveria lançar exceção, mas foi aceito: " + path
+        );
+    }
+
     private String load(String path) throws IOException, URISyntaxException {
         var url = getClass().getClassLoader().getResource(path);
         System.out.println(url);
@@ -58,38 +87,15 @@ public class PipelineTest {
             "scripts/valid/calculo-desconto.prog",
             "scripts/valid/teste-while.prog",
             "scripts/valid/super-expr.prog",
+            "scripts/valid/teste-expressoes.prog",
+            "scripts/valid/sistema-academico.prog",
+            "scripts/valid/controle-estoque.prog",
+            "scripts/valid/hello-world.prog",
     })
     void acceptsValidScripts(String path) throws Exception {
         assertDoesNotThrow(
                 () -> new CompilationPipeline().compile(load(path), ExecutionMode.TEST, false, OUTPUT_DIR),
                 "Script deveria ser válido, mas ocorreram erros em " + path
-        );
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {
-            "scripts/invalid/attr-sem-expr.prog",
-            "scripts/invalid/if-sem-then.prog",
-            "scripts/invalid/read-sem-pars.prog",
-            "scripts/invalid/sem-begin.prog",
-            "scripts/invalid/sem-ponto.prog",
-            "scripts/invalid/sem-pvig.prog",
-            "scripts/invalid/tipo-invalido.prog",
-            "scripts/invalid/var-sem-tipo.prog",
-            "scripts/invalid/while-sem-do.prog",
-            "scripts/invalid/id-reservado.prog",
-            "scripts/invalid/erro-duplo-semantico.prog",
-            "scripts/invalid/attr-wrong-type.prog",
-            "scripts/invalid/ops-diferentes-tipos.prog",
-            "scripts/invalid/if-not-boolean.prog",
-            "scripts/invalid/tamanho-constante.prog",
-            "scripts/invalid/ops-bool-int.prog",
-    })
-    void rejectsInvalidScripts(String path) throws Exception {
-        assertThrows(
-                Exception.class,
-                () -> new CompilationPipeline().compile(load(path), ExecutionMode.TEST, false, OUTPUT_DIR),
-                "Script deveria lançar exceção, mas foi aceito: " + path
         );
     }
 

@@ -1,7 +1,6 @@
 ; ============================================
-; Programa  : whilescript
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : whilescript
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -14,11 +13,12 @@ includelib kernel32.lib
 
 .data
 	v_id dw 0
-	t0 dw 0
+	t0 db 0
 	t1 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -57,6 +57,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L1
+	cmp eax, 0
+	je L1
 
 	; t1 = v_id + 1
 	mov ax, word ptr [v_id]
@@ -87,7 +89,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax

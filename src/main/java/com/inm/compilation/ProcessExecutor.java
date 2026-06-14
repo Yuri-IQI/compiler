@@ -31,7 +31,12 @@ public class ProcessExecutor {
         );
     }
 
-    public static int execute(Path exeFile) throws IOException, InterruptedException {
-        return ProcessRunner.runInheritIO(exeFile.toAbsolutePath().toString());
+    public static int execute(Path exeFile, String stdInContent) throws IOException, InterruptedException {
+        String exeStr = exeFile.toAbsolutePath().toString();
+        if (stdInContent != null && !stdInContent.isEmpty()) {
+            return ProcessRunner.runWithInput(stdInContent, exeStr);
+        } else {
+            return ProcessRunner.runInheritIO(exeStr);
+        }
     }
 }

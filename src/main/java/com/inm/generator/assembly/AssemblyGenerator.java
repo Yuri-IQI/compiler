@@ -12,7 +12,7 @@ public class AssemblyGenerator {
     public AssemblyGenerator(CompilationContext context) {
         this.context = context;
         this.writer = new Writer();
-        this.translator = new InstructionTranslator(writer, context.symbolTable());
+        this.translator = new InstructionTranslator(writer, context.symbolTable(), context.threeAddressCode());
         this.helper = new HelperInstructions(writer, translator);
     }
 
@@ -32,9 +32,8 @@ public class AssemblyGenerator {
 
     private void generateHeader() {
         writer.data("; ============================================");
-        writer.data("; Programa  : " + context.programName());
-        writer.data("; Gerado por: Compilador INM");
-        writer.data("; Alvo      : x86 32 bits (MASM, Windows i386)");
+        writer.data("; Programa : " + context.programName());
+        writer.data("; Alvo     : x86 32 bits (MASM, Windows i386)");
         writer.data("; ============================================");
         writer.data("");
         writer.data(".386");
@@ -62,15 +61,26 @@ public class AssemblyGenerator {
             if (inst.matches("t\\d+ = .*")) {
                 String temp = inst.split(" = ")[0].trim();
                 String bufferStr = writer.getDataBuffer().toString();
+
                 if (!bufferStr.contains(" " + temp + " ") && !bufferStr.contains("\t" + temp + " ")) {
-                    writer.data(temp + " dw 0", 1);
+                    String tempType = context.threeAddressCode().getTempType(temp);
+                    if (tempType == null) {
+                        tempType = "INTEGER";
+                    }
+
+                    switch (tempType.toUpperCase()) {
+                        case "STRING" -> writer.data(temp + " db 256 dup(0)", 1);
+                        case "BOOLEAN" -> writer.data(temp + " db 0", 1);
+                        default -> writer.data(temp + " dw 0", 1);
+                    }
                 }
             }
         }
 
         writer.data("_buf db 14 dup(0)", 1);
-        writer.data("_s_true db 'true', 10", 1);
-        writer.data("_s_false db 'false', 10", 1);
+        writer.data("_s_true db 'true', 13, 10, 0", 1);
+        writer.data("_s_false db 'false', 13, 10, 0", 1);
+        writer.data("_nl db 13, 10", 1);
         writer.data("_hOut dd ?", 1);
         writer.data("_hIn dd ?", 1);
         writer.data("_written dd ?", 1);

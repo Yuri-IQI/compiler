@@ -14,6 +14,7 @@ public class CompilationContext {
     private ThreeAddressCode threeAddressCode;
     private String asmPath;
     private ExecutionParams executionParams;
+    private String stdInContent = "";
 
     public CompilationContext() {
         this.symbolTable = new SymbolTable();
@@ -36,9 +37,11 @@ public class CompilationContext {
     public ThreeAddressCode threeAddressCode() { return threeAddressCode; }
     public String asmPath() { return asmPath; }
     public ExecutionParams executionParams() { return executionParams; }
+    public String stdInContent() { return stdInContent; }
 
     public void setSymbolTable(SymbolTable symbolTable) { this.symbolTable = symbolTable; }
     public void setThreeAddressCode(ThreeAddressCode tac) { this.threeAddressCode = tac; }
     public void setAsmPath(String asmPath) { this.asmPath = asmPath; }
     public void setProgramName(String progName) {programName = progName;}
+    public void setStdInContent(String content) {stdInContent = content;}
 }

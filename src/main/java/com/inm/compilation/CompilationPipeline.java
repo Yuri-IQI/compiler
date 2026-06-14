@@ -4,19 +4,17 @@ import com.inm.exceptions.ParsingException;
 import com.inm.exceptions.SemanticException;
 import com.inm.generator.assembly.AssemblyGenerator;
 import com.inm.generator.Optimizer;
-import com.inm.helper.ExecutionEnvHelper;
 import com.inm.helper.ParseHelper;
 import com.inm.helper.Printer;
-import com.inm.semantic.ContextualizedWalker;
 import com.inm.semantic.SemanticAndIntermediateListener;
 import com.inm.terminal.ExecutionMode;
 import com.inm.terminal.ExecutionParams;
 import org.antlr.v4.gui.Trees;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 
 public class CompilationPipeline {
 
@@ -71,8 +69,8 @@ public class CompilationPipeline {
         System.out.println("\n=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===");
 
         SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener(context);
-        ContextualizedWalker walker = new ContextualizedWalker(listener, context);
-        walker.walk();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(listener, context.tree());
 
         if (listener.getErrorCount() > 0) {
             System.err.println("\n[FALHA SEMÂNTICA] " + listener.getErrorCount() + " erro(s) encontrado(s). Compilação interrompida.");

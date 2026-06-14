@@ -56,15 +56,20 @@ public class ExecutionTest {
 
         CompilationContext context = new CompilationContext();
         context.setAsmPath(asmPath.toAbsolutePath().toString());
+        context.setStdInContent("9\r\n3\r\n7\r\n");
 
         String filename = asmPath.getFileName().toString();
         int dot = filename.lastIndexOf('.');
         String progName = dot > 0 ? filename.substring(0, dot) : filename;
         context.setProgramName(progName);
 
+        if (progName.equalsIgnoreCase("sistemaacademico")) {
+            context.setStdInContent("9\r\n3\r\n7\r\n");
+        }
+
         assertDoesNotThrow(
                 () -> Executor.runExecution(context),
-                "Falha ao executar: " + asmPath.getFileName()
+                "Falha ao executar ou timeout no script: " + asmPath.getFileName()
         );
     }
 }

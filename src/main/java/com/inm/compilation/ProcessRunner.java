@@ -12,13 +12,43 @@ public class ProcessRunner {
 
         Thread stdoutReader = pipeAsync(process, false);
         Thread stderrReader = pipeAsync(process, true);
-
         stdoutReader.start();
         stderrReader.start();
+
         int exitCode = process.waitFor();
 
         stdoutReader.join(5000);
         stderrReader.join(5000);
+        return exitCode;
+    }
+    
+    public static int runWithInput(String stdInContent, String... command) throws IOException, InterruptedException {
+        Process process = new ProcessBuilder(command)
+                .redirectErrorStream(false)
+                .start();
+
+        Thread stdoutReader = pipeAsync(process, false);
+        Thread stderrReader = pipeAsync(process, true);
+        stdoutReader.start();
+        stderrReader.start();
+
+        if (stdInContent != null && !stdInContent.isEmpty()) {
+            try (var writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(process.getOutputStream()))) {
+                writer.write(stdInContent);
+                writer.flush();
+            }
+        }
+
+        boolean terminado = process.waitFor(5, java.util.concurrent.TimeUnit.SECONDS);
+        if (!terminado) {
+            process.destroyForcibly();
+            throw new IOException("Timeout: O programa travou aguardando entradas (Stdin) ou entrou em loop.");
+        }
+
+        int exitCode = process.exitValue();
+
+        stdoutReader.join(1000);
+        stderrReader.join(1000);
         return exitCode;
     }
 

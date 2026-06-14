@@ -1,0 +1,20 @@
+PROGRAM TesteErros;
+
+BEGIN
+    VAR numero : INTEGER;
+    VAR ativo : BOOLEAN;
+    VAR texto : STRING;
+
+    numero := TRUE;
+    ativo := 10;
+    texto := FALSE;
+
+    ativo := numero AND TRUE;
+
+    numero := "ABC";
+
+    IF numero THEN
+    BEGIN
+        WRITE("ERRO");
+    END;
+END.

@@ -1,7 +1,6 @@
 ; ============================================
-; Programa  : danglingelse
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : danglingelse
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -15,11 +14,12 @@ includelib kernel32.lib
 .data
 	v_x dw 0
 	v_y dw 0
-	t0 dw 0
-	t1 dw 0
+	t0 db 0
+	t1 db 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -60,6 +60,8 @@ cmp_e_t0:
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L0
+	cmp eax, 0
+	je L0
 
 	; t1 = 1 == 2
 	mov ax, 1
@@ -73,6 +75,8 @@ cmp_e_t1:
 
 	; ifFalse t1 goto L2
 	movzx eax, byte ptr [t1]
+	cmp eax, 0
+	je L2
 	cmp eax, 0
 	je L2
 
@@ -106,17 +110,16 @@ _print_str:
 	push ebp
 	mov ebp, esp
 	push esi
-	push edi
 	mov esi, ecx
-	mov edi, ecx
-	xor eax, eax
-	mov ecx, 256
-	repne scasb
-	mov eax, 256
-	sub eax, ecx
-	dec eax
-	invoke WriteFile, dword ptr [_hOut], esi, eax, addr _written, 0
-	pop edi
+	xor edx, edx
+ps_len:
+	cmp byte ptr [esi+edx], 0
+	je ps_write
+	inc edx
+	jmp ps_len
+ps_write:
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	invoke WriteFile, dword ptr [_hOut], offset _nl, 2, addr _written, 0
 	pop esi
 	pop ebp
 	ret

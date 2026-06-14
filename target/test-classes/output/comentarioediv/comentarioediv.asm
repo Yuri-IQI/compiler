@@ -1,7 +1,6 @@
 ; ============================================
-; Programa  : comentarioEDiv
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : comentarioEDiv
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -16,8 +15,9 @@ includelib kernel32.lib
 	v_div dw 0
 	t0 dw 0
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?

@@ -1,7 +1,6 @@
 ; ============================================
-; Programa  : variaveis
-; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (MASM, Windows i386)
+; Programa : variaveis
+; Alvo     : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
 .386
@@ -17,8 +16,9 @@ includelib kernel32.lib
 	v_y dw 0
 	v_z db 256 dup(0)
 	_buf db 14 dup(0)
-	_s_true db 'true', 10
-	_s_false db 'false', 10
+	_s_true db 'true', 13, 10, 0
+	_s_false db 'false', 13, 10, 0
+	_nl db 13, 10
 	_hOut dd ?
 	_hIn dd ?
 	_written dd ?
@@ -47,9 +47,9 @@ start:
 	push eax
 	call _print_int
 
-	; READ v_z
-	call _read_int
-	mov word ptr [v_z], ax
+	; READ_STRING v_z
+	lea ecx, v_z
+	call _read_str
 
 	invoke Sleep, 50
 	invoke ExitProcess, 0
@@ -60,7 +60,9 @@ _print_int:
 	push ebx
 	push esi
 	movsx eax, word ptr [ebp+8]
-	lea ecx, [_buf+13]
+	lea ecx, [_buf+12]
+	mov byte ptr [ecx], 13
+	inc ecx
 	mov byte ptr [ecx], 10
 	dec ecx
 	mov esi, eax
@@ -91,38 +93,31 @@ pi_write:
 	pop ebp
 	ret 4
 
-_read_int:
+_read_str:
 	push ebp
 	mov ebp, esp
 	push esi
+	push edi
 	push ebx
-	invoke ReadConsoleA, dword ptr [_hIn], addr _ibuf, 12, addr _read, 0
-	mov esi, offset _ibuf
-	xor eax, eax
+	mov edi, ecx
+	invoke ReadFile, dword ptr [_hIn], edi, 255, addr _read, 0
+	mov esi, edi
 	xor ebx, ebx
-	mov cl, byte ptr [esi]
-	cmp cl, '-'
-	jne ri_loop
-	mov ebx, 1
-	inc esi
-ri_loop:
-	mov cl, byte ptr [esi]
-	cmp cl, '0'
-	jl ri_done
-	cmp cl, '9'
-	jg ri_done
-	sub cl, '0'
-	imul eax, eax, 10
-	movzx ecx, cl
-	add eax, ecx
-	inc esi
-	jmp ri_loop
-ri_done:
-	test ebx, ebx
-	jz ri_pos
-	neg eax
-ri_pos:
+rs_scan:
+	mov al, byte ptr [esi+ebx]
+	cmp al, 13
+	je rs_trim
+	cmp al, 10
+	je rs_trim
+	cmp al, 0
+	je rs_done
+	inc ebx
+	jmp rs_scan
+rs_trim:
+	mov byte ptr [esi+ebx], 0
+rs_done:
 	pop ebx
+	pop edi
 	pop esi
 	pop ebp
 	ret

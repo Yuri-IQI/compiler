@@ -1,0 +1,44 @@
+PROGRAM SistemaAcademico;
+
+BEGIN
+    VAR nota1, nota2, nota3 : INTEGER;
+    VAR media : INTEGER;
+    VAR aprovado, frequenciaOk, resultadoFinal : BOOLEAN;
+    VAR situacao : STRING;
+
+    WRITE("DIGITE A PRIMEIRA NOTA");
+    READ(nota1);
+
+    WRITE("DIGITE A SEGUNDA NOTA");
+    READ(nota2);
+
+    WRITE("DIGITE A TERCEIRA NOTA");
+    READ(nota3);
+
+    media := (nota1 + nota2 + nota3) / 3;
+
+    WRITE("MEDIA CALCULADA");
+    WRITE(media);
+
+    aprovado := media >= 7;
+    frequenciaOk := TRUE;
+
+    resultadoFinal := aprovado AND frequenciaOk;
+
+    WRITE(resultadoFinal);
+
+    IF resultadoFinal THEN
+    BEGIN
+        situacao := "APROVADO";
+        WRITE(situacao);
+    END
+    ELSE
+    BEGIN
+        situacao := "REPROVADO";
+        WRITE(situacao);
+    END;
+
+    aprovado := ~(media < 7);
+
+    WRITE(aprovado);
+END.

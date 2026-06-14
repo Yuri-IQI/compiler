@@ -50,7 +50,6 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     private void emit(String instruction) {
         tac.emit(instruction);
     }
-    private String newTemp() { return tac.newTemp(); }
     private String newLabel() { return tac.newLabel(); }
 
     @Override
@@ -130,7 +129,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
                                 + left.getType() + "' com '" + right.getType() + "'.");
                 exprStack.push(new TypedOperand("0", "undefined"));
             } else {
-                String temp = newTemp();
+                String temp = tac.newTemp("BOOLEAN");
                 emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
                 exprStack.push(new TypedOperand(temp, "boolean"));
             }
@@ -178,21 +177,26 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             return;
         }
 
-        String temp = newTemp();
+        String temp = tac.newTemp("BOOLEAN");
         emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
         exprStack.push(new TypedOperand(temp, "boolean"));
     }
 
     private void writeOp(Token t, TypedOperand left, TypedOperand right, String op) {
+        if (op.equals("+") && left.getType().equalsIgnoreCase("string") && right.getType().equalsIgnoreCase("string")) {
+            String temp = tac.newTemp("STRING");
+            emit(temp + " = " + left.getValue() + " CONCAT " + right.getValue());
+            exprStack.push(new TypedOperand(temp, "string"));
+            return;
+        }
+
         if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
-            reportSemanticError(t,
-                    "Operação '" + op + "' inválida entre '"
-                            + left.getType() + "' e '" + right.getType() + "'. Esperado 'integer'.");
+            reportSemanticError(t, "Operação '" + op + "' inválida... Esperado 'integer'.");
             pushErrorOperand();
             return;
         }
 
-        String temp = newTemp();
+        String temp = tac.newTemp("INTEGER");
         emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
         exprStack.push(new TypedOperand(temp, "integer"));
     }
@@ -229,7 +233,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             return;
         }
 
-        String temp = newTemp();
+        String temp = tac.newTemp("BOOLEAN");
         emit(temp + " = ~" + right.getValue());
         exprStack.push(new TypedOperand(temp, "boolean"));
     }
@@ -330,7 +334,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         for (String idName : ids) {
             String type = resolveType(idName, t);
             if (type == null) continue;
-            emit("READ " + SymbolTable.getPrefixedName(idName));
+            emit("READ_" + type.toUpperCase() + " " + SymbolTable.getPrefixedName(idName));
         }
     }
 

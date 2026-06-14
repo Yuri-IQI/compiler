@@ -1,0 +1,36 @@
+PROGRAM ControleEstoque;
+
+BEGIN
+    VAR quantidade : INTEGER;
+    VAR vendidos : INTEGER;
+    VAR restante : INTEGER;
+    VAR continuar : BOOLEAN;
+
+    quantidade := 20;
+    vendidos := 0;
+    continuar := TRUE;
+
+    WHILE continuar DO
+    BEGIN
+        vendidos := vendidos + 2;
+
+        restante := quantidade - vendidos;
+
+        WRITE("VENDIDOS");
+        WRITE(vendidos);
+
+        WRITE("RESTANTE");
+        WRITE(restante);
+
+        IF restante <= 0 THEN
+        BEGIN
+            continuar := FALSE;
+        END
+        ELSE
+        BEGIN
+            continuar := TRUE;
+        END;
+    END;
+
+    WRITE("ESTOQUE ENCERRADO");
+END.

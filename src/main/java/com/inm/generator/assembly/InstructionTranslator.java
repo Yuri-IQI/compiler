@@ -1,11 +1,13 @@
 package com.inm.generator.assembly;
 
 import com.inm.semantic.SymbolTable;
+import com.inm.semantic.ThreeAddressCode;
 
 public class InstructionTranslator {
     private final Writer writer;
     private final InstructionEmitter emit;
     private final SymbolTable symbolTable;
+    private final ThreeAddressCode tac;
 
     private int stringLitCount = 0;
 
@@ -13,11 +15,23 @@ public class InstructionTranslator {
     boolean needsPrintBool = false;
     boolean needsPrintStr = false;
     boolean needsReadInt = false;
+    boolean needsReadBool = false;
+    boolean needsReadStr = false;
 
-    public InstructionTranslator(Writer writer, SymbolTable symbolTable) {
+    public InstructionTranslator(Writer writer, SymbolTable symbolTable, ThreeAddressCode tac) {
         this.writer = writer;
         this.emit = new InstructionEmitter(writer);
         this.symbolTable = symbolTable;
+        this.tac = tac;
+    }
+
+    public String getOperandType(String operand) {
+        if (operand.startsWith("t")) {
+            return tac.getTempType(operand);
+        }
+
+        String pureName = operand.replace(SymbolTable.prefix, "");
+        return symbolTable.getType(pureName, 0, 0);
     }
 
     public void translate(String inst) {
@@ -36,8 +50,16 @@ public class InstructionTranslator {
             return;
         }
 
-        if (inst.startsWith("READ ")) {
-            translateRead(inst);
+        if (inst.startsWith("READ_INTEGER ")) {
+            translateReadInt(inst.substring(13).trim());
+            return;
+        }
+        if (inst.startsWith("READ_BOOLEAN ")) {
+            translateReadBool(inst.substring(13).trim());
+            return;
+        }
+        if (inst.startsWith("READ_STRING ")) {
+            translateReadStr(inst.substring(12).trim());
             return;
         }
 
@@ -51,7 +73,12 @@ public class InstructionTranslator {
             return;
         }
 
-        if (inst.matches("\\w+ = -?\\d+")) {
+        if (inst.matches("(v_)?\\w+ = \".*\"")) {
+            translateStringAssign(inst);
+            return;
+        }
+
+        if (inst.matches("\\w+ = [+-]?\\d+")) {
             String[] p = inst.split(" = ");
             emit.storeWord(p[0], p[1]);
             return;
@@ -60,6 +87,11 @@ public class InstructionTranslator {
         if (inst.matches("(?i)\\w+ = (TRUE|FALSE)")) {
             String[] p = inst.split(" = ");
             emit.storeByte(p[0], emit.boolToInt(p[1]));
+            return;
+        }
+
+        if (inst.matches("\\w+ = (\".*\"|\\w+) CONCAT \\w+")) {
+            translateStringConcat(inst);
             return;
         }
 
@@ -101,6 +133,55 @@ public class InstructionTranslator {
         writer.comment("[NÃO TRADUZIDO] " + inst);
     }
 
+    private void translateStringConcat(String inst) {
+        String dest = inst.split(" = ")[0].trim();
+        String resto = inst.split(" = ")[1].trim();
+        String str1 = resto.split(" CONCAT ")[0].trim();
+        String str2 = resto.split(" CONCAT ")[1].trim();
+
+        String src1Label = str1;
+        String src2Label = str2;
+
+        if (str1.startsWith("\"")) {
+            src1Label = "_lit_concat_" + stringLitCount++;
+            String conteudo = str1.substring(1, str1.length() - 1);
+            writer.strLit(src1Label + " db '" + conteudo + "', 0");
+        }
+
+        if (str2.startsWith("\"")) {
+            src2Label = "_lit_concat_" + stringLitCount++;
+            String conteudo = str2.substring(1, str2.length() - 1);
+            writer.strLit(src2Label + " db '" + conteudo + "', 0");
+        }
+
+        String loop1 = "concat1_" + stringLitCount;
+        String loop2 = "concat2_" + stringLitCount++;
+
+        writer.code("lea esi, " + src1Label);
+        writer.code("lea edi, " + dest);
+
+        writer.label(loop1 + ":");
+        writer.code("mov al, [esi]");
+        writer.code("test al, al");
+        writer.code("jz " + loop2);
+        writer.code("mov [edi], al");
+        writer.code("inc esi");
+        writer.code("inc edi");
+        writer.code("jmp " + loop1);
+
+        writer.label(loop2 + ":");
+        writer.code("lea esi, " + src2Label);
+
+        String loop2Body = "concat2_body_" + stringLitCount;
+        writer.label(loop2Body + ":");
+        writer.code("mov al, [esi]");
+        writer.code("mov [edi], al");
+        writer.code("inc esi");
+        writer.code("inc edi");
+        writer.code("test al, al");
+        writer.code("jnz " + loop2Body);
+    }
+
     private void translateIfFalse(String inst) {
         String[] p = inst.split(" ");
         String expr = p[1].trim();
@@ -113,27 +194,37 @@ public class InstructionTranslator {
             return;
         }
 
-        if (expr.startsWith(SymbolTable.prefix)) {
-            String pureName = expr.replace(SymbolTable.prefix, "");
-            String type = symbolTable.getType(pureName, 0, 0);
-            if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
-                writer.code("movzx eax, byte ptr [" + expr + "]");
-            } else {
-                writer.code("movsx eax, word ptr [" + expr + "]");
-            }
-        } else {
+        String type = getOperandType(expr);
+
+        if ("BOOLEAN".equalsIgnoreCase(type)) {
             writer.code("movzx eax, byte ptr [" + expr + "]");
+        } else {
+            writer.code("movsx eax, word ptr [" + expr + "]");
         }
+
+        writer.code("cmp eax, 0");
+        writer.code("je " + exec);
 
         writer.code("cmp eax, 0");
         writer.code("je " + exec);
     }
 
-    private void translateRead(String inst) {
+    private void translateReadInt(String var) {
         needsReadInt = true;
-        String var = inst.substring(5).trim();
         writer.code("call _read_int");
-        emit.storeWord(var, "ax");
+        writer.code("mov word ptr [" + var + "], ax");
+    }
+
+    private void translateReadBool(String var) {
+        needsReadBool = true;
+        writer.code("call _read_bool");
+        writer.code("mov byte ptr [" + var + "], al");
+    }
+
+    private void translateReadStr(String var) {
+        needsReadStr = true;
+        writer.code("lea ecx, " + var);
+        writer.code("call _read_str");
     }
 
     private void translateWrite(String inst) {
@@ -164,14 +255,17 @@ public class InstructionTranslator {
             return;
         }
 
-        String pureName = var.replace(SymbolTable.prefix, "");
-        String type = symbolTable.getType(pureName, 0, 0);
-
+        String type = getOperandType(var);
         if (type != null && type.equalsIgnoreCase("STRING")) {
             needsPrintStr = true;
-            writer.code("mov ecx, offset " + var);
-            writer.code("call _print_str");
 
+            if (var.startsWith("t")) {
+                writer.code("mov ecx, offset " + var);
+            } else {
+                writer.code("mov ecx, offset " + var);
+            }
+
+            writer.code("call _print_str");
         } else if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
             needsPrintBool = true;
             writer.code("movzx eax, byte ptr [" + var + "]");
@@ -260,15 +354,57 @@ public class InstructionTranslator {
         String[] p = inst.split(" = ");
         String dest = p[0].trim();
         String source = p[1].trim();
-        String pureName = dest.replace(SymbolTable.prefix, "");
-        String type = symbolTable.getType(pureName, 0, 0);
 
-        if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
+        String type = getOperandType(dest);
+        if ("BOOLEAN".equalsIgnoreCase(type)) {
             emit.loadByte("al", source);
             emit.storeByte(dest, "al");
+        } else if ("STRING".equalsIgnoreCase(type)) {
+            translateStringCopy(dest, source);
         } else {
             emit.loadWord("ax", source);
             emit.storeWord(dest, "ax");
         }
+    }
+
+    private void translateStringCopy(String dest, String source) {
+        String loop = "copy_" + stringLitCount++;
+
+        writer.code("lea esi, " + source);
+        writer.code("lea edi, " + dest);
+
+        writer.label(loop + ":");
+        writer.code("mov al, [esi]");
+        writer.code("mov [edi], al");
+        writer.code("inc esi");
+        writer.code("inc edi");
+        writer.code("test al, al");
+        writer.code("jnz " + loop);
+    }
+
+    private void translateStringAssign(String inst) {
+        String[] p = inst.split(" = ", 2);
+
+        String dest = p[0].trim();
+
+        String text = p[1].trim();
+        text = text.substring(1, text.length() - 1);
+
+        String lbl = "_lit_" + stringLitCount++;
+
+        writer.strLit(lbl + " db '" + text + "', 0");
+
+        writer.code("lea esi, " + lbl);
+        writer.code("lea edi, " + dest);
+
+        String loop = "copy_" + stringLitCount;
+
+        writer.label(loop + ":");
+        writer.code("mov al, [esi]");
+        writer.code("mov [edi], al");
+        writer.code("inc esi");
+        writer.code("inc edi");
+        writer.code("test al, al");
+        writer.code("jnz " + loop);
     }
 }

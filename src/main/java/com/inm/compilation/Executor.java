@@ -17,9 +17,9 @@ public class Executor {
 
         try {
             WorkspacePaths paths = resolveWorkspace(context, Path.of(asmPath).toAbsolutePath());
-            assemble(paths);
+            mount(paths);
             link(paths);
-            run(paths);
+            run(paths, context);
         } catch (IOException e) {
             System.err.println("[ERRO] Falha de I/O durante a execução: " + e.getMessage());
             System.err.println("Verifique se o MASM32 SDK está instalado corretamente em C:\\masm32.");
@@ -31,7 +31,7 @@ public class Executor {
         System.out.println("Fase 5 concluída.");
     }
 
-    private static void assemble(WorkspacePaths paths) throws IOException, InterruptedException {
+    private static void mount(WorkspacePaths paths) throws IOException, InterruptedException {
         System.out.println("Montando com MASM (ml.exe)...");
         int exit = ProcessExecutor.mount(paths.asmFile(), paths.objFile());
         if (exit != 0) {
@@ -49,11 +49,13 @@ public class Executor {
         System.out.println("Linkagem concluída: " + paths.exeFile());
     }
 
-    private static void run(WorkspacePaths paths) throws IOException, InterruptedException {
+    private static void run(WorkspacePaths paths, CompilationContext context) throws IOException, InterruptedException {
         System.out.println("\n=== SAÍDA DO PROGRAMA ===");
         System.out.flush();
         System.err.flush();
-        int exit = ProcessExecutor.execute(paths.exeFile());
+
+        String stdIn = context.stdInContent();
+        int exit = ProcessExecutor.execute(paths.exeFile(), stdIn);
         System.out.println("=========================");
         System.out.println("Programa encerrou com código: " + exit);
     }

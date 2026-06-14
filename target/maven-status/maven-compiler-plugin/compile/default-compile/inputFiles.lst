@@ -22,7 +22,6 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\Printer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\PrintingLexer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\Symbol.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\Main.java
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\ContextualizedWalker.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SemanticAndIntermediateListener.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SymbolTable.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\ThreeAddressCode.java

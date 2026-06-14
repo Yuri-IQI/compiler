@@ -1,0 +1,12 @@
+PROGRAM TesteLexico;
+
+BEGIN
+    VAR nome_muito_grande_demais_para_a_linguagem : INTEGER;
+
+    VAR x : INTEGER;
+
+    x := 50000;
+
+    @
+
+END.
