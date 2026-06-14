@@ -3,12 +3,14 @@ com\inm\antlr4\ProgramParser$ExprParContext.class
 com\inm\terminal\ExecutionParams.class
 com\inm\antlr4\ProgramParser$ProgContext.class
 com\inm\antlr4\ProgramParser$CmdWriteContext.class
+com\inm\compilation\Executor.class
 com\inm\antlr4\ProgramParser$CmdContext.class
 com\inm\antlr4\ProgramParser$ListCmdContext.class
 com\inm\antlr4\ProgramParser$ExprLogContext.class
 com\inm\semantic\TypedOperand.class
 com\inm\generator\assembly\InstructionEmitter.class
 com\inm\semantic\SymbolTable.class
+com\inm\compilation\ProcessRunner.class
 com\inm\helper\PrintingLexer.class
 com\inm\antlr4\ProgramParser$CmdCompContext.class
 com\inm\antlr4\ProgramParser$DeclsContext.class
@@ -27,6 +29,8 @@ com\inm\antlr4\ProgramParser$ExprAdLineContext.class
 com\inm\exceptions\SemanticException.class
 com\inm\terminal\TerminalHandler.class
 com\inm\antlr4\ProgramParser$CmdIfContext.class
+com\inm\helper\ExecutionEnvHelper.class
+com\inm\compilation\Executor$WorkspacePaths.class
 com\inm\Main.class
 com\inm\antlr4\ProgramParser$DeclTipContext.class
 com\inm\generator\assembly\InstructionTranslator.class
@@ -40,6 +44,7 @@ com\inm\helper\ParseHelper.class
 com\inm\antlr4\ProgramParser$ExprNegContext.class
 com\inm\antlr4\ProgramListener.class
 com\inm\antlr4\ProgramParser$ExprLogLineContext.class
+com\inm\compilation\CompilationContext.class
 com\inm\antlr4\ProgramParser$ListDeclContext.class
 com\inm\antlr4\ProgramParser$ListWLineContext.class
 com\inm\antlr4\ProgramBaseListener.class
@@ -58,3 +63,4 @@ com\inm\antlr4\ProgramParser$VarDeclContext.class
 com\inm\antlr4\ProgramParser$ExprMultContext.class
 com\inm\antlr4\ProgramParser$CmdAtribContext.class
 com\inm\antlr4\ProgramParser$CmdIfLineContext.class
+com\inm\compilation\ProcessExecutor.class

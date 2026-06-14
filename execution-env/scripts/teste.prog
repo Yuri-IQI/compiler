@@ -1,4 +1,0 @@
-program EscreveTeste;
-begin
-    write("teste");
-end.

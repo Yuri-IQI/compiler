@@ -27,22 +27,29 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     public SymbolTable getSymbolTable() { return currentScope; }
     public ThreeAddressCode getThreeAddressCode() { return tac; }
 
-    public String getGenerated3AC() {
-        if (errorCount > 0) {
-            return "Código intermediário não gerado devido a " + errorCount + " erro(s) semântico(s).";
-        }
-        return tac.getCode();
-    }
-
     private void reportSemanticError(Token token, String message) {
         errorCount++;
         System.err.println("Erro Semântico [" + token.getLine() + ":" + token.getCharPositionInLine() + "]: " + message);
     }
 
+    private String truncateIdentifier(String name, Token token) {
+        if (name.length() > 16) {
+            String truncated = name.substring(0, 16);
+            System.out.println("Aviso [" + token.getLine() + ":"
+                    + token.getCharPositionInLine() + "]: Identificador '"
+                    + name + "' truncado para '" + truncated + "'.");
+            return truncated;
+        }
+        return name;
+    }
+
+    private void pushErrorOperand() {
+        exprStack.push(new TypedOperand("0", "undefined"));
+    }
+
     private void emit(String instruction) {
         tac.emit(instruction);
     }
-
     private String newTemp() { return tac.newTemp(); }
     private String newLabel() { return tac.newLabel(); }
 
@@ -61,7 +68,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (ctx.listId() == null || ctx.tip() == null) return;
 
         List<String> idList = new ArrayList<>();
-        idList.add(ctx.listId().ID().getText());
+        Token firstToken = ctx.listId().ID().getSymbol();
+        String firstName = truncateIdentifier(ctx.listId().ID().getText(), firstToken);
+        idList.add(firstName);
         findIdsInLine(ctx.listId().listIdLine(), idList);
 
         String type = ctx.tip().getText();
@@ -77,8 +86,12 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
     private void findIdsInLine(ProgramParser.ListIdLineContext lineCtx, List<String> idList) {
         if (lineCtx == null) return;
-        if (lineCtx.ID() != null && !idList.contains(lineCtx.ID().getText()))
-            idList.add(lineCtx.ID().getText());
+        if (lineCtx.ID() != null) {
+            Token t = lineCtx.ID().getSymbol();
+            String name = truncateIdentifier(lineCtx.ID().getText(), t);
+            if (!idList.contains(name))
+                idList.add(name);
+        }
         findIdsInLine(lineCtx.listIdLine(), idList);
     }
 
@@ -91,8 +104,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         String idType = resolveType(idName, idToken);
 
         TypedOperand expr = exprStack.pop();
+        if (idType == null) return;
 
-        if (idType != null && !idType.equalsIgnoreCase(expr.getType())) {
+        if (!idType.equalsIgnoreCase(expr.getType())) {
             reportSemanticError(idToken,
                     "Incompatibilidade de tipos: não é possível atribuir '" + expr.getType()
                             + "' à variável '" + idName + "' do tipo '" + idType.toUpperCase() + "'.");
@@ -108,10 +122,18 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             TypedOperand right = exprStack.pop();
             TypedOperand left = exprStack.pop();
             String op = ctx.exprRelLine().OPREL().getText();
+            Token t = ctx.getStart();
 
-            String temp = newTemp();
-            emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
-            exprStack.push(new TypedOperand(temp, "boolean"));
+            if (!left.getType().equals(right.getType())) {
+                reportSemanticError(t,
+                        "Operador relacional '" + op + "' não pode comparar '"
+                                + left.getType() + "' com '" + right.getType() + "'.");
+                exprStack.push(new TypedOperand("0", "undefined"));
+            } else {
+                String temp = newTemp();
+                emit(temp + " = " + left.getValue() + " " + op + " " + right.getValue());
+                exprStack.push(new TypedOperand(temp, "boolean"));
+            }
         }
 
         boolean isIfCondition = ctx.getParent() instanceof ProgramParser.CmdIfContext;
@@ -151,7 +173,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (!left.getType().equals("boolean") || !right.getType().equals("boolean")) {
             reportSemanticError(t,
                     "Operação lógica '" + op + "' inválida entre '"
-                            + left.getType() + "' e '" + right.getType() + "'.");
+                            + left.getType() + "' e '" + right.getType() + "'. Esperado 'boolean'.");
+            pushErrorOperand();
+            return;
         }
 
         String temp = newTemp();
@@ -163,7 +187,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (!left.getType().equals("integer") || !right.getType().equals("integer")) {
             reportSemanticError(t,
                     "Operação '" + op + "' inválida entre '"
-                            + left.getType() + "' e '" + right.getType() + "'.");
+                            + left.getType() + "' e '" + right.getType() + "'. Esperado 'integer'.");
+            pushErrorOperand();
+            return;
         }
 
         String temp = newTemp();
@@ -174,12 +200,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     @Override
     public void exitExprAdLine(ProgramParser.ExprAdLineContext ctx) {
         if (ctx.OPAD() == null || exprStack.size() < 2) return;
-
         TypedOperand right = exprStack.pop();
         TypedOperand left = exprStack.pop();
-        String op = ctx.OPAD().getText();
-        Token t = ctx.getStart();
-        writeOp(t, left, right, op);
+        writeOp(ctx.getStart(), left, right, ctx.OPAD().getText());
     }
 
     @Override
@@ -188,9 +211,7 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
         TypedOperand right = exprStack.pop();
         TypedOperand left = exprStack.pop();
-        String op = ctx.OPMULT().getText();
-        Token t = ctx.getStart();
-        writeOp(t, left, right, op);
+        writeOp(ctx.getStart(), left, right, ctx.OPMULT().getText());
     }
 
     @Override
@@ -202,7 +223,10 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
 
         if (!right.getType().equals("boolean")) {
             reportSemanticError(t,
-                    "Operador '~' inválido para o tipo '" + right.getType() + "'. Esperado 'boolean'.");
+                    "Operador '~' inválido para o tipo '"
+                            + right.getType() + "'. Esperado 'boolean'.");
+            pushErrorOperand();
+            return;
         }
 
         String temp = newTemp();
@@ -270,11 +294,15 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
             Token t = ctx.CTE().getSymbol();
             try {
                 long v = Long.parseLong(val);
-                if (v < -32768 || v > 32767)
-                    reportSemanticError(t,
-                            "Constante '" + val + "' excede o limite de 2 bytes (-32768 a 32767).");
+                if (v < -32768 || v > 32767) {
+                    reportSemanticError(t, "Constante '" + val + "' excede o limite de 2 bytes (-32768 a 32767).");
+                    exprStack.push(new TypedOperand("0", "integer"));
+                    return;
+                }
             } catch (NumberFormatException e) {
                 reportSemanticError(t, "Constante '" + val + "' não é um inteiro válido.");
+                exprStack.push(new TypedOperand("0", "integer"));
+                return;
             }
             exprStack.push(new TypedOperand(val, "integer"));
 
@@ -294,12 +322,14 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
         if (ctx.listId() == null) return;
 
         List<String> ids = new ArrayList<>();
-        ids.add(ctx.listId().ID().getText());
+        Token firstToken = ctx.listId().ID().getSymbol();
+        ids.add(truncateIdentifier(ctx.listId().ID().getText(), firstToken));
         findIdsInLine(ctx.listId().listIdLine(), ids);
 
         Token t = ctx.getStart();
         for (String idName : ids) {
-            resolveType(idName, t);
+            String type = resolveType(idName, t);
+            if (type == null) continue;
             emit("READ " + SymbolTable.getPrefixedName(idName));
         }
     }
@@ -308,7 +338,9 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     public void exitElemW(ProgramParser.ElemWContext ctx) {
         if (ctx.CADEIA() != null) {
             emit("WRITE " + ctx.CADEIA().getText());
-            if (!exprStack.isEmpty()) exprStack.pop();
+            if (!exprStack.isEmpty() && exprStack.peek().getValue().equals(ctx.CADEIA().getText())) {
+                exprStack.pop();
+            }
         } else {
             if (!exprStack.isEmpty()) {
                 TypedOperand target = exprStack.pop();

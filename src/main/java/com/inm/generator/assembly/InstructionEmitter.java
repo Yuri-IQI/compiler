@@ -26,7 +26,7 @@ public class InstructionEmitter {
         } else if (isBoolLiteral(op)) {
             writer.code("mov " + reg + ", " + boolToInt(op));
         } else {
-            writer.code("mov " + reg + ", word [" + op + "]");
+            writer.code("mov " + reg + ", word ptr [" + op + "]");
         }
     }
 
@@ -34,9 +34,9 @@ public class InstructionEmitter {
         if (isNumericLiteral(op)) {
             writer.code("mov " + reg + ", " + op);
         } else if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
-            writer.code("movzx " + reg + ", byte [" + op + "]");
+            writer.code("movzx " + reg + ", byte ptr [" + op + "]");
         } else {
-            writer.code("movsx " + reg + ", word [" + op + "]");
+            writer.code("movsx " + reg + ", word ptr [" + op + "]");
         }
     }
 
@@ -46,35 +46,31 @@ public class InstructionEmitter {
         } else if (isNumericLiteral(op)) {
             writer.code("mov " + reg + ", " + op);
         } else {
-            writer.code("mov " + reg + ", byte [" + op + "]");
+            writer.code("mov " + reg + ", byte ptr [" + op + "]");
         }
     }
 
     public void storeWord(String dest, String val) {
-        if (isNumericLiteral(val)) {
-            writer.code("mov word [" + dest + "], " + val);
-        } else {
-            writer.code("mov word [" + dest + "], " + val);
-        }
+        writer.code("mov word ptr [" + dest + "], " + val);
     }
 
     public void storeByte(String dest, String val) {
-        writer.code("mov byte [" + dest + "], " + val);
+        writer.code("mov byte ptr [" + dest + "], " + val);
     }
 
     public void opWord(String op, String operand) {
         if (isNumericLiteral(operand)) {
             writer.code(op + " ax, " + operand);
         } else {
-            writer.code(op + " ax, word [" + operand + "]");
+            writer.code(op + " ax, word ptr [" + operand + "]");
         }
     }
 
     public void mulWord(String operand) {
         if (isNumericLiteral(operand)) {
-            writer.code("imul ax, " + operand);
+            writer.code("imul ax, ax, " + operand);
         } else {
-            writer.code("imul word [" + operand + "]");
+            writer.code("imul word ptr [" + operand + "]");
         }
     }
 
@@ -83,7 +79,7 @@ public class InstructionEmitter {
             writer.code("mov bx, " + operand);
             writer.code("idiv bx");
         } else {
-            writer.code("idiv word [" + operand + "]");
+            writer.code("idiv word ptr [" + operand + "]");
         }
     }
 
@@ -91,7 +87,7 @@ public class InstructionEmitter {
         if (isNumericLiteral(operand)) {
             writer.code(op + " al, " + operand);
         } else {
-            writer.code(op + " al, byte [" + operand + "]");
+            writer.code(op + " al, byte ptr [" + operand + "]");
         }
     }
 }

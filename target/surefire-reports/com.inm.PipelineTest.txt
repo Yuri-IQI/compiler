@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.inm.PipelineTest
 -------------------------------------------------------------------------------
-Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.873 s -- in com.inm.PipelineTest
+Tests run: 31, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.811 s <<< FAILURE! -- in com.inm.PipelineTest
+com.inm.PipelineTest.acceptsValidScripts(String)[6] -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Script deveria ser válido, mas ocorreram erros em scripts/valid/nome-identificador.prog ==> Unexpected exception thrown: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:90)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:56)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:43)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3314)
+	at com.inm.PipelineTest.acceptsValidScripts(PipelineTest.java:63)
+Caused by: com.inm.exceptions.SemanticException: 2 erro(s) semântico(s) encontrado(s).
+	at com.inm.compilation.CompilationPipeline.runSemantic(CompilationPipeline.java:79)
+	at com.inm.compilation.CompilationPipeline.compile(CompilationPipeline.java:38)
+	at com.inm.compilation.CompilationPipeline.compile(CompilationPipeline.java:33)
+	at com.inm.PipelineTest.lambda$acceptsValidScripts$0(PipelineTest.java:64)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:52)
+	... 3 more
+

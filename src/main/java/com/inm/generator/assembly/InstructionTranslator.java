@@ -10,6 +10,7 @@ public class InstructionTranslator {
     private int stringLitCount = 0;
 
     boolean needsPrintInt = false;
+    boolean needsPrintBool = false;
     boolean needsPrintStr = false;
     boolean needsReadInt = false;
 
@@ -116,12 +117,12 @@ public class InstructionTranslator {
             String pureName = expr.replace(SymbolTable.prefix, "");
             String type = symbolTable.getType(pureName, 0, 0);
             if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
-                writer.code("movzx eax, byte [" + expr + "]");
+                writer.code("movzx eax, byte ptr [" + expr + "]");
             } else {
-                writer.code("mov ax, word [" + expr + "]");
+                writer.code("movsx eax, word ptr [" + expr + "]");
             }
         } else {
-            writer.code("movzx eax, byte [" + expr + "]");
+            writer.code("movzx eax, byte ptr [" + expr + "]");
         }
 
         writer.code("cmp eax, 0");
@@ -141,22 +142,25 @@ public class InstructionTranslator {
             String literal = inst.substring(6).trim();
             String content = literal.substring(1, literal.length() - 1);
             String lbl = "_str" + stringLitCount++;
-            writer.strLit(lbl + " db '" + content + "', 10");
-            writer.strLit(lbl + "_len equ $ - " + lbl);
-            writer.code("mov ecx, " + lbl);
-            writer.code("mov edx, " + lbl + "_len");
+            writer.strLit(lbl + " db '" + content + "', 0");
+            writer.code("mov ecx, offset " + lbl);
             writer.code("call _print_str");
             return;
         }
 
         String var = inst.substring(6).trim();
 
-        if (emit.isNumericLiteral(var) || emit.isBoolLiteral(var)) {
+        if (emit.isBoolLiteral(var)) {
+            needsPrintBool = true;
+            writer.code("push " + emit.boolToInt(var));
+            writer.code("call _print_bool");
+            return;
+        }
+
+        if (emit.isNumericLiteral(var)) {
             needsPrintInt = true;
-            emit.loadPrintable("eax", null, var);
-            writer.code("push eax");
+            writer.code("push " + var);
             writer.code("call _print_int");
-            writer.code("add esp, 4");
             return;
         }
 
@@ -165,15 +169,20 @@ public class InstructionTranslator {
 
         if (type != null && type.equalsIgnoreCase("STRING")) {
             needsPrintStr = true;
-            writer.code("mov ecx, " + var);
-            writer.code("mov edx, 256");
+            writer.code("mov ecx, offset " + var);
             writer.code("call _print_str");
+
+        } else if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
+            needsPrintBool = true;
+            writer.code("movzx eax, byte ptr [" + var + "]");
+            writer.code("push eax");
+            writer.code("call _print_bool");
+
         } else {
             needsPrintInt = true;
             emit.loadPrintable("eax", type, var);
             writer.code("push eax");
             writer.code("call _print_int");
-            writer.code("add esp, 4");
         }
     }
 
@@ -233,8 +242,10 @@ public class InstructionTranslator {
             case ">=" -> "jge";
             default -> "je";
         };
+
         String lblTrue = "cmp_t_" + p[0];
         String lblEnd = "cmp_e_" + p[0];
+
         emit.loadWord("ax", p[2]);
         emit.opWord("cmp", p[4]);
         writer.code(jmp + " " + lblTrue);

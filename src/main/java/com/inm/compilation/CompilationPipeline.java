@@ -40,7 +40,7 @@ public class CompilationPipeline {
         runAssembly(context);
 
         if (execParams.execute()) {
-            runExecution(context);
+            Executor.runExecution(context);
         }
     }
 
@@ -100,7 +100,6 @@ public class CompilationPipeline {
 
         AssemblyGenerator generator = new AssemblyGenerator(context);
         String finalCode = generator.generate();
-        context.setFinalCode(finalCode);
 
         try {
             Path outputDir = Path.of(context.executionParams().output());
@@ -117,98 +116,5 @@ public class CompilationPipeline {
         }
 
         System.out.println("Fase 4 concluída.");
-    }
-
-    public void runExecution(CompilationContext context) {
-        System.out.println("\n=== FASE 5: MONTAGEM E EXECUÇÃO ===");
-
-        String asmPath = context.asmPath();
-        if (asmPath == null) {
-            System.err.println("[ERRO] Caminho do arquivo .asm não definido.");
-            return;
-        }
-
-        try {
-            Path originalAsm = Path.of(asmPath).toAbsolutePath();
-            String programName = originalAsm.getFileName().toString().replace(".asm", "");
-
-            Path programDir = originalAsm.getParent().resolve(programName);
-            Files.createDirectories(programDir);
-
-            Path asmInDir = programDir.resolve(programName + ".asm");
-            Files.move(originalAsm, asmInDir, StandardCopyOption.REPLACE_EXISTING);
-            context.setAsmPath(asmInDir.toString());
-
-            String asmFile = asmInDir.toAbsolutePath().toString();
-            String objFile = programDir.resolve(programName + ".o").toAbsolutePath().toString();
-            String binFile = programDir.resolve(programName).toAbsolutePath().toString();
-
-            System.out.println("Pasta de execução: " + programDir);
-
-            System.out.println("Montando com NASM...");
-            int nasmExit;
-
-            if (ExecutionEnvHelper.isAvailable("nasm")) {
-                nasmExit = run("nasm", "-f", "elf32", asmFile, "-o", objFile);
-            } else if (ExecutionEnvHelper.isDockerImageAvailable()) {
-                nasmExit = run("docker", "run", "--rm",
-                        "-v", programDir.toAbsolutePath() + ":/app",
-                        "-w", "/app",
-                        ExecutionEnvHelper.PROJECT_IMAGE,
-                        "nasm", "-f", "elf32", programName + ".asm", "-o", programName + ".o");
-            } else {
-                System.err.println("[ERRO] Nem NASM nativo nem imagem Docker do projeto encontrados.");
-                System.err.println("Execute: docker compose build");
-                return;
-            }
-
-            System.out.println("Linkando com ld...");
-            int ldExit;
-
-            if (ExecutionEnvHelper.isAvailable("ld")) {
-                ldExit = run("ld", "-m", "elf_i386", objFile, "-o", binFile);
-            } else if (ExecutionEnvHelper.isDockerImageAvailable()) {
-                ldExit = run("docker", "run", "--rm",
-                        "-v", programDir.toAbsolutePath() + ":/app",
-                        "-w", "/app",
-                        ExecutionEnvHelper.PROJECT_IMAGE,
-                        "ld", "-m", "elf_i386", programName + ".o", "-o", programName);
-            } else {
-                System.err.println("[ERRO] ld não encontrado.");
-                return;
-            }
-
-            System.out.println("\n=== SAÍDA DO PROGRAMA ===");
-            int runExit;
-
-            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-                runExit = run("docker", "run", "--rm",
-                        "-v", programDir.toAbsolutePath() + ":/app",
-                        "-w", "/app",
-                        ExecutionEnvHelper.PROJECT_IMAGE,
-                        "./" + programName);
-            } else {
-                runExit = run(binFile);
-            }
-
-            System.out.println("=========================");
-            System.out.println("Programa encerrou com código: " + runExit);
-
-        } catch (IOException e) {
-            System.err.println("[ERRO] Falha ao executar: " + e.getMessage());
-            System.err.println("Verifique se NASM e ld estão instalados.");
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            System.err.println("[ERRO] Execução interrompida.");
-        }
-
-        System.out.println("Fase 5 concluída.");
-    }
-
-    private int run(String... command) throws IOException, InterruptedException {
-        Process process = new ProcessBuilder(command)
-                .inheritIO()
-                .start();
-        return process.waitFor();
     }
 }

@@ -7,13 +7,11 @@ import com.inm.terminal.ExecutionParams;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 public class CompilationContext {
-
     private String programName;
     private ParseTree tree;
     private ProgramParser parser;
     private SymbolTable symbolTable;
     private ThreeAddressCode threeAddressCode;
-    private String finalCode;
     private String asmPath;
     private ExecutionParams executionParams;
 
@@ -41,6 +39,6 @@ public class CompilationContext {
 
     public void setSymbolTable(SymbolTable symbolTable) { this.symbolTable = symbolTable; }
     public void setThreeAddressCode(ThreeAddressCode tac) { this.threeAddressCode = tac; }
-    public void setFinalCode(String finalCode) { this.finalCode = finalCode; }
     public void setAsmPath(String asmPath) { this.asmPath = asmPath; }
+    public void setProgramName(String progName) {programName = progName;}
 }

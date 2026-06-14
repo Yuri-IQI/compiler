@@ -1,6 +1,7 @@
 package com.inm.semantic;
 
 import com.inm.helper.Symbol;
+import org.antlr.v4.runtime.Token;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,6 +34,13 @@ public class SymbolTable {
         return prefix + varName.toLowerCase();
     }
 
+    private String truncateIdentifier(String name) {
+        if (name.length() > 16) {
+            return name.substring(0, 16);
+        }
+        return name;
+    }
+
     public void declare(String name, String type, int line, int col) {
         String key = name.toLowerCase();
         if (table.containsKey(key)) {
@@ -50,14 +58,12 @@ public class SymbolTable {
     }
 
     public String getType(String name, int line, int col) {
-        String key = name.toLowerCase().replace(prefix, "");
+        String key = truncateIdentifier(name.toLowerCase().replace(prefix, ""));
         if (table.containsKey(key))
             return table.get(key).type();
         if (parent != null)
             return parent.getType(name, line, col);
-        throw new RuntimeException(
-                "Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' não foi declarada."
-        );
+        throw new RuntimeException("Erro Semântico [Linha " + line + ":" + col + "]: Variável '" + name + "' não foi declarada.");
     }
 
     public SymbolTable getParent() { return parent; }

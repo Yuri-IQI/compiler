@@ -92,7 +92,7 @@ VIG : ',' ;
 ABPAR : '(' ;
 FPAR : ')' ;
 
-ID : [a-z][a-z0-9]* {if (getText().length() > 16) { setText(getText().substring(0, 16)); }} ;
+ID : [a-z][a-z0-9]* ;
 
 CADEIA : '"' (~["\r\n])* '"' ;
 

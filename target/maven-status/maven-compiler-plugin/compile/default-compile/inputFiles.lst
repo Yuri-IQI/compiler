@@ -4,6 +4,9 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramListener.jav
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\antlr4\ProgramParser.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\CompilationContext.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\CompilationPipeline.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\Executor.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\ProcessExecutor.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\compilation\ProcessRunner.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\exceptions\ParsingException.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\exceptions\SemanticException.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\AssemblyGenerator.java
@@ -13,6 +16,7 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\Instruc
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\Writer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\Optimizer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ExceptionPrinter.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ExecutionEnvHelper.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ParseHelper.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\Printer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\PrintingLexer.java

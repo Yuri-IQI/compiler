@@ -1,12 +1,18 @@
 ; ============================================
 ; Programa  : superExpr
 ; Gerado por: Compilador INM
-; Alvo      : x86 32 bits (NASM, Linux i386)
+; Alvo      : x86 32 bits (MASM, Windows i386)
 ; ============================================
 
-bits 32
+.386
+.model flat, stdcall
+option casemap:none
 
-section .data
+include windows.inc
+include kernel32.inc
+includelib kernel32.lib
+
+.data
 	v_x dw 0
 	v_y dw 0
 	v_z dw 0
@@ -14,83 +20,98 @@ section .data
 	t1 dw 0
 	t2 dw 0
 	t3 dw 0
-	_buf times 12 db 0
-	_nl  db 10
+	_buf db 14 dup(0)
+	_s_true db 'true', 10
+	_s_false db 'false', 10
+	_hOut dd ?
+	_hIn dd ?
+	_written dd ?
+	_read dd ?
 
-section .bss
-	_ibuf resb 12
 
-section .text
-global _start
+.data?
+	_ibuf db 12 dup(?)
 
-_start:
+.code
+
+start:
+	invoke GetStdHandle, STD_OUTPUT_HANDLE
+	mov dword ptr [_hOut], eax
+
+	invoke GetStdHandle, STD_INPUT_HANDLE
+	mov dword ptr [_hIn], eax
+
 	; v_x = 10
-	mov word [v_x], 10
+	mov word ptr [v_x], 10
 
 	; v_y = 5
-	mov word [v_y], 5
+	mov word ptr [v_y], 5
 
 	; t0 = 5 << 1
 	mov ax, 5
 	shl ax, 1
-	mov word [t0], ax
+	mov word ptr [t0], ax
 
 	; t1 = 2
-	mov word [t1], 2
+	mov word ptr [t1], 2
 
 	; t2 = t0 - 2
-	mov ax, word [t0]
+	mov ax, word ptr [t0]
 	sub ax, 2
-	mov word [t2], ax
+	mov word ptr [t2], ax
 
 	; t3 = 10 + t2
 	mov ax, 10
-	add ax, word [t2]
-	mov word [t3], ax
+	add ax, word ptr [t2]
+	mov word ptr [t3], ax
 
 	; v_z = t3
-	mov ax, word [t3]
-	mov word [v_z], ax
+	mov ax, word ptr [t3]
+	mov word ptr [v_z], ax
 
 	; WRITE v_z
-	movsx eax, word [v_z]
+	movsx eax, word ptr [v_z]
 	push eax
 	call _print_int
-	add esp, 4
 
-	; encerramento: syscall exit(0)
-	mov eax, 1
-	xor ebx, ebx
-	int 0x80
+	invoke Sleep, 50
+	invoke ExitProcess, 0
 
 _print_int:
 	push ebp
 	mov ebp, esp
-	mov eax, [ebp+8]
-	lea ecx, [_buf+11]
-	mov byte [ecx], 10
-	mov ebx, 10
-	test eax, eax
-	jns .ppos
-	neg eax
-.ppos:
+	push ebx
+	push esi
+	movsx eax, word ptr [ebp+8]
+	lea ecx, [_buf+13]
+	mov byte ptr [ecx], 10
 	dec ecx
+	mov esi, eax
+	test eax, eax
+	jns pi_pos
+	neg eax
+pi_pos:
+	mov ebx, 10
+pi_loop:
 	xor edx, edx
 	div ebx
 	add dl, '0'
-	mov [ecx], dl
-	test eax, eax
-	jnz .ppos
-	mov eax, [ebp+8]
-	test eax, eax
-	jns .pwrite
+	mov byte ptr [ecx], dl
 	dec ecx
-	mov byte [ecx], '-'
-.pwrite:
-	lea edx, [_buf+12]
+	test eax, eax
+	jnz pi_loop
+	test esi, esi
+	jns pi_write
+	mov byte ptr [ecx], '-'
+	dec ecx
+pi_write:
+	inc ecx
+	lea edx, [_buf+14]
 	sub edx, ecx
-	mov eax, 4
-	mov ebx, 1
-	int 0x80
+	invoke WriteFile, dword ptr [_hOut], ecx, edx, addr _written, 0
+	pop esi
+	pop ebx
 	pop ebp
-	ret
+	ret 4
+
+end start
