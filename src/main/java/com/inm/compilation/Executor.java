@@ -7,7 +7,7 @@ import java.nio.file.StandardCopyOption;
 
 public class Executor {
     public static void runExecution(CompilationContext context) {
-        System.out.println("\n=== FASE 5: MONTAGEM E EXECUÇÃO ===");
+        System.out.println("\nIniciando Montagem e Execução");
 
         String asmPath = context.asmPath();
         if (asmPath == null) {
@@ -27,8 +27,6 @@ public class Executor {
             Thread.currentThread().interrupt();
             System.err.println("[ERRO] Execução interrompida.");
         }
-
-        System.out.println("Fase 5 concluída.");
     }
 
     private static void mount(WorkspacePaths paths) throws IOException, InterruptedException {
@@ -56,7 +54,6 @@ public class Executor {
 
         String stdIn = context.stdInContent();
         int exit = ProcessExecutor.execute(paths.exeFile(), stdIn);
-        System.out.println("=========================");
         System.out.println("Programa encerrou com código: " + exit);
     }
 

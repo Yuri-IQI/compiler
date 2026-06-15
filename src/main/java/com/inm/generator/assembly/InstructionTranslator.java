@@ -1,7 +1,7 @@
 package com.inm.generator.assembly;
 
 import com.inm.semantic.SymbolTable;
-import com.inm.semantic.ThreeAddressCode;
+import com.inm.generator.ThreeAddressCode;
 
 public class InstructionTranslator {
     private final Writer writer;
@@ -187,7 +187,7 @@ public class InstructionTranslator {
         String expr = p[1].trim();
         String exec = p[3].trim();
 
-        if (emit.isBoolLiteral(expr)) {
+        if (InstructionEmitter.isBoolLiteral(expr)) {
             writer.code("mov eax, " + emit.boolToInt(expr));
             writer.code("cmp eax, 0");
             writer.code("je " + exec);
@@ -201,9 +201,6 @@ public class InstructionTranslator {
         } else {
             writer.code("movsx eax, word ptr [" + expr + "]");
         }
-
-        writer.code("cmp eax, 0");
-        writer.code("je " + exec);
 
         writer.code("cmp eax, 0");
         writer.code("je " + exec);
@@ -241,7 +238,7 @@ public class InstructionTranslator {
 
         String var = inst.substring(6).trim();
 
-        if (emit.isBoolLiteral(var)) {
+        if (InstructionEmitter.isBoolLiteral(var)) {
             needsPrintBool = true;
             writer.code("push " + emit.boolToInt(var));
             writer.code("call _print_bool");
@@ -258,13 +255,7 @@ public class InstructionTranslator {
         String type = getOperandType(var);
         if (type != null && type.equalsIgnoreCase("STRING")) {
             needsPrintStr = true;
-
-            if (var.startsWith("t")) {
-                writer.code("mov ecx, offset " + var);
-            } else {
-                writer.code("mov ecx, offset " + var);
-            }
-
+            writer.code("mov ecx, offset " + var);
             writer.code("call _print_str");
         } else if (type != null && type.equalsIgnoreCase("BOOLEAN")) {
             needsPrintBool = true;

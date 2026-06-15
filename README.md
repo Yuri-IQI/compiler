@@ -1,37 +1,59 @@
-# Analisador Léxico e Sintático
+# Compilador
+
+Compilador completo para uma linguagem de programação simples, implementado em Java com ANTLR4. Realiza as fases de análise léxica, sintática, semântica, geração de código intermediário (3AC), otimização e geração de código Assembly x86 MASM 32-bits.
 
 ---
 
 ## Requisitos
 
-- Java 21+
-- Maven 3.8+
-- ANTLR4 4.13.2+
+* Java 21+
+* Maven 3.8+
+* ANTLR4 4.13.2+
+* MASM32 (para montagem e execução nativa do assembly gerado no Windows)
 
 ---
 
 ## Estrutura do Projeto
 
-```
+```text
 src/
-  main/
-    antlr4/com/inm/antlr4/
-      Program.g4              # Gramática da linguagem
-    java/com/inm/
-      Main.java
-      analyzer/
-        ProgramAnalyzer.java  # Leitura e análise do código
-      helper/
-        ParseHelper.java      # Criação da árvore sintática
-        Printer.java          # Impressão de tokens e erros
-  test/
-    java/com/inm/
-      ProgramParserTest.java  # Suite de testes para os scripts em resources/scripts
-    resources/scripts/
-      valid/                  # Scripts corretos
-      invalid/                # Scripts com erros
+├── main/
+│   ├── antlr4/
+│   │   └── com/inm/antlr4/
+│   │       └── Program.g4                                  # Gramática da linguagem
+│   └── java/
+│       └── com/inm/
+│           ├── Main.java                                   # Ponto de entrada
+│           ├── compilation/
+│           │   ├── CompilationPipeline.java                # Gerenciamento das fases do compilador
+│           │   ├── CompilationContext.java                 # Contexto compartilhado entre as fases
+│           │   ├── Executor.java                           # Orquestra a fase 5: resolve o workspace, chama montagem, linkagem e execução do .exe gerado
+│           │   ├── ProcessExecutor.java                    # Encapsula os comandos ml.exe (MASM) e link.exe do MASM32 SDK com seus flags e caminhos
+│           │   └── ProcessRunner.java                      # Executa processos externos via ProcessBuilder com leitura assíncrona de stdout/stderr
+│           ├── terminal/
+│           │   ├── TerminalHandler.java                    # Interface de terminal e modos de leitura
+│           │   └── ExecutionParams.java                    # Parâmetros de execução
+│           ├── helper/
+│           │   └── ParseHelper.java                        # Criação da árvore sintática
+│           ├── semantic/
+│           │   ├── SemanticAndIntermediateListener.java    # Análise semântica e geração 3AC
+│           │   ├── SymbolTable.java                        # Tabela de símbolos com escopos aninhados
+│           │   └── TypedOperand.java                       # Wrapper de valor e tipo semântico
+│           └── generator/
+│               ├── Optimizer.java                          # Otimizador do código intermediário (3AC)
+│               ├── ThreeAddressCode.java                   # Repositório de instruções intermediárias
+│               └── assembly/
+│                   ├── AssemblyGenerator.java              # Orquestração da geração de assembly
+│                   ├── InstructionTranslator.java          # Tradução de 3AC para assembly
+│                   ├── InstructionEmitter.java             # Emissão de instruções de baixo nível
+│                   ├── HelperInstructions.java             # Rotinas auxiliares (print/read)
+│                   └── Writer.java                         # Construtor do arquivo assembly
+└── test/
+    └── java/
+        └── com/inm/
+            ├── PipelineTest.java                           # Testes da pipeline de compilação
+            └── ExecutionTest.java                          # Testes de execução do assembly gerado
 ```
-
 ---
 
 ## Compilar e Executar
@@ -39,173 +61,78 @@ src/
 ### Via Maven
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4 (substituir %ANTLR_JAR% pelo caminho para o jar do ANTLR)
-java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
+# compilar e executar em modo SCRIPT (entrada manual)
+mvn compile exec:java
 
-# lê um script dos resources
-./mvnw compile exec:java -DreadFile=true
+# modo TEST: selecionar script dos resources
+mvn compile exec:java -Dmode=TEST
 
-# escreve o código manualmente
-./mvnw compile exec:java -DreadFile=false
+# modo FILE: compilar arquivo específico
+mvn compile exec:java -Dmode=FILE -DfilePath=scripts/meu-programa.prog
 
-# abre a visualização do parser em uma árvore
-./mvnw compile exec:java -DreadFile=false -DshowTree=true
+# modo DIR: compilar todos os .prog de uma pasta
+mvn compile exec:java -Dmode=DIR -DfilePath=scripts/valid
+
+# exibir árvore sintática em janela gráfica
+mvn compile exec:java -Dmode=TEST -DshowTree=true
+
+# compilar e executar o assembly gerado
+mvn compile exec:java -Dmode=FILE -DfilePath=meu.prog -Dexec=true
+
+# especificar pasta de saída do assembly
+mvn compile exec:java -Dmode=FILE -DfilePath=meu.prog -Doutput=minha-pasta
 ```
 
 ### Via JAR
 
 ```bat
-# compilar classes de lexer e parser pelo ANTLR4 (substituir %ANTLR_JAR% pelo caminho para o jar do ANTLR)
-java -jar %ANTLR_JAR% src\main\java\com\inm\antlr4\Program.g4
-
 # gerar o JAR
-./mvnw package
+mvn package
 
-# lê um script dos resources
-java -DreadFile=true -jar .\target\analisador.jar
+# modo SCRIPT
+java -jar target/compiler.jar
 
-# escreve o código manualmente
-java -DreadFile=false -jar .\target\analisador.jar
+# modo TEST
+java -jar target/compiler.jar -Dmode=TEST
 
-# abre a visualização do parser em uma árvore
-java -DreadFile=false -DshowTree=true -jar .\target\analisador.jar
+# modo FILE com execução
+java -jar target/compiler.jar -Dmode=FILE -DfilePath=meu.prog -Dexec=true
+
+# modo DIR
+java -jar target/compiler.jar -Dmode=DIR -DfilePath=scripts/valid
 ```
+---
+
+## Parâmetros
+
+| Parâmetro | Valores | Padrão | Descrição |
+|---|---|---|---|
+| `mode` | `SCRIPT`, `TEST`, `FILE`, `DIR` | `SCRIPT` | Modo de leitura do código fonte |
+| `showTree` | `true`, `false` | `false` | Exibe a árvore sintática em janela gráfica |
+| `flag` | qualquer string | `#` | Delimitador de fim de entrada no modo SCRIPT |
+| `exec` | `true`, `false` | `false` | Monta e executa o assembly gerado após compilar |
+| `output` | caminho | `output` | Pasta de saída para os arquivos `.asm` gerados |
+| `filePath` | caminho | `./` | Caminho do arquivo ou pasta nos modos FILE e DIR |
 
 ---
 
-## Modos de Entrada
+## Pipeline de Compilação
 
-### Leitura de arquivo (`-DreadFile=true`)
-
-Lista os scripts disponíveis nos resources e permite escolher por código ou caminho:
-
-```
-Arquivos disponíveis:
-Válidos
-  [V1] atribuicao.prog
-  [V2] comentario-e-div.prog
-  ...
-Inválidos
-  [I1] attr-sem-expr.prog
-  [I2] if-sem-then.prog
-  ...
-
-Escolha um código (ex: V1, I2) ou digite o caminho:
-```
-
-### Escrita manual (`-DreadFile=false`)
-
-```
-Escreva o código (@ em nova linha para analisar):
-program teste;
-begin
-    write("ola")
-end.
-@
-```
-
----
-
-## Saída
-
-Para cada token reconhecido, o analisador imprime seu texto, tipo e atributo:
-
-```
-Token: program    | Tipo: PROGRAM    | Atributo: -
-Token: atribuicao | Tipo: ID         | Atributo: atribuicao
-Token: ;          | Tipo: PVIG       | Atributo: -
-Token: 2          | Tipo: CTE        | Atributo: 2
-Token: +          | Tipo: OPAD       | Atributo: MAIS
-Token: <=         | Tipo: OPREL      | Atributo: MENIG
-```
-
-Em caso de erro sintático:
-
-```
-------ERRO-----------------------------
-Linha 5:4 mismatched input 'begin' expecting {'INTEGER', 'BOOLEAN', 'STRING'}
-------ERRO-----------------------------
-```
-
-Caso o argumento `-DshowTree=true` seja passado, a árvore sintática é exibida em uma janela gráfica após a análise.
-
----
-
-## Testes
-
-```bat
-./mvnw test
-```
-
-Os testes verificam automaticamente todos os scripts em `src/test/resources/scripts/valid/` e `src/test/resources/scripts/invalid/`.
-
-```
-✓ acceptsValidScripts(scripts/valid/atribuicao.prog)
-✓ acceptsValidScripts(scripts/valid/condicional.prog)
-...
-✓ rejectsInvalidScripts(scripts/invalid/sem-begin.prog)
-✓ rejectsInvalidScripts(scripts/invalid/tipo-invalido.prog)
-...
-```
-
----
-
-## Estrutura do Código
-
-### Program.g4
-
-Gramática LL(1) da linguagem, processada pelo ANTLR4 para gerar automaticamente o lexer (`ProgramLexer`) e o parser (`ProgramParser`).
-
-A gramática define:
-
-- **Tokens**: palavras reservadas, operadores, símbolos de marcação e tokens de atributo variável.
-- **Regras do parser**: estrutura completa da linguagem, da declaração de variáveis aos comandos e expressões, organizada em níveis de precedência.
-
----
-
-### Main
-
-Ponto de entrada da aplicação. Lê as system properties `-DreadFile` e `-DshowTree` e delega para `ProgramAnalyzer`.
-
----
-
-### ProgramAnalyzer
-
-Responsável pela leitura do código-fonte e pela orquestração da análise.
-
-| Método | Descrição                                                                                                                                                                        |
-|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `run(boolean shouldReadFile)` | Decide entre leitura de arquivo ou entrada manual e chama `analyze`.                                                                                                             |
-| `analyze(String source, boolean showTree)` | Chama `ParseHelper.parse` e exibe o resultado; se `showTree`, abre a janela da árvore sintática.                                                                                 |
-| `readFile(Scanner scanner)` | Lista os scripts dos resources, interpreta o código de seleção (`V1`, `I2`) ou caminho digitado e retorna o conteúdo.                                                            |
-| `readScript(Scanner scanner)` | Lê linhas do stdin até encontrar `@` e retorna o código digitado. O caractere `@` foi escolhido como FLAG por não ser usado gramática e poder ser descartado ao final do script. |
-| `mapFiles()` | Carrega e exibe os arquivos `.prog` disponíveis nos diretórios `scripts/valid` e `scripts/invalid` dos resources.                                                                |
-| `listResourceFiles(String folder)` | Lista arquivos `.prog` em um diretório dos resources, com suporte tanto ao filesystem (Maven) quanto ao JA.R                                                                     |
-| `showTree(ParseTree, ProgramParser)` | Exibe a árvore sintática em uma janela Swing e aguarda o fechamento antes de encerrar.                                                                                           |
-
----
-
-### ParseHelper
-
-Responsável por construir a árvore sintática a partir de um código-fonte.
-
-| Método / Tipo | Descrição                                                                                             |
-|---------------|-------------------------------------------------------------------------------------------------------|
-| `parse(String source)` | Cria o lexer, o parser e o `Printer`, executa o parse e retorna um `ParseResult`.                     |
-| `parse(String source, boolean printErrors)` | Sobrecarga que controla se os erros são impressos, usada nos testes para suprimir saída.              |
-| `ParseResult` | Record com `programName`, `tree`, `parser` e `errors`; expõe `isValid()` para checar se não há erros. |
-
----
-
-### Printer
-
-Implementa `BaseErrorListener` do ANTLR4 para capturar erros sintáticos, além de imprimir os tokens e seus atributos.
-
-| Método | Descrição                                                                                                                                                                                       |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `syntaxError(...)` | Chamado automaticamente pelo ANTLR ao encontrar um erro, formata e armazena a mensagem.                                                                                                         |
-| `setErrorListener(ProgramParser)` | Remove os listeners padrão do ANTLR e registra o `Printer` como listener de erros.                                                                                                              |
-| `printTokens(CommonTokenStream, ProgramParser)` | Itera sobre todos os tokens e imprime texto, tipo e atributo de cada um.                                                                                                                        |
-| `printErrors()` | Imprime todos os erros capturados.                                                                                                                                                              |
-| `getErrors()` | Retorna a lista imutável de erros, usada pelo `ParseResult`.                                                                                                                                    |
-| `resolveAttribute(String token, String text)` | Resolve o atributo semântico de cada token: para `ID`, `CTE` e `CADEIA` retorna o valor, para operadores retorna o nome semântico (`MAIS`, `VEZES`, `DIFER`, etc.), para os demais retorna `-`. |
+````
+Código Fonte (.prog)
+       │
+       ▼
+[ Léxico + Sintático ] ──────────────► Validação via Gramática ANTLR4
+       │
+       ▼
+[ Semântica + 3AC ] ─────────────────► Checagem de Tipos, Escopos e Emissão Intermediária
+       │
+       ▼
+[ Otimização ] ──────────────────────► Constant Folding/Propagation, Dead Code Elimination
+       │
+       ▼
+[ Geração de Assembly ] ─────────────► Emissão de código MASM x86 32-bits nativo
+       │
+       ▼
+[ Montagem/Execução (Opcional) ] ────► Execução do executável PE final (-Dexec=true)
+````

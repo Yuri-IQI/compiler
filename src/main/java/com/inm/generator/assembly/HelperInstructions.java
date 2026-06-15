@@ -149,8 +149,23 @@ public class HelperInstructions {
 
         writer.label("ri_done:");
         writer.code("test ebx, ebx");
-        writer.code("jz ri_pos");
+        writer.code("jz ri_validate_pos");
         writer.code("neg eax");
+
+        writer.label("ri_validate_neg:");
+        writer.code("cmp eax, -32767");
+        writer.code("jl ri_overflow");
+        writer.code("jmp ri_success");
+
+        writer.label("ri_validate_pos:");
+        writer.code("cmp eax, 32767");
+        writer.code("jg ri_overflow");
+
+        writer.label("ri_success:");
+        writer.code("jmp ri_pos");
+
+        writer.code("ri_overflow:");
+        writer.code("xor eax, eax");
 
         writer.label("ri_pos:");
         writer.code("pop ebx");

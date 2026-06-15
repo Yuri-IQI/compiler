@@ -1,6 +1,7 @@
 package com.inm.generator;
 
 import com.inm.compilation.CompilationContext;
+import com.inm.generator.assembly.InstructionEmitter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,11 +18,15 @@ public class Optimizer {
 
     public void optimize() {
         List<String> instructions = context.threeAddressCode().getInstructions();
+        List<String> previous;
 
-        instructions = constantFolding(instructions);
-        instructions = constantPropagation(instructions);
-        instructions = deadCodeElimination(instructions);
-        instructions = strengthReduction(instructions);
+        do {
+            previous = new ArrayList<>(instructions);
+            instructions = constantPropagation(instructions);
+            instructions = constantFolding(instructions);
+            instructions = deadCodeElimination(instructions);
+            instructions = strengthReduction(instructions);
+        } while (!instructions.equals(previous));
 
         context.threeAddressCode().setInstructions(instructions);
     }
@@ -29,24 +34,55 @@ public class Optimizer {
     private List<String> constantFolding(List<String> inst) {
         List<String> result = new ArrayList<>();
         for (String line : inst) {
-            if (line.matches("\\w+ = -?\\d+ [+\\-*/] -?\\d+")) {
-                String[] parts = line.split(" ");
-                int a = Integer.parseInt(parts[2]);
-                int b = Integer.parseInt(parts[4]);
-                String op = parts[3];
-                int val = switch (op) {
-                    case "+" -> a + b;
-                    case "-" -> a - b;
-                    case "*" -> a * b;
-                    case "/" -> b != 0 ? a / b : 0;
-                    default -> 0;
-                };
-                result.add(parts[0] + " = " + val);
-            } else {
-                result.add(line);
-            }
+            result.add(tryFold(line));
         }
         return result;
+    }
+
+    private String tryFold(String line) {
+        if (!line.matches("\\w+ = (-?\\d+|TRUE|FALSE) ([+\\-*/]|>=|<=|==|<>|>|<) (-?\\d+|TRUE|FALSE)")) {
+            return line;
+        }
+
+        String[] parts = line.split(" ");
+        String dest = parts[0];
+        String left = parts[2];
+        String op = parts[3];
+        String right = parts[4];
+
+        if (left.matches("-?\\d+") && right.matches("-?\\d+")) {
+            int a = Integer.parseInt(left);
+            int b = Integer.parseInt(right);
+            String val = switch (op) {
+                case "+" -> String.valueOf(a + b);
+                case "-" -> String.valueOf(a - b);
+                case "*" -> String.valueOf(a * b);
+                case "/" -> b != 0 ? String.valueOf(a / b) : line;
+                case ">" -> a > b ? "TRUE" : "FALSE";
+                case "<" -> a < b ? "TRUE" : "FALSE";
+                case ">=" -> a >= b ? "TRUE" : "FALSE";
+                case "<=" -> a <= b ? "TRUE" : "FALSE";
+                case "==" -> a == b ? "TRUE" : "FALSE";
+                case "<>" -> a != b ? "TRUE" : "FALSE";
+                default -> null;
+            };
+            if (val != null) return dest + " = " + val;
+        }
+
+        if (InstructionEmitter.isBoolLiteral(left) && InstructionEmitter.isBoolLiteral(right)) {
+            boolean a = left.equalsIgnoreCase("TRUE");
+            boolean b = right.equalsIgnoreCase("TRUE");
+            String val = switch (op) {
+                case "==" -> a == b ? "TRUE" : "FALSE";
+                case "<>" -> a != b ? "TRUE" : "FALSE";
+                case "AND" -> a && b ? "TRUE" : "FALSE";
+                case "OR" -> a || b ? "TRUE" : "FALSE";
+                default -> null;
+            };
+            if (val != null) return dest + " = " + val;
+        }
+
+        return line;
     }
 
     private List<String> constantPropagation(List<String> inst) {

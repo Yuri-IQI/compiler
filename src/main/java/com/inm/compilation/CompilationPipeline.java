@@ -43,7 +43,7 @@ public class CompilationPipeline {
     }
 
     private CompilationContext runParsing(String source, ExecutionParams execParams) {
-        System.out.println("\n=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===");
+        System.out.println("\nExecutando análise sintática");
 
         CompilationContext context;
         try {
@@ -61,20 +61,20 @@ public class CompilationPipeline {
             Trees.inspect(context.tree(), context.parser());
         }
 
-        System.out.println("Fase 1 concluída. Programa: " + context.programName());
+        System.out.println("Análise sintática concluída. Programa: " + context.programName());
         return context;
     }
 
     private void runSemantic(CompilationContext context) {
-        System.out.println("\n=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===");
+        System.out.println("\nExecutando análise semântica e 3AC");
 
         SemanticAndIntermediateListener listener = new SemanticAndIntermediateListener(context);
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(listener, context.tree());
 
         if (listener.getErrorCount() > 0) {
-            System.err.println("\n[FALHA SEMÂNTICA] " + listener.getErrorCount() + " erro(s) encontrado(s). Compilação interrompida.");
-            throw new SemanticException(listener.getErrorCount() + " erro(s) semântico(s) encontrado(s).");
+            System.err.println("\n[FALHA SEMÂNTICA] " + listener.getErrorCount() + " erros encontrados. Compilação interrompida.");
+            throw new SemanticException(listener.getErrorCount() + " erros semânticos encontrados.");
         }
 
         context.setSymbolTable(listener.getSymbolTable());
@@ -83,18 +83,18 @@ public class CompilationPipeline {
         System.out.println("\n--- Código Intermediário (3AC) ---");
         System.out.println(context.threeAddressCode().getCode());
         System.out.println("----------------------------------");
-        System.out.println("Fase 2 concluída com sucesso.");
+        System.out.println("Análise semântica e 3AC concluídos");
     }
 
     private void runOptimization(CompilationContext context) {
-        System.out.println("\n=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===");
+        System.out.println("\nOtimização de Código");
         new Optimizer(context).optimize();
         Printer.printInstructions(context);
-        System.out.println("Fase 3 concluída.");
+        System.out.println("Instruções otimizadas.");
     }
 
     private void runAssembly(CompilationContext context) {
-        System.out.println("\n=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===");
+        System.out.println("\nGeração de Assembly x86)");
 
         AssemblyGenerator generator = new AssemblyGenerator(context);
         String finalCode = generator.generate();
@@ -113,6 +113,6 @@ public class CompilationPipeline {
             System.err.println("[ERRO] Não foi possível salvar o arquivo .asm: " + e.getMessage());
         }
 
-        System.out.println("Fase 4 concluída.");
+        System.out.println("Geração de Assembly concluída");
     }
 }

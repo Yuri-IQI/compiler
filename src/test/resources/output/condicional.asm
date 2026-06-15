@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : condicional
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -42,20 +42,11 @@ start:
 	; v_x = 5
 	mov word ptr [v_x], 5
 
-	; t0 = 5 > 3
-	mov ax, 5
-	cmp ax, 3
-	jg cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L0
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L0
 	cmp eax, 0
 	je L0
 

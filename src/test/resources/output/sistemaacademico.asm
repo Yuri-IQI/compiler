@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : SistemaAcademico
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -14,6 +14,7 @@ includelib kernel32.lib
 .data
 	v_nota1 dw 0
 	v_situacao db 256 dup(0)
+	v_nota4 dw 0
 	v_aprovado db 0
 	v_nota2 dw 0
 	v_nota3 dw 0
@@ -23,10 +24,11 @@ includelib kernel32.lib
 	t0 dw 0
 	t1 dw 0
 	t2 dw 0
-	t3 db 0
+	t3 dw 0
 	t4 db 0
 	t5 db 0
 	t6 db 0
+	t7 db 0
 	_buf db 14 dup(0)
 	_s_true db 'true', 13, 10, 0
 	_s_false db 'false', 13, 10, 0
@@ -39,9 +41,10 @@ includelib kernel32.lib
 	_str0 db 'DIGITE A PRIMEIRA NOTA', 0
 	_str1 db 'DIGITE A SEGUNDA NOTA', 0
 	_str2 db 'DIGITE A TERCEIRA NOTA', 0
-	_str3 db 'MEDIA CALCULADA', 0
-	_lit_4 db 'APROVADO', 0
-	_lit_5 db 'REPROVADO', 0
+	_str3 db 'DIGITE A TERCEIRA NOTA', 0
+	_str4 db 'MEDIA CALCULADA', 0
+	_lit_5 db 'APROVADO', 0
+	_lit_6 db 'REPROVADO', 0
 
 .data?
 	_ibuf db 12 dup(?)
@@ -79,29 +82,42 @@ start:
 	call _read_int
 	mov word ptr [v_nota3], ax
 
-	; t0 = v_nota2 + v_nota3
-	mov ax, word ptr [v_nota2]
-	add ax, word ptr [v_nota3]
+	; WRITE "DIGITE A TERCEIRA NOTA"
+	mov ecx, offset _str3
+	call _print_str
+
+	; READ_INTEGER v_nota4
+	call _read_int
+	mov word ptr [v_nota4], ax
+
+	; t0 = v_nota3 + v_nota4
+	mov ax, word ptr [v_nota3]
+	add ax, word ptr [v_nota4]
 	mov word ptr [t0], ax
 
-	; t1 = v_nota1 + t0
-	mov ax, word ptr [v_nota1]
+	; t1 = v_nota2 + t0
+	mov ax, word ptr [v_nota2]
 	add ax, word ptr [t0]
 	mov word ptr [t1], ax
 
-	; t2 = t1 / 3
-	mov ax, word ptr [t1]
-	cwd
-	mov bx, 3
-	idiv bx
+	; t2 = v_nota1 + t1
+	mov ax, word ptr [v_nota1]
+	add ax, word ptr [t1]
 	mov word ptr [t2], ax
 
-	; v_media = t2
+	; t3 = t2 / 4
 	mov ax, word ptr [t2]
+	cwd
+	mov bx, 4
+	idiv bx
+	mov word ptr [t3], ax
+
+	; v_media = t3
+	mov ax, word ptr [t3]
 	mov word ptr [v_media], ax
 
 	; WRITE "MEDIA CALCULADA"
-	mov ecx, offset _str3
+	mov ecx, offset _str4
 	call _print_str
 
 	; WRITE v_media
@@ -109,30 +125,30 @@ start:
 	push eax
 	call _print_int
 
-	; t3 = v_media >= 7
+	; t4 = v_media >= 7
 	mov ax, word ptr [v_media]
 	cmp ax, 7
-	jge cmp_t_t3
-	mov byte ptr [t3], 0
-	jmp cmp_e_t3
-cmp_t_t3:
-	mov byte ptr [t3], 1
-cmp_e_t3:
+	jge cmp_t_t4
+	mov byte ptr [t4], 0
+	jmp cmp_e_t4
+cmp_t_t4:
+	mov byte ptr [t4], 1
+cmp_e_t4:
 
-	; v_aprovado = t3
-	mov al, byte ptr [t3]
+	; v_aprovado = t4
+	mov al, byte ptr [t4]
 	mov byte ptr [v_aprovado], al
 
 	; v_frequenciaok = TRUE
 	mov byte ptr [v_frequenciaok], 1
 
-	; t4 = v_aprovado AND v_frequenciaok
+	; t5 = v_aprovado AND v_frequenciaok
 	mov al, byte ptr [v_aprovado]
 	and al, byte ptr [v_frequenciaok]
-	mov byte ptr [t4], al
+	mov byte ptr [t5], al
 
-	; v_resultadofinal = t4
-	mov al, byte ptr [t4]
+	; v_resultadofinal = t5
+	mov al, byte ptr [t5]
 	mov byte ptr [v_resultadofinal], al
 
 	; WRITE v_resultadofinal
@@ -144,31 +160,8 @@ cmp_e_t3:
 	movzx eax, byte ptr [v_resultadofinal]
 	cmp eax, 0
 	je L0
-	cmp eax, 0
-	je L0
 
 	; v_situacao = "APROVADO"
-	lea esi, _lit_4
-	lea edi, v_situacao
-copy_5:
-	mov al, [esi]
-	mov [edi], al
-	inc esi
-	inc edi
-	test al, al
-	jnz copy_5
-
-	; WRITE v_situacao
-	mov ecx, offset v_situacao
-	call _print_str
-
-	; goto L1
-	jmp L1
-
-	; L0:
-L0:
-
-	; v_situacao = "REPROVADO"
 	lea esi, _lit_5
 	lea edi, v_situacao
 copy_6:
@@ -183,26 +176,47 @@ copy_6:
 	mov ecx, offset v_situacao
 	call _print_str
 
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; v_situacao = "REPROVADO"
+	lea esi, _lit_6
+	lea edi, v_situacao
+copy_7:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_7
+
+	; WRITE v_situacao
+	mov ecx, offset v_situacao
+	call _print_str
+
 	; L1:
 L1:
 
-	; t5 = v_media < 7
+	; t6 = v_media < 7
 	mov ax, word ptr [v_media]
 	cmp ax, 7
-	jl cmp_t_t5
-	mov byte ptr [t5], 0
-	jmp cmp_e_t5
-cmp_t_t5:
-	mov byte ptr [t5], 1
-cmp_e_t5:
+	jl cmp_t_t6
+	mov byte ptr [t6], 0
+	jmp cmp_e_t6
+cmp_t_t6:
+	mov byte ptr [t6], 1
+cmp_e_t6:
 
-	; t6 = ~t5
-	mov al, byte ptr [t5]
-	xor al, 1
-	mov byte ptr [t6], al
-
-	; v_aprovado = t6
+	; t7 = ~t6
 	mov al, byte ptr [t6]
+	xor al, 1
+	mov byte ptr [t7], al
+
+	; v_aprovado = t7
+	mov al, byte ptr [t7]
 	mov byte ptr [v_aprovado], al
 
 	; WRITE v_aprovado
@@ -315,8 +329,19 @@ ri_loop:
 	jmp ri_loop
 ri_done:
 	test ebx, ebx
-	jz ri_pos
+	jz ri_validate_pos
 	neg eax
+ri_validate_neg:
+	cmp eax, -32767
+	jl ri_overflow
+	jmp ri_success
+ri_validate_pos:
+	cmp eax, 32767
+	jg ri_overflow
+ri_success:
+	jmp ri_pos
+	ri_overflow:
+	xor eax, eax
 ri_pos:
 	pop ebx
 	pop esi

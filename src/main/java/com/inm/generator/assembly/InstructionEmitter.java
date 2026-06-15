@@ -12,7 +12,7 @@ public class InstructionEmitter {
         return op.matches("-?\\d+");
     }
 
-    public boolean isBoolLiteral(String op) {
+    public static boolean isBoolLiteral(String op) {
         return op.equalsIgnoreCase("TRUE") || op.equalsIgnoreCase("FALSE");
     }
 

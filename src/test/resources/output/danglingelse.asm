@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : danglingelse
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -46,37 +46,19 @@ start:
 	; v_y = 1
 	mov word ptr [v_y], 1
 
-	; t0 = 1 == 1
-	mov ax, 1
-	cmp ax, 1
-	je cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L0
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L0
-	cmp eax, 0
-	je L0
 
-	; t1 = 1 == 2
-	mov ax, 1
-	cmp ax, 2
-	je cmp_t_t1
+	; t1 = FALSE
 	mov byte ptr [t1], 0
-	jmp cmp_e_t1
-cmp_t_t1:
-	mov byte ptr [t1], 1
-cmp_e_t1:
 
 	; ifFalse t1 goto L2
 	movzx eax, byte ptr [t1]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 

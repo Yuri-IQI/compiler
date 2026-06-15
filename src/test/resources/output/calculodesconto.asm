@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : calculoDesconto
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -161,8 +161,19 @@ ri_loop:
 	jmp ri_loop
 ri_done:
 	test ebx, ebx
-	jz ri_pos
+	jz ri_validate_pos
 	neg eax
+ri_validate_neg:
+	cmp eax, -32767
+	jl ri_overflow
+	jmp ri_success
+ri_validate_pos:
+	cmp eax, 32767
+	jg ri_overflow
+ri_success:
+	jmp ri_pos
+	ri_overflow:
+	xor eax, eax
 ri_pos:
 	pop ebx
 	pop esi

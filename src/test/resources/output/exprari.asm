@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : exprAri
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -46,28 +46,20 @@ start:
 	; v_y = 3
 	mov word ptr [v_y], 3
 
-	; t0 = 3 << 1
-	mov ax, 3
-	shl ax, 1
-	mov word ptr [t0], ax
+	; t0 = 6
+	mov word ptr [t0], 6
 
-	; t1 = t0 - 1
-	mov ax, word ptr [t0]
-	sub ax, 1
-	mov word ptr [t1], ax
+	; t1 = 5
+	mov word ptr [t1], 5
 
-	; t2 = 10 + t1
-	mov ax, 10
-	add ax, word ptr [t1]
-	mov word ptr [t2], ax
+	; t2 = 15
+	mov word ptr [t2], 15
 
-	; v_z = t2
-	mov ax, word ptr [t2]
-	mov word ptr [v_z], ax
+	; v_z = 15
+	mov word ptr [v_z], 15
 
-	; WRITE v_z
-	movsx eax, word ptr [v_z]
-	push eax
+	; WRITE 15
+	push 15
 	call _print_int
 
 	invoke Sleep, 50

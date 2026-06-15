@@ -19,6 +19,7 @@ com\inm\compilation\Executor$WorkspacePaths.class
 com\inm\generator\assembly\InstructionTranslator.class
 com\inm\generator\assembly\AssemblyGenerator.class
 com\inm\antlr4\ProgramParser$ListDeclLineContext.class
+com\inm\generator\ThreeAddressCode.class
 com\inm\helper\ParseHelper.class
 com\inm\antlr4\ProgramParser$ExprNegContext.class
 com\inm\antlr4\ProgramListener.class
@@ -27,7 +28,6 @@ com\inm\antlr4\ProgramParser$ListDeclContext.class
 com\inm\antlr4\ProgramBaseListener.class
 com\inm\antlr4\ProgramParser$ListIdLineContext.class
 com\inm\antlr4\ProgramParser.class
-com\inm\semantic\ThreeAddressCode.class
 com\inm\generator\assembly\Writer.class
 com\inm\semantic\SemanticAndIntermediateListener.class
 com\inm\helper\Symbol.class

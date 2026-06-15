@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : ifaninhado
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -57,20 +57,11 @@ start:
 	mov ecx, offset _str1
 	call _print_str
 
-	; t0 = 4 > 2
-	mov ax, 4
-	cmp ax, 2
-	jg cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L2
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 
@@ -85,8 +76,6 @@ cmp_e_t0:
 
 	; ifFalse t1 goto L4
 	movzx eax, byte ptr [t1]
-	cmp eax, 0
-	je L4
 	cmp eax, 0
 	je L4
 

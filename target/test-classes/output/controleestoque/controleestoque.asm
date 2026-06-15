@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : ControleEstoque
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -60,8 +60,6 @@ L0:
 	movzx eax, byte ptr [v_continuar]
 	cmp eax, 0
 	je L1
-	cmp eax, 0
-	je L1
 
 	; t0 = v_vendidos + 2
 	mov ax, word ptr [v_vendidos]
@@ -111,8 +109,6 @@ cmp_e_t2:
 
 	; ifFalse t2 goto L2
 	movzx eax, byte ptr [t2]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 

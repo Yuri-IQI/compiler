@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : superExpr
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -47,31 +47,23 @@ start:
 	; v_y = 5
 	mov word ptr [v_y], 5
 
-	; t0 = 5 << 1
-	mov ax, 5
-	shl ax, 1
-	mov word ptr [t0], ax
+	; t0 = 10
+	mov word ptr [t0], 10
 
 	; t1 = 2
 	mov word ptr [t1], 2
 
-	; t2 = t0 - 2
-	mov ax, word ptr [t0]
-	sub ax, 2
-	mov word ptr [t2], ax
+	; t2 = 8
+	mov word ptr [t2], 8
 
-	; t3 = 10 + t2
-	mov ax, 10
-	add ax, word ptr [t2]
-	mov word ptr [t3], ax
+	; t3 = 18
+	mov word ptr [t3], 18
 
-	; v_z = t3
-	mov ax, word ptr [t3]
-	mov word ptr [v_z], ax
+	; v_z = 18
+	mov word ptr [v_z], 18
 
-	; WRITE v_z
-	movsx eax, word ptr [v_z]
-	push eax
+	; WRITE 18
+	push 18
 	call _print_int
 
 	invoke Sleep, 50

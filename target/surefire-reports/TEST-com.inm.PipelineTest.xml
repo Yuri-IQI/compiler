@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.PipelineTest" time="0.815" tests="37" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.PipelineTest" time="1.108" tests="37" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="C:\Users\Yuri\graalvm21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260 2026-06-14T18-39-43_464-jvmRun1 surefire-20260614183943581_1tmp surefire_0-20260614183943581_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012\surefirebooter-20260615152700892_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012 2026-06-15T15-27-00_787-jvmRun1 surefire-20260615152700892_1tmp surefire_0-20260615152700892_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Yuri\Projetos\compiler\target\test-classes;C:\Users\Yuri\Projetos\compiler\target\classes;C:\Users\Yuri\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr4\4.13.2\antlr4-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\Yuri\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\Yuri\.m2\repository\org\abego\treelayout\org.abego.treelayout.core\1.0.3\org.abego.treelayout.core-1.0.3.jar;C:\Users\Yuri\.m2\repository\com\ibm\icu\icu4j\72.1\icu4j-72.1.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Yuri\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012\surefirebooter-20260615152700892_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-jvmci-23.1-b30"/>
@@ -60,10 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="rejectsInvalidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.125">
+  <testcase name="rejectsInvalidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.084">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-sem-expr.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: attrsemexpr | Tipo: ID         | Atributo: attrsemexpr
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -84,10 +84,10 @@ Linha 5:0 mismatched input 'end' expecting {'FALSE', 'TRUE', CTE, '~', '(', ID, 
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.011">
+  <testcase name="rejectsInvalidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.01">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/if-sem-then.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: ifsemthen  | Tipo: ID         | Atributo: ifsemthen
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -117,7 +117,7 @@ Linha 6:4 missing 'THEN' at 'begin'
   <testcase name="rejectsInvalidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/read-sem-pars.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: readsempars | Tipo: ID         | Atributo: readsempars
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -140,7 +140,7 @@ Linha 4:9 missing '(' at 'x'
   <testcase name="rejectsInvalidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-begin.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: sembegin   | Tipo: ID         | Atributo: sembegin
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -159,10 +159,10 @@ Linha 4:6 mismatched input ':=' expecting {':', ','}
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.01">
+  <testcase name="rejectsInvalidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-ponto.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: semponto   | Tipo: ID         | Atributo: semponto
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -182,7 +182,7 @@ Linha 4:0 missing ';' at 'end'
   <testcase name="rejectsInvalidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/sem-pvig.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: sempvig    | Tipo: ID         | Atributo: sempvig
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -207,7 +207,7 @@ Linha 5:4 missing ';' at 'x'
   <testcase name="rejectsInvalidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/tipo-invalido.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: tipoinvalido | Tipo: ID         | Atributo: tipoinvalido
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -223,10 +223,10 @@ Linha 2:8 mismatched input 'real' expecting {':', ','}
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.003">
+  <testcase name="rejectsInvalidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/var-sem-tipo.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: varsemtipo | Tipo: ID         | Atributo: varsemtipo
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -242,10 +242,10 @@ Linha 2:7 missing {'INTEGER', 'BOOLEAN', 'STRING'} at ';'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.003">
+  <testcase name="rejectsInvalidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/while-sem-do.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: whilesemdo | Tipo: ID         | Atributo: whilesemdo
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -275,7 +275,7 @@ Linha 6:4 missing 'DO' at 'begin'
   <testcase name="rejectsInvalidScripts(String)[10]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/id-reservado.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: idreservado | Tipo: ID         | Atributo: idreservado
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -289,10 +289,10 @@ Linha 2:4 mismatched input 'while' expecting ID
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="rejectsInvalidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-duplo-semantico.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: erroSemantico | Tipo: ID         | Atributo: erroSemantico
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -312,10 +312,10 @@ Linha 3:0 missing 'BEGIN' at 'var'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.025">
+  <testcase name="rejectsInvalidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.016">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/attr-wrong-type.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: attrWrongType | Tipo: ID         | Atributo: attrWrongType
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -335,19 +335,19 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program attrWrongType ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "abc")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: attrWrongType
+Análise sintática concluída. Programa: attrWrongType
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [5:4]: Incompatibilidade de tipos: não é possível atribuir 'string' à variável 'x' do tipo 'INTEGER'.
 
-[FALHA SEMÂNTICA] 1 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 1 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="rejectsInvalidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-diferentes-tipos.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: opsDiferentesTipos | Tipo: ID         | Atributo: opsDiferentesTipos
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -371,21 +371,21 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program opsDiferentesTipos ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "abc")) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 5)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: opsDiferentesTipos
+Análise sintática concluída. Programa: opsDiferentesTipos
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [5:19]: Operação '+' inválida... Esperado 'integer'.
 Erro Semântico [5:15]: Operação '+' inválida... Esperado 'integer'.
 Erro Semântico [5:4]: Incompatibilidade de tipos: não é possível atribuir 'undefined' à variável 'x' do tipo 'INTEGER'.
 
-[FALHA SEMÂNTICA] 3 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 3 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="rejectsInvalidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/if-not-boolean.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: ifnotboolean | Tipo: ID         | Atributo: ifnotboolean
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -412,21 +412,21 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program ifnotboolean ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin listCmd end) cmdIfLine)) ; (listCmd (varDecl var (declTip (listId x listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar "erro"))) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: ifnotboolean
+Análise sintática concluída. Programa: ifnotboolean
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [3:7]: Expressão condicional deve resultar em 'boolean', mas resultou em 'integer'.
 Erro Semântico [7:9]: Operador '~' inválido para o tipo 'string'. Esperado 'boolean'.
 Erro Semântico [7:4]: Incompatibilidade de tipos: não é possível atribuir 'undefined' à variável 'x' do tipo 'STRING'.
 
-[FALHA SEMÂNTICA] 3 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 3 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="rejectsInvalidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/tamanho-constante.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: tamanhoConstante | Tipo: ID         | Atributo: tamanhoConstante
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -452,20 +452,20 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program tamanhoConstante ; (decls var (listDecl (declTip (listId y (listIdLine , z listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar -32769)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 32768)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: tamanhoConstante
+Análise sintática concluída. Programa: tamanhoConstante
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [4:9]: Constante '-32769' excede o limite de 2 bytes (-32768 a 32767).
 Erro Semântico [5:9]: Constante '32768' excede o limite de 2 bytes (-32768 a 32767).
 
-[FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 2 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
   <testcase name="rejectsInvalidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.006">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/ops-bool-int.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: opsBoolComInt | Tipo: ID         | Atributo: opsBoolComInt
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -501,20 +501,20 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program opsBoolComInt ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) (listDeclLine (declTip (listId z listIdLine) : (tip boolean) ;) listDeclLine))) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) (exprLogLine and (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; listCmd)))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: opsBoolComInt
+Análise sintática concluída. Programa: opsBoolComInt
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [7:11]: Operação lógica 'and' inválida entre 'integer' e 'integer'. Esperado 'boolean'.
 Erro Semântico [7:4]: Incompatibilidade de tipos: não é possível atribuir 'undefined' à variável 'z' do tipo 'BOOLEAN'.
 
-[FALHA SEMÂNTICA] 2 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 2 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="rejectsInvalidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-lexico.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: TesteLexico | Tipo: ID         | Atributo: TesteLexico
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -532,10 +532,10 @@ Linha 4:13 mismatched input 'muito' expecting {':', ','}
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsInvalidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.008">
+  <testcase name="rejectsInvalidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.009">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/invalid/erro-semantico.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: TesteErros | Tipo: ID         | Atributo: TesteErros
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -594,9 +594,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog PROGRAM TesteErros ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId numero listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId ativo listIdLine) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId texto listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib numero := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib ativo := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib ativo := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar numero)) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib numero := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ABC")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar numero)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ERRO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) END) cmdIfLine)) ; listCmd)))))))))))))))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: TesteErros
+Análise sintática concluída. Programa: TesteErros
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 ]]></system-out>
     <system-err><![CDATA[Erro Semântico [8:4]: Incompatibilidade de tipos: não é possível atribuir 'boolean' à variável 'numero' do tipo 'INTEGER'.
 Erro Semântico [9:4]: Incompatibilidade de tipos: não é possível atribuir 'integer' à variável 'ativo' do tipo 'BOOLEAN'.
@@ -606,12 +606,12 @@ Erro Semântico [12:4]: Incompatibilidade de tipos: não é possível atribuir '
 Erro Semântico [14:4]: Incompatibilidade de tipos: não é possível atribuir 'string' à variável 'numero' do tipo 'INTEGER'.
 Erro Semântico [16:7]: Expressão condicional deve resultar em 'boolean', mas resultou em 'integer'.
 
-[FALHA SEMÂNTICA] 7 erro(s) encontrado(s). Compilação interrompida.
+[FALHA SEMÂNTICA] 7 erros encontrados. Compilação interrompida.
 ]]></system-err>
   </testcase>
-  <testcase name="rejectsEmptyScript" classname="com.inm.PipelineTest" time="0.002">
+  <testcase name="rejectsEmptyScript" classname="com.inm.PipelineTest" time="0.004">
     <system-out><![CDATA[
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 ]]></system-out>
     <system-err><![CDATA[[ERRO LÉXICO/SINTÁTICO] 
 ------ERRO-----------------------------
@@ -619,10 +619,10 @@ Linha 1:0 mismatched input '<EOF>' expecting 'PROGRAM'
 ------ERRO-----------------------------
 ]]></system-err>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.023">
+  <testcase name="acceptsValidScripts(String)[1]" classname="com.inm.PipelineTest" time="0.014">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/atribuicao.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: atribuicao | Tipo: ID         | Atributo: atribuicao
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -647,31 +647,31 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program atribuicao ; (decls var (listDecl (declTip (listId variavel listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib variavel := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar variavel)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: atribuicao
+Análise sintática concluída. Programa: atribuicao
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_variavel = 2
 WRITE v_variavel
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_variavel = 2
 WRITE 2
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : atribuicao
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -758,13 +758,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\atribuicao.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.008">
+  <testcase name="acceptsValidScripts(String)[2]" classname="com.inm.PipelineTest" time="0.01">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/comentario-e-div.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: comentarioEDiv | Tipo: ID         | Atributo: comentarioEDiv
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -786,31 +786,31 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program comentarioEDiv ; (decls var (listDecl (declTip (listId div listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib div := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: comentarioEDiv
+Análise sintática concluída. Programa: comentarioEDiv
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 t0 = 2 / 2
 v_div = t0
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 t0 = 1
 v_div = 1
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : comentarioEDiv
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -858,13 +858,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\comentarioediv.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
   <testcase name="acceptsValidScripts(String)[3]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/dangling-else.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: danglingelse | Tipo: ID         | Atributo: danglingelse
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -919,9 +919,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program danglingelse ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine == (exprLog (exprAd (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine == (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "se")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end) (cmdIfLine else (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "nao")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end)))) ; listCmd)) end) cmdIfLine)) ; listCmd)))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: danglingelse
+Análise sintática concluída. Programa: danglingelse
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_x = 1
@@ -938,16 +938,16 @@ L3:
 L0:
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_x = 1
 v_y = 1
-t0 = 1 == 1
+t0 = TRUE
 ifFalse t0 goto L0
-t1 = 1 == 2
+t1 = FALSE
 ifFalse t1 goto L2
 WRITE "se"
 goto L3
@@ -957,15 +957,15 @@ L3:
 L0:
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : danglingelse
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1010,37 +1010,19 @@ start:
 	; v_y = 1
 	mov word ptr [v_y], 1
 
-	; t0 = 1 == 1
-	mov ax, 1
-	cmp ax, 1
-	je cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L0
 	movzx eax, byte ptr [t0]
 	cmp eax, 0
 	je L0
-	cmp eax, 0
-	je L0
 
-	; t1 = 1 == 2
-	mov ax, 1
-	cmp ax, 2
-	je cmp_t_t1
+	; t1 = FALSE
 	mov byte ptr [t1], 0
-	jmp cmp_e_t1
-cmp_t_t1:
-	mov byte ptr [t1], 1
-cmp_e_t1:
 
 	; ifFalse t1 goto L2
 	movzx eax, byte ptr [t1]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 
@@ -1092,13 +1074,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\danglingelse.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
   <testcase name="acceptsValidScripts(String)[4]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/escreve-teste.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: EscreveTeste | Tipo: ID         | Atributo: EscreveTeste
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1114,29 +1096,29 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program EscreveTeste ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: EscreveTeste
+Análise sintática concluída. Programa: EscreveTeste
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE "teste"
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "teste"
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : EscreveTeste
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1199,13 +1181,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\escreveteste.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.015">
+  <testcase name="acceptsValidScripts(String)[5]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/expr-ari.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: exprAri    | Tipo: ID         | Atributo: exprAri
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1248,9 +1230,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program exprAri ; (decls var (listDecl (declTip (listId x (listIdLine , y (listIdLine , z listIdLine))) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 3)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar y)) (exprMultLine * (exprNeg (exprPar 2)) exprMultLine)) (exprAdLine - (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar z)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: exprAri
+Análise sintática concluída. Programa: exprAri
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_x = 10
@@ -1261,28 +1243,28 @@ t2 = v_x + t1
 v_z = t2
 WRITE v_z
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_x = 10
 v_y = 3
-t0 = 3 << 1
-t1 = t0 - 1
-t2 = 10 + t1
-v_z = t2
-WRITE v_z
+t0 = 6
+t1 = 5
+t2 = 15
+v_z = 15
+WRITE 15
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : exprAri
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1327,28 +1309,20 @@ start:
 	; v_y = 3
 	mov word ptr [v_y], 3
 
-	; t0 = 3 << 1
-	mov ax, 3
-	shl ax, 1
-	mov word ptr [t0], ax
+	; t0 = 6
+	mov word ptr [t0], 6
 
-	; t1 = t0 - 1
-	mov ax, word ptr [t0]
-	sub ax, 1
-	mov word ptr [t1], ax
+	; t1 = 5
+	mov word ptr [t1], 5
 
-	; t2 = 10 + t1
-	mov ax, 10
-	add ax, word ptr [t1]
-	mov word ptr [t2], ax
+	; t2 = 15
+	mov word ptr [t2], 15
 
-	; v_z = t2
-	mov ax, word ptr [t2]
-	mov word ptr [v_z], ax
+	; v_z = 15
+	mov word ptr [v_z], 15
 
-	; WRITE v_z
-	movsx eax, word ptr [v_z]
-	push eax
+	; WRITE 15
+	push 15
 	call _print_int
 
 	invoke Sleep, 50
@@ -1397,13 +1371,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\exprari.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.009">
+  <testcase name="acceptsValidScripts(String)[6]" classname="com.inm.PipelineTest" time="0.008">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/nome-identificador.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: nomeIdentificador | Tipo: ID         | Atributo: nomeIdentificador
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1428,32 +1402,32 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program nomeIdentificador ; (decls var (listDecl (declTip (listId variavelasdae32e2wqdr3asdsaerqwvx2314 listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib variavelasdae32e2wqdr3asdsaerqwvx2314 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar variavelasdae32e2wqdr3asdsaerqwvx2314)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: nomeIdentificador
+Análise sintática concluída. Programa: nomeIdentificador
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 Aviso [2:4]: Identificador 'variavelasdae32e2wqdr3asdsaerqwvx2314' truncado para 'variavelasdae32e'.
 
 --- Código Intermediário (3AC) ---
 v_variavelasdae32e2wqdr3asdsaerqwvx2314 = 2
 WRITE v_variavelasdae32e2wqdr3asdsaerqwvx2314
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_variavelasdae32e2wqdr3asdsaerqwvx2314 = 2
 WRITE 2
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : nomeIdentificador
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1540,13 +1514,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\nomeidentificador.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="acceptsValidScripts(String)[7]" classname="com.inm.PipelineTest" time="0.008">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/variaveis.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: variaveis  | Tipo: ID         | Atributo: variaveis
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1583,33 +1557,33 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program variaveis ; (decls var (listDecl (declTip (listId x (listIdLine , y listIdLine)) : (tip integer) ;) (listDeclLine (declTip (listId z listIdLine) : (tip sTrInG) ;) listDeclLine))) (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar y)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId z listIdLine) ))) ; listCmd)))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: variaveis
+Análise sintática concluída. Programa: variaveis
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE v_x
 WRITE v_y
 READ_STRING v_z
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE v_x
 WRITE v_y
 READ_STRING v_z
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : variaveis
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1734,13 +1708,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\variaveis.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.01">
+  <testcase name="acceptsValidScripts(String)[8]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/while-script.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: whilescript | Tipo: ID         | Atributo: whilescript
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1779,9 +1753,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program whilescript ; (decls var (listDecl (declTip (listId id listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib id := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile while (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) do (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib id := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar id)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: whilescript
+Análise sintática concluída. Programa: whilescript
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_id = 0
@@ -1794,9 +1768,9 @@ WRITE v_id
 goto L0
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_id = 0
@@ -1809,15 +1783,15 @@ WRITE v_id
 goto L0
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : whilescript
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -1871,8 +1845,6 @@ cmp_e_t0:
 
 	; ifFalse t0 goto L1
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L1
 	cmp eax, 0
 	je L1
 
@@ -1942,13 +1914,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\whilescript.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.007">
+  <testcase name="acceptsValidScripts(String)[9]" classname="com.inm.PipelineTest" time="0.009">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/condicional.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: condicional | Tipo: ID         | Atributo: condicional
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -1994,9 +1966,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program condicional ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar 3)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "maior")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "dois")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) (cmdIfLine else (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "menor")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)) end)))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: condicional
+Análise sintática concluída. Programa: condicional
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_x = 5
@@ -2009,13 +1981,13 @@ L0:
 WRITE "menor"
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_x = 5
-t0 = 5 > 3
+t0 = TRUE
 ifFalse t0 goto L0
 WRITE "maior"
 WRITE "dois"
@@ -2024,15 +1996,15 @@ L0:
 WRITE "menor"
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : condicional
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -2073,20 +2045,11 @@ start:
 	; v_x = 5
 	mov word ptr [v_x], 5
 
-	; t0 = 5 > 3
-	mov ax, 5
-	cmp ax, 3
-	jg cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L0
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L0
 	cmp eax, 0
 	je L0
 
@@ -2136,13 +2099,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\condicional.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
   <testcase name="acceptsValidScripts(String)[10]" classname="com.inm.PipelineTest" time="0.01">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/if-aninhado.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: ifaninhado | Tipo: ID         | Atributo: ifaninhado
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -2214,9 +2177,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program ifaninhado ; decls (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste7")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar true)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste5")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 4)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste3")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf if (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar false))) exprMultLine) exprAdLine) exprLogLine) exprRelLine) then (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste1")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste2")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste4")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste6")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) cmdIfLine)) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "teste8")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: ifaninhado
+Análise sintática concluída. Programa: ifaninhado
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE "teste7"
@@ -2239,15 +2202,15 @@ L0:
 L1:
 WRITE "teste8"
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "teste7"
 ifFalse TRUE goto L0
 WRITE "teste5"
-t0 = 4 > 2
+t0 = TRUE
 ifFalse t0 goto L2
 WRITE "teste3"
 t1 = ~FALSE
@@ -2264,15 +2227,15 @@ L0:
 L1:
 WRITE "teste8"
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : ifaninhado
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -2328,20 +2291,11 @@ start:
 	mov ecx, offset _str1
 	call _print_str
 
-	; t0 = 4 > 2
-	mov ax, 4
-	cmp ax, 2
-	jg cmp_t_t0
-	mov byte ptr [t0], 0
-	jmp cmp_e_t0
-cmp_t_t0:
+	; t0 = TRUE
 	mov byte ptr [t0], 1
-cmp_e_t0:
 
 	; ifFalse t0 goto L2
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 
@@ -2356,8 +2310,6 @@ cmp_e_t0:
 
 	; ifFalse t1 goto L4
 	movzx eax, byte ptr [t1]
-	cmp eax, 0
-	je L4
 	cmp eax, 0
 	je L4
 
@@ -2424,13 +2376,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\ifaninhado.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.012">
+  <testcase name="acceptsValidScripts(String)[11]" classname="com.inm.PipelineTest" time="0.013">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/projeto-compiladores.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: ProjetoCompiladores | Tipo: ID         | Atributo: ProjetoCompiladores
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -2536,9 +2488,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog PROGRAM ProjetoCompiladores ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId nota1 (listIdLine , nota2 listIdLine)) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId resultado listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "INFORME A PRIMEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota1 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "INFORME A SEGUNDA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota2 listIdLine) ))) ; (listCmd (varDecl VAR (declTip (listId media listIdLine) : (tip INTEGER) ;) (listCmd (cmdDecl (cmd (cmdAtrib media := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar nota1)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota2)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (varDecl VAR (declTip (listId aprovado listIdLine) : (tip BOOLEAN) ;) (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Aprovado")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Reprovado")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; listCmd)))))))))))))))))))))))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: ProjetoCompiladores
+Análise sintática concluída. Programa: ProjetoCompiladores
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE "INFORME A PRIMEIRA NOTA"
@@ -2561,9 +2513,9 @@ v_resultado = "Reprovado"
 WRITE v_resultado
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "INFORME A PRIMEIRA NOTA"
@@ -2586,15 +2538,15 @@ v_resultado = "Reprovado"
 WRITE v_resultado
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : ProjetoCompiladores
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -2697,8 +2649,6 @@ cmp_e_t2:
 
 	; ifFalse v_aprovado goto L0
 	movzx eax, byte ptr [v_aprovado]
-	cmp eax, 0
-	je L0
 	cmp eax, 0
 	je L0
 
@@ -2846,8 +2796,19 @@ ri_loop:
 	jmp ri_loop
 ri_done:
 	test ebx, ebx
-	jz ri_pos
+	jz ri_validate_pos
 	neg eax
+ri_validate_neg:
+	cmp eax, -32767
+	jl ri_overflow
+	jmp ri_success
+ri_validate_pos:
+	cmp eax, 32767
+	jg ri_overflow
+ri_success:
+	jmp ri_pos
+	ri_overflow:
+	xor eax, eax
 ri_pos:
 	pop ebx
 	pop esi
@@ -2858,13 +2819,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\projetocompiladores.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="acceptsValidScripts(String)[12]" classname="com.inm.PipelineTest" time="0.326">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/calculo-desconto.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: calculoDesconto | Tipo: ID         | Atributo: calculoDesconto
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -2915,9 +2876,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program calculoDesconto ; (decls var (listDecl (declTip (listId preco (listIdLine , resultado listIdLine)) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Informe o Preço")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId preco listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar preco)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib resultado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar preco)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar 15)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: calculoDesconto
+Análise sintática concluída. Programa: calculoDesconto
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 t0 = 5 / 2
@@ -2929,9 +2890,9 @@ t1 = v_preco - 15
 v_resultado = t1
 WRITE v_resultado
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 t0 = 2
@@ -2943,15 +2904,15 @@ t1 = v_preco - 15
 v_resultado = t1
 WRITE v_resultado
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : calculoDesconto
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -3111,8 +3072,19 @@ ri_loop:
 	jmp ri_loop
 ri_done:
 	test ebx, ebx
-	jz ri_pos
+	jz ri_validate_pos
 	neg eax
+ri_validate_neg:
+	cmp eax, -32767
+	jl ri_overflow
+	jmp ri_success
+ri_validate_pos:
+	cmp eax, 32767
+	jg ri_overflow
+ri_success:
+	jmp ri_pos
+	ri_overflow:
+	xor eax, eax
 ri_pos:
 	pop ebx
 	pop esi
@@ -3123,13 +3095,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\calculodesconto.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.006">
+  <testcase name="acceptsValidScripts(String)[13]" classname="com.inm.PipelineTest" time="0.005">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/teste-while.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: loopTest   | Tipo: ID         | Atributo: loopTest
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -3168,9 +3140,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program loopTest ; (decls var (listDecl (declTip (listId x listIdLine) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile while (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) do (cmdComp begin (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 1)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; listCmd)))) end))) ; listCmd)))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: loopTest
+Análise sintática concluída. Programa: loopTest
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_x = 0
@@ -3183,9 +3155,9 @@ v_x = t1
 goto L0
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_x = 0
@@ -3198,15 +3170,15 @@ v_x = t1
 goto L0
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : loopTest
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -3260,8 +3232,6 @@ cmp_e_t0:
 
 	; ifFalse t0 goto L1
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L1
 	cmp eax, 0
 	je L1
 
@@ -3331,13 +3301,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\looptest.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.264">
+  <testcase name="acceptsValidScripts(String)[14]" classname="com.inm.PipelineTest" time="0.008">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/super-expr.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: program    | Tipo: PROGRAM    | Atributo: -
 Token: superExpr  | Tipo: ID         | Atributo: superExpr
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -3382,9 +3352,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog program superExpr ; (decls var (listDecl (declTip (listId x (listIdLine , y (listIdLine , z listIdLine))) : (tip integer) ;) listDeclLine)) (cmdComp begin (listCmd (cmdDecl (cmd (cmdAtrib x := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib y := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib z := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar x)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar y)) (exprMultLine * (exprNeg (exprPar 2)) exprMultLine)) (exprAdLine - (exprMult (exprNeg (exprPar 4)) (exprMultLine / (exprNeg (exprPar 2)) exprMultLine)) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar z)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))) end) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: superExpr
+Análise sintática concluída. Programa: superExpr
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_x = 10
@@ -3396,29 +3366,29 @@ t3 = v_x + t2
 v_z = t3
 WRITE v_z
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_x = 10
 v_y = 5
-t0 = 5 << 1
+t0 = 10
 t1 = 2
-t2 = t0 - 2
-t3 = 10 + t2
-v_z = t3
-WRITE v_z
+t2 = 8
+t3 = 18
+v_z = 18
+WRITE 18
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : superExpr
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -3464,31 +3434,23 @@ start:
 	; v_y = 5
 	mov word ptr [v_y], 5
 
-	; t0 = 5 << 1
-	mov ax, 5
-	shl ax, 1
-	mov word ptr [t0], ax
+	; t0 = 10
+	mov word ptr [t0], 10
 
 	; t1 = 2
 	mov word ptr [t1], 2
 
-	; t2 = t0 - 2
-	mov ax, word ptr [t0]
-	sub ax, 2
-	mov word ptr [t2], ax
+	; t2 = 8
+	mov word ptr [t2], 8
 
-	; t3 = 10 + t2
-	mov ax, 10
-	add ax, word ptr [t2]
-	mov word ptr [t3], ax
+	; t3 = 18
+	mov word ptr [t3], 18
 
-	; v_z = t3
-	mov ax, word ptr [t3]
-	mov word ptr [v_z], ax
+	; v_z = 18
+	mov word ptr [v_z], 18
 
-	; WRITE v_z
-	movsx eax, word ptr [v_z]
-	push eax
+	; WRITE 18
+	push 18
 	call _print_int
 
 	invoke Sleep, 50
@@ -3537,13 +3499,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\superexpr.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.017">
+  <testcase name="acceptsValidScripts(String)[15]" classname="com.inm.PipelineTest" time="0.021">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/teste-expressoes.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: TesteExpressoes | Tipo: ID         | Atributo: TesteExpressoes
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -3714,9 +3676,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog PROGRAM TesteExpressoes ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId a (listIdLine , b (listIdLine , c (listIdLine , d listIdLine)))) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId r1 (listIdLine , r2 listIdLine)) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId comp1 (listIdLine , comp2 (listIdLine , final listIdLine))) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId texto listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdAtrib a := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 10)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib b := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 5)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib c := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib d := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 8)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib r1 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar b)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) (exprMultLine * (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar c)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar d)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib r2 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) (exprMultLine * (exprNeg (exprPar b)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine) ))) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar d)) (exprMultLine / (exprNeg (exprPar c)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine) ))) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar c)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine) ))) exprMultLine) exprAdLine))) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib comp1 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r1)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine > (exprLog (exprAd (exprMult (exprNeg (exprPar r2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdAtrib comp2 := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar a)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar b)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) ))) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar d)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine <> (exprLog (exprAd (exprMult (exprNeg (exprPar c)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) ))) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib final := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp1)) exprMultLine) exprAdLine) (exprLogLine OR (exprAd (exprMult (exprNeg (exprPar comp2)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar r2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp1)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar comp2)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar final)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar final)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "VERDADEIRO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar texto)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib texto := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "FALSO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar texto)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; listCmd)))))))))))))))))))))))))))))))))))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: TesteExpressoes
+Análise sintática concluída. Programa: TesteExpressoes
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_a = 10
@@ -3755,35 +3717,35 @@ v_texto = "FALSO"
 WRITE v_texto
 L1:
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_a = 10
 v_b = 5
 v_c = 2
 v_d = 8
-t0 = 10 + 5
-t1 = 2 + 8
-t2 = t0 * t1
-v_r1 = t2
-t3 = 10 * 5
-t4 = 8 / 2
-t5 = 10 - 2
-t6 = t4 + t5
-t7 = t3 - t6
-v_r2 = t7
-t8 = v_r1 > v_r2
+t0 = 15
+t1 = 10
+t2 = 150
+v_r1 = 150
+t3 = 50
+t4 = 4
+t5 = 8
+t6 = 12
+t7 = 38
+v_r2 = 38
+t8 = TRUE
 v_comp1 = t8
-t9 = 10 >= 5
-t10 = 8 <> 2
+t9 = TRUE
+t10 = TRUE
 t11 = t9 AND t10
 v_comp2 = t11
 t12 = v_comp1 OR v_comp2
 v_final = t12
-WRITE v_r1
-WRITE v_r2
+WRITE 150
+WRITE 38
 WRITE v_comp1
 WRITE v_comp2
 WRITE v_final
@@ -3796,15 +3758,15 @@ v_texto = "FALSO"
 WRITE v_texto
 L1:
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : TesteExpressoes
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -3874,89 +3836,48 @@ start:
 	; v_d = 8
 	mov word ptr [v_d], 8
 
-	; t0 = 10 + 5
-	mov ax, 10
-	add ax, 5
-	mov word ptr [t0], ax
+	; t0 = 15
+	mov word ptr [t0], 15
 
-	; t1 = 2 + 8
-	mov ax, 2
-	add ax, 8
-	mov word ptr [t1], ax
+	; t1 = 10
+	mov word ptr [t1], 10
 
-	; t2 = t0 * t1
-	mov ax, word ptr [t0]
-	imul word ptr [t1]
-	mov word ptr [t2], ax
+	; t2 = 150
+	mov word ptr [t2], 150
 
-	; v_r1 = t2
-	mov ax, word ptr [t2]
-	mov word ptr [v_r1], ax
+	; v_r1 = 150
+	mov word ptr [v_r1], 150
 
-	; t3 = 10 * 5
-	mov ax, 10
-	imul ax, ax, 5
-	mov word ptr [t3], ax
+	; t3 = 50
+	mov word ptr [t3], 50
 
-	; t4 = 8 / 2
-	mov ax, 8
-	cwd
-	mov bx, 2
-	idiv bx
-	mov word ptr [t4], ax
+	; t4 = 4
+	mov word ptr [t4], 4
 
-	; t5 = 10 - 2
-	mov ax, 10
-	sub ax, 2
-	mov word ptr [t5], ax
+	; t5 = 8
+	mov word ptr [t5], 8
 
-	; t6 = t4 + t5
-	mov ax, word ptr [t4]
-	add ax, word ptr [t5]
-	mov word ptr [t6], ax
+	; t6 = 12
+	mov word ptr [t6], 12
 
-	; t7 = t3 - t6
-	mov ax, word ptr [t3]
-	sub ax, word ptr [t6]
-	mov word ptr [t7], ax
+	; t7 = 38
+	mov word ptr [t7], 38
 
-	; v_r2 = t7
-	mov ax, word ptr [t7]
-	mov word ptr [v_r2], ax
+	; v_r2 = 38
+	mov word ptr [v_r2], 38
 
-	; t8 = v_r1 > v_r2
-	mov ax, word ptr [v_r1]
-	cmp ax, word ptr [v_r2]
-	jg cmp_t_t8
-	mov byte ptr [t8], 0
-	jmp cmp_e_t8
-cmp_t_t8:
+	; t8 = TRUE
 	mov byte ptr [t8], 1
-cmp_e_t8:
 
 	; v_comp1 = t8
 	mov al, byte ptr [t8]
 	mov byte ptr [v_comp1], al
 
-	; t9 = 10 >= 5
-	mov ax, 10
-	cmp ax, 5
-	jge cmp_t_t9
-	mov byte ptr [t9], 0
-	jmp cmp_e_t9
-cmp_t_t9:
+	; t9 = TRUE
 	mov byte ptr [t9], 1
-cmp_e_t9:
 
-	; t10 = 8 <> 2
-	mov ax, 8
-	cmp ax, 2
-	jne cmp_t_t10
-	mov byte ptr [t10], 0
-	jmp cmp_e_t10
-cmp_t_t10:
+	; t10 = TRUE
 	mov byte ptr [t10], 1
-cmp_e_t10:
 
 	; t11 = t9 AND t10
 	mov al, byte ptr [t9]
@@ -3976,14 +3897,12 @@ cmp_e_t10:
 	mov al, byte ptr [t12]
 	mov byte ptr [v_final], al
 
-	; WRITE v_r1
-	movsx eax, word ptr [v_r1]
-	push eax
+	; WRITE 150
+	push 150
 	call _print_int
 
-	; WRITE v_r2
-	movsx eax, word ptr [v_r2]
-	push eax
+	; WRITE 38
+	push 38
 	call _print_int
 
 	; WRITE v_comp1
@@ -4003,8 +3922,6 @@ cmp_e_t10:
 
 	; ifFalse v_final goto L0
 	movzx eax, byte ptr [v_final]
-	cmp eax, 0
-	je L0
 	cmp eax, 0
 	je L0
 
@@ -4128,13 +4045,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\testeexpressoes.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.012">
+  <testcase name="acceptsValidScripts(String)[16]" classname="com.inm.PipelineTest" time="0.011">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/sistema-academico.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: SistemaAcademico | Tipo: ID         | Atributo: SistemaAcademico
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -4145,6 +4062,8 @@ Token: ,          | Tipo: VIG        | Atributo: -
 Token: nota2      | Tipo: ID         | Atributo: nota2
 Token: ,          | Tipo: VIG        | Atributo: -
 Token: nota3      | Tipo: ID         | Atributo: nota3
+Token: ,          | Tipo: VIG        | Atributo: -
+Token: nota4      | Tipo: ID         | Atributo: nota4
 Token: :          | Tipo: DPONTOS    | Atributo: -
 Token: INTEGER    | Tipo: INTEGER    | Atributo: -
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -4197,6 +4116,16 @@ Token: (          | Tipo: ABPAR      | Atributo: -
 Token: nota3      | Tipo: ID         | Atributo: nota3
 Token: )          | Tipo: FPAR       | Atributo: -
 Token: ;          | Tipo: PVIG       | Atributo: -
+Token: WRITE      | Tipo: WRITE      | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: "DIGITE A TERCEIRA NOTA" | Tipo: CADEIA     | Atributo: DIGITE A TERCEIRA NOTA
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
+Token: READ       | Tipo: READ       | Atributo: -
+Token: (          | Tipo: ABPAR      | Atributo: -
+Token: nota4      | Tipo: ID         | Atributo: nota4
+Token: )          | Tipo: FPAR       | Atributo: -
+Token: ;          | Tipo: PVIG       | Atributo: -
 Token: media      | Tipo: ID         | Atributo: media
 Token: :=         | Tipo: ATRIB      | Atributo: -
 Token: (          | Tipo: ABPAR      | Atributo: -
@@ -4205,9 +4134,11 @@ Token: +          | Tipo: OPAD       | Atributo: MAIS
 Token: nota2      | Tipo: ID         | Atributo: nota2
 Token: +          | Tipo: OPAD       | Atributo: MAIS
 Token: nota3      | Tipo: ID         | Atributo: nota3
+Token: +          | Tipo: OPAD       | Atributo: MAIS
+Token: nota4      | Tipo: ID         | Atributo: nota4
 Token: )          | Tipo: FPAR       | Atributo: -
 Token: /          | Tipo: OPMULT     | Atributo: DIV
-Token: 3          | Tipo: CTE        | Atributo: 3
+Token: 4          | Tipo: CTE        | Atributo: 4
 Token: ;          | Tipo: PVIG       | Atributo: -
 Token: WRITE      | Tipo: WRITE      | Atributo: -
 Token: (          | Tipo: ABPAR      | Atributo: -
@@ -4285,11 +4216,11 @@ Token: END        | Tipo: END        | Atributo: -
 Token: .          | Tipo: PONTO      | Atributo: -
 
 --- Árvore Sintática (texto) ---
-(prog PROGRAM SistemaAcademico ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId nota1 (listIdLine , nota2 (listIdLine , nota3 listIdLine))) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId media listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId aprovado (listIdLine , frequenciaOk (listIdLine , resultadoFinal listIdLine))) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId situacao listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A PRIMEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota1 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A SEGUNDA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota2 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A TERCEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota3 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib media := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar nota1)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota2)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota3)) exprMultLine) exprAdLine))) exprLogLine) exprRelLine) ))) (exprMultLine / (exprNeg (exprPar 3)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "MEDIA CALCULADA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdAtrib frequenciaOk := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib resultadoFinal := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar frequenciaOk)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "APROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "REPROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) )))) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))))))))))))))))))))))))))))))) END) . <EOF>)
+(prog PROGRAM SistemaAcademico ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId nota1 (listIdLine , nota2 (listIdLine , nota3 (listIdLine , nota4 listIdLine)))) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId media listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId aprovado (listIdLine , frequenciaOk (listIdLine , resultadoFinal listIdLine))) : (tip BOOLEAN) ;) (listCmd (varDecl VAR (declTip (listId situacao listIdLine) : (tip STRING) ;) (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A PRIMEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota1 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A SEGUNDA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota2 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A TERCEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota3 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "DIGITE A TERCEIRA NOTA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead READ ( (listId nota4 listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib media := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar nota1)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota2)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota3)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar nota4)) exprMultLine) exprAdLine)))) exprLogLine) exprRelLine) ))) (exprMultLine / (exprNeg (exprPar 4)) exprMultLine)) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "MEDIA CALCULADA")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine >= (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)))) ; (listCmd (cmdDecl (cmd (cmdAtrib frequenciaOk := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib resultadoFinal := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) (exprLogLine AND (exprAd (exprMult (exprNeg (exprPar frequenciaOk)) exprMultLine) exprAdLine) exprLogLine)) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar resultadoFinal)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "APROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib situacao := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "REPROVADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar situacao)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))) END)))) ; (listCmd (cmdDecl (cmd (cmdAtrib aprovado := (exprRel (exprLog (exprAd (exprMult (exprNeg ~ (exprNeg (exprPar ( (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar media)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine < (exprLog (exprAd (exprMult (exprNeg (exprPar 7)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) )))) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar aprovado)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))))))))))))))))))))))))))))))))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: SistemaAcademico
+Análise sintática concluída. Programa: SistemaAcademico
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE "DIGITE A PRIMEIRA NOTA"
@@ -4298,17 +4229,20 @@ WRITE "DIGITE A SEGUNDA NOTA"
 READ_INTEGER v_nota2
 WRITE "DIGITE A TERCEIRA NOTA"
 READ_INTEGER v_nota3
-t0 = v_nota2 + v_nota3
-t1 = v_nota1 + t0
-t2 = t1 / 3
-v_media = t2
+WRITE "DIGITE A TERCEIRA NOTA"
+READ_INTEGER v_nota4
+t0 = v_nota3 + v_nota4
+t1 = v_nota2 + t0
+t2 = v_nota1 + t1
+t3 = t2 / 4
+v_media = t3
 WRITE "MEDIA CALCULADA"
 WRITE v_media
-t3 = v_media >= 7
-v_aprovado = t3
+t4 = v_media >= 7
+v_aprovado = t4
 v_frequenciaok = TRUE
-t4 = v_aprovado AND v_frequenciaok
-v_resultadofinal = t4
+t5 = v_aprovado AND v_frequenciaok
+v_resultadofinal = t5
 WRITE v_resultadofinal
 ifFalse v_resultadofinal goto L0
 v_situacao = "APROVADO"
@@ -4318,14 +4252,14 @@ L0:
 v_situacao = "REPROVADO"
 WRITE v_situacao
 L1:
-t5 = v_media < 7
-t6 = ~t5
-v_aprovado = t6
+t6 = v_media < 7
+t7 = ~t6
+v_aprovado = t7
 WRITE v_aprovado
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "DIGITE A PRIMEIRA NOTA"
@@ -4334,17 +4268,20 @@ WRITE "DIGITE A SEGUNDA NOTA"
 READ_INTEGER v_nota2
 WRITE "DIGITE A TERCEIRA NOTA"
 READ_INTEGER v_nota3
-t0 = v_nota2 + v_nota3
-t1 = v_nota1 + t0
-t2 = t1 / 3
-v_media = t2
+WRITE "DIGITE A TERCEIRA NOTA"
+READ_INTEGER v_nota4
+t0 = v_nota3 + v_nota4
+t1 = v_nota2 + t0
+t2 = v_nota1 + t1
+t3 = t2 / 4
+v_media = t3
 WRITE "MEDIA CALCULADA"
 WRITE v_media
-t3 = v_media >= 7
-v_aprovado = t3
+t4 = v_media >= 7
+v_aprovado = t4
 v_frequenciaok = TRUE
-t4 = v_aprovado AND v_frequenciaok
-v_resultadofinal = t4
+t5 = v_aprovado AND v_frequenciaok
+v_resultadofinal = t5
 WRITE v_resultadofinal
 ifFalse v_resultadofinal goto L0
 v_situacao = "APROVADO"
@@ -4354,20 +4291,20 @@ L0:
 v_situacao = "REPROVADO"
 WRITE v_situacao
 L1:
-t5 = v_media < 7
-t6 = ~t5
-v_aprovado = t6
+t6 = v_media < 7
+t7 = ~t6
+v_aprovado = t7
 WRITE v_aprovado
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : SistemaAcademico
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -4380,6 +4317,7 @@ includelib kernel32.lib
 .data
 	v_nota1 dw 0
 	v_situacao db 256 dup(0)
+	v_nota4 dw 0
 	v_aprovado db 0
 	v_nota2 dw 0
 	v_nota3 dw 0
@@ -4389,10 +4327,11 @@ includelib kernel32.lib
 	t0 dw 0
 	t1 dw 0
 	t2 dw 0
-	t3 db 0
+	t3 dw 0
 	t4 db 0
 	t5 db 0
 	t6 db 0
+	t7 db 0
 	_buf db 14 dup(0)
 	_s_true db 'true', 13, 10, 0
 	_s_false db 'false', 13, 10, 0
@@ -4405,9 +4344,10 @@ includelib kernel32.lib
 	_str0 db 'DIGITE A PRIMEIRA NOTA', 0
 	_str1 db 'DIGITE A SEGUNDA NOTA', 0
 	_str2 db 'DIGITE A TERCEIRA NOTA', 0
-	_str3 db 'MEDIA CALCULADA', 0
-	_lit_4 db 'APROVADO', 0
-	_lit_5 db 'REPROVADO', 0
+	_str3 db 'DIGITE A TERCEIRA NOTA', 0
+	_str4 db 'MEDIA CALCULADA', 0
+	_lit_5 db 'APROVADO', 0
+	_lit_6 db 'REPROVADO', 0
 
 .data?
 	_ibuf db 12 dup(?)
@@ -4445,29 +4385,42 @@ start:
 	call _read_int
 	mov word ptr [v_nota3], ax
 
-	; t0 = v_nota2 + v_nota3
-	mov ax, word ptr [v_nota2]
-	add ax, word ptr [v_nota3]
+	; WRITE "DIGITE A TERCEIRA NOTA"
+	mov ecx, offset _str3
+	call _print_str
+
+	; READ_INTEGER v_nota4
+	call _read_int
+	mov word ptr [v_nota4], ax
+
+	; t0 = v_nota3 + v_nota4
+	mov ax, word ptr [v_nota3]
+	add ax, word ptr [v_nota4]
 	mov word ptr [t0], ax
 
-	; t1 = v_nota1 + t0
-	mov ax, word ptr [v_nota1]
+	; t1 = v_nota2 + t0
+	mov ax, word ptr [v_nota2]
 	add ax, word ptr [t0]
 	mov word ptr [t1], ax
 
-	; t2 = t1 / 3
-	mov ax, word ptr [t1]
-	cwd
-	mov bx, 3
-	idiv bx
+	; t2 = v_nota1 + t1
+	mov ax, word ptr [v_nota1]
+	add ax, word ptr [t1]
 	mov word ptr [t2], ax
 
-	; v_media = t2
+	; t3 = t2 / 4
 	mov ax, word ptr [t2]
+	cwd
+	mov bx, 4
+	idiv bx
+	mov word ptr [t3], ax
+
+	; v_media = t3
+	mov ax, word ptr [t3]
 	mov word ptr [v_media], ax
 
 	; WRITE "MEDIA CALCULADA"
-	mov ecx, offset _str3
+	mov ecx, offset _str4
 	call _print_str
 
 	; WRITE v_media
@@ -4475,30 +4428,30 @@ start:
 	push eax
 	call _print_int
 
-	; t3 = v_media >= 7
+	; t4 = v_media >= 7
 	mov ax, word ptr [v_media]
 	cmp ax, 7
-	jge cmp_t_t3
-	mov byte ptr [t3], 0
-	jmp cmp_e_t3
-cmp_t_t3:
-	mov byte ptr [t3], 1
-cmp_e_t3:
+	jge cmp_t_t4
+	mov byte ptr [t4], 0
+	jmp cmp_e_t4
+cmp_t_t4:
+	mov byte ptr [t4], 1
+cmp_e_t4:
 
-	; v_aprovado = t3
-	mov al, byte ptr [t3]
+	; v_aprovado = t4
+	mov al, byte ptr [t4]
 	mov byte ptr [v_aprovado], al
 
 	; v_frequenciaok = TRUE
 	mov byte ptr [v_frequenciaok], 1
 
-	; t4 = v_aprovado AND v_frequenciaok
+	; t5 = v_aprovado AND v_frequenciaok
 	mov al, byte ptr [v_aprovado]
 	and al, byte ptr [v_frequenciaok]
-	mov byte ptr [t4], al
+	mov byte ptr [t5], al
 
-	; v_resultadofinal = t4
-	mov al, byte ptr [t4]
+	; v_resultadofinal = t5
+	mov al, byte ptr [t5]
 	mov byte ptr [v_resultadofinal], al
 
 	; WRITE v_resultadofinal
@@ -4510,31 +4463,8 @@ cmp_e_t3:
 	movzx eax, byte ptr [v_resultadofinal]
 	cmp eax, 0
 	je L0
-	cmp eax, 0
-	je L0
 
 	; v_situacao = "APROVADO"
-	lea esi, _lit_4
-	lea edi, v_situacao
-copy_5:
-	mov al, [esi]
-	mov [edi], al
-	inc esi
-	inc edi
-	test al, al
-	jnz copy_5
-
-	; WRITE v_situacao
-	mov ecx, offset v_situacao
-	call _print_str
-
-	; goto L1
-	jmp L1
-
-	; L0:
-L0:
-
-	; v_situacao = "REPROVADO"
 	lea esi, _lit_5
 	lea edi, v_situacao
 copy_6:
@@ -4549,26 +4479,47 @@ copy_6:
 	mov ecx, offset v_situacao
 	call _print_str
 
+	; goto L1
+	jmp L1
+
+	; L0:
+L0:
+
+	; v_situacao = "REPROVADO"
+	lea esi, _lit_6
+	lea edi, v_situacao
+copy_7:
+	mov al, [esi]
+	mov [edi], al
+	inc esi
+	inc edi
+	test al, al
+	jnz copy_7
+
+	; WRITE v_situacao
+	mov ecx, offset v_situacao
+	call _print_str
+
 	; L1:
 L1:
 
-	; t5 = v_media < 7
+	; t6 = v_media < 7
 	mov ax, word ptr [v_media]
 	cmp ax, 7
-	jl cmp_t_t5
-	mov byte ptr [t5], 0
-	jmp cmp_e_t5
-cmp_t_t5:
-	mov byte ptr [t5], 1
-cmp_e_t5:
+	jl cmp_t_t6
+	mov byte ptr [t6], 0
+	jmp cmp_e_t6
+cmp_t_t6:
+	mov byte ptr [t6], 1
+cmp_e_t6:
 
-	; t6 = ~t5
-	mov al, byte ptr [t5]
-	xor al, 1
-	mov byte ptr [t6], al
-
-	; v_aprovado = t6
+	; t7 = ~t6
 	mov al, byte ptr [t6]
+	xor al, 1
+	mov byte ptr [t7], al
+
+	; v_aprovado = t7
+	mov al, byte ptr [t7]
 	mov byte ptr [v_aprovado], al
 
 	; WRITE v_aprovado
@@ -4681,8 +4632,19 @@ ri_loop:
 	jmp ri_loop
 ri_done:
 	test ebx, ebx
-	jz ri_pos
+	jz ri_validate_pos
 	neg eax
+ri_validate_neg:
+	cmp eax, -32767
+	jl ri_overflow
+	jmp ri_success
+ri_validate_pos:
+	cmp eax, 32767
+	jg ri_overflow
+ri_success:
+	jmp ri_pos
+	ri_overflow:
+	xor eax, eax
 ri_pos:
 	pop ebx
 	pop esi
@@ -4693,13 +4655,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\sistemaacademico.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.011">
+  <testcase name="acceptsValidScripts(String)[17]" classname="com.inm.PipelineTest" time="0.296">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/controle-estoque.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: ControleEstoque | Tipo: ID         | Atributo: ControleEstoque
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -4804,9 +4766,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog PROGRAM ControleEstoque ; decls (cmdComp BEGIN (listCmd (varDecl VAR (declTip (listId quantidade listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId vendidos listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId restante listIdLine) : (tip INTEGER) ;) (listCmd (varDecl VAR (declTip (listId continuar listIdLine) : (tip BOOLEAN) ;) (listCmd (cmdDecl (cmd (cmdAtrib quantidade := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 20)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib vendidos := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWhile WHILE (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar continuar)) exprMultLine) exprAdLine) exprLogLine) exprRelLine) DO (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib vendidos := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar vendidos)) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar 2)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdAtrib restante := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar quantidade)) exprMultLine) (exprAdLine - (exprMult (exprNeg (exprPar vendidos)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "VENDIDOS")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar vendidos)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "RESTANTE")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar restante)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdIf IF (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar restante)) exprMultLine) exprAdLine) exprLogLine) (exprRelLine <= (exprLog (exprAd (exprMult (exprNeg (exprPar 0)) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) THEN (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar FALSE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) END) (cmdIfLine ELSE (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdAtrib continuar := (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar TRUE)) exprMultLine) exprAdLine) exprLogLine) exprRelLine))) ; listCmd)) END)))) ; listCmd)))))))))))))) END))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "ESTOQUE ENCERRADO")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))))))))))))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: ControleEstoque
+Análise sintática concluída. Programa: ControleEstoque
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 v_quantidade = 20
@@ -4833,9 +4795,9 @@ goto L0
 L1:
 WRITE "ESTOQUE ENCERRADO"
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 v_quantidade = 20
@@ -4862,15 +4824,15 @@ goto L0
 L1:
 WRITE "ESTOQUE ENCERRADO"
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : ControleEstoque
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -4929,8 +4891,6 @@ L0:
 	movzx eax, byte ptr [v_continuar]
 	cmp eax, 0
 	je L1
-	cmp eax, 0
-	je L1
 
 	; t0 = v_vendidos + 2
 	mov ax, word ptr [v_vendidos]
@@ -4980,8 +4940,6 @@ cmp_e_t2:
 
 	; ifFalse t2 goto L2
 	movzx eax, byte ptr [t2]
-	cmp eax, 0
-	je L2
 	cmp eax, 0
 	je L2
 
@@ -5074,13 +5032,13 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\controleestoque.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
-  <testcase name="acceptsValidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.005">
+  <testcase name="acceptsValidScripts(String)[18]" classname="com.inm.PipelineTest" time="0.01">
     <system-out><![CDATA[file:/C:/Users/Yuri/Projetos/compiler/target/classes/scripts/valid/hello-world.prog
 
-=== FASE 1: ANÁLISE LÉXICA E SINTÁTICA ===
+Executando análise sintática
 Token: PROGRAM    | Tipo: PROGRAM    | Atributo: -
 Token: helloWorld | Tipo: ID         | Atributo: helloWorld
 Token: ;          | Tipo: PVIG       | Atributo: -
@@ -5113,9 +5071,9 @@ Token: .          | Tipo: PONTO      | Atributo: -
 --- Árvore Sintática (texto) ---
 (prog PROGRAM helloWorld ; (decls var (listDecl (declTip (listId name listIdLine) : (tip STRING) ;) listDeclLine)) (cmdComp BEGIN (listCmd (cmdDecl (cmd (cmdWrite write ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Qual o seu nome?")) exprMultLine) exprAdLine) exprLogLine) exprRelLine)) listWLine) ))) ; (listCmd (cmdDecl (cmd (cmdRead read ( (listId name listIdLine) ))) ; (listCmd (cmdDecl (cmd (cmdWrite WRITE ( (listW (elemW (exprRel (exprLog (exprAd (exprMult (exprNeg (exprPar "Ola, ")) exprMultLine) (exprAdLine + (exprMult (exprNeg (exprPar name)) exprMultLine) exprAdLine)) exprLogLine) exprRelLine)) listWLine) ))) ; listCmd)))))) END) . <EOF>)
 --------------------------------
-Fase 1 concluída. Programa: helloWorld
+Análise sintática concluída. Programa: helloWorld
 
-=== FASE 2: ANÁLISE SEMÂNTICA E GERAÇÃO DE CÓDIGO INTERMEDIÁRIO ===
+Executando análise semântica e 3AC
 
 --- Código Intermediário (3AC) ---
 WRITE "Qual o seu nome?"
@@ -5123,9 +5081,9 @@ READ_STRING v_name
 t0 = "Ola, " CONCAT v_name
 WRITE t0
 ----------------------------------
-Fase 2 concluída com sucesso.
+Análise semântica e 3AC concluídos
 
-=== FASE 3: OTIMIZAÇÃO DE CÓDIGO ===
+Otimização de Código
 
 --- Instruções Otimizadas (3AC) ---
 WRITE "Qual o seu nome?"
@@ -5133,15 +5091,15 @@ READ_STRING v_name
 t0 = "Ola, " CONCAT v_name
 WRITE t0
 -----------------------------------
-Fase 3 concluída.
+Instruções otimizadas.
 
-=== FASE 4: GERAÇÃO DE CÓDIGO FINAL (ASSEMBLY x86) ===
+Geração de Assembly x86)
 
---- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---
-; ============================================
+--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---
+; ===========================================
 ; Programa : helloWorld
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -5265,7 +5223,7 @@ end start
 
 -----------------------------------------------------------
 Assembly salvo em: C:\Users\Yuri\Projetos\compiler\src\test\resources\output\helloworld.asm
-Fase 4 concluída.
+Geração de Assembly concluída
 ]]></system-out>
   </testcase>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.ExecutionTest" time="9.969" tests="40" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.inm.ExecutionTest" time="10.46" tests="40" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="C:\Users\Yuri\graalvm21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260 2026-06-14T18-39-43_464-jvmRun1 surefire-20260614183943581_1tmp surefire_0-20260614183943581_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012\surefirebooter-20260615152700892_3.jar C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012 2026-06-15T15-27-00_787-jvmRun1 surefire-20260615152700892_1tmp surefire_0-20260615152700892_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Yuri\Projetos\compiler\target\test-classes;C:\Users\Yuri\Projetos\compiler\target\classes;C:\Users\Yuri\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr4\4.13.2\antlr4-4.13.2.jar;C:\Users\Yuri\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\Yuri\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\Yuri\.m2\repository\org\abego\treelayout\org.abego.treelayout.core\1.0.3\org.abego.treelayout.core-1.0.3.jar;C:\Users\Yuri\.m2\repository\com\ibm\icu\icu4j\72.1\icu4j-72.1.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Yuri\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Yuri\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire11602779898993109260\surefirebooter-20260614183943581_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Yuri\AppData\Local\Temp\surefire11315005180201877012\surefirebooter-20260615152700892_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-jvmci-23.1-b30"/>
@@ -60,9 +60,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="executesAssembly(Path)[1]" classname="com.inm.ExecutionTest" time="0.306">
+  <testcase name="executesAssembly(Path)[1]" classname="com.inm.ExecutionTest" time="0.387">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\atribuicao
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\atribuicao\atribuicao.asm
@@ -80,18 +80,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 2
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[2]" classname="com.inm.ExecutionTest" time="0.233">
+  <testcase name="executesAssembly(Path)[2]" classname="com.inm.ExecutionTest" time="0.249">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\atribuicao
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\atribuicao\atribuicao.asm
@@ -109,18 +107,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 2
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[3]" classname="com.inm.ExecutionTest" time="0.263">
+  <testcase name="executesAssembly(Path)[3]" classname="com.inm.ExecutionTest" time="0.251">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\calculodesconto
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\calculodesconto\calculodesconto.asm
@@ -141,18 +137,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 Informe o Preço
 9
 -6
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[4]" classname="com.inm.ExecutionTest" time="0.235">
+  <testcase name="executesAssembly(Path)[4]" classname="com.inm.ExecutionTest" time="0.266">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\calculodesconto
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\calculodesconto\calculodesconto.asm
@@ -173,18 +167,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 Informe o Preço
 9
 -6
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[5]" classname="com.inm.ExecutionTest" time="0.279">
+  <testcase name="executesAssembly(Path)[5]" classname="com.inm.ExecutionTest" time="0.265">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv\comentarioediv.asm
@@ -201,18 +193,16 @@ Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
 Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv\comentarioediv.exe
 
 === SAÍDA DO PROGRAMA ===
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[6]" classname="com.inm.ExecutionTest" time="0.249">
+  <testcase name="executesAssembly(Path)[6]" classname="com.inm.ExecutionTest" time="0.25">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv\comentarioediv.asm
@@ -229,18 +219,16 @@ Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
 Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\comentarioediv\comentarioediv.exe
 
 === SAÍDA DO PROGRAMA ===
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[7]" classname="com.inm.ExecutionTest" time="0.266">
+  <testcase name="executesAssembly(Path)[7]" classname="com.inm.ExecutionTest" time="0.249">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\condicional
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\condicional\condicional.asm
@@ -259,18 +247,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 maior
 dois
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[8]" classname="com.inm.ExecutionTest" time="0.266">
+  <testcase name="executesAssembly(Path)[8]" classname="com.inm.ExecutionTest" time="0.247">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\condicional
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\condicional\condicional.asm
@@ -289,18 +275,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 maior
 dois
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[9]" classname="com.inm.ExecutionTest" time="0.248">
+  <testcase name="executesAssembly(Path)[9]" classname="com.inm.ExecutionTest" time="0.281">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\controleestoque
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\controleestoque\controleestoque.asm
@@ -358,18 +342,16 @@ VENDIDOS
 RESTANTE
 0
 ESTOQUE ENCERRADO
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[10]" classname="com.inm.ExecutionTest" time="0.249">
+  <testcase name="executesAssembly(Path)[10]" classname="com.inm.ExecutionTest" time="0.265">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\controleestoque
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\controleestoque\controleestoque.asm
@@ -427,18 +409,16 @@ VENDIDOS
 RESTANTE
 0
 ESTOQUE ENCERRADO
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[11]" classname="com.inm.ExecutionTest" time="0.238">
+  <testcase name="executesAssembly(Path)[11]" classname="com.inm.ExecutionTest" time="0.267">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\danglingelse
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\danglingelse\danglingelse.asm
@@ -456,18 +436,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 nao
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[12]" classname="com.inm.ExecutionTest" time="0.233">
+  <testcase name="executesAssembly(Path)[12]" classname="com.inm.ExecutionTest" time="0.298">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\danglingelse
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\danglingelse\danglingelse.asm
@@ -485,18 +463,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 nao
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[13]" classname="com.inm.ExecutionTest" time="0.234">
+  <testcase name="executesAssembly(Path)[13]" classname="com.inm.ExecutionTest" time="0.266">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\escreveteste
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\escreveteste\escreveteste.asm
@@ -514,18 +490,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 teste
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[14]" classname="com.inm.ExecutionTest" time="0.267">
+  <testcase name="executesAssembly(Path)[14]" classname="com.inm.ExecutionTest" time="0.253">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\escreveteste
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\escreveteste\escreveteste.asm
@@ -543,18 +517,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 teste
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[15]" classname="com.inm.ExecutionTest" time="0.265">
+  <testcase name="executesAssembly(Path)[15]" classname="com.inm.ExecutionTest" time="0.262">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\exprari
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\exprari\exprari.asm
@@ -572,18 +544,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 15
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[16]" classname="com.inm.ExecutionTest" time="0.282">
+  <testcase name="executesAssembly(Path)[16]" classname="com.inm.ExecutionTest" time="0.264">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\exprari
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\exprari\exprari.asm
@@ -601,18 +571,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 15
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[17]" classname="com.inm.ExecutionTest" time="0.235">
+  <testcase name="executesAssembly(Path)[17]" classname="com.inm.ExecutionTest" time="0.279">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\helloworld
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\helloworld\helloworld.asm
@@ -631,18 +599,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 Qual o seu nome?
 Ola, 9
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[18]" classname="com.inm.ExecutionTest" time="0.252">
+  <testcase name="executesAssembly(Path)[18]" classname="com.inm.ExecutionTest" time="0.295">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\helloworld
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\helloworld\helloworld.asm
@@ -661,18 +627,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 Qual o seu nome?
 Ola, 9
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[19]" classname="com.inm.ExecutionTest" time="0.254">
+  <testcase name="executesAssembly(Path)[19]" classname="com.inm.ExecutionTest" time="0.293">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\ifaninhado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\ifaninhado\ifaninhado.asm
@@ -697,18 +661,16 @@ teste2
 teste4
 teste6
 teste8
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[20]" classname="com.inm.ExecutionTest" time="0.269">
+  <testcase name="executesAssembly(Path)[20]" classname="com.inm.ExecutionTest" time="0.251">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\ifaninhado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\ifaninhado\ifaninhado.asm
@@ -733,18 +695,16 @@ teste2
 teste4
 teste6
 teste8
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[21]" classname="com.inm.ExecutionTest" time="0.318">
+  <testcase name="executesAssembly(Path)[21]" classname="com.inm.ExecutionTest" time="0.249">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\looptest
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\looptest\looptest.asm
@@ -766,18 +726,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 2
 3
 4
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[22]" classname="com.inm.ExecutionTest" time="0.28">
+  <testcase name="executesAssembly(Path)[22]" classname="com.inm.ExecutionTest" time="0.25">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\looptest
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\looptest\looptest.asm
@@ -799,18 +757,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 2
 3
 4
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[23]" classname="com.inm.ExecutionTest" time="0.25">
+  <testcase name="executesAssembly(Path)[23]" classname="com.inm.ExecutionTest" time="0.266">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificado\nomeidentificado.asm
@@ -828,18 +784,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 2
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[24]" classname="com.inm.ExecutionTest" time="0.132">
+  <testcase name="executesAssembly(Path)[24]" classname="com.inm.ExecutionTest" time="0.131">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador\nomeidentificador.asm
@@ -849,7 +803,6 @@ ASCII build
 ***********
 
 C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador\nomeidentificador.asm(39) : error A2006: undefined symbol : v_variavelasdae32e2wqdr3asdsaerqwvx2314
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
@@ -858,9 +811,9 @@ Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 Verifique se o MASM32 SDK está instalado corretamente em C:\masm32.
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[25]" classname="com.inm.ExecutionTest" time="0.116">
+  <testcase name="executesAssembly(Path)[25]" classname="com.inm.ExecutionTest" time="0.132">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador\nomeidentificador.asm
@@ -870,7 +823,6 @@ ASCII build
 ***********
 
 C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificador\nomeidentificador.asm(39) : error A2006: undefined symbol : v_variavelasdae32e2wqdr3asdsaerqwvx2314
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
@@ -879,9 +831,9 @@ Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 Verifique se o MASM32 SDK está instalado corretamente em C:\masm32.
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[26]" classname="com.inm.ExecutionTest" time="0.24">
+  <testcase name="executesAssembly(Path)[26]" classname="com.inm.ExecutionTest" time="0.252">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\nomeidentificado\nomeidentificado.asm
@@ -899,18 +851,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 2
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[27]" classname="com.inm.ExecutionTest" time="0.25">
+  <testcase name="executesAssembly(Path)[27]" classname="com.inm.ExecutionTest" time="0.253">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompilado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompilado\projetocompilado.asm
@@ -929,18 +879,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 INFORME A PRIMEIRA NOTAINFORME A SEGUNDA NOTA0
 false
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[28]" classname="com.inm.ExecutionTest" time="0.237">
+  <testcase name="executesAssembly(Path)[28]" classname="com.inm.ExecutionTest" time="0.265">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompiladores
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompiladores\projetocompiladores.asm
@@ -962,18 +910,16 @@ INFORME A SEGUNDA NOTA
 9
 true
 Aprovado
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[29]" classname="com.inm.ExecutionTest" time="0.252">
+  <testcase name="executesAssembly(Path)[29]" classname="com.inm.ExecutionTest" time="0.281">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompiladores
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompiladores\projetocompiladores.asm
@@ -995,18 +941,16 @@ INFORME A SEGUNDA NOTA
 9
 true
 Aprovado
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[30]" classname="com.inm.ExecutionTest" time="0.237">
+  <testcase name="executesAssembly(Path)[30]" classname="com.inm.ExecutionTest" time="0.264">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompilado
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\projetocompilado\projetocompilado.asm
@@ -1025,18 +969,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 INFORME A PRIMEIRA NOTAINFORME A SEGUNDA NOTA0
 false
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[31]" classname="com.inm.ExecutionTest" time="0.236">
+  <testcase name="executesAssembly(Path)[31]" classname="com.inm.ExecutionTest" time="0.298">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\sistemaacademico
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\sistemaacademico\sistemaacademico.asm
@@ -1056,23 +998,22 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 DIGITE A PRIMEIRA NOTA
 DIGITE A SEGUNDA NOTA
 DIGITE A TERCEIRA NOTA
+DIGITE A TERCEIRA NOTA
 MEDIA CALCULADA
 9
 true
 APROVADO
 true
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[32]" classname="com.inm.ExecutionTest" time="0.268">
+  <testcase name="executesAssembly(Path)[32]" classname="com.inm.ExecutionTest" time="0.281">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\sistemaacademico
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\sistemaacademico\sistemaacademico.asm
@@ -1092,23 +1033,22 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 DIGITE A PRIMEIRA NOTA
 DIGITE A SEGUNDA NOTA
 DIGITE A TERCEIRA NOTA
+DIGITE A TERCEIRA NOTA
 MEDIA CALCULADA
 9
 true
 APROVADO
 true
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[33]" classname="com.inm.ExecutionTest" time="0.247">
+  <testcase name="executesAssembly(Path)[33]" classname="com.inm.ExecutionTest" time="0.251">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\superexpr
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\superexpr\superexpr.asm
@@ -1126,18 +1066,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 18
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[34]" classname="com.inm.ExecutionTest" time="0.254">
+  <testcase name="executesAssembly(Path)[34]" classname="com.inm.ExecutionTest" time="0.269">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\superexpr
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\superexpr\superexpr.asm
@@ -1155,18 +1093,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 
 === SAÍDA DO PROGRAMA ===
 18
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[35]" classname="com.inm.ExecutionTest" time="0.236">
+  <testcase name="executesAssembly(Path)[35]" classname="com.inm.ExecutionTest" time="0.25">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\testeexpressoes
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\testeexpressoes\testeexpressoes.asm
@@ -1189,18 +1125,16 @@ true
 true
 true
 VERDADEIRO
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[36]" classname="com.inm.ExecutionTest" time="0.237">
+  <testcase name="executesAssembly(Path)[36]" classname="com.inm.ExecutionTest" time="0.249">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\testeexpressoes
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\testeexpressoes\testeexpressoes.asm
@@ -1223,18 +1157,16 @@ true
 true
 true
 VERDADEIRO
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[37]" classname="com.inm.ExecutionTest" time="0.236">
+  <testcase name="executesAssembly(Path)[37]" classname="com.inm.ExecutionTest" time="0.252">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\variaveis
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\variaveis\variaveis.asm
@@ -1253,18 +1185,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 0
 0
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[38]" classname="com.inm.ExecutionTest" time="0.249">
+  <testcase name="executesAssembly(Path)[38]" classname="com.inm.ExecutionTest" time="0.251">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\variaveis
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\variaveis\variaveis.asm
@@ -1283,18 +1213,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 === SAÍDA DO PROGRAMA ===
 0
 0
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[39]" classname="com.inm.ExecutionTest" time="0.238">
+  <testcase name="executesAssembly(Path)[39]" classname="com.inm.ExecutionTest" time="0.248">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\whilescript
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\whilescript\whilescript.asm
@@ -1321,18 +1249,16 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 8
 9
 10
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.
 
 ]]></system-err>
   </testcase>
-  <testcase name="executesAssembly(Path)[40]" classname="com.inm.ExecutionTest" time="0.267">
+  <testcase name="executesAssembly(Path)[40]" classname="com.inm.ExecutionTest" time="0.25">
     <system-out><![CDATA[
-=== FASE 5: MONTAGEM E EXECUÇÃO ===
+Iniciando Montagem e Execução
 Diretório de trabalho: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\whilescript
 Montando com MASM (ml.exe)...
  Assembling: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\whilescript\whilescript.asm
@@ -1359,9 +1285,7 @@ Linkagem concluída: C:\Users\Yuri\Projetos\compiler\target\test-classes\output\
 8
 9
 10
-=========================
 Programa encerrou com código: 0
-Fase 5 concluída.
 ]]></system-out>
     <system-err><![CDATA[Microsoft (R) Macro Assembler Version 6.14.8444
 Copyright (C) Microsoft Corp 1981-1997.  All rights reserved.

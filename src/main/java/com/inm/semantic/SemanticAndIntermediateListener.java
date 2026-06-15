@@ -3,6 +3,7 @@ package com.inm.semantic;
 import com.inm.compilation.CompilationContext;
 import com.inm.antlr4.ProgramBaseListener;
 import com.inm.antlr4.ProgramParser;
+import com.inm.generator.ThreeAddressCode;
 import org.antlr.v4.runtime.Token;
 
 import java.util.ArrayList;
@@ -183,7 +184,8 @@ public class SemanticAndIntermediateListener extends ProgramBaseListener {
     }
 
     private void writeOp(Token t, TypedOperand left, TypedOperand right, String op) {
-        if (op.equals("+") && left.getType().equalsIgnoreCase("string") && right.getType().equalsIgnoreCase("string")) {
+        if (op.equals("+") && left.getType().equalsIgnoreCase("string")
+                && right.getType().equalsIgnoreCase("string")) {
             String temp = tac.newTemp("STRING");
             emit(temp + " = " + left.getValue() + " CONCAT " + right.getValue());
             exprStack.push(new TypedOperand(temp, "string"));

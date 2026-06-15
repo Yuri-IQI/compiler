@@ -24,17 +24,17 @@ public class AssemblyGenerator {
 
         String result = writer.build();
 
-        System.out.println("\n--- Assembly x86 Gerado (MASM, Sintaxe Intel Clássica) ---");
+        System.out.println("\n--- Assembly x86 Gerado (MASM - Sintaxe Intel Clássica) ---");
         System.out.println(result);
         System.out.println("-----------------------------------------------------------");
         return result;
     }
 
     private void generateHeader() {
-        writer.data("; ============================================");
+        writer.data("; ===========================================");
         writer.data("; Programa : " + context.programName());
         writer.data("; Alvo     : x86 32 bits (MASM, Windows i386)");
-        writer.data("; ============================================");
+        writer.data("; ===========================================");
         writer.data("");
         writer.data(".386");
         writer.data(".model flat, stdcall");

@@ -1,7 +1,7 @@
 PROGRAM SistemaAcademico;
 
 BEGIN
-    VAR nota1, nota2, nota3 : INTEGER;
+    VAR nota1, nota2, nota3, nota4 : INTEGER;
     VAR media : INTEGER;
     VAR aprovado, frequenciaOk, resultadoFinal : BOOLEAN;
     VAR situacao : STRING;
@@ -15,7 +15,10 @@ BEGIN
     WRITE("DIGITE A TERCEIRA NOTA");
     READ(nota3);
 
-    media := (nota1 + nota2 + nota3) / 3;
+    WRITE("DIGITE A TERCEIRA NOTA");
+    READ(nota4);
+
+    media := (nota1 + nota2 + nota3 + nota4) / 4;
 
     WRITE("MEDIA CALCULADA");
     WRITE(media);

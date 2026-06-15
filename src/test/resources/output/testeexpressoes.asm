@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : TesteExpressoes
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -71,89 +71,48 @@ start:
 	; v_d = 8
 	mov word ptr [v_d], 8
 
-	; t0 = 10 + 5
-	mov ax, 10
-	add ax, 5
-	mov word ptr [t0], ax
+	; t0 = 15
+	mov word ptr [t0], 15
 
-	; t1 = 2 + 8
-	mov ax, 2
-	add ax, 8
-	mov word ptr [t1], ax
+	; t1 = 10
+	mov word ptr [t1], 10
 
-	; t2 = t0 * t1
-	mov ax, word ptr [t0]
-	imul word ptr [t1]
-	mov word ptr [t2], ax
+	; t2 = 150
+	mov word ptr [t2], 150
 
-	; v_r1 = t2
-	mov ax, word ptr [t2]
-	mov word ptr [v_r1], ax
+	; v_r1 = 150
+	mov word ptr [v_r1], 150
 
-	; t3 = 10 * 5
-	mov ax, 10
-	imul ax, ax, 5
-	mov word ptr [t3], ax
+	; t3 = 50
+	mov word ptr [t3], 50
 
-	; t4 = 8 / 2
-	mov ax, 8
-	cwd
-	mov bx, 2
-	idiv bx
-	mov word ptr [t4], ax
+	; t4 = 4
+	mov word ptr [t4], 4
 
-	; t5 = 10 - 2
-	mov ax, 10
-	sub ax, 2
-	mov word ptr [t5], ax
+	; t5 = 8
+	mov word ptr [t5], 8
 
-	; t6 = t4 + t5
-	mov ax, word ptr [t4]
-	add ax, word ptr [t5]
-	mov word ptr [t6], ax
+	; t6 = 12
+	mov word ptr [t6], 12
 
-	; t7 = t3 - t6
-	mov ax, word ptr [t3]
-	sub ax, word ptr [t6]
-	mov word ptr [t7], ax
+	; t7 = 38
+	mov word ptr [t7], 38
 
-	; v_r2 = t7
-	mov ax, word ptr [t7]
-	mov word ptr [v_r2], ax
+	; v_r2 = 38
+	mov word ptr [v_r2], 38
 
-	; t8 = v_r1 > v_r2
-	mov ax, word ptr [v_r1]
-	cmp ax, word ptr [v_r2]
-	jg cmp_t_t8
-	mov byte ptr [t8], 0
-	jmp cmp_e_t8
-cmp_t_t8:
+	; t8 = TRUE
 	mov byte ptr [t8], 1
-cmp_e_t8:
 
 	; v_comp1 = t8
 	mov al, byte ptr [t8]
 	mov byte ptr [v_comp1], al
 
-	; t9 = 10 >= 5
-	mov ax, 10
-	cmp ax, 5
-	jge cmp_t_t9
-	mov byte ptr [t9], 0
-	jmp cmp_e_t9
-cmp_t_t9:
+	; t9 = TRUE
 	mov byte ptr [t9], 1
-cmp_e_t9:
 
-	; t10 = 8 <> 2
-	mov ax, 8
-	cmp ax, 2
-	jne cmp_t_t10
-	mov byte ptr [t10], 0
-	jmp cmp_e_t10
-cmp_t_t10:
+	; t10 = TRUE
 	mov byte ptr [t10], 1
-cmp_e_t10:
 
 	; t11 = t9 AND t10
 	mov al, byte ptr [t9]
@@ -173,14 +132,12 @@ cmp_e_t10:
 	mov al, byte ptr [t12]
 	mov byte ptr [v_final], al
 
-	; WRITE v_r1
-	movsx eax, word ptr [v_r1]
-	push eax
+	; WRITE 150
+	push 150
 	call _print_int
 
-	; WRITE v_r2
-	movsx eax, word ptr [v_r2]
-	push eax
+	; WRITE 38
+	push 38
 	call _print_int
 
 	; WRITE v_comp1
@@ -200,8 +157,6 @@ cmp_e_t10:
 
 	; ifFalse v_final goto L0
 	movzx eax, byte ptr [v_final]
-	cmp eax, 0
-	je L0
 	cmp eax, 0
 	je L0
 

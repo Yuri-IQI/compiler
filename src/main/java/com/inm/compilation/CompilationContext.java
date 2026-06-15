@@ -2,7 +2,7 @@ package com.inm.compilation;
 
 import com.inm.antlr4.ProgramParser;
 import com.inm.semantic.SymbolTable;
-import com.inm.semantic.ThreeAddressCode;
+import com.inm.generator.ThreeAddressCode;
 import com.inm.terminal.ExecutionParams;
 import org.antlr.v4.runtime.tree.ParseTree;
 

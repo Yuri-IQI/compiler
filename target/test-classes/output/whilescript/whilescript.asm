@@ -1,7 +1,7 @@
-; ============================================
+; ===========================================
 ; Programa : whilescript
 ; Alvo     : x86 32 bits (MASM, Windows i386)
-; ============================================
+; ===========================================
 
 .386
 .model flat, stdcall
@@ -55,8 +55,6 @@ cmp_e_t0:
 
 	; ifFalse t0 goto L1
 	movzx eax, byte ptr [t0]
-	cmp eax, 0
-	je L1
 	cmp eax, 0
 	je L1
 

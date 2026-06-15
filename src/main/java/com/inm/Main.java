@@ -18,7 +18,6 @@ public class Main {
             }
         }
 
-        new TerminalHandler()
-                .run(ExecutionParams.buildParams());
+        new TerminalHandler().run(ExecutionParams.buildParams());
     }
 }

@@ -15,6 +15,7 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\Instruc
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\InstructionTranslator.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\assembly\Writer.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\Optimizer.java
+C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\generator\ThreeAddressCode.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ExceptionPrinter.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ExecutionEnvHelper.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\ParseHelper.java
@@ -24,7 +25,6 @@ C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\helper\Symbol.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\Main.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SemanticAndIntermediateListener.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\SymbolTable.java
-C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\ThreeAddressCode.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\semantic\TypedOperand.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\terminal\ExecutionMode.java
 C:\Users\Yuri\Projetos\compiler\src\main\java\com\inm\terminal\ExecutionParams.java
